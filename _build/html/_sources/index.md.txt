@@ -51,4 +51,4 @@ conda activate smake
 
 # Tutorial
 
-https://snakemake2019.readthedocs.io/en/latest/tutorial.html
+[**Tutorial**](https://snakemake2019.readthedocs.io/en/latest/tutorial.html)
