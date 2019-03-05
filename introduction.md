@@ -25,3 +25,7 @@ rule myname:
     output: ['myoutput']
     shell: 'Some command to go from in to out'
 ```
+
+[**Snakemake Documentation**](https://snakemake.readthedocs.io/en/stable/index.html)
+
+[**Snakemake Paper**](https://academic.oup.com/bioinformatics/article/28/19/2520/290322)

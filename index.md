@@ -11,21 +11,18 @@ Intro to Workflows for Efficient Automated Data Analysis, using Snakemake
 No license; the below content is under CC0.
 ```
 
-```
 In this breakout session you'll learn about [snakemake](https://snakemake.readthedocs.io/en/stable/), a workflow management system consisting of a text-based workflow specification language and a scalable execution environment. You will be introduced to the Snakemake workflow definition language and how to use the execution environment to scale workflows to compute servers and clusters while adapting to hardware specific constraints. 
-```
 
-```
 Snakemake is designed specifically for computationally intensive and/or complex data analysis pipelines. The name is a reference to the programming language Python, which forms the basis for the Snakemake syntax. 
 > > You don't need to be an expert at Python to use Snakemake, but it can sometimes be very useful.
-```
+
 
 # Brief Survey
+
 https://goo.gl/forms/zRYziI86hQxuGkn13
 
 
 # Setup
-
 
 **Working on binder**
 
@@ -51,56 +48,3 @@ You could use this install file to run everything we're doing today on your lapt
 conda env create --file environment.yml -n smake
 conda activate smake
 ```
-
-
----
-
-Introduction
-===
-Why invest time in a workflow management system? 
-
-A workflow management system (WMS) is a piece of software that sets up, performs and monitors a defined sequence of computational tasks (i.e. "a workflow"). Snakemake is a WMS that was developed in the bioinformatics community, and as such it has some features that make it particularly well suited for creating reproducible and scalable data analyses.
-
-[**The Rationale**](https://hackmd.io/4useBM-tQHGGBg-i_2eAIw#)
-
-![hate_research](img/hate_research.png)
-
-
-**Snakemake is a workflow management system that helps you build pipelines between the scripts of your project.**
-
-**Snakemake allows you to create a set of rules, each one defining a "step" of your analysis.** 
-
-The rules need to be written in a file called "**Snakefile**". For each step you need to provide:
-
-+ **Input** : Data files, scripts, executables or any other files.
-+ **Expected output**. It's not required to list all possible outputs. Just those that you want to monitor or that are used by a subsequent step as inputs.
-+ A **command** to run to process the input and create the output.
-
-```
-rule myname:
-    input: ['myinput1', 'myinput2']
-    output: ['myoutput']
-    shell: 'Some command to go from in to out'
-```
-Tutorial
-===
-
-## http://snakemake2019.readthedocs.io/
-
-
-
-
----
-
-### [Additional Reading](https://hackmd.io/ZA42KGMSQDOAw89b93HHMA#)
-
-[**rnaseq-star-deseq2 snakemake workflow**](https://github.com/snakemake-workflows/rna-seq-star-deseq2)
-
-[**Snakemake Documentation**](https://snakemake.readthedocs.io/en/stable/index.html)
-
-[**Snakemake Paper**](https://academic.oup.com/bioinformatics/article/28/19/2520/290322)
-
-Challenge exercise: 
-https://davetang.org/muse/2017/10/25/getting-started-hisat-stringtie-ballgown/
-
----
