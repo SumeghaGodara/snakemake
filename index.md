@@ -7,18 +7,18 @@ Intro to Workflows for Efficient Automated Data Analysis, using Snakemake
 
 > [Sateesh Peri](https://sateeshperi.github.io/)
 
-:::warning
-No license; the below content is under CC0. (Do with it what you will, and I hope it's useful!)
-:::
+```
+No license; the below content is under CC0.
+```
 
-:::success
+```
 In this breakout session you'll learn about [snakemake](https://snakemake.readthedocs.io/en/stable/), a workflow management system consisting of a text-based workflow specification language and a scalable execution environment. You will be introduced to the Snakemake workflow definition language and how to use the execution environment to scale workflows to compute servers and clusters while adapting to hardware specific constraints. 
-:::
+```
 
-:::info
+```
 Snakemake is designed specifically for computationally intensive and/or complex data analysis pipelines. The name is a reference to the programming language Python, which forms the basis for the Snakemake syntax. 
 > > You don't need to be an expert at Python to use Snakemake, but it can sometimes be very useful.
-:::
+```
 
 # Brief Survey
 https://goo.gl/forms/zRYziI86hQxuGkn13
@@ -27,15 +27,14 @@ https://goo.gl/forms/zRYziI86hQxuGkn13
 # Setup
 
 
-**Working on binder** :mega: (recommended)
+**Working on binder**
 
 We're going to use mybinder.org, a fantastic service that lets us run demonstrations and short workshops in the cloud! 
 
 Click on the button below to get started:
 
-:::success
-[**Launch Binder**](https://mybinder.org/v2/gh/ctb/2019-snakemake-ucdavis/feb2019?urlpath=rstudio) 
-:::
+
+### [**Launch Binder**](https://mybinder.org/v2/gh/ctb/2019-snakemake-ucdavis/feb2019?urlpath=rstudio) 
 
 
 ### Software we're going to use
@@ -85,9 +84,9 @@ rule myname:
 ```
 Tutorial
 ===
-:::info
-https://github.com/sateeshperi/Snakemake_Tutorial/blob/master/tutorial.md
-:::
+
+## http://snakemake2019.readthedocs.io/
+
 
 
 

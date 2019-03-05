@@ -2,6 +2,6 @@
    :maxdepth: 2
    :numbered:
 
-   README.md
+   index.md
 
    tutorial.md

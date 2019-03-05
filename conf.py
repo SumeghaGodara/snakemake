@@ -24,8 +24,8 @@ import guzzle_sphinx_theme
 # -- Project information -----------------------------------------------------
 
 project = 'snakemake2019'
-copyright = '2019, Titus C. Brown, Sateesh Peri'
-author = 'Titus C. Brown, Sateesh Peri'
+copyright = '2019, Sateesh Peri'
+authors = 'Titus C. Brown, Sateesh Peri'
 
 # The short X.Y version
 version = ''
