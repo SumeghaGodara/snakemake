@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="_static/css/bootstrap-theme.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>7. Introduction &#8212; snakemake2019 0.0.1 documentation</title>
+    <title>8. Introduction &#8212; snakemake2019 0.0.1 documentation</title>
     <link rel="stylesheet" href="_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10. Tutorial" href="tutorial.html" />
+    <link rel="next" title="11. Tutorial" href="tutorial.html" />
     <link rel="prev" title="1. Intro to Workflows for Efficient Automated Data Analysis, using Snakemake" href="index.html" />
   
    
@@ -39,7 +39,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="tutorial.html" title="10. Tutorial"
+          <a href="tutorial.html" title="11. Tutorial"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="1. Intro to Workflows for Efficient Automated Data Analysis, using Snakemake"
@@ -59,9 +59,12 @@
     <h2>Contents</h2>
     <div class="sidebar-localtoc">
       <ul>
-<li><a class="reference internal" href="#">7. Introduction</a></li>
-<li><a class="reference internal" href="#nextflow">8. Nextflow</a></li>
-<li><a class="reference internal" href="#snakemake">9. Snakemake</a></li>
+<li><a class="reference internal" href="#">8. Introduction</a><ul>
+<li><a class="reference internal" href="#why-invest-time-in-a-workflow-management-system">8.1. Why invest time in a workflow management system?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nextflow">9. Nextflow</a></li>
+<li><a class="reference internal" href="#snakemake">10. Snakemake</a></li>
 </ul>
 
     </div>
@@ -72,7 +75,7 @@
                         title="previous chapter">1. Intro to Workflows for Efficient Automated Data Analysis, using Snakemake</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="tutorial.html"
-                        title="next chapter">10. Tutorial</a></p>
+                        title="next chapter">11. Tutorial</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -102,27 +105,29 @@
             <ol class="breadcrumb">
               <li><a href="toc.html">Docs</a></li>
               
-              <li>7. Introduction</li>
+              <li>8. Introduction</li>
             </ol>
           </div>
           
           <div class="document clearer body">
             
   <div class="section" id="introduction">
-<h1>7. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>Why invest time in a workflow management system?</p>
+<h1>8. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="why-invest-time-in-a-workflow-management-system">
+<h2>8.1. Why invest time in a workflow management system?<a class="headerlink" href="#why-invest-time-in-a-workflow-management-system" title="Permalink to this headline">¶</a></h2>
 <p>A workflow management system (WMS) is a piece of software that sets up, performs and monitors a defined sequence of computational tasks (i.e. “a workflow”). Snakemake is a WMS that was developed in the bioinformatics community, and as such it has some features that make it particularly well suited for creating reproducible and scalable data analyses.</p>
 <p><a class="reference external" href="https://hackmd.io/4useBM-tQHGGBg-i_2eAIw#"><strong>The Rationale</strong></a></p>
 <p><img alt="_images/hate_research.png" src="_images/hate_research.png" />hate_research</p>
 </div>
+</div>
 <div class="section" id="nextflow">
-<h1>8. Nextflow<a class="headerlink" href="#nextflow" title="Permalink to this headline">¶</a></h1>
+<h1>9. Nextflow<a class="headerlink" href="#nextflow" title="Permalink to this headline">¶</a></h1>
 </div>
 <div class="section" id="snakemake">
-<h1>9. Snakemake<a class="headerlink" href="#snakemake" title="Permalink to this headline">¶</a></h1>
+<h1>10. Snakemake<a class="headerlink" href="#snakemake" title="Permalink to this headline">¶</a></h1>
 <p><strong>Snakemake is a workflow management system that helps you build pipelines between the scripts of your project.</strong></p>
 <p><strong>Snakemake allows you to create a set of rules, each one defining a “step” of your analysis.</strong></p>
-<p>The rules need to be written in a file called “<strong>Snakefile</strong>”. For each step you need to provide:</p>
+<p>For each step you need to provide:</p>
 <ul class="simple">
 <li><strong>Input</strong> : Data files, scripts, executables or any other files.</li>
 <li><strong>Expected output</strong>. It’s not required to list all possible outputs. Just those that you want to monitor or that are used by a subsequent step as inputs.</li>
@@ -134,6 +139,8 @@
     <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;Some command to go from in to out&#39;</span>
 </pre></div>
 </div>
+<blockquote>
+<div>The rules need to be written in a file called “<strong>Snakefile</strong>”.</div></blockquote>
 <p><a class="reference external" href="https://snakemake.readthedocs.io/en/stable/index.html"><strong>Snakemake Documentation</strong></a></p>
 <p><a class="reference external" href="https://academic.oup.com/bioinformatics/article/28/19/2520/290322"><strong>Snakemake Paper</strong></a></p>
 </div>
@@ -148,7 +155,7 @@
       </div>
     
       <div class="pull-right">
-        <a class="btn btn-default" href="tutorial.html" title="next chapter (use the right arrow)">10. Tutorial</a>
+        <a class="btn btn-default" href="tutorial.html" title="next chapter (use the right arrow)">11. Tutorial</a>
       </div>
     </div>
     <div class="clearer"></div>
@@ -163,7 +170,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="tutorial.html" title="10. Tutorial"
+          <a href="tutorial.html" title="11. Tutorial"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="1. Intro to Workflows for Efficient Automated Data Analysis, using Snakemake"

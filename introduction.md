@@ -1,6 +1,8 @@
 Introduction
 ===
-Why invest time in a workflow management system? 
+
+
+### Why invest time in a workflow management system? 
 
 A workflow management system (WMS) is a piece of software that sets up, performs and monitors a defined sequence of computational tasks (i.e. "a workflow"). Snakemake is a WMS that was developed in the bioinformatics community, and as such it has some features that make it particularly well suited for creating reproducible and scalable data analyses.
 
@@ -20,10 +22,12 @@ A workflow management system (WMS) is a piece of software that sets up, performs
 
 **Snakemake allows you to create a set of rules, each one defining a "step" of your analysis.** 
 
-The rules need to be written in a file called "**Snakefile**". For each step you need to provide:
+For each step you need to provide:
 
 + **Input** : Data files, scripts, executables or any other files.
+
 + **Expected output**. It's not required to list all possible outputs. Just those that you want to monitor or that are used by a subsequent step as inputs.
+
 + A **command** to run to process the input and create the output.
 
 ```
@@ -32,6 +36,7 @@ rule myname:
     output: ['myoutput']
     shell: 'Some command to go from in to out'
 ```
+> The rules need to be written in a file called "**Snakefile**".
 
 [**Snakemake Documentation**](https://snakemake.readthedocs.io/en/stable/index.html)
 

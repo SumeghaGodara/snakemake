@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7. Introduction" href="introduction.html" />
+    <link rel="next" title="8. Introduction" href="introduction.html" />
     <link rel="prev" title="&lt;no title&gt;" href="toc.html" />
   
    
@@ -39,7 +39,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="introduction.html" title="7. Introduction"
+          <a href="introduction.html" title="8. Introduction"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="toc.html" title="&lt;no title&gt;"
@@ -61,13 +61,14 @@
       <ul>
 <li><a class="reference internal" href="#">1. Intro to Workflows for Efficient Automated Data Analysis, using Snakemake</a></li>
 <li><a class="reference internal" href="#authors">2. Authors:</a></li>
-<li><a class="reference internal" href="#setup">3. Setup</a><ul>
-<li><a class="reference internal" href="#software-we-re-going-to-use">3.1. Software we’re going to use</a></li>
+<li><a class="reference internal" href="#setup">3. Setup</a></li>
+<li><a class="reference internal" href="#working-on-binder">4. <strong>Working on binder</strong></a><ul>
+<li><a class="reference internal" href="#software-we-re-going-to-use">4.1. Software we’re going to use</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#introduction">4. Introduction</a></li>
-<li><a class="reference internal" href="#tutorial">5. Tutorial</a></li>
-<li><a class="reference internal" href="#awesome">6. Awesome</a></li>
+<li><a class="reference internal" href="#introduction">5. Introduction</a></li>
+<li><a class="reference internal" href="#tutorial">6. Tutorial</a></li>
+<li><a class="reference internal" href="#awesome">7. Awesome</a></li>
 </ul>
 
     </div>
@@ -78,7 +79,7 @@
                         title="previous chapter">&lt;no title&gt;</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="introduction.html"
-                        title="next chapter">7. Introduction</a></p>
+                        title="next chapter">8. Introduction</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -127,20 +128,27 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">No</span> <span class="n">license</span><span class="p">;</span> <span class="n">the</span> <span class="n">below</span> <span class="n">content</span> <span class="ow">is</span> <span class="n">under</span> <span class="n">CC0</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>In this breakout session you’ll learn about <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/">snakemake</a>, a workflow management system consisting of a text-based workflow specification language and a scalable execution environment. You will be introduced to the Snakemake workflow definition language and how to use the execution environment to scale workflows to compute servers and clusters while adapting to hardware specific constraints.</p>
-<p>Snakemake is designed specifically for computationally intensive and/or complex data analysis pipelines. The name is a reference to the programming language Python, which forms the basis for the Snakemake syntax.</p>
+<p><strong>In this breakout session you’ll learn about <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/">snakemake</a>, a workflow management system consisting of a text-based workflow specification language and a scalable execution environment. You will be introduced to the Snakemake workflow definition language and how to use the execution environment to scale workflows to compute servers and clusters while adapting to hardware specific constraints.</strong></p>
+<p><strong>Snakemake is designed specifically for computationally intensive and/or complex data analysis pipelines. The name is a reference to the programming language Python, which forms the basis for the Snakemake syntax.</strong></p>
 <blockquote>
 <div>You don’t need to be an expert at Python to use Snakemake, but it can sometimes be very useful.</div></blockquote>
 </div>
 <div class="section" id="setup">
 <h1>3. Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
-<p><strong>Working on binder</strong></p>
+</div>
+<div class="section" id="working-on-binder">
+<h1>4. <strong>Working on binder</strong><a class="headerlink" href="#working-on-binder" title="Permalink to this headline">¶</a></h1>
 <p>We’re going to use <a class="reference external" href="https://mybinder.org/">mybinder.org</a> , a fantastic service that lets us run demonstrations and short workshops in the cloud!</p>
 <blockquote>
 <div><strong>Click on the button below to open a pre-configured Binder file that is rendered via a Rstudio interface.</strong></div></blockquote>
-<p>———-&gt; <a class="reference external" href="https://mybinder.org/v2/gh/ctb/2019-snakemake-ucdavis/feb2019?urlpath=rstudio"><strong>Launch Binder</strong></a> &lt;———–</p>
+<p>———-&gt; <a class="reference external" href="https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/master?urlpath=rstudio"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" />Binder</a> &lt;———-</p>
+<p><strong>We’re mostly going to work in the file editor and the terminal; to get started, open the terminal, and execute:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PS1</span><span class="o">=</span><span class="s1">&#39;$ &#39;</span>
+</pre></div>
+</div>
+<p>to get a shorter prompt.</p>
 <div class="section" id="software-we-re-going-to-use">
-<h2>3.1. Software we’re going to use<a class="headerlink" href="#software-we-re-going-to-use" title="Permalink to this headline">¶</a></h2>
+<h2>4.1. Software we’re going to use<a class="headerlink" href="#software-we-re-going-to-use" title="Permalink to this headline">¶</a></h2>
 <p>We’re going to be using <a class="reference external" href="https://conda.io/en/latest/">conda</a> and <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/">snakemake</a>, a well as packages from <a class="reference external" href="https://bioconda.github.io/">bioconda</a>. If you wanted to run all of this on your own computer, you’ll need to follow the bioconda install instructions.</p>
 <p>We’ll be implementing a short read quality check and trimming pipeline, using <a class="reference external" href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">fastqc</a>, <a class="reference external" href="http://www.usadellab.org/cms/?page=trimmomatic">trimmomatic</a>, and <a class="reference external" href="https://multiqc.info/">multiqc</a>.</p>
 <p>You can see the full set of installed software requirements <a class="reference external" href="https://github.com/ctb/2019-snakemake-ucdavis/blob/master/binder/environment.yml">here</a>, in a conda environment.yml file.</p>
@@ -152,15 +160,15 @@
 </div>
 </div>
 <div class="section" id="introduction">
-<h1>4. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<h1>5. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/introduction.html"><strong>Introduction</strong></a></p>
 </div>
 <div class="section" id="tutorial">
-<h1>5. Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
+<h1>6. Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/tutorial.html"><strong>Tutorial</strong></a></p>
 </div>
 <div class="section" id="awesome">
-<h1>6. Awesome<a class="headerlink" href="#awesome" title="Permalink to this headline">¶</a></h1>
+<h1>7. Awesome<a class="headerlink" href="#awesome" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/awesome.html"><strong>Awesome</strong></a></p>
 </div>
 
@@ -174,7 +182,7 @@
       </div>
     
       <div class="pull-right">
-        <a class="btn btn-default" href="introduction.html" title="next chapter (use the right arrow)">7. Introduction</a>
+        <a class="btn btn-default" href="introduction.html" title="next chapter (use the right arrow)">8. Introduction</a>
       </div>
     </div>
     <div class="clearer"></div>
@@ -189,7 +197,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="introduction.html" title="7. Introduction"
+          <a href="introduction.html" title="8. Introduction"
              >next</a> |</li>
         <li class="right" >
           <a href="toc.html" title="&lt;no title&gt;"

@@ -17,12 +17,11 @@ conda activate smake
 
 # Working on binder
 
-We're going to use mybinder.org, a fantastic service that lets us run demonstrations and short workshops in the cloud! Click on the button below to get started:
+[mybinder.org](https://mybinder.org/) , a fantastic service that lets us run demonstrations and short workshops in the cloud! 
 
-titus
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ctb/2019-snakemake-ucdavis/feb2019?urlpath=rstudio)
+> **Click on the button below to open a pre-configured Binder file that is rendered via a Rstudio interface.**
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/master?urlpath=rstudio)
+----------> [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/master?urlpath=rstudio) <----------
 
 **We're mostly going to work in the file editor and the terminal; to get started, open the terminal, and execute:**
 
@@ -810,8 +809,6 @@ A laundry list:
   - allows use of potentially incompatible software
 
 For me, the main reason to use snakemake is that it lets be sure that my workflow completed properly. snakemake tracks which commands fails, and will stop the workflow in its tracks! This is not something that you usually do in shell scripts.
-
-(It turns out that I've spent a lot of my life being a bit paranoid about whether my commands actually ran correctly!)
 
 ### Dealing with complexity
 

@@ -9,3 +9,5 @@
    tutorial.md
 
    awesome.md
+
+   README.md
