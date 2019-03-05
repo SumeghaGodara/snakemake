@@ -27,10 +27,6 @@ PS1='$ '
 ```
 to get a shorter prompt.
 
-## Overview of the data 
-
-
-
 
 
 ## Running snakemake!
@@ -69,8 +65,7 @@ Complete log: /home/jovyan/.snakemake/log/2019-02-27T130941.260352.snakemake.log
 ```
 and there will be two new files,
 
-Points to make:
-* the snakemake configuration file is by default called `Snakefile`
+> Point to note: snakemake configuration file is by default called `Snakefile`
 
 ### Updating the Snakefile to track inputs and outputs 
 
@@ -95,8 +90,7 @@ rule fastqc_a_file:
     "fastqc data/0Hour_001_1.fq.gz"
 ```
 
-here, we've annotated the rule with the required
-**input** file, as well as the expected **output** files.
+here, we've annotated the rule with the required **input** file, as well as the expected **output** files.
 
 Question: how do we know what the output files are?
 
@@ -130,7 +124,7 @@ You can also remove an output file and it will automatically re-run:
 rm data/*.html
 snakemake
 ```
-note that you don't need to remove *all* the output files to rerun a command - just remove *one* of them.
+> Note that you don't need to remove *all* the output files to rerun a command - just remove *one* of them.
 
 You can *also* update the timestamp on an *input* file, and snakemake will figure out that the output file is older than the input file, and rerun things.
 
@@ -424,7 +418,7 @@ rule run_multiqc:
 
 Yay, that seems to work!
 
-Points to make:
+Points to note:
 
 * other than the first rule, rules can be in any order
 * the rule name doesn't really matter, it's mostly for debugging. It just needs to be "boring" (text, underscores, etc. only)
@@ -499,7 +493,7 @@ rule run_multiqc:
     "multiqc data/"
 ```
 
-Points to make:
+Points to note:
 
 * quoted strings are ...strings (filename, usually)
 * you can also use Python to create, manipulate, etc. filenames or lists of them, and it will work fine!
