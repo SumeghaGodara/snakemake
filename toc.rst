@@ -4,4 +4,6 @@
 
    index.md
 
+   introduction.md
+
    tutorial.md
