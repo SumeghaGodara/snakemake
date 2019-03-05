@@ -7,3 +7,5 @@
    introduction.md
 
    tutorial.md
+
+   awesome.md

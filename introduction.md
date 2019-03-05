@@ -9,6 +9,13 @@ A workflow management system (WMS) is a piece of software that sets up, performs
 ![hate_research](img/hate_research.png)
 
 
+# Nextflow
+
+
+
+
+# Snakemake
+
 **Snakemake is a workflow management system that helps you build pipelines between the scripts of your project.**
 
 **Snakemake allows you to create a set of rules, each one defining a "step" of your analysis.** 

@@ -16,22 +16,16 @@ In this breakout session you'll learn about [snakemake](https://snakemake.readth
 Snakemake is designed specifically for computationally intensive and/or complex data analysis pipelines. The name is a reference to the programming language Python, which forms the basis for the Snakemake syntax. 
 >  You don't need to be an expert at Python to use Snakemake, but it can sometimes be very useful.
 
-
-# Brief Survey
-
-Click on this [**link**](https://goo.gl/forms/zRYziI86hQxuGkn13) to answer a brief survey
-
-
 # Setup
 
 **Working on binder**
 
-We're going to use mybinder.org, a fantastic service that lets us run demonstrations and short workshops in the cloud! 
+We're going to use [mybinder.org](https://mybinder.org/) , a fantastic service that lets us run demonstrations and short workshops in the cloud! 
 
-Click on the button below to get started:
+> **Click on the button below to open a pre-configured Binder file that is rendered via a Rstudio interface.**
 
 
-### [**Launch Binder**](https://mybinder.org/v2/gh/ctb/2019-snakemake-ucdavis/feb2019?urlpath=rstudio) 
+----------> [**Launch Binder**](https://mybinder.org/v2/gh/ctb/2019-snakemake-ucdavis/feb2019?urlpath=rstudio) <-----------
 
 
 ### Software we're going to use
@@ -55,3 +49,7 @@ conda activate smake
 # Tutorial
 
 [**Tutorial**](https://snakemake2019.readthedocs.io/en/latest/tutorial.html)
+
+# Awesome
+
+[**Awesome**](https://snakemake2019.readthedocs.io/en/latest/awesome.html)
