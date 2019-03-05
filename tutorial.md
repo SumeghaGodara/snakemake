@@ -19,9 +19,13 @@ conda activate smake
 
 We're going to use mybinder.org, a fantastic service that lets us run demonstrations and short workshops in the cloud! Click on the button below to get started:
 
+titus
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ctb/2019-snakemake-ucdavis/feb2019?urlpath=rstudio)
 
-We're mostly going to work in the file editor and the terminal; to get started, open the terminal, and execute:
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sateeshperi/snakemake2019/feb2019?urlpath=rstudio)
+
+**We're mostly going to work in the file editor and the terminal; to get started, open the terminal, and execute:**
+
 ```
 PS1='$ '
 ```
