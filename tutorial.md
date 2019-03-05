@@ -22,7 +22,7 @@ We're going to use mybinder.org, a fantastic service that lets us run demonstrat
 titus
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ctb/2019-snakemake-ucdavis/feb2019?urlpath=rstudio)
 
-[![Binder](https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/master?urlpath=rstudio)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/master?urlpath=rstudio)
 
 **We're mostly going to work in the file editor and the terminal; to get started, open the terminal, and execute:**
 

@@ -25,7 +25,7 @@ We're going to use [mybinder.org](https://mybinder.org/) , a fantastic service t
 > **Click on the button below to open a pre-configured Binder file that is rendered via a Rstudio interface.**
 
 
-----------> [**Launch Binder**](https://mybinder.org/v2/gh/ctb/2019-snakemake-ucdavis/feb2019?urlpath=rstudio) <-----------
+----------> [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/master?urlpath=rstudio) <-----------
 
 
 ### Software we're going to use
