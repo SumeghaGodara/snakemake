@@ -1,6 +1,6 @@
 Intro to Workflows for Efficient Automated Data Analysis, using Snakemake
 ===
-![logo](https://i.imgur.com/XRiMXYh.png)
+![logo](/img/smake_logo.png)
 
 ## **Authors:**
 > [C. Titus Brown](titus@idyll.org)
@@ -29,7 +29,10 @@ https://goo.gl/forms/zRYziI86hQxuGkn13
 
 **Working on binder** :mega: (recommended)
 
-We're going to use mybinder.org, a fantastic service that lets us run demonstrations and short workshops in the cloud! Click on the button below to get started:
+We're going to use mybinder.org, a fantastic service that lets us run demonstrations and short workshops in the cloud! 
+
+Click on the button below to get started:
+
 :::success
 [**Launch Binder**](https://mybinder.org/v2/gh/ctb/2019-snakemake-ucdavis/feb2019?urlpath=rstudio) 
 :::
@@ -55,9 +58,13 @@ conda activate smake
 
 Introduction
 ===
-Why invest time in a workflow management system? - [**The Rationale**](https://hackmd.io/4useBM-tQHGGBg-i_2eAIw#)
+Why invest time in a workflow management system? 
 
-![](https://i.imgur.com/VB2OPRz.png)
+A workflow management system (WMS) is a piece of software that sets up, performs and monitors a defined sequence of computational tasks (i.e. "a workflow"). Snakemake is a WMS that was developed in the bioinformatics community, and as such it has some features that make it particularly well suited for creating reproducible and scalable data analyses.
+
+[**The Rationale**](https://hackmd.io/4useBM-tQHGGBg-i_2eAIw#)
+
+![hate_research](img/hate_research.png)
 
 
 **Snakemake is a workflow management system that helps you build pipelines between the scripts of your project.**
@@ -79,7 +86,7 @@ rule myname:
 Tutorial
 ===
 :::info
-https://github.com/ctb/2019-snakemake-ucdavis/blob/master/tutorial.md
+https://github.com/sateeshperi/Snakemake_Tutorial/blob/master/tutorial.md
 :::
 
 
@@ -98,17 +105,3 @@ Challenge exercise:
 https://davetang.org/muse/2017/10/25/getting-started-hisat-stringtie-ballgown/
 
 ---
-
-
-
-:::danger
-awesome snakemake development video
-https://www.youtube.com/watch?v=bq3vXrWw1yk
-:::
-
-
-
-
-what are containerized workflows?
-
-comparison between nextflow/pegasus/ other workflow systems

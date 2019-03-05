@@ -1,5 +1,3 @@
-[Check out DIBSI](http://ivory.idyll.org/dibsi/), which is a set of summer workshops that my lab runs. (Not yet announced for 2019, but it will be July 1-July 12).
-
 ## Software we're going to use
 
 We're going to be using [conda](https://conda.io/en/latest/) and [snakemake](https://snakemake.readthedocs.io/en/stable/), a well as packages from [bioconda](https://bioconda.github.io). If you wanted to run all of this on your own computer, you'll need to follow the bioconda install instructions.
