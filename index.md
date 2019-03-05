@@ -48,3 +48,7 @@ You could use this install file to run everything we're doing today on your lapt
 conda env create --file environment.yml -n smake
 conda activate smake
 ```
+
+# Tutorial
+
+https://snakemake2019.readthedocs.io/en/latest/tutorial.html

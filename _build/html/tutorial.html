@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="_static/css/bootstrap-theme.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>5. Tutorial &#8212; snakemake2019 0.0.1 documentation</title>
+    <title>7. Tutorial &#8212; snakemake2019 0.0.1 documentation</title>
     <link rel="stylesheet" href="_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="4. Introduction" href="introduction.html" />
+    <link rel="prev" title="6. Introduction" href="introduction.html" />
   
    
 
@@ -38,7 +38,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="introduction.html" title="4. Introduction"
+          <a href="introduction.html" title="6. Introduction"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="toc.html">snakemake2019 0.0.1 documentation</a> &#187;</li> 
       </ul>
@@ -55,41 +55,40 @@
     <h2>Contents</h2>
     <div class="sidebar-localtoc">
       <ul>
-<li><a class="reference internal" href="#">5. Tutorial</a><ul>
-<li><a class="reference internal" href="#software-we-re-going-to-use">5.1. Software we’re going to use</a></li>
-<li><a class="reference internal" href="#working-on-binder">5.2. Working on binder</a></li>
-<li><a class="reference internal" href="#overview-of-the-data">5.3. Overview of the data</a></li>
-<li><a class="reference internal" href="#running-snakemake">5.4. Running snakemake!</a><ul>
-<li><a class="reference internal" href="#getting-started-your-first-snakefile">5.4.1. Getting started - your first Snakefile</a></li>
-<li><a class="reference internal" href="#updating-the-snakefile-to-track-inputs-and-outputs">5.4.2. Updating the Snakefile to track inputs and outputs</a></li>
-<li><a class="reference internal" href="#forcibly-re-running-things">5.4.3. Forcibly re-running things</a></li>
-<li><a class="reference internal" href="#multiple-rules">5.4.4. Multiple rules</a></li>
-<li><a class="reference internal" href="#a-first-refactoring-adding-a-better-default-rule">5.4.5. A first refactoring: adding a better default rule</a></li>
-<li><a class="reference internal" href="#a-second-refactoring-doing-a-bit-of-templating">5.4.6. A second refactoring: doing a bit of templating</a></li>
-<li><a class="reference internal" href="#refactoring-3-templating-output-files-too">5.4.7. Refactoring 3: templating output files, too</a></li>
-<li><a class="reference internal" href="#adding-some-more-files">5.4.8. Adding some more files</a></li>
-<li><a class="reference internal" href="#rerunning-snakemake">5.4.9. Rerunning snakemake</a></li>
-<li><a class="reference internal" href="#building-out-the-workflow">5.4.10. Building out the workflow</a></li>
-<li><a class="reference internal" href="#providing-input-files-explicitly-to-the-multiqc-rule">5.4.11. Providing input files explicitly to the multiqc rule</a></li>
-<li><a class="reference internal" href="#refactoring-this-to-make-it-slightly-more-concise">5.4.12. Refactoring this to make it slightly more concise –</a></li>
-<li><a class="reference internal" href="#digression-what-files-does-snakemake-check-in-order-to-decide-about-rerunning">5.4.13. Digression: what files does snakemake check in order to decide about rerunning?</a></li>
-<li><a class="reference internal" href="#making-a-clean-rule">5.4.14. Making a <code class="docutils literal notranslate"><span class="pre">clean</span></code> rule</a></li>
-<li><a class="reference internal" href="#digression-running-things-in-parallel">5.4.15. Digression: running things in parallel</a></li>
-<li><a class="reference internal" href="#doing-more-things-in-our-workflow">5.4.16. Doing more things in our workflow.</a></li>
+<li><a class="reference internal" href="#">7. Tutorial</a><ul>
+<li><a class="reference internal" href="#software-we-re-going-to-use">7.1. Software we’re going to use</a></li>
+<li><a class="reference internal" href="#working-on-binder">7.2. Working on binder</a></li>
+<li><a class="reference internal" href="#running-snakemake">7.3. Running snakemake!</a><ul>
+<li><a class="reference internal" href="#getting-started-your-first-snakefile">7.3.1. Getting started - your first Snakefile</a></li>
+<li><a class="reference internal" href="#updating-the-snakefile-to-track-inputs-and-outputs">7.3.2. Updating the Snakefile to track inputs and outputs</a></li>
+<li><a class="reference internal" href="#forcibly-re-running-things">7.3.3. Forcibly re-running things</a></li>
+<li><a class="reference internal" href="#multiple-rules">7.3.4. Multiple rules</a></li>
+<li><a class="reference internal" href="#a-first-refactoring-adding-a-better-default-rule">7.3.5. A first refactoring: adding a better default rule</a></li>
+<li><a class="reference internal" href="#a-second-refactoring-doing-a-bit-of-templating">7.3.6. A second refactoring: doing a bit of templating</a></li>
+<li><a class="reference internal" href="#refactoring-3-templating-output-files-too">7.3.7. Refactoring 3: templating output files, too</a></li>
+<li><a class="reference internal" href="#adding-some-more-files">7.3.8. Adding some more files</a></li>
+<li><a class="reference internal" href="#rerunning-snakemake">7.3.9. Rerunning snakemake</a></li>
+<li><a class="reference internal" href="#building-out-the-workflow">7.3.10. Building out the workflow</a></li>
+<li><a class="reference internal" href="#providing-input-files-explicitly-to-the-multiqc-rule">7.3.11. Providing input files explicitly to the multiqc rule</a></li>
+<li><a class="reference internal" href="#refactoring-this-to-make-it-slightly-more-concise">7.3.12. Refactoring this to make it slightly more concise –</a></li>
+<li><a class="reference internal" href="#digression-what-files-does-snakemake-check-in-order-to-decide-about-rerunning">7.3.13. Digression: what files does snakemake check in order to decide about rerunning?</a></li>
+<li><a class="reference internal" href="#making-a-clean-rule">7.3.14. Making a <code class="docutils literal notranslate"><span class="pre">clean</span></code> rule</a></li>
+<li><a class="reference internal" href="#digression-running-things-in-parallel">7.3.15. Digression: running things in parallel</a></li>
+<li><a class="reference internal" href="#doing-more-things-in-our-workflow">7.3.16. Doing more things in our workflow.</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#more-advanced-snakemake">5.5. More advanced snakemake</a><ul>
-<li><a class="reference internal" href="#dry-run">5.5.1. Dry run</a></li>
-<li><a class="reference internal" href="#running-things-in-parallel-revisited">5.5.2. Running things in parallel, revisited</a></li>
-<li><a class="reference internal" href="#specifying-software-required-for-a-rule">5.5.3. Specifying software required for a rule</a></li>
-<li><a class="reference internal" href="#outputting-the-entire-workflow-diagram">5.5.4. Outputting the entire workflow diagram</a></li>
-<li><a class="reference internal" href="#adding-in-some-python">5.5.5. Adding in some Python…</a></li>
-<li><a class="reference internal" href="#final-thoughts-writing-your-own-snakefile">5.5.6. Final thoughts - writing your own snakefile</a></li>
+<li><a class="reference internal" href="#more-advanced-snakemake">7.4. More advanced snakemake</a><ul>
+<li><a class="reference internal" href="#dry-run">7.4.1. Dry run</a></li>
+<li><a class="reference internal" href="#running-things-in-parallel-revisited">7.4.2. Running things in parallel, revisited</a></li>
+<li><a class="reference internal" href="#specifying-software-required-for-a-rule">7.4.3. Specifying software required for a rule</a></li>
+<li><a class="reference internal" href="#outputting-the-entire-workflow-diagram">7.4.4. Outputting the entire workflow diagram</a></li>
+<li><a class="reference internal" href="#adding-in-some-python">7.4.5. Adding in some Python…</a></li>
+<li><a class="reference internal" href="#final-thoughts-writing-your-own-snakefile">7.4.6. Final thoughts - writing your own snakefile</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#thinking-about-workflows-a-strong-er-argument">5.6. Thinking about workflows - a strong(er) argument</a><ul>
-<li><a class="reference internal" href="#dealing-with-complexity">5.6.1. Dealing with complexity</a></li>
-<li><a class="reference internal" href="#go-forth-and-workflow">5.6.2. Go forth and Workflow!</a></li>
+<li><a class="reference internal" href="#thinking-about-workflows-a-strong-er-argument">7.5. Thinking about workflows - a strong(er) argument</a><ul>
+<li><a class="reference internal" href="#dealing-with-complexity">7.5.1. Dealing with complexity</a></li>
+<li><a class="reference internal" href="#go-forth-and-workflow">7.5.2. Go forth and Workflow!</a></li>
 </ul>
 </li>
 </ul>
@@ -101,7 +100,7 @@
 </div>
   <h4>Previous topic</h4>
   <p class="topless"><a href="introduction.html"
-                        title="previous chapter">4. Introduction</a></p>
+                        title="previous chapter">6. Introduction</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -131,16 +130,16 @@
             <ol class="breadcrumb">
               <li><a href="toc.html">Docs</a></li>
               
-              <li>5. Tutorial</li>
+              <li>7. Tutorial</li>
             </ol>
           </div>
           
           <div class="document clearer body">
             
   <div class="section" id="tutorial">
-<h1>5. Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
+<h1>7. Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="software-we-re-going-to-use">
-<h2>5.1. Software we’re going to use<a class="headerlink" href="#software-we-re-going-to-use" title="Permalink to this headline">¶</a></h2>
+<h2>7.1. Software we’re going to use<a class="headerlink" href="#software-we-re-going-to-use" title="Permalink to this headline">¶</a></h2>
 <p>We’re going to be using <a class="reference external" href="https://conda.io/en/latest/">conda</a> and <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/">snakemake</a>, a well as packages from <a class="reference external" href="https://bioconda.github.io">bioconda</a>. If you wanted to run all of this on your own computer, you’ll need to follow the bioconda install instructions.</p>
 <p>We’ll be implementing a short read quality check and trimming pipeline, using <a class="reference external" href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">fastqc</a>, <a class="reference external" href="http://www.usadellab.org/cms/?page=trimmomatic">trimmomatic</a>, and <a class="reference external" href="https://multiqc.info/">multiqc</a>. No worries if you don’t know what any of this means, it’s not super critical to the snakemake side of things :)</p>
 <p>You can see the full set of installed software requirements <a class="reference external" href="https://github.com/ctb/2019-snakemake-ucdavis/blob/master/binder/environment.yml">here</a>, in a conda <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file.</p>
@@ -151,7 +150,7 @@
 </div>
 </div>
 <div class="section" id="working-on-binder">
-<h2>5.2. Working on binder<a class="headerlink" href="#working-on-binder" title="Permalink to this headline">¶</a></h2>
+<h2>7.2. Working on binder<a class="headerlink" href="#working-on-binder" title="Permalink to this headline">¶</a></h2>
 <p>We’re going to use mybinder.org, a fantastic service that lets us run demonstrations and short workshops in the cloud! Click on the button below to get started:</p>
 <p><a class="reference external" href="https://mybinder.org/v2/gh/ctb/2019-snakemake-ucdavis/feb2019?urlpath=rstudio"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" />Binder</a></p>
 <p>We’re mostly going to work in the file editor and the terminal; to get started, open the terminal, and execute:</p>
@@ -160,13 +159,10 @@
 </div>
 <p>to get a shorter prompt.</p>
 </div>
-<div class="section" id="overview-of-the-data">
-<h2>5.3. Overview of the data<a class="headerlink" href="#overview-of-the-data" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="running-snakemake">
-<h2>5.4. Running snakemake!<a class="headerlink" href="#running-snakemake" title="Permalink to this headline">¶</a></h2>
+<h2>7.3. Running snakemake!<a class="headerlink" href="#running-snakemake" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="getting-started-your-first-snakefile">
-<h3>5.4.1. Getting started - your first Snakefile<a class="headerlink" href="#getting-started-your-first-snakefile" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.1. Getting started - your first Snakefile<a class="headerlink" href="#getting-started-your-first-snakefile" title="Permalink to this headline">¶</a></h3>
 <p>Create a new text file (<code class="docutils literal notranslate"><span class="pre">File</span></code>, <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">File</span></code>, <code class="docutils literal notranslate"><span class="pre">Text</span> <span class="pre">file</span></code>) and write:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">fastqc_a_file</span><span class="p">:</span>
   <span class="n">shell</span><span class="p">:</span>
@@ -194,13 +190,11 @@
 </pre></div>
 </div>
 <p>and there will be two new files,</p>
-<p>Points to make:</p>
-<ul class="simple">
-<li>the snakemake configuration file is by default called <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code></li>
-</ul>
+<blockquote>
+<div>Point to note: snakemake configuration file is by default called <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code></div></blockquote>
 </div>
 <div class="section" id="updating-the-snakefile-to-track-inputs-and-outputs">
-<h3>5.4.2. Updating the Snakefile to track inputs and outputs<a class="headerlink" href="#updating-the-snakefile-to-track-inputs-and-outputs" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.2. Updating the Snakefile to track inputs and outputs<a class="headerlink" href="#updating-the-snakefile-to-track-inputs-and-outputs" title="Permalink to this headline">¶</a></h3>
 <p>At the moment this is basically just a shell script with extra syntax… what’s the point?</p>
 <p>Well, shell scripts - and this snakefile, too - will rerun the command every time you run the file, even if there’s no reason to do so because the file hasn’t changed.</p>
 <p><strong>Digression:</strong> This is particularly important for large or long workflows, where you’re dealing with 10s to 100s of files that may take hours to days to process! It can be hard to figure out which files to rerun, but (spoiler alert) snakemake can really help you do this!</p>
@@ -216,8 +210,7 @@
     <span class="s2">&quot;fastqc data/0Hour_001_1.fq.gz&quot;</span>
 </pre></div>
 </div>
-<p>here, we’ve annotated the rule with the required
-<strong>input</strong> file, as well as the expected <strong>output</strong> files.</p>
+<p>here, we’ve annotated the rule with the required <strong>input</strong> file, as well as the expected <strong>output</strong> files.</p>
 <p>Question: how do we know what the output files are?</p>
 <p>Now run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">snakemake</span>
@@ -233,7 +226,7 @@
 <p>snakemake looked at the file, saw that the output files existed, and figured out that it didn’t need to do anything!</p>
 </div>
 <div class="section" id="forcibly-re-running-things">
-<h3>5.4.3. Forcibly re-running things<a class="headerlink" href="#forcibly-re-running-things" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.3. Forcibly re-running things<a class="headerlink" href="#forcibly-re-running-things" title="Permalink to this headline">¶</a></h3>
 <p>You can tell snakemake to run the rule no matter what with <code class="docutils literal notranslate"><span class="pre">-f</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">snakemake</span> <span class="o">-</span><span class="n">f</span>
 </pre></div>
@@ -243,7 +236,8 @@
 <span class="n">snakemake</span>
 </pre></div>
 </div>
-<p>note that you don’t need to remove <em>all</em> the output files to rerun a command - just remove <em>one</em> of them.</p>
+<blockquote>
+<div>Note that you don’t need to remove <em>all</em> the output files to rerun a command - just remove <em>one</em> of them.</div></blockquote>
 <p>You can <em>also</em> update the timestamp on an <em>input</em> file, and snakemake will figure out that the output file is older than the input file, and rerun things.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">touch</span> <span class="n">data</span><span class="o">/*.</span><span class="n">fq</span><span class="o">.</span><span class="n">gz</span>
 <span class="n">snakemake</span>
@@ -252,7 +246,7 @@
 <p>This will become important later :)</p>
 </div>
 <div class="section" id="multiple-rules">
-<h3>5.4.4. Multiple rules<a class="headerlink" href="#multiple-rules" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.4. Multiple rules<a class="headerlink" href="#multiple-rules" title="Permalink to this headline">¶</a></h3>
 <p>Let’s add a rule to run fastqc on a second file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">fastqc_a_file</span><span class="p">:</span>
   <span class="nb">input</span><span class="p">:</span>
@@ -287,7 +281,7 @@
 </ul>
 </div>
 <div class="section" id="a-first-refactoring-adding-a-better-default-rule">
-<h3>5.4.5. A first refactoring: adding a better default rule<a class="headerlink" href="#a-first-refactoring-adding-a-better-default-rule" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.5. A first refactoring: adding a better default rule<a class="headerlink" href="#a-first-refactoring-adding-a-better-default-rule" title="Permalink to this headline">¶</a></h3>
 <p>Let’s start refactoring (cleaning up) this Snakefile.</p>
 <p>First, let’s add a rule at the top:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="nb">all</span><span class="p">:</span>
@@ -320,7 +314,7 @@
 <p>Note that <code class="docutils literal notranslate"><span class="pre">snakemake</span> <span class="pre">-f</span></code> no longer works properly, because <code class="docutils literal notranslate"><span class="pre">-f</span></code> only forces rerunning a single rule. To rerun everything, you can run <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">data/*.fq.gz</span></code> to make all the output files stale; or <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">data/*.html</span></code> to remove some of the output files.</p>
 </div>
 <div class="section" id="a-second-refactoring-doing-a-bit-of-templating">
-<h3>5.4.6. A second refactoring: doing a bit of templating<a class="headerlink" href="#a-second-refactoring-doing-a-bit-of-templating" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.6. A second refactoring: doing a bit of templating<a class="headerlink" href="#a-second-refactoring-doing-a-bit-of-templating" title="Permalink to this headline">¶</a></h3>
 <p>There’s a lot of repetition in each of these rules. Let’s collapse it down a little bit by replacing the filename in the fastqc command with a magic variable, <code class="docutils literal notranslate"><span class="pre">{input}</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="nb">all</span><span class="p">:</span>
   <span class="nb">input</span><span class="p">:</span>
@@ -349,7 +343,7 @@
 <p>This all works as before, but now the rule is a bit more generic and will work with any input file. Sort of.</p>
 </div>
 <div class="section" id="refactoring-3-templating-output-files-too">
-<h3>5.4.7. Refactoring 3: templating output files, too<a class="headerlink" href="#refactoring-3-templating-output-files-too" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.7. Refactoring 3: templating output files, too<a class="headerlink" href="#refactoring-3-templating-output-files-too" title="Permalink to this headline">¶</a></h3>
 <p>What do I mean, sort of?</p>
 <p>Well, the output filenames ALSO depend on the input file names in some way - specifically, fastqc replace part of the filename with <code class="docutils literal notranslate"><span class="pre">_fastqc.html</span></code> and <code class="docutils literal notranslate"><span class="pre">_fastqc.zip</span></code> to make its two output files.</p>
 <p>Let’s rewrite the rule using some snakemake pattern matching:</p>
@@ -403,7 +397,7 @@
 <p>and THAT should now work just fine!</p>
 </div>
 <div class="section" id="adding-some-more-files">
-<h3>5.4.8. Adding some more files<a class="headerlink" href="#adding-some-more-files" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.8. Adding some more files<a class="headerlink" href="#adding-some-more-files" title="Permalink to this headline">¶</a></h3>
 <p>Now here’s the fun bit – if you look in the data directory, you’ll see that there are actually 8 files in there. Let’s modify the snakefile to run fastqc on all of them!</p>
 <p>How should we do that? (Give it a try!)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="nb">all</span><span class="p">:</span>
@@ -424,7 +418,7 @@
 </div>
 </div>
 <div class="section" id="rerunning-snakemake">
-<h3>5.4.9. Rerunning snakemake<a class="headerlink" href="#rerunning-snakemake" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.9. Rerunning snakemake<a class="headerlink" href="#rerunning-snakemake" title="Permalink to this headline">¶</a></h3>
 <p>Note you can just run snakemake whenever you want. It won’t do anything unless something’s changed.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">snakemake</span>
 </pre></div>
@@ -437,7 +431,7 @@
 </div>
 </div>
 <div class="section" id="building-out-the-workflow">
-<h3>5.4.10. Building out the workflow<a class="headerlink" href="#building-out-the-workflow" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.10. Building out the workflow<a class="headerlink" href="#building-out-the-workflow" title="Permalink to this headline">¶</a></h3>
 <p>So, we’ve gotten fastqc sorted out. What’s next?</p>
 <p>Let’s add in a new rule - multiqc, to summarize our fastqc results.</p>
 <p>multiqc takes a directory name under which there are one or more fastqc reports, and then summarizes them.</p>
@@ -493,14 +487,14 @@
 </pre></div>
 </div>
 <p>Yay, that seems to work!</p>
-<p>Points to make:</p>
+<p>Points to note:</p>
 <ul class="simple">
 <li>other than the first rule, rules can be in any order</li>
 <li>the rule name doesn’t really matter, it’s mostly for debugging. It just needs to be “boring” (text, underscores, etc. only)</li>
 </ul>
 </div>
 <div class="section" id="providing-input-files-explicitly-to-the-multiqc-rule">
-<h3>5.4.11. Providing input files explicitly to the multiqc rule<a class="headerlink" href="#providing-input-files-explicitly-to-the-multiqc-rule" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.11. Providing input files explicitly to the multiqc rule<a class="headerlink" href="#providing-input-files-explicitly-to-the-multiqc-rule" title="Permalink to this headline">¶</a></h3>
 <p>The third problem, that multiqc doesn’t have any input dependencies, is a bit harder to fix.</p>
 <p>(Why do we want to fix this? Well, this is how snakemake tracks “out of date” files - if we don’t specify input dependencies, then we may update one of the fastqc results that multiqc uses, but snakemake won’t re-run multiqc on it, and our multiqc results will be out of date.)</p>
 <p>Basically we need to tell snakemake <em>all</em> of the files that we want. On the face of it, that’s easy – change the rule like so:</p>
@@ -556,7 +550,7 @@
     <span class="s2">&quot;multiqc data/&quot;</span>
 </pre></div>
 </div>
-<p>Points to make:</p>
+<p>Points to note:</p>
 <ul class="simple">
 <li>quoted strings are …strings (filename, usually)</li>
 <li>you can also use Python to create, manipulate, etc. filenames or lists of them, and it will work fine!</li>
@@ -564,7 +558,7 @@
 </ul>
 </div>
 <div class="section" id="refactoring-this-to-make-it-slightly-more-concise">
-<h3>5.4.12. Refactoring this to make it slightly more concise –<a class="headerlink" href="#refactoring-this-to-make-it-slightly-more-concise" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.12. Refactoring this to make it slightly more concise –<a class="headerlink" href="#refactoring-this-to-make-it-slightly-more-concise" title="Permalink to this headline">¶</a></h3>
 <p>We’ve got one more redundancy in this file - the <code class="docutils literal notranslate"><span class="pre">fastqc_output</span></code> is listed in the <code class="docutils literal notranslate"><span class="pre">all</span></code> rule, but you don’t need it there! Why?</p>
 <p>Well, <code class="docutils literal notranslate"><span class="pre">multiqc_report.html</span></code> is already in the all rule, and the multiqc rule depends on <code class="docutils literal notranslate"><span class="pre">fastqc_output</span></code>, so <code class="docutils literal notranslate"><span class="pre">fastqc_output</span></code> already needs to be created to satisfy the all rule, so… specifying it in the all rule is redundant! And you can remove it!</p>
 <p>(It’s not a big deal and I usually leave it in. But I wanted to talk about dependencies!)</p>
@@ -604,7 +598,7 @@
 </div>
 </div>
 <div class="section" id="digression-what-files-does-snakemake-check-in-order-to-decide-about-rerunning">
-<h3>5.4.13. Digression: what files does snakemake check in order to decide about rerunning?<a class="headerlink" href="#digression-what-files-does-snakemake-check-in-order-to-decide-about-rerunning" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.13. Digression: what files does snakemake check in order to decide about rerunning?<a class="headerlink" href="#digression-what-files-does-snakemake-check-in-order-to-decide-about-rerunning" title="Permalink to this headline">¶</a></h3>
 <p>snakemake will compare only at the very initial input files, and the
 specific output file(s) you are requesting, to decide if it needs to
 rerun the workflow.</p>
@@ -617,7 +611,7 @@ rerunning.</p>
 <p>(<a class="reference external" href="https://bitbucket.org/snakemake/snakemake/issues/885/snakemake-sometimes-doesnt-run-rule-when">This is a feature, not a bug</a> - it helps deal with data-intensive pipelines where the intermediate files are really big.)</p>
 </div>
 <div class="section" id="making-a-clean-rule">
-<h3>5.4.14. Making a <code class="docutils literal notranslate"><span class="pre">clean</span></code> rule<a class="headerlink" href="#making-a-clean-rule" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.14. Making a <code class="docutils literal notranslate"><span class="pre">clean</span></code> rule<a class="headerlink" href="#making-a-clean-rule" title="Permalink to this headline">¶</a></h3>
 <p>It’s kind of annoying to have to delete things explicitly. Snakemake should take care of that for us. Let’s add a new rule, <code class="docutils literal notranslate"><span class="pre">clean</span></code>, that forces rerunning of things –</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">clean</span><span class="p">:</span>
   <span class="n">shell</span><span class="p">:</span>
@@ -637,7 +631,7 @@ rerunning.</p>
 <p>What’s particularly nice about the <code class="docutils literal notranslate"><span class="pre">clean</span></code> rule (the name is a convention, not a requirement) is that you only need to keep track of the expected output files in one or two places - the all rule, and the clean rule.</p>
 </div>
 <div class="section" id="digression-running-things-in-parallel">
-<h3>5.4.15. Digression: running things in parallel<a class="headerlink" href="#digression-running-things-in-parallel" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.15. Digression: running things in parallel<a class="headerlink" href="#digression-running-things-in-parallel" title="Permalink to this headline">¶</a></h3>
 <p>So, we’ve put all this work into making this snakefile with its input rules and its output rules… and there are a lot of advantages to our current approach already! Let’s list a few of them –</p>
 <ul class="simple">
 <li>we’ve completely automated our analysis!</li>
@@ -654,7 +648,7 @@ rerunning.</p>
 <p>this will run up to four things in parallel!</p>
 </div>
 <div class="section" id="doing-more-things-in-our-workflow">
-<h3>5.4.16. Doing more things in our workflow.<a class="headerlink" href="#doing-more-things-in-our-workflow" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.16. Doing more things in our workflow.<a class="headerlink" href="#doing-more-things-in-our-workflow" title="Permalink to this headline">¶</a></h3>
 <p>Let’s add some trimming!</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">trim_reads</span><span class="p">:</span>
   <span class="nb">input</span><span class="p">:</span>
@@ -697,9 +691,9 @@ rerunning.</p>
 </div>
 </div>
 <div class="section" id="more-advanced-snakemake">
-<h2>5.5. More advanced snakemake<a class="headerlink" href="#more-advanced-snakemake" title="Permalink to this headline">¶</a></h2>
+<h2>7.4. More advanced snakemake<a class="headerlink" href="#more-advanced-snakemake" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="dry-run">
-<h3>5.5.1. Dry run<a class="headerlink" href="#dry-run" title="Permalink to this headline">¶</a></h3>
+<h3>7.4.1. Dry run<a class="headerlink" href="#dry-run" title="Permalink to this headline">¶</a></h3>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">snakemake</span> <span class="pre">-n</span></code> to see what <em>would</em> be run, without actually running it! This is called a “dry run”. This is useful when you have really big compute.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">snakemake</span> <span class="n">clean</span>
 <span class="n">snakemake</span> <span class="o">-</span><span class="n">n</span>
@@ -707,7 +701,7 @@ rerunning.</p>
 </div>
 </div>
 <div class="section" id="running-things-in-parallel-revisited">
-<h3>5.5.2. Running things in parallel, revisited<a class="headerlink" href="#running-things-in-parallel-revisited" title="Permalink to this headline">¶</a></h3>
+<h3>7.4.2. Running things in parallel, revisited<a class="headerlink" href="#running-things-in-parallel-revisited" title="Permalink to this headline">¶</a></h3>
 <p>Above, we saw that you can use <code class="docutils literal notranslate"><span class="pre">snakemake</span> <span class="pre">-j</span> <span class="pre">4</span></code> to run four jobs in parallel. Here are some other</p>
 <ul class="simple">
 <li>all the output is sort of smushed together… if a rule fails, it may be hard to figure out what happened. You can always just rerun snakemake.</li>
@@ -716,7 +710,7 @@ rerunning.</p>
 </ul>
 </div>
 <div class="section" id="specifying-software-required-for-a-rule">
-<h3>5.5.3. Specifying software required for a rule<a class="headerlink" href="#specifying-software-required-for-a-rule" title="Permalink to this headline">¶</a></h3>
+<h3>7.4.3. Specifying software required for a rule<a class="headerlink" href="#specifying-software-required-for-a-rule" title="Permalink to this headline">¶</a></h3>
 <p>You can specify software on a per-rule basis! This is really helpful when you have incompatible software requirements for different rules, or want to run on a cluster, or just want to pin your snakemake workflow to a specific version.</p>
 <p>For example, if you create a file <code class="docutils literal notranslate"><span class="pre">env_fastqc.yml</span></code> with the following content,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">channels</span><span class="p">:</span>
@@ -749,14 +743,14 @@ rerunning.</p>
 <p>(You can also do this with docker and singularity containers, too!)</p>
 </div>
 <div class="section" id="outputting-the-entire-workflow-diagram">
-<h3>5.5.4. Outputting the entire workflow diagram<a class="headerlink" href="#outputting-the-entire-workflow-diagram" title="Permalink to this headline">¶</a></h3>
+<h3>7.4.4. Outputting the entire workflow diagram<a class="headerlink" href="#outputting-the-entire-workflow-diagram" title="Permalink to this headline">¶</a></h3>
 <p>You can visualize your workflow like so!</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">snakemake</span> <span class="o">--</span><span class="n">dag</span> <span class="o">|</span> <span class="n">dot</span> <span class="o">-</span><span class="n">Tpng</span> <span class="o">&gt;</span> <span class="n">dag</span><span class="o">.</span><span class="n">png</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="adding-in-some-python">
-<h3>5.5.5. Adding in some Python…<a class="headerlink" href="#adding-in-some-python" title="Permalink to this headline">¶</a></h3>
+<h3>7.4.5. Adding in some Python…<a class="headerlink" href="#adding-in-some-python" title="Permalink to this headline">¶</a></h3>
 <p>You can add in some Python to load in the input files, like so:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span><span class="o">,</span> <span class="nn">sys</span>
 <span class="n">fastqc_input</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;data/?Hour_00?_?.fq.gz&#39;</span><span class="p">)</span>
@@ -820,7 +814,7 @@ rerunning.</p>
 <p>Take a look at <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/project_info/faq.html#how-do-i-run-my-rule-on-all-files-of-a-certain-directory">glob_wildcards</a> as well.</p>
 </div>
 <div class="section" id="final-thoughts-writing-your-own-snakefile">
-<h3>5.5.6. Final thoughts - writing your own snakefile<a class="headerlink" href="#final-thoughts-writing-your-own-snakefile" title="Permalink to this headline">¶</a></h3>
+<h3>7.4.6. Final thoughts - writing your own snakefile<a class="headerlink" href="#final-thoughts-writing-your-own-snakefile" title="Permalink to this headline">¶</a></h3>
 <p>Just like scripting, or writing an R script, writing a snakefile is a kind of programming. So you’ll have to do a lot of debugging :) :(. A few thoughts for you on how to do this:</p>
 <ul class="simple">
 <li>start small, grow your snakefile!</li>
@@ -830,7 +824,7 @@ rerunning.</p>
 </div>
 </div>
 <div class="section" id="thinking-about-workflows-a-strong-er-argument">
-<h2>5.6. Thinking about workflows - a strong(er) argument<a class="headerlink" href="#thinking-about-workflows-a-strong-er-argument" title="Permalink to this headline">¶</a></h2>
+<h2>7.5. Thinking about workflows - a strong(er) argument<a class="headerlink" href="#thinking-about-workflows-a-strong-er-argument" title="Permalink to this headline">¶</a></h2>
 <p>what do (snakemake) workflows do for me?</p>
 <p>A laundry list:</p>
 <ul class="simple">
@@ -855,12 +849,12 @@ rerunning.</p>
 <p>For me, the main reason to use snakemake is that it lets be sure that my workflow completed properly. snakemake tracks which commands fails, and will stop the workflow in its tracks! This is not something that you usually do in shell scripts.</p>
 <p>(It turns out that I’ve spent a lot of my life being a bit paranoid about whether my commands actually ran correctly!)</p>
 <div class="section" id="dealing-with-complexity">
-<h3>5.6.1. Dealing with complexity<a class="headerlink" href="#dealing-with-complexity" title="Permalink to this headline">¶</a></h3>
+<h3>7.5.1. Dealing with complexity<a class="headerlink" href="#dealing-with-complexity" title="Permalink to this headline">¶</a></h3>
 <p>Workflows can get really complicated; <a class="reference external" href="https://github.com/spacegraphcats/2018-paper-spacegraphcats/blob/master/pipeline-base/Snakefile">here</a>, for example, is one for our most recent paper. But it’s all just using the building blocks that I showed you above!</p>
 <p>If you want to see some good examples of how to build nice, clean, simple looking workflows, check out <a class="reference external" href="https://github.com/snakemake-workflows/rna-seq-star-deseq2">this RNAseq example</a>.</p>
 </div>
 <div class="section" id="go-forth-and-workflow">
-<h3>5.6.2. Go forth and Workflow!<a class="headerlink" href="#go-forth-and-workflow" title="Permalink to this headline">¶</a></h3>
+<h3>7.5.2. Go forth and Workflow!<a class="headerlink" href="#go-forth-and-workflow" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>
@@ -871,7 +865,7 @@ rerunning.</p>
   <div class="footer-relations">
     
       <div class="pull-left">
-        <a class="btn btn-default" href="introduction.html" title="previous chapter (use the left arrow)">4. Introduction</a>
+        <a class="btn btn-default" href="introduction.html" title="previous chapter (use the left arrow)">6. Introduction</a>
       </div>
     
     </div>
@@ -887,7 +881,7 @@ rerunning.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="introduction.html" title="4. Introduction"
+          <a href="introduction.html" title="6. Introduction"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="toc.html">snakemake2019 0.0.1 documentation</a> &#187;</li> 
       </ul>
