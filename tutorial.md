@@ -715,6 +715,10 @@ snakemake --dag | dot -Tpng > dag.png
 
 ### Snakemake Log
 
+```
+add text here
+```
+
 
 ### Adding in some Python...
 

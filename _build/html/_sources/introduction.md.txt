@@ -14,6 +14,7 @@ A workflow management system (WMS) is a piece of software that sets up, performs
 # Nextflow
 
 
+# Pegasus
 
 
 # Snakemake
