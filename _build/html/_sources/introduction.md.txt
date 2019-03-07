@@ -36,13 +36,13 @@ rule myname:
 
 ### Snakemake Advantages:
 
-	+ Memory: stores the architecture of the work and allows you to rapidly perform a complete or partial analysis.
++ Memory: stores the architecture of the work and allows you to rapidly perform a complete or partial analysis.
 
-	+ Portability: if built in a user-sensitive way, anyone working on the same analysis can obtain every results.
++ Portability: if built in a user-sensitive way, anyone working on the same analysis can obtain every results.
 
-	+ Modularity: as a rule is only a path between an input and an output, if one method or technique used in the analysis needs to be updated or modified, it can be replaced by a new rule with the same output. It allows a parallel comparison of different techniques in a very simple way.
++ Modularity: as a rule is only a path between an input and an output, if one method or technique used in the analysis needs to be updated or modified, it can be replaced by a new rule with the same output. It allows a parallel comparison of different techniques in a very simple way.
 
-	+ Reproducibility: if you’re analysing a data sample collected by the same experiment in different years of exploitation and you plan to analyse data samples not even collected yet, Snakemake is a simple solution to perform the same analysis to different data sets.
++ Reproducibility: if you’re analysing a data sample collected by the same experiment in different years of exploitation and you plan to analyse data samples not even collected yet, Snakemake is a simple solution to perform the same analysis to different data sets.
 
 
 [**Snakemake Paper**](https://academic.oup.com/bioinformatics/article/28/19/2520/290322)
