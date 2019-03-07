@@ -63,9 +63,12 @@
 <li><a class="reference internal" href="#why-invest-time-in-a-workflow-management-system">7.1. Why invest time in a workflow management system?</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#nextflow">8. Nextflow</a></li>
-<li><a class="reference internal" href="#pegasus">9. Pegasus</a></li>
-<li><a class="reference internal" href="#snakemake">10. Snakemake</a></li>
+<li><a class="reference internal" href="#snakemake">8. <strong>Snakemake</strong></a><ul>
+<li><a class="reference internal" href="#snakemake-advantages">8.1. Snakemake Advantages:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nextflow">9. Nextflow</a></li>
+<li><a class="reference internal" href="#pegasus">10. Pegasus</a></li>
 </ul>
 
     </div>
@@ -116,19 +119,14 @@
 <h1>7. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="why-invest-time-in-a-workflow-management-system">
 <h2>7.1. Why invest time in a workflow management system?<a class="headerlink" href="#why-invest-time-in-a-workflow-management-system" title="Permalink to this headline">¶</a></h2>
-<p>A workflow management system (WMS) is a piece of software that sets up, performs and monitors a defined sequence of computational tasks (i.e. “a workflow”). Snakemake is a WMS that was developed in the bioinformatics community, and as such it has some features that make it particularly well suited for creating reproducible and scalable data analyses.</p>
-<p><a class="reference external" href="https://hackmd.io/4useBM-tQHGGBg-i_2eAIw#"><strong>The Rationale</strong></a></p>
 <p><img alt="_images/hate_research.png" src="_images/hate_research.png" />hate_research</p>
+<p><strong>A common pattern in scientific computing involves the execution of many computational or data manipulation tasks. Those tasks are usually coupled, i.e., data produced by of one task are consumed by one or more other tasks. Thus execution of such tasks often requires a non-trivial coordination (orchestration) to satisfy their data dependencies.</strong></p>
+<p><strong>A workflow management system (WMS) is a piece of software that sets up, performs and monitors a defined sequence of computational tasks (i.e. “a workflow”).</strong></p>
+<p><a class="reference external" href="https://hackmd.io/4useBM-tQHGGBg-i_2eAIw#"><strong>The Rationale</strong></a></p>
 </div>
-</div>
-<div class="section" id="nextflow">
-<h1>8. Nextflow<a class="headerlink" href="#nextflow" title="Permalink to this headline">¶</a></h1>
-</div>
-<div class="section" id="pegasus">
-<h1>9. Pegasus<a class="headerlink" href="#pegasus" title="Permalink to this headline">¶</a></h1>
 </div>
 <div class="section" id="snakemake">
-<h1>10. Snakemake<a class="headerlink" href="#snakemake" title="Permalink to this headline">¶</a></h1>
+<h1>8. <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/index.html"><strong>Snakemake</strong></a><a class="headerlink" href="#snakemake" title="Permalink to this headline">¶</a></h1>
 <p><strong>Snakemake is a workflow management system that helps you build pipelines between the scripts of your project.</strong></p>
 <p><strong>Snakemake allows you to create a set of rules, each one defining a “step” of your analysis.</strong></p>
 <p>For each step you need to provide:</p>
@@ -145,8 +143,29 @@
 </div>
 <blockquote>
 <div>The rules need to be written in a file called “<strong>Snakefile</strong>”.</div></blockquote>
-<p><a class="reference external" href="https://snakemake.readthedocs.io/en/stable/index.html"><strong>Snakemake Documentation</strong></a></p>
+<div class="section" id="snakemake-advantages">
+<h2>8.1. Snakemake Advantages:<a class="headerlink" href="#snakemake-advantages" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>+ Memory: stores the architecture of the work and allows you to rapidly perform a complete or partial analysis.
+
++ Portability: if built in a user-sensitive way, anyone working on the same analysis can obtain every results.
+
++ Modularity: as a rule is only a path between an input and an output, if one method or technique used in the analysis needs to be updated or modified, it can be replaced by a new rule with the same output. It allows a parallel comparison of different techniques in a very simple way.
+
++ Reproducibility: if you’re analysing a data sample collected by the same experiment in different years of exploitation and you plan to analyse data samples not even collected yet, Snakemake is a simple solution to perform the same analysis to different data sets.
+</pre></div>
+</div>
 <p><a class="reference external" href="https://academic.oup.com/bioinformatics/article/28/19/2520/290322"><strong>Snakemake Paper</strong></a></p>
+</div>
+</div>
+<div class="section" id="nextflow">
+<h1>9. <a class="reference external" href="https://www.nextflow.io/">Nextflow</a><a class="headerlink" href="#nextflow" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div>Dockers with Nextflow documentation is <a class="reference external" href="https://www.nextflow.io/docs/latest/docker.html">here</a></div></blockquote>
+</div>
+<div class="section" id="pegasus">
+<h1>10. <a class="reference external" href="https://pegasus.isi.edu/">Pegasus</a><a class="headerlink" href="#pegasus" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0167739X14002015">Pegasus_Paper</a></div></blockquote>
 </div>
 
 

@@ -4,20 +4,15 @@ Introduction
 
 ### Why invest time in a workflow management system? 
 
-A workflow management system (WMS) is a piece of software that sets up, performs and monitors a defined sequence of computational tasks (i.e. "a workflow"). Snakemake is a WMS that was developed in the bioinformatics community, and as such it has some features that make it particularly well suited for creating reproducible and scalable data analyses.
+![hate_research](img/hate_research.png)
+
+**A common pattern in scientific computing involves the execution of many computational or data manipulation tasks. Those tasks are usually coupled, i.e., data produced by of one task are consumed by one or more other tasks. Thus execution of such tasks often requires a non-trivial coordination (orchestration) to satisfy their data dependencies.**
+
+**A workflow management system (WMS) is a piece of software that sets up, performs and monitors a defined sequence of computational tasks (i.e. "a workflow").**
 
 [**The Rationale**](https://hackmd.io/4useBM-tQHGGBg-i_2eAIw#)
 
-![hate_research](img/hate_research.png)
-
-
-# Nextflow
-
-
-# Pegasus
-
-
-# Snakemake
+# [**Snakemake**](https://snakemake.readthedocs.io/en/stable/index.html)
 
 **Snakemake is a workflow management system that helps you build pipelines between the scripts of your project.**
 
@@ -39,6 +34,23 @@ rule myname:
 ```
 > The rules need to be written in a file called "**Snakefile**".
 
-[**Snakemake Documentation**](https://snakemake.readthedocs.io/en/stable/index.html)
+### Snakemake Advantages:
+
+	+ Memory: stores the architecture of the work and allows you to rapidly perform a complete or partial analysis.
+
+	+ Portability: if built in a user-sensitive way, anyone working on the same analysis can obtain every results.
+
+	+ Modularity: as a rule is only a path between an input and an output, if one method or technique used in the analysis needs to be updated or modified, it can be replaced by a new rule with the same output. It allows a parallel comparison of different techniques in a very simple way.
+
+	+ Reproducibility: if you’re analysing a data sample collected by the same experiment in different years of exploitation and you plan to analyse data samples not even collected yet, Snakemake is a simple solution to perform the same analysis to different data sets.
+
 
 [**Snakemake Paper**](https://academic.oup.com/bioinformatics/article/28/19/2520/290322)
+
+# [Nextflow](https://www.nextflow.io/)
+
+> Dockers with Nextflow documentation is [here](https://www.nextflow.io/docs/latest/docker.html)
+
+# [Pegasus](https://pegasus.isi.edu/)
+
+> [Pegasus_Paper](https://www.sciencedirect.com/science/article/pii/S0167739X14002015)
