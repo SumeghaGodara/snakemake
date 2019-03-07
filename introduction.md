@@ -11,10 +11,13 @@ A workflow management system (WMS) is a piece of software that sets up, performs
 ![hate_research](img/hate_research.png)
 
 
-# Nextflow
+# [Nextflow](https://www.nextflow.io/)
 
+> Dockers with Nextflow documentation is [here](https://www.nextflow.io/docs/latest/docker.html)
 
-# Pegasus
+# [Pegasus](https://pegasus.isi.edu/)
+
+> [Pegasus_Paper](https://www.sciencedirect.com/science/article/pii/S0167739X14002015)
 
 
 # Snakemake
