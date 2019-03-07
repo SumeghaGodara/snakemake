@@ -1,37 +1,6 @@
 Tutorial
 ===
 
-# Software we're going to use
-
-We're going to be using [conda](https://conda.io/en/latest/) and [snakemake](https://snakemake.readthedocs.io/en/stable/), a well as packages from [bioconda](https://bioconda.github.io). If you wanted to run all of this on your own computer, you'll need to follow the bioconda install instructions.
-
-We'll be implementing a short read quality check and trimming pipeline, using [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), [trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic), and [multiqc](https://multiqc.info/). No worries if you don't know what any of this means, it's not super critical to the snakemake side of things :)
-
-You can see the full set of installed software requirements [here](https://github.com/ctb/2019-snakemake-ucdavis/blob/master/binder/environment.yml), in a conda `environment.yml` file.
-
-You could use this install file to run everything we're doing today on your laptop, with: 
-```
-conda env create --file environment.yml -n smake
-conda activate smake
-```
-
-# Working on binder
-
-[mybinder.org](https://mybinder.org/) , a fantastic service that lets us run demonstrations and short workshops in the cloud! 
-
-> **Click on the button below to open a pre-configured Binder file that is rendered via a Rstudio interface.**
-
-----------> [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/master?urlpath=rstudio) <----------
-
-**We're mostly going to work in the file editor and the terminal; to get started, open the terminal, and execute:**
-
-```
-PS1='$ '
-```
-to get a shorter prompt.
-
-
-
 # Running snakemake!
 
 ### Getting started - your first Snakefile
@@ -703,7 +672,27 @@ snakemake --use-conda
 
 **This aids in reproducibility, in addition to the practical advantages of isolating software installs from each other.**
 
-**(You can also do this with docker and singularity containers, too!)**
+# Running jobs in containers
+
+As an alternative to using Conda (see above), it is possible to define, for each rule, a docker or singularity container to use, e.g.,
+
+```
+rule NAME:
+    input:
+        "table.txt"
+    output:
+        "plots/myplot.pdf"
+    singularity:
+        "docker://joseespinosa/docker-r-ggplot2"
+    script:
+        "scripts/plot-stuff.R"
+```
+When executing Snakemake with
+```
+snakemake --use-singularity
+```
+it will execute the job within a singularity container that is spawned from the given image. Allowed image urls entail everything supported by singularity (e.g., shub:// and docker://). 
+
 
 ### Outputting the entire workflow diagram
 
@@ -713,11 +702,15 @@ snakemake --use-conda
 snakemake --dag | dot -Tpng > dag.png
 ```
 
-### Snakemake Log
+### Snakemake Report
 
+Snakemake can automatically generate detailed self-contained HTML reports that encompass runtime statistics, provenance information, workflow topology and results.
+
+To create the report simply run
 ```
-add text here
+snakemake --report report.html
 ```
+
 
 
 ### Adding in some Python...
