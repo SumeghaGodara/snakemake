@@ -16,7 +16,7 @@ Introduction
 
 **Snakemake is a workflow management system that helps you build pipelines between the scripts of your project.**
 
-**Snakemake allows you to create a set of rules, each one defining a "step" of your analysis.** 
+**Snakemake allows you to create a set of rules, each one defining a "step" of your analysis. Rules can either use shell commands, plain Python code or external Python or R scripts to create output files from input files.** 
 
 For each step you need to provide:
 
@@ -43,6 +43,12 @@ rule myname:
 + Modularity: as a rule is only a path between an input and an output, if one method or technique used in the analysis needs to be updated or modified, it can be replaced by a new rule with the same output. It allows a parallel comparison of different techniques in a very simple way.
 
 + Reproducibility: if you’re analysing a data sample collected by the same experiment in different years of exploitation and you plan to analyse data samples not even collected yet, Snakemake is a simple solution to perform the same analysis to different data sets.
+
++ **Snakemake workflows can be easily executed on workstations, clusters, the grid, and in the cloud without modification**. The job scheduling can be constrained by arbitrary resources like e.g. available CPU cores, memory or GPUs.
+
++ **Snakemake can automatically deploy required software dependencies of a workflow using Conda or Singularity.**
+
++ Snakemake can use Amazon S3, Google Storage, Dropbox, FTP, WebDAV, SFTP and iRODS to access input or output files and further access input files via HTTP and HTTPS.
 
 
 [**Snakemake Paper**](https://academic.oup.com/bioinformatics/article/28/19/2520/290322)
