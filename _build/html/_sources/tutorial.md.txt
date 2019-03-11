@@ -781,7 +781,7 @@ Take a look at [glob_wildcards](https://snakemake.readthedocs.io/en/stable/proje
 
 # Final thoughts - writing your own snakefile
 
-**Just like scripting, or writing an R script, writing a snakefile is a kind of programming. So you'll have to do a lot of debugging :) :(. A few thoughts for you on how to do this:
+**Just like scripting, or writing an R script, writing a snakefile is a kind of programming. So you'll have to do a lot of debugging :) :(.** A few thoughts for you on how to do this:
 * start small, grow your snakefile!
 * DO copy and paste from this tutorial and others you find online!
 * it rarely hurts to just re-run snakemake!**

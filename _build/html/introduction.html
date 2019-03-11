@@ -128,7 +128,7 @@
 <div class="section" id="snakemake">
 <h1>8. <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/index.html"><strong>Snakemake</strong></a><a class="headerlink" href="#snakemake" title="Permalink to this headline">¶</a></h1>
 <p><strong>Snakemake is a workflow management system that helps you build pipelines between the scripts of your project.</strong></p>
-<p><strong>Snakemake allows you to create a set of rules, each one defining a “step” of your analysis.</strong></p>
+<p><strong>Snakemake allows you to create a set of rules, each one defining a “step” of your analysis. Rules can either use shell commands, plain Python code or external Python or R scripts to create output files from input files.</strong></p>
 <p>For each step you need to provide:</p>
 <ul class="simple">
 <li><strong>Input</strong> : Data files, scripts, executables or any other files.</li>
@@ -150,6 +150,9 @@
 <li>Portability: if built in a user-sensitive way, anyone working on the same analysis can obtain every results.</li>
 <li>Modularity: as a rule is only a path between an input and an output, if one method or technique used in the analysis needs to be updated or modified, it can be replaced by a new rule with the same output. It allows a parallel comparison of different techniques in a very simple way.</li>
 <li>Reproducibility: if you’re analysing a data sample collected by the same experiment in different years of exploitation and you plan to analyse data samples not even collected yet, Snakemake is a simple solution to perform the same analysis to different data sets.</li>
+<li><strong>Snakemake workflows can be easily executed on workstations, clusters, the grid, and in the cloud without modification</strong>. The job scheduling can be constrained by arbitrary resources like e.g. available CPU cores, memory or GPUs.</li>
+<li><strong>Snakemake can automatically deploy required software dependencies of a workflow using Conda or Singularity.</strong></li>
+<li>Snakemake can use Amazon S3, Google Storage, Dropbox, FTP, WebDAV, SFTP and iRODS to access input or output files and further access input files via HTTP and HTTPS.</li>
 </ul>
 <p><a class="reference external" href="https://academic.oup.com/bioinformatics/article/28/19/2520/290322"><strong>Snakemake Paper</strong></a></p>
 </div>
