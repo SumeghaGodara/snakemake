@@ -701,6 +701,7 @@ it will execute the job within a singularity container that is spawned from the 
 ```
 snakemake --dag | dot -Tpng > dag.png
 ```
+The DAG png file should look something like [this](![dag](/img/dag.png))
 
 ### Snakemake Report
 
