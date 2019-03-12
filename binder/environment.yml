@@ -7,3 +7,4 @@ dependencies:
   - snakemake
   - multiqc
   - fastqc
+  - singularity
