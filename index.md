@@ -13,8 +13,10 @@ Intro to Workflows for Efficient Automated Data Analysis, using Snakemake
 No license; the below content is under CC0.
 ```
 ### Credits
+
 The content for this website has been compiled from tutorials put together by:
 + [Titus Brown](https://twitter.com/ctitusbrown) - [Link to Tutorial](https://github.com/ctb/2019-snakemake-ucdavis)
+
 + [Johannes Koster](https://twitter.com/johanneskoester) - [Link to Tutorial](https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html)
 
 # Setup
