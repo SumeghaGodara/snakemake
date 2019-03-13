@@ -7,6 +7,5 @@ dependencies:
   - snakemake
   - fastqc
   - multiqc
-  - singularity
+  - singularity=3.0.1
   - squashfs-tools
-    
