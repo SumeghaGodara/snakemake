@@ -731,16 +731,38 @@ rerun the workflow.</strong></p>
 </div>
 <div class="section" id="running-jobs-in-containers">
 <h1>18. Running jobs in containers<a class="headerlink" href="#running-jobs-in-containers" title="Permalink to this headline">¶</a></h1>
+<p><strong>Note: Singularity installation needs ‘sudo’ rights and instructions can be found <a class="reference external" href="https://www.sylabs.io/guides/3.0/user-guide/installation.html#installation">here</a></strong></p>
 <p>As an alternative to using Conda (see above), it is possible to define, for each rule, a docker or singularity container to use, e.g.,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">NAME</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fastqc_output</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;data/0Hour_001_1_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_001_1_fastqc.html&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;data/0Hour_001_2_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_001_2_fastqc.html&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;data/0Hour_002_1_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_002_1_fastqc.html&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;data/0Hour_002_2_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_002_2_fastqc.html&quot;</span><span class="p">]</span>
+
+<span class="n">rule</span> <span class="nb">all</span><span class="p">:</span>
+  <span class="nb">input</span><span class="p">:</span>
+    <span class="s2">&quot;multiqc_report.html&quot;</span>
+        
+<span class="n">rule</span> <span class="n">fastqc</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="s2">&quot;table.txt&quot;</span>
+        <span class="s2">&quot;</span><span class="si">{filename}</span><span class="s2">.fq.gz&quot;</span>
     <span class="n">output</span><span class="p">:</span>
-        <span class="s2">&quot;plots/myplot.pdf&quot;</span>
+        <span class="s2">&quot;</span><span class="si">{filename}</span><span class="s2">_fastqc.html&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;</span><span class="si">{filename}</span><span class="s2">_fastqc.zip&quot;</span>
     <span class="n">singularity</span><span class="p">:</span>
-        <span class="s2">&quot;docker://joseespinosa/docker-r-ggplot2&quot;</span>
-    <span class="n">script</span><span class="p">:</span>
-        <span class="s2">&quot;scripts/plot-stuff.R&quot;</span>
+        <span class="s2">&quot;docker://sateeshperi/fastqc_bioc&quot;</span>    
+    <span class="n">shell</span><span class="p">:</span>
+        <span class="s2">&quot;fastqc </span><span class="si">{input}</span><span class="s2">&quot;</span>
+
+<span class="n">rule</span> <span class="n">run_multiqc</span><span class="p">:</span>
+  <span class="nb">input</span><span class="p">:</span>
+    <span class="n">fastqc_output</span>
+  <span class="n">output</span><span class="p">:</span>
+    <span class="s2">&quot;multiqc_report.html&quot;</span><span class="p">,</span>
+    <span class="n">directory</span><span class="p">(</span><span class="s2">&quot;multiqc_data&quot;</span><span class="p">)</span>
+  <span class="n">singularity</span><span class="p">:</span>
+    <span class="s2">&quot;docker://sateeshperi/multiqc_bioc&quot;</span>
+  <span class="n">shell</span><span class="p">:</span>
+    <span class="s2">&quot;multiqc data/&quot;</span>
 </pre></div>
 </div>
 <p>When executing Snakemake with</p>
