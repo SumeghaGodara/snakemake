@@ -7,5 +7,6 @@ dependencies:
   - snakemake
   - multiqc
   - fastqc
-  - singularity=3.0.1
   - squashfs-tools
+  - pip:
+    - singularity
