@@ -5,6 +5,8 @@ channels:
 dependencies:
   - trimmomatic
   - snakemake
-  - singularity=2.4.2
+  - fastqc
+  - multiqc
+  - singularity
   - squashfs-tools
     
