@@ -2,11 +2,10 @@ channels:
   - bioconda
   - defaults
   - conda-forge
-  - conda-forge/label/gcc7
 dependencies:
   - trimmomatic
   - snakemake
   - multiqc
   - fastqc
-  - singularity
+  - conda-forge/label/gcc7 singularity
   - squashfs-tools
