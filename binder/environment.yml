@@ -8,4 +8,3 @@ dependencies:
   - fastqc
   - multiqc
   - singularity=3.0.1
-  - squashfs-tools
