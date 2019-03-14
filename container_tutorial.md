@@ -1,12 +1,16 @@
 Running Jobs in containers
 ===
 
-# Running jobs in containers [^1]
+We will be executing the same workflow (fastqc--->multiqc--->trimmomatic) as in [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html) but, with each tool being executed in singularity containers [^2] based on either Docker or Singularity builds
 
-[**CyVerse Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html)
+> [**Guide to Launching Atmosphere Instances**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html)
 
 
-#### Activate Conda
+1. Login to CyVerse [Atmosphere](https://atmo.cyverse.org/application/images)
+
+2. Launch a medium 'm1' instance with the 'DCG-UNR-RNAseq' v3.0 base image [^1]
+
+3. Activate Conda
 
 ```
 echo export PATH=$PATH:/opt/miniconda3/bin >> ~/.bashrc
@@ -29,12 +33,19 @@ conda config --add channels bioconda
 Try running a program pre-installed on this instance:
 
 ```bash
-fastqc
+snakemake
 ```
+4. Test singularity 
 
+Singularity 2.6.1 is pre-installed and should be available in this image
 
+Test installation by
+```bash
+singularity --version
+```
+5. Download data
 
-As an alternative to using Conda (see above), it is possible to define, for each rule, a docker or singularity container to use, e.g.,
+6. Create 'Snakefile' with the code below
 
 ```python
 fastqc_output = ["data/0Hour_001_1_fastqc.html", "data/6Hour_001_1_fastqc.html",
@@ -92,14 +103,24 @@ rule clean:
   shell:
     "rm -f {fastqc_output} multiqc_report.html"     
 ```
-When executing Snakemake with
+
+7. Executing Snakemake with
 ```
 snakemake --use-singularity
 ```
-it will execute the job within a singularity container that is spawned from the given image. Allowed image urls entail everything supported by singularity (e.g., shub:// and docker://). 
 
+Snakemake will pull the containers and execute each rule individually in the containers specified
+
+8. Generate Report
+```bash
+snakemake --report report.html
 ```
-Image Software:
+
+---------------------------
+
+[^1]: DCG-UNR-RNAseq v3.0 Atmosphere Image Specifications
+
+Software:
 		    - Miniconda 4.6.8
 		    - Rstudio 1.1.453
 		    - Singularity 2.6.1
@@ -131,10 +152,10 @@ R_Packages:
 	        - "AnnotationDbi"
 	        - "clusterProfiler"
 	        - "org.Mm.eg.db"
-```
 
 
 
 
 
-[^1]: A container image is an encapsulated, portable environment that is created to distribute a scientific analysis or a general function. Containers help with reproducibility of such content as they nicely package software and data dependencies, along with libraries that are needed.
+
+[^2]: A container image is an encapsulated, portable environment that is created to distribute a scientific analysis or a general function. Containers help with reproducibility of such content as they nicely package software and data dependencies, along with libraries that are needed.
