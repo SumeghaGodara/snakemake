@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. Introduction" href="introduction.html" />
+    <link rel="next" title="7. Introduction" href="introduction.html" />
     <link rel="prev" title="&lt;no title&gt;" href="toc.html" />
   
    
@@ -39,7 +39,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="introduction.html" title="6. Introduction"
+          <a href="introduction.html" title="7. Introduction"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="toc.html" title="&lt;no title&gt;"
@@ -70,8 +70,9 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#introduction">3. <strong>Introduction</strong></a></li>
-<li><a class="reference internal" href="#tutorial">4. <strong>Tutorial</strong></a></li>
-<li><a class="reference internal" href="#awesome">5. <strong>Awesome</strong></a></li>
+<li><a class="reference internal" href="#basic-tutorial">4. <strong>Basic Tutorial</strong></a></li>
+<li><a class="reference internal" href="#container-tutorial">5. <strong>Container Tutorial</strong></a></li>
+<li><a class="reference internal" href="#awesome">6. <strong>Awesome</strong></a></li>
 </ul>
 
     </div>
@@ -82,7 +83,7 @@
                         title="previous chapter">&lt;no title&gt;</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="introduction.html"
-                        title="next chapter">6. Introduction</a></p>
+                        title="next chapter">7. Introduction</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -159,7 +160,7 @@
 <h2>2.2. Software we’re going to use<a class="headerlink" href="#software-we-re-going-to-use" title="Permalink to this headline">¶</a></h2>
 <p>We’re going to be using <a class="reference external" href="https://conda.io/en/latest/">conda</a> and <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/">snakemake</a>, a well as packages from <a class="reference external" href="https://bioconda.github.io/">bioconda</a>. If you wanted to run all of this on your own computer, you’ll need to follow the bioconda install instructions.</p>
 <p>We’ll be implementing a short read quality check and trimming pipeline, using <a class="reference external" href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">fastqc</a>, <a class="reference external" href="http://www.usadellab.org/cms/?page=trimmomatic">trimmomatic</a>, and <a class="reference external" href="https://multiqc.info/">multiqc</a>.</p>
-<p>You can see the full set of installed software requirements <a class="reference external" href="https://github.com/ctb/2019-snakemake-ucdavis/blob/master/binder/environment.yml">here</a>, in a conda environment.yml file.</p>
+<p>You can see the full set of installed software requirements <a class="reference external" href="https://github.com/sateeshperi/snakemake2019/blob/master/binder/environment.yml">here</a>, in a conda environment.yml file.</p>
 <p>You could use this install file to run everything we’re doing today on your laptop, with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">--</span><span class="n">file</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span> <span class="o">-</span><span class="n">n</span> <span class="n">smake</span>
 <span class="n">conda</span> <span class="n">activate</span> <span class="n">smake</span>
@@ -170,11 +171,14 @@
 <div class="section" id="introduction">
 <h1>3. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/introduction.html"><strong>Introduction</strong></a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 </div>
-<div class="section" id="tutorial">
-<h1>4. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/tutorial.html"><strong>Tutorial</strong></a><a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basic-tutorial">
+<h1>4. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html"><strong>Basic Tutorial</strong></a><a class="headerlink" href="#basic-tutorial" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="container-tutorial">
+<h1>5. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html"><strong>Container Tutorial</strong></a><a class="headerlink" href="#container-tutorial" title="Permalink to this headline">¶</a></h1>
 </div>
 <div class="section" id="awesome">
-<h1>5. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/awesome.html"><strong>Awesome</strong></a><a class="headerlink" href="#awesome" title="Permalink to this headline">¶</a></h1>
+<h1>6. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/awesome.html"><strong>Awesome</strong></a><a class="headerlink" href="#awesome" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -187,7 +191,7 @@
       </div>
     
       <div class="pull-right">
-        <a class="btn btn-default" href="introduction.html" title="next chapter (use the right arrow)">6. Introduction</a>
+        <a class="btn btn-default" href="introduction.html" title="next chapter (use the right arrow)">7. Introduction</a>
       </div>
     </div>
     <div class="clearer"></div>
@@ -202,7 +206,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="introduction.html" title="6. Introduction"
+          <a href="introduction.html" title="7. Introduction"
              >next</a> |</li>
         <li class="right" >
           <a href="toc.html" title="&lt;no title&gt;"

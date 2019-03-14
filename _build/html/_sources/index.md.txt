@@ -41,7 +41,7 @@ We're going to be using [conda](https://conda.io/en/latest/) and [snakemake](htt
 
 We'll be implementing a short read quality check and trimming pipeline, using [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), [trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic), and [multiqc](https://multiqc.info/).
 
-You can see the full set of installed software requirements [here](https://github.com/ctb/2019-snakemake-ucdavis/blob/master/binder/environment.yml), in a conda environment.yml file.
+You can see the full set of installed software requirements [here](https://github.com/sateeshperi/snakemake2019/blob/master/binder/environment.yml), in a conda environment.yml file.
 
 You could use this install file to run everything we're doing today on your laptop, with:
 
@@ -51,6 +51,8 @@ conda activate smake
 ```
 # [**Introduction**](https://snakemake2019.readthedocs.io/en/latest/introduction.html)
 
-# [**Tutorial**](https://snakemake2019.readthedocs.io/en/latest/tutorial.html)
+# [**Basic Tutorial**](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html)
+
+# [**Container Tutorial**](https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html)
 
 # [**Awesome**](https://snakemake2019.readthedocs.io/en/latest/awesome.html)
