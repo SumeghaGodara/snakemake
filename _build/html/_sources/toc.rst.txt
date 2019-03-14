@@ -13,5 +13,3 @@
    container_tutorial.md
 
    awesome.md
-
-   README.md

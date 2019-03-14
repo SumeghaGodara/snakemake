@@ -55,10 +55,10 @@ You could use this install file to run everything we're doing today on your lapt
 conda env create --file environment.yml -n smake
 conda activate smake
 ```
-### [**Introduction**](https://snakemake2019.readthedocs.io/en/latest/introduction.html)
+# [**Introduction**](https://snakemake2019.readthedocs.io/en/latest/introduction.html)
 
-### [**Basic Tutorial**](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html)
+# [**Basic Tutorial**](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html)
 
-### [**Container Tutorial**](https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html)
+# [**Container Tutorial**](https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html)
 
-### [**Awesome**](https://snakemake2019.readthedocs.io/en/latest/awesome.html)
+# [**Awesome**](https://snakemake2019.readthedocs.io/en/latest/awesome.html)
