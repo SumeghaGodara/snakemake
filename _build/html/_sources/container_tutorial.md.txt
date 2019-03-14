@@ -1,16 +1,18 @@
 Running Jobs in containers
 ===
 
-We will be executing the same workflow (fastqc--->multiqc--->trimmomatic) as in [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html) but, with each tool being executed in singularity containers [^2] based on either Docker or Singularity builds
+**Snakemake can automatically deploy required software dependencies of a workflow using Conda or Singularity.**
+
+We will be executing the same workflow **(fastqc--->multiqc--->trimmomatic)** as in [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html) but, with each tool being executed in singularity containers[^2] based on either Docker or Singularity builds
 
 > [**Guide to Launching Atmosphere Instances**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html)
 
 
-1. Login to CyVerse [Atmosphere](https://atmo.cyverse.org/application/images)
+### Login to CyVerse [Atmosphere](https://atmo.cyverse.org/application/images)
 
-2. Launch a medium 'm1' instance with the 'DCG-UNR-RNAseq' v3.0 base image [^1]
+### Launch a medium 'm1' instance with the 'DCG-UNR-RNAseq' v3.0 base image[^1]
 
-3. Activate Conda
+### Activate Conda & Snakemake
 
 ```
 echo export PATH=$PATH:/opt/miniconda3/bin >> ~/.bashrc
@@ -35,17 +37,40 @@ Try running a program pre-installed on this instance:
 ```bash
 snakemake
 ```
-4. Test singularity 
 
-Singularity 2.6.1 is pre-installed and should be available in this image
+### Test singularity 
 
-Test installation by
+Singularity is pre-installed in this image. Test installation by
+
 ```bash
 singularity --version
 ```
-5. Download data
+> 2.6.1-HEAD.9103f015
 
-6. Create 'Snakefile' with the code below
+### Download data
+
+```bash
+mkdir data
+cd data/
+```
+
+Download the test reads by
+
+```bash
+curl -L https://osf.io/er5tb/download -o data.zip
+unzip data.zip
+rm data.zip
+cd ..
+```
+
+### Run snakemake
+
+Create Snakefile
+
+```bash
+nano Snakefile
+```
+ and paste the code below we have from [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html)
 
 ```python
 fastqc_output = ["data/0Hour_001_1_fastqc.html", "data/6Hour_001_1_fastqc.html",
@@ -104,14 +129,16 @@ rule clean:
     "rm -f {fastqc_output} multiqc_report.html"     
 ```
 
-7. Executing Snakemake with
+### Execute Snakemake with
+
 ```
 snakemake --use-singularity
 ```
 
 Snakemake will pull the containers and execute each rule individually in the containers specified
 
-8. Generate Report
+### Generate Report
+
 ```bash
 snakemake --report report.html
 ```
