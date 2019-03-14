@@ -6,7 +6,9 @@
 
    introduction.md
 
-   tutorial.md
+   basic_tutorial.md
+
+   container_tutorial.md
 
    awesome.md
 
