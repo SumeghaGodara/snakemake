@@ -3,16 +3,16 @@ Running Jobs in containers
 
 **Snakemake can automatically deploy required software dependencies of a workflow using Conda or Singularity.**
 
-We will be executing the same workflow **(fastqc--->multiqc--->trimmomatic)** as in [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html) but, with each tool being executed in singularity containers[^2] based on either Docker or Singularity builds
+We will be executing the same workflow **(fastqc--->multiqc--->trimmomatic)** as in [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html) but, with each tool being executed in singularity containers based on either Docker or Singularity builds
 
 > [**Guide to Launching Atmosphere Instances**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html)
 
 
 ### Login to CyVerse [Atmosphere](https://atmo.cyverse.org/application/images)
 
-### Launch a medium 'm1' instance with the 'DCG-UNR-RNAseq' v3.0 base image[^1]
+### Launch a medium 'm1' instance with the 'DCG-UNR-RNAseq' v3.0 base image
 
-### Activate Conda & Snakemake
+### Activate Conda
 
 ```
 echo export PATH=$PATH:/opt/miniconda3/bin >> ~/.bashrc

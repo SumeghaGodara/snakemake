@@ -61,8 +61,8 @@
       <ul>
 <li><a class="reference internal" href="#">26. Running Jobs in containers</a><ul>
 <li><a class="reference internal" href="#login-to-cyverse-atmosphere">26.1. Login to CyVerse Atmosphere</a></li>
-<li><a class="reference internal" href="#launch-a-medium-m1-instance-with-the-dcg-unr-rnaseq-v3-0-base-image-1">26.2. Launch a medium ‘m1’ instance with the ‘DCG-UNR-RNAseq’ v3.0 base image[^1]</a></li>
-<li><a class="reference internal" href="#activate-conda-snakemake">26.3. Activate Conda &amp; Snakemake</a></li>
+<li><a class="reference internal" href="#launch-a-medium-m1-instance-with-the-dcg-unr-rnaseq-v3-0-base-image">26.2. Launch a medium ‘m1’ instance with the ‘DCG-UNR-RNAseq’ v3.0 base image</a></li>
+<li><a class="reference internal" href="#activate-conda">26.3. Activate Conda</a></li>
 <li><a class="reference internal" href="#test-singularity">26.4. Test singularity</a></li>
 <li><a class="reference internal" href="#download-data">26.5. Download data</a></li>
 <li><a class="reference internal" href="#run-snakemake">26.6. Run snakemake</a></li>
@@ -119,17 +119,17 @@
   <div class="section" id="running-jobs-in-containers">
 <h1>26. Running Jobs in containers<a class="headerlink" href="#running-jobs-in-containers" title="Permalink to this headline">¶</a></h1>
 <p><strong>Snakemake can automatically deploy required software dependencies of a workflow using Conda or Singularity.</strong></p>
-<p>We will be executing the same workflow <strong>(fastqc—&gt;multiqc—&gt;trimmomatic)</strong> as in <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html">Basic Tutorial</a> but, with each tool being executed in singularity containers[^2] based on either Docker or Singularity builds</p>
+<p>We will be executing the same workflow <strong>(fastqc—&gt;multiqc—&gt;trimmomatic)</strong> as in <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html">Basic Tutorial</a> but, with each tool being executed in singularity containers based on either Docker or Singularity builds</p>
 <blockquote>
 <div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html"><strong>Guide to Launching Atmosphere Instances</strong></a></div></blockquote>
 <div class="section" id="login-to-cyverse-atmosphere">
 <h2>26.1. Login to CyVerse <a class="reference external" href="https://atmo.cyverse.org/application/images">Atmosphere</a><a class="headerlink" href="#login-to-cyverse-atmosphere" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="launch-a-medium-m1-instance-with-the-dcg-unr-rnaseq-v3-0-base-image-1">
-<h2>26.2. Launch a medium ‘m1’ instance with the ‘DCG-UNR-RNAseq’ v3.0 base image[^1]<a class="headerlink" href="#launch-a-medium-m1-instance-with-the-dcg-unr-rnaseq-v3-0-base-image-1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="launch-a-medium-m1-instance-with-the-dcg-unr-rnaseq-v3-0-base-image">
+<h2>26.2. Launch a medium ‘m1’ instance with the ‘DCG-UNR-RNAseq’ v3.0 base image<a class="headerlink" href="#launch-a-medium-m1-instance-with-the-dcg-unr-rnaseq-v3-0-base-image" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="activate-conda-snakemake">
-<h2>26.3. Activate Conda &amp; Snakemake<a class="headerlink" href="#activate-conda-snakemake" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="activate-conda">
+<h2>26.3. Activate Conda<a class="headerlink" href="#activate-conda" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo export PATH=$PATH:/opt/miniconda3/bin &gt;&gt; ~/.bashrc
 </pre></div>
 </div>
