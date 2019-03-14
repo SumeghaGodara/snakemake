@@ -25,7 +25,7 @@ We're going to use [mybinder.org](https://mybinder.org/) , a fantastic service t
 
 > **Click on the button below to open a pre-configured Binder file that is rendered via a Rstudio interface.**
 
-===> [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/master?urlpath=rstudio) <===
+===> [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/binder?urlpath=rstudio) <===
 
 **We're mostly going to work in the file editor and the terminal; to get started, open the terminal, and execute:**
 
