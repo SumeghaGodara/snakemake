@@ -60,14 +60,15 @@
     <div class="sidebar-localtoc">
       <ul>
 <li><a class="reference internal" href="#">26. Running Jobs in containers</a><ul>
-<li><a class="reference internal" href="#login-to-cyverse-atmosphere">26.1. Login to CyVerse Atmosphere</a></li>
-<li><a class="reference internal" href="#launch-a-medium-m1-instance-with-the-dcg-unr-rnaseq-v3-0-base-image">26.2. Launch a medium ‘m1’ instance with the ‘DCG-UNR-RNAseq’ v3.0 base image</a></li>
-<li><a class="reference internal" href="#activate-conda">26.3. Activate Conda</a></li>
-<li><a class="reference internal" href="#test-singularity">26.4. Test singularity</a></li>
-<li><a class="reference internal" href="#download-data">26.5. Download data</a></li>
-<li><a class="reference internal" href="#run-snakemake">26.6. Run snakemake</a></li>
-<li><a class="reference internal" href="#execute-snakemake-with">26.7. Execute Snakemake with</a></li>
-<li><a class="reference internal" href="#generate-report">26.8. Generate Report</a></li>
+<li><a class="reference internal" href="#what-are-containers">26.1. What are containers</a></li>
+<li><a class="reference internal" href="#login-to-cyverse-atmosphere">26.2. Login to CyVerse Atmosphere</a></li>
+<li><a class="reference internal" href="#launch-a-medium-m1-instance-with-the-dcg-unr-rnaseq-v3-0-base-image">26.3. Launch a medium ‘m1’ instance with the ‘DCG-UNR-RNAseq’ v3.0 base image</a></li>
+<li><a class="reference internal" href="#activate-conda">26.4. Activate Conda</a></li>
+<li><a class="reference internal" href="#test-singularity">26.5. Test singularity</a></li>
+<li><a class="reference internal" href="#download-data">26.6. Download data</a></li>
+<li><a class="reference internal" href="#run-snakemake">26.7. Run snakemake</a></li>
+<li><a class="reference internal" href="#execute-snakemake-with">26.8. Execute Snakemake with</a></li>
+<li><a class="reference internal" href="#generate-report">26.9. Generate Report</a></li>
 </ul>
 </li>
 </ul>
@@ -118,18 +119,24 @@
             
   <div class="section" id="running-jobs-in-containers">
 <h1>26. Running Jobs in containers<a class="headerlink" href="#running-jobs-in-containers" title="Permalink to this headline">¶</a></h1>
-<p><strong>Snakemake can automatically deploy required software dependencies of a workflow using Conda or Singularity.</strong></p>
+<div class="section" id="what-are-containers">
+<h2>26.1. What are containers<a class="headerlink" href="#what-are-containers" title="Permalink to this headline">¶</a></h2>
+<p>Containers are running instances of Singularity/Docker images — containers run the actual applications. A container includes an application and all of its dependencies. It shares the kernel with other containers, and runs as an isolated process in user space on the host OS.</p>
+<p>And</p>
+<p>Snakemake with Singularity (installed separately)
+<strong>Snakemake can automatically deploy required software dependencies of a workflow using Conda or Singularity.</strong></p>
 <p>We will be executing the same workflow <strong>(fastqc—&gt;multiqc—&gt;trimmomatic)</strong> as in <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html">Basic Tutorial</a> but, with each tool being executed in singularity containers based on either Docker or Singularity builds</p>
 <blockquote>
 <div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html"><strong>Guide to Launching Atmosphere Instances</strong></a></div></blockquote>
+</div>
 <div class="section" id="login-to-cyverse-atmosphere">
-<h2>26.1. Login to CyVerse <a class="reference external" href="https://atmo.cyverse.org/application/images">Atmosphere</a><a class="headerlink" href="#login-to-cyverse-atmosphere" title="Permalink to this headline">¶</a></h2>
+<h2>26.2. Login to CyVerse <a class="reference external" href="https://atmo.cyverse.org/application/images">Atmosphere</a><a class="headerlink" href="#login-to-cyverse-atmosphere" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="launch-a-medium-m1-instance-with-the-dcg-unr-rnaseq-v3-0-base-image">
-<h2>26.2. Launch a medium ‘m1’ instance with the ‘DCG-UNR-RNAseq’ v3.0 base image<a class="headerlink" href="#launch-a-medium-m1-instance-with-the-dcg-unr-rnaseq-v3-0-base-image" title="Permalink to this headline">¶</a></h2>
+<h2>26.3. Launch a medium ‘m1’ instance with the ‘DCG-UNR-RNAseq’ v3.0 base image<a class="headerlink" href="#launch-a-medium-m1-instance-with-the-dcg-unr-rnaseq-v3-0-base-image" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="activate-conda">
-<h2>26.3. Activate Conda<a class="headerlink" href="#activate-conda" title="Permalink to this headline">¶</a></h2>
+<h2>26.4. Activate Conda<a class="headerlink" href="#activate-conda" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo export PATH=$PATH:/opt/miniconda3/bin &gt;&gt; ~/.bashrc
 </pre></div>
 </div>
@@ -149,7 +156,7 @@
 </div>
 </div>
 <div class="section" id="test-singularity">
-<h2>26.4. Test singularity<a class="headerlink" href="#test-singularity" title="Permalink to this headline">¶</a></h2>
+<h2>26.5. Test singularity<a class="headerlink" href="#test-singularity" title="Permalink to this headline">¶</a></h2>
 <p>Singularity is pre-installed in this image. Test installation by</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity --version
 </pre></div>
@@ -158,7 +165,7 @@
 <div>2.6.1-HEAD.9103f015</div></blockquote>
 </div>
 <div class="section" id="download-data">
-<h2>26.5. Download data<a class="headerlink" href="#download-data" title="Permalink to this headline">¶</a></h2>
+<h2>26.6. Download data<a class="headerlink" href="#download-data" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir data
 <span class="nb">cd</span> data/
 </pre></div>
@@ -172,7 +179,7 @@ rm data.zip
 </div>
 </div>
 <div class="section" id="run-snakemake">
-<h2>26.6. Run snakemake<a class="headerlink" href="#run-snakemake" title="Permalink to this headline">¶</a></h2>
+<h2>26.7. Run snakemake<a class="headerlink" href="#run-snakemake" title="Permalink to this headline">¶</a></h2>
 <p>Create Snakefile</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano Snakefile
 </pre></div>
@@ -236,14 +243,14 @@ rm data.zip
 </div>
 </div>
 <div class="section" id="execute-snakemake-with">
-<h2>26.7. Execute Snakemake with<a class="headerlink" href="#execute-snakemake-with" title="Permalink to this headline">¶</a></h2>
+<h2>26.8. Execute Snakemake with<a class="headerlink" href="#execute-snakemake-with" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">snakemake</span> <span class="o">--</span><span class="n">use</span><span class="o">-</span><span class="n">singularity</span>
 </pre></div>
 </div>
 <p>Snakemake will pull the containers and execute each rule individually in the containers specified</p>
 </div>
 <div class="section" id="generate-report">
-<h2>26.8. Generate Report<a class="headerlink" href="#generate-report" title="Permalink to this headline">¶</a></h2>
+<h2>26.9. Generate Report<a class="headerlink" href="#generate-report" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake --report report.html
 </pre></div>
 </div>

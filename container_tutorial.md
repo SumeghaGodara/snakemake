@@ -1,6 +1,13 @@
 Running Jobs in containers
 ===
 
+### What are containers
+
+Containers are running instances of Singularity/Docker images — containers run the actual applications. A container includes an application and all of its dependencies. It shares the kernel with other containers, and runs as an isolated process in user space on the host OS.
+
+And
+
+Snakemake with Singularity (installed separately) 
 **Snakemake can automatically deploy required software dependencies of a workflow using Conda or Singularity.**
 
 We will be executing the same workflow **(fastqc--->multiqc--->trimmomatic)** as in [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html) but, with each tool being executed in singularity containers based on either Docker or Singularity builds
