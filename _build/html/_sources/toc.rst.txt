@@ -8,6 +8,8 @@
 
    basic_tutorial.md
 
+   Atmosphere_Cloud.md
+
    container_tutorial.md
 
    awesome.md

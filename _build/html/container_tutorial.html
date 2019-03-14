@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="_static/css/bootstrap-theme.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>21. Running Jobs in containers &#8212; snakemake2019 0.0.1 documentation</title>
+    <title>22. Running Jobs in containers &#8212; snakemake2019 0.0.1 documentation</title>
     <link rel="stylesheet" href="_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="22. Awesome" href="awesome.html" />
-    <link rel="prev" title="11. Tutorial" href="basic_tutorial.html" />
+    <link rel="next" title="24. Awesome" href="awesome.html" />
+    <link rel="prev" title="16. Logging onto Atmosphere Cloud" href="Atmosphere_Cloud.html" />
   
    
 
@@ -39,10 +39,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="awesome.html" title="22. Awesome"
+          <a href="awesome.html" title="24. Awesome"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="basic_tutorial.html" title="11. Tutorial"
+          <a href="Atmosphere_Cloud.html" title="16. Logging onto Atmosphere Cloud"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="toc.html">snakemake2019 0.0.1 documentation</a> &#187;</li> 
       </ul>
@@ -54,12 +54,24 @@
       </div>
   <div id="left-column">
     <div class="sphinxsidebar">
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Contents</h2>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">22. Running Jobs in containers</a></li>
+<li><a class="reference internal" href="#id1">23. Running jobs in containers</a></li>
+</ul>
+
+    </div>
+  </div>
+</div>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="basic_tutorial.html"
-                        title="previous chapter">11. Tutorial</a></p>
+  <p class="topless"><a href="Atmosphere_Cloud.html"
+                        title="previous chapter">16. Logging onto Atmosphere Cloud</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="awesome.html"
-                        title="next chapter">22. Awesome</a></p>
+                        title="next chapter">24. Awesome</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -89,15 +101,90 @@
             <ol class="breadcrumb">
               <li><a href="toc.html">Docs</a></li>
               
-              <li>21. Running Jobs in containers</li>
+              <li>22. Running Jobs in containers</li>
             </ol>
           </div>
           
           <div class="document clearer body">
             
   <div class="section" id="running-jobs-in-containers">
-<h1>21. Running Jobs in containers<a class="headerlink" href="#running-jobs-in-containers" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://unr-omics.readthedocs.io/en/latest/Loggin_on_Atmosphere_Cloud.html">Login to CyVerse Atmosphere</a></p>
+<h1>22. Running Jobs in containers<a class="headerlink" href="#running-jobs-in-containers" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="id1">
+<h1>23. Running jobs in containers<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html"><strong>CyVerse Atmosphere</strong></a></p>
+<p>As an alternative to using Conda (see above), it is possible to define, for each rule, a docker or singularity container to use, e.g.,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fastqc_output</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;data/0Hour_001_1_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_001_1_fastqc.html&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;data/0Hour_001_2_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_001_2_fastqc.html&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;data/0Hour_002_1_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_002_1_fastqc.html&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;data/0Hour_002_2_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_002_2_fastqc.html&quot;</span><span class="p">]</span>
+
+<span class="n">rule</span> <span class="nb">all</span><span class="p">:</span>
+  <span class="nb">input</span><span class="p">:</span>
+    <span class="s2">&quot;multiqc_report.html&quot;</span>
+        
+<span class="n">rule</span> <span class="n">fastqc</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="s2">&quot;</span><span class="si">{filename}</span><span class="s2">.fq.gz&quot;</span>
+    <span class="n">output</span><span class="p">:</span>
+        <span class="s2">&quot;</span><span class="si">{filename}</span><span class="s2">_fastqc.html&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;</span><span class="si">{filename}</span><span class="s2">_fastqc.zip&quot;</span>
+    <span class="n">singularity</span><span class="p">:</span>
+        <span class="s2">&quot;docker://sateeshperi/fastqc_bioc&quot;</span>    
+    <span class="n">shell</span><span class="p">:</span>
+        <span class="s2">&quot;fastqc </span><span class="si">{input}</span><span class="s2">&quot;</span>
+
+<span class="n">rule</span> <span class="n">run_multiqc</span><span class="p">:</span>
+  <span class="nb">input</span><span class="p">:</span>
+    <span class="n">fastqc_output</span>
+  <span class="n">output</span><span class="p">:</span>
+    <span class="s2">&quot;multiqc_report.html&quot;</span><span class="p">,</span>
+    <span class="n">directory</span><span class="p">(</span><span class="s2">&quot;multiqc_data&quot;</span><span class="p">)</span>
+  <span class="n">singularity</span><span class="p">:</span>
+    <span class="s2">&quot;docker://sateeshperi/multiqc_bioc&quot;</span>
+  <span class="n">shell</span><span class="p">:</span>
+    <span class="s2">&quot;multiqc data/&quot;</span>
+</pre></div>
+</div>
+<p>When executing Snakemake with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">snakemake</span> <span class="o">--</span><span class="n">use</span><span class="o">-</span><span class="n">singularity</span>
+</pre></div>
+</div>
+<p>it will execute the job within a singularity container that is spawned from the given image. Allowed image urls entail everything supported by singularity (e.g., shub:// and docker://).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span> <span class="n">Software</span><span class="p">:</span>
+		    <span class="o">-</span> <span class="n">Miniconda</span> <span class="mf">4.6</span><span class="o">.</span><span class="mi">8</span>
+		    <span class="o">-</span> <span class="n">Rstudio</span> <span class="mf">1.1</span><span class="o">.</span><span class="mi">453</span>
+		    <span class="o">-</span> <span class="n">Singularity</span> <span class="mf">2.6</span><span class="o">.</span><span class="mi">1</span>
+		    <span class="o">-</span> <span class="n">Snakemake</span> <span class="mf">5.4</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">Conda</span> <span class="n">tools</span><span class="p">:</span>
+		    <span class="o">-</span> <span class="n">fastqc</span> <span class="mf">0.11</span><span class="o">.</span><span class="mi">8</span>
+		    <span class="o">-</span> <span class="n">multiqc</span> <span class="mf">1.6</span>
+		    <span class="o">-</span> <span class="n">trimmomatic</span> <span class="mf">0.38</span>
+		    <span class="o">-</span> <span class="n">salmon</span> <span class="mf">0.11</span><span class="o">.</span><span class="mi">3</span>
+		    <span class="o">-</span> <span class="n">trinity</span> <span class="mf">2.8</span><span class="o">.</span><span class="mi">4</span>
+<span class="n">R_Packages</span><span class="p">:</span>
+	        <span class="o">-</span> <span class="s2">&quot;BiocGenerics&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;S4Vectors&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;knitr&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;readr&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;GenomicFeatures&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;rjson&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;tximport&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;DESeq2&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;magrittr&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;ggplot2&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;org.Hs.eg.db&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;dplyr&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;GO.db&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;formatR&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;caTools&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;rprojroot&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;rmarkdown&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;AnnotationDbi&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;clusterProfiler&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;org.Mm.eg.db&quot;</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -106,11 +193,11 @@
   <div class="footer-relations">
     
       <div class="pull-left">
-        <a class="btn btn-default" href="basic_tutorial.html" title="previous chapter (use the left arrow)">11. Tutorial</a>
+        <a class="btn btn-default" href="Atmosphere_Cloud.html" title="previous chapter (use the left arrow)">16. Logging onto Atmosphere Cloud</a>
       </div>
     
       <div class="pull-right">
-        <a class="btn btn-default" href="awesome.html" title="next chapter (use the right arrow)">22. Awesome</a>
+        <a class="btn btn-default" href="awesome.html" title="next chapter (use the right arrow)">24. Awesome</a>
       </div>
     </div>
     <div class="clearer"></div>
@@ -125,10 +212,10 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="awesome.html" title="22. Awesome"
+          <a href="awesome.html" title="24. Awesome"
              >next</a> |</li>
         <li class="right" >
-          <a href="basic_tutorial.html" title="11. Tutorial"
+          <a href="Atmosphere_Cloud.html" title="16. Logging onto Atmosphere Cloud"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="toc.html">snakemake2019 0.0.1 documentation</a> &#187;</li> 
       </ul>

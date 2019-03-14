@@ -1,7 +1,7 @@
-Tutorial
+Basic Tutorial
 ===
 
-# Running snakemake!
+# Running snakemake in binder
 
 ### Getting started - your first Snakefile
 
@@ -310,13 +310,6 @@ rule fastqc_a_file:
 Note you can just run snakemake whenever you want. It won't do anything unless something's changed.
 
 ```
-snakemake
-```
-
-**It's actually kind of soothing...**
-```
-snakemake
-snakemake
 snakemake
 ```
 
@@ -672,50 +665,6 @@ snakemake --use-conda
 
 **This aids in reproducibility, in addition to the practical advantages of isolating software installs from each other.**
 
-# Running jobs in containers
-
-**Note: Singularity installation needs 'sudo' rights and instructions can be found [here](https://www.sylabs.io/guides/3.0/user-guide/installation.html#installation)**
-
-As an alternative to using Conda (see above), it is possible to define, for each rule, a docker or singularity container to use, e.g.,
-
-```
-fastqc_output = ["data/0Hour_001_1_fastqc.html", "data/6Hour_001_1_fastqc.html",
-  "data/0Hour_001_2_fastqc.html", "data/6Hour_001_2_fastqc.html",
-  "data/0Hour_002_1_fastqc.html", "data/6Hour_002_1_fastqc.html",
-  "data/0Hour_002_2_fastqc.html", "data/6Hour_002_2_fastqc.html"]
-
-rule all:
-  input:
-    "multiqc_report.html"
-        
-rule fastqc:
-    input:
-        "{filename}.fq.gz"
-    output:
-        "{filename}_fastqc.html",
-        "{filename}_fastqc.zip"
-    singularity:
-        "docker://sateeshperi/fastqc_bioc"    
-    shell:
-        "fastqc {input}"
-
-rule run_multiqc:
-  input:
-    fastqc_output
-  output:
-    "multiqc_report.html",
-    directory("multiqc_data")
-  singularity:
-    "docker://sateeshperi/multiqc_bioc"
-  shell:
-    "multiqc data/"
-```
-When executing Snakemake with
-```
-snakemake --use-singularity
-```
-it will execute the job within a singularity container that is spawned from the given image. Allowed image urls entail everything supported by singularity (e.g., shub:// and docker://). 
-
 
 ### Outputting the entire workflow diagram
 
@@ -735,8 +684,6 @@ To create the report simply run
 ```
 snakemake --report report.html
 ```
-
-
 
 ### Adding in some Python...
 
