@@ -27,7 +27,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="26. Running Jobs in containers" href="container_tutorial.html" />
-    <link rel="prev" title="11. Basic Tutorial" href="basic_tutorial.html" />
+    <link rel="prev" title="12. Basic Tutorial" href="basic_tutorial.html" />
   
    
 
@@ -42,7 +42,7 @@
           <a href="container_tutorial.html" title="26. Running Jobs in containers"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="basic_tutorial.html" title="11. Basic Tutorial"
+          <a href="basic_tutorial.html" title="12. Basic Tutorial"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="toc.html">snakemake2019 0.0.1 documentation</a> &#187;</li> 
       </ul>
@@ -76,8 +76,9 @@
 <li><a class="reference internal" href="#additional-features">25. Additional Features</a><ul>
 <li><a class="reference internal" href="#web-shell">25.1. Web Shell</a></li>
 <li><a class="reference internal" href="#web-desktop">25.2. Web Desktop</a></li>
-<li><a class="reference internal" href="#custom-images">25.3. Custom Images</a></li>
-<li><a class="reference internal" href="#deposit-rsa-key">25.4. Deposit rsa-key</a></li>
+<li><a class="reference internal" href="#transferring-data-to-and-from-an-instance">25.3. Transferring Data to and from an Instance</a></li>
+<li><a class="reference internal" href="#custom-images">25.4. Custom Images</a></li>
+<li><a class="reference internal" href="#deposit-rsa-key">25.5. Deposit rsa-key</a></li>
 </ul>
 </li>
 </ul>
@@ -87,7 +88,7 @@
 </div>
   <h4>Previous topic</h4>
   <p class="topless"><a href="basic_tutorial.html"
-                        title="previous chapter">11. Basic Tutorial</a></p>
+                        title="previous chapter">12. Basic Tutorial</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="container_tutorial.html"
                         title="next chapter">26. Running Jobs in containers</a></p>
@@ -139,9 +140,11 @@
 <li>Atmosphere, CyVerse’s cloud-computing platform allows you to launch your own isolated virtual machine (VM) image and software, using compute resources such as CyVerse-provided software suites, and pre-configured, frequently used analysis routines, relevant algorithms, and datasets.</li>
 </ul>
 <blockquote>
-<div><strong>Before you can begin using Atmosphere, you must have a CyVerse account and be granted access to Atmosphere</strong></div></blockquote>
-<blockquote>
-<div><strong>Request access to Atmosphere <a class="reference external" href="https://user.cyverse.org/services/available">here</a></strong></div></blockquote>
+<div>To request access to Atmosphere, login to the <code class="docutils literal notranslate"><span class="pre">CyVerse</span> <span class="pre">User</span> <span class="pre">Portal</span></code>(https://user.cyverse.org/). In the <code class="docutils literal notranslate"><span class="pre">Services</span> <span class="pre">Menu</span> <span class="pre">&lt;https://user.cyverse.org/services/mine&gt;</span></code> under ‘MY
+SERVICES’ you should see Atmosphere listed as an option you can launch. If
+not, look uner the <code class="docutils literal notranslate"><span class="pre">Available</span> <span class="pre">&lt;https://user.cyverse.org/services/available&gt;</span></code>_
+menu, and click the ‘REQUEST ACCESS’ link. You will receive an email
+requesting additional information.</div></blockquote>
 <ul class="simple">
 <li>This is the first and last place in these lessons where it will matter if you are using PC, Mac, or Linux. After we connect to our virtual machines built using the same image; we will all be on the same operating system/computing environment.</li>
 <li>Cyverse documentation on how to use Atmosphere resources can be found <a class="reference external" href="https://learning.cyverse.org/projects/atmosphere-guide/en/latest/index.html">here</a></li>
@@ -225,6 +228,10 @@
 <p><img alt="_images/ssh1.png" src="_images/ssh1.png" /></p>
 <ul class="simple">
 <li>Enter ‘yes’ and then you will be asked for your CyVerse password.</li>
+</ul>
+<blockquote>
+<div>Your cursor will not move or indicate you are typing as you enter your password. If you make a mistake, hit enter and you will be prompted again.</div></blockquote>
+<ul class="simple">
 <li>Successful login should look something like below</li>
 </ul>
 <p><img alt="_images/ssh2.png" src="_images/ssh2.png" /></p>
@@ -273,11 +280,64 @@
 </ul>
 <p><img alt="_images/additional2.png" src="_images/additional2.png" /></p>
 </div>
+<div class="section" id="transferring-data-to-and-from-an-instance">
+<h2>25.3. Transferring Data to and from an Instance<a class="headerlink" href="#transferring-data-to-and-from-an-instance" title="Permalink to this headline">¶</a></h2>
+<p>An Atmosphere instance only contains data that were included in the original image that was used to make that instance. You can transfer data to/from the CyVerse Data Store, an Atmosphere Volume, a sever, or your local machine. In this guide, we will only cover data transfer using iCommands. iCommands is installed on every Atmosphere instance.</p>
+<blockquote>
+<div><strong>Related Links</strong></div></blockquote>
+<ul class="simple">
+<li><a class="reference external" href="https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html"><strong>iCommands Guide:</strong></a></li>
+<li><a class="reference external" href="https://wiki.cyverse.org/wiki/display/DS/Setting+Up+iCommands"><strong>iCommands Download:</strong></a></li>
+</ul>
+<p><strong>Transferring Data to/from an Instance using iCommands</strong></p>
+<p>You can execute to the instance’s icommand if you are connected via SSH or if you are connected to the desktop via VNC, open the instance’s terminal application.</p>
+<ol>
+<li><p class="first">At the instance’s terminal, start the iCommands configuration using the
+‘iinit’ command and enter configure.</p>
+<p>.. important::
+This configuration is a one-time step on your first use with this
+instance.</p>
+<p>.. code:: bash</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> $ iinit
+
+ # As prompted, enter the following values:
+ # Host: data.cyverse.org
+ # Port: 1247
+ # User: your_cyverse_username
+ # Zone: iplant
+ # Password: your_cyverse_password
+</pre></div>
+</div>
+<p>If you make a mistake in your configuration you can edit <code class="docutils literal notranslate"><span class="pre">~/.irods/irods_environment.json</span></code>
+on your instance.</p>
+</li>
+<li><p class="first">Test your configuration by listing your Data Store contents with the “ils”
+command.</p>
+<p>.. code:: bash</p>
+<p>$ ils</p>
+<p>.. Tip::
+If you made a mistake during the configuration, you can edit your
+icommands configuration file.</p>
+</li>
+<li><p class="first">To download a file from the Data Store to your instance, use “iget”</p>
+<p>.. code:: bash</p>
+<p>$iget data_store_file</p>
+</li>
+<li><p class="first">To upload file from your instance to the Data Store use “iput”</p>
+<p>.. code:: bash</p>
+<p>$iget file_on_instance location_on_data_store</p>
+</li>
+</ol>
+<p>.. tip::
+iCommands has a variety of options, to see progress of transfers, operate
+recursively, and more. See additional <a class="reference external" href="https://wiki.cyverse.org/wiki/display/DS/Using+iCommands">iCommands documentation</a> on the CyVerse wiki.</p>
+<p>===</p>
+</div>
 <div class="section" id="custom-images">
-<h2>25.3. Custom Images<a class="headerlink" href="#custom-images" title="Permalink to this headline">¶</a></h2>
+<h2>25.4. Custom Images<a class="headerlink" href="#custom-images" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="deposit-rsa-key">
-<h2>25.4. Deposit rsa-key<a class="headerlink" href="#deposit-rsa-key" title="Permalink to this headline">¶</a></h2>
+<h2>25.5. Deposit rsa-key<a class="headerlink" href="#deposit-rsa-key" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Concerning Keys:
 Cryptographic keys are a convenient and secure way to authenticate without having to use passwords. They consist of a pair of files called the public and private keys: the public part can be shared with whoever you’d like to authenticate with (in our case, CyVerse Atmosphere!), and the private part is kept “secret” on your machine. Things that are encrypted with the public key can be be decrypted with the private key, but it is computationally intractable (ie, it would take on the order of thousands of years) to determine a private key from a public key. You can read more about it <a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2">here</a></li>
@@ -338,7 +398,7 @@ Cryptographic keys are a convenient and secure way to authenticate without havin
   <div class="footer-relations">
     
       <div class="pull-left">
-        <a class="btn btn-default" href="basic_tutorial.html" title="previous chapter (use the left arrow)">11. Basic Tutorial</a>
+        <a class="btn btn-default" href="basic_tutorial.html" title="previous chapter (use the left arrow)">12. Basic Tutorial</a>
       </div>
     
       <div class="pull-right">
@@ -360,7 +420,7 @@ Cryptographic keys are a convenient and secure way to authenticate without havin
           <a href="container_tutorial.html" title="26. Running Jobs in containers"
              >next</a> |</li>
         <li class="right" >
-          <a href="basic_tutorial.html" title="11. Basic Tutorial"
+          <a href="basic_tutorial.html" title="12. Basic Tutorial"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="toc.html">snakemake2019 0.0.1 documentation</a> &#187;</li> 
       </ul>

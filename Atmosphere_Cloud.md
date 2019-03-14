@@ -9,9 +9,11 @@ Logging onto Atmosphere Cloud
 
 - Atmosphere, CyVerse's cloud-computing platform allows you to launch your own isolated virtual machine (VM) image and software, using compute resources such as CyVerse-provided software suites, and pre-configured, frequently used analysis routines, relevant algorithms, and datasets. 
 
-> **Before you can begin using Atmosphere, you must have a CyVerse account and be granted access to Atmosphere**
-
-> **Request access to Atmosphere [here](https://user.cyverse.org/services/available)**
+> To request access to Atmosphere, login to the `CyVerse User Portal`(https://user.cyverse.org/). In the `Services Menu <https://user.cyverse.org/services/mine>` under 'MY
+		SERVICES' you should see Atmosphere listed as an option you can launch. If
+		not, look uner the `Available <https://user.cyverse.org/services/available>`_
+		menu, and click the 'REQUEST ACCESS' link. You will receive an email
+		requesting additional information.
 
 - This is the first and last place in these lessons where it will matter if you are using PC, Mac, or Linux. After we connect to our virtual machines built using the same image; we will all be on the same operating system/computing environment.
 
@@ -99,6 +101,9 @@ ssh your_cyverseusername@ip_address
 ![](/img/ssh1.png)
 
 - Enter 'yes' and then you will be asked for your CyVerse password.
+
+> Your cursor will not move or indicate you are typing as you enter your password. If you make a mistake, hit enter and you will be prompted again.
+
 - Successful login should look something like below 
 
 ![](/img/ssh2.png)
@@ -148,6 +153,72 @@ ssh your_cyverseusername@ip_address
 
 ![](/img/additional2.png)
 
+#### Transferring Data to and from an Instance
+
+An Atmosphere instance only contains data that were included in the original image that was used to make that instance. You can transfer data to/from the CyVerse Data Store, an Atmosphere Volume, a sever, or your local machine. In this guide, we will only cover data transfer using iCommands. iCommands is installed on every Atmosphere instance.
+
+
+> **Related Links**
+
+- [**iCommands Guide:**](https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html)
+- [**iCommands Download:**](https://wiki.cyverse.org/wiki/display/DS/Setting+Up+iCommands)
+
+
+**Transferring Data to/from an Instance using iCommands**
+
+You can execute to the instance's icommand if you are connected via SSH or if you are connected to the desktop via VNC, open the instance's terminal application.
+
+
+  1. At the instance's terminal, start the iCommands configuration using the
+     'iinit' command and enter configure.
+
+      .. important::
+          This configuration is a one-time step on your first use with this
+          instance.
+
+        .. code:: bash
+
+          $ iinit
+
+          # As prompted, enter the following values:
+          # Host: data.cyverse.org
+          # Port: 1247
+          # User: your_cyverse_username
+          # Zone: iplant
+          # Password: your_cyverse_password
+
+        If you make a mistake in your configuration you can edit `~/.irods/irods_environment.json`
+        on your instance.
+
+  2. Test your configuration by listing your Data Store contents with the "ils"
+     command.
+
+      .. code:: bash
+
+        $ ils
+
+      .. Tip::
+          If you made a mistake during the configuration, you can edit your
+          icommands configuration file.
+
+  3. To download a file from the Data Store to your instance, use "iget"
+
+      .. code:: bash
+
+        $iget data_store_file
+
+  4. To upload file from your instance to the Data Store use "iput"
+
+      .. code:: bash
+
+        $iget file_on_instance location_on_data_store
+
+
+.. tip::
+    iCommands has a variety of options, to see progress of transfers, operate
+    recursively, and more. See additional [iCommands documentation](https://wiki.cyverse.org/wiki/display/DS/Using+iCommands) on the CyVerse wiki.
+
+===
 
 #### Custom Images
 

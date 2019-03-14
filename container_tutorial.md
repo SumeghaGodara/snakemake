@@ -1,17 +1,50 @@
 Running Jobs in containers
 ===
 
-# Running jobs in containers
+# Running jobs in containers [^1]
 
 [**CyVerse Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html)
 
-As an alternative to using Conda (see above), it is possible to define, for each rule, a docker or singularity container to use, e.g.,
+
+#### Activate Conda
 
 ```
+echo export PATH=$PATH:/opt/miniconda3/bin >> ~/.bashrc
+```
+
+Then, run the following command (or start a new terminal session) in order to activate the conda environment:
+
+```
+source ~/.bashrc
+```
+
+Add channels
+
+```
+conda config --add channels defaults
+conda config --add channels conda-forge
+conda config --add channels bioconda
+```
+
+Try running a program pre-installed on this instance:
+
+```bash
+fastqc
+```
+
+
+
+As an alternative to using Conda (see above), it is possible to define, for each rule, a docker or singularity container to use, e.g.,
+
+```python
 fastqc_output = ["data/0Hour_001_1_fastqc.html", "data/6Hour_001_1_fastqc.html",
   "data/0Hour_001_2_fastqc.html", "data/6Hour_001_2_fastqc.html",
   "data/0Hour_002_1_fastqc.html", "data/6Hour_002_1_fastqc.html",
-  "data/0Hour_002_2_fastqc.html", "data/6Hour_002_2_fastqc.html"]
+  "data/0Hour_002_2_fastqc.html", "data/6Hour_002_2_fastqc.html",
+  "data/0Hour_001_1.pe.qc_fastqc.html", "data/0Hour_002_1.pe.qc_fastqc.html",
+  "data/6Hour_001_1.pe.qc_fastqc.html", "data/6Hour_002_1.pe.qc_fastqc.html",
+  "data/0Hour_001_2.pe.qc_fastqc.html", "data/0Hour_002_2.pe.qc_fastqc.html",
+  "data/0Hour_001_2.pe.qc_fastqc.html", "data/0Hour_002_2.pe.qc_fastqc.html"]
 
 rule all:
   input:
@@ -38,6 +71,26 @@ rule run_multiqc:
     "docker://sateeshperi/multiqc_bioc"
   shell:
     "multiqc data/"
+
+rule trim_reads:
+  input:
+    "{filename}_1.fq.gz",
+    "{filename}_2.fq.gz"
+  output:
+    "{filename}_1.pe.qc.fq.gz",
+    "{filename}_1.se.qc.fq.gz",
+    "{filename}_2.pe.qc.fq.gz",
+    "{filename}_2.se.qc.fq.gz"
+  singularity:
+    "docker://fjukstad/trimmomatic"
+  shell:
+    "java -jar /tools/trimmomatic/trimmomatic-0.36.jar PE {input} {output} LEADING:2 TRAILING:2 \
+     SLIDINGWINDOW:4:15 \
+     MINLEN:25"    
+
+rule clean:
+  shell:
+    "rm -f {fastqc_output} multiqc_report.html"     
 ```
 When executing Snakemake with
 ```
@@ -79,3 +132,9 @@ R_Packages:
 	        - "clusterProfiler"
 	        - "org.Mm.eg.db"
 ```
+
+
+
+
+
+[^1]: A container image is an encapsulated, portable environment that is created to distribute a scientific analysis or a general function. Containers help with reproducibility of such content as they nicely package software and data dependencies, along with libraries that are needed.

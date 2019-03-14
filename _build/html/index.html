@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7. Introduction" href="introduction.html" />
+    <link rel="next" title="8. Introduction" href="introduction.html" />
     <link rel="prev" title="&lt;no title&gt;" href="toc.html" />
   
    
@@ -39,7 +39,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="introduction.html" title="7. Introduction"
+          <a href="introduction.html" title="8. Introduction"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="toc.html" title="&lt;no title&gt;"
@@ -66,16 +66,15 @@
 </li>
 <li><a class="reference internal" href="#setup">2. Setup</a><ul>
 <li><a class="reference internal" href="#working-on-binder">2.1. Working on Binder</a></li>
-<li><a class="reference internal" href="#working-on-cloud">2.2. Working on Cloud</a><ul>
-<li><a class="reference internal" href="#software-we-re-going-to-use">2.2.1. Software we’re going to use</a></li>
+<li><a class="reference internal" href="#working-on-cloud">2.2. Working on Cloud</a></li>
+<li><a class="reference internal" href="#custom-install">2.3. Custom Install</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a class="reference internal" href="#introduction">3. <strong>Introduction</strong></a></li>
-<li><a class="reference internal" href="#basic-tutorial">4. <strong>Basic Tutorial</strong></a></li>
-<li><a class="reference internal" href="#container-tutorial">5. <strong>Container Tutorial</strong></a></li>
-<li><a class="reference internal" href="#awesome">6. <strong>Awesome</strong></a></li>
+<li><a class="reference internal" href="#introduction">3. Introduction</a></li>
+<li><a class="reference internal" href="#basic-tutorial">4. Basic Tutorial</a></li>
+<li><a class="reference internal" href="#atmosphere-cloud">5. Atmosphere Cloud</a></li>
+<li><a class="reference internal" href="#container-tutorial">6. Container Tutorial</a></li>
+<li><a class="reference internal" href="#awesome">7. Awesome</a></li>
 </ul>
 
     </div>
@@ -86,7 +85,7 @@
                         title="previous chapter">&lt;no title&gt;</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="introduction.html"
-                        title="next chapter">7. Introduction</a></p>
+                        title="next chapter">8. Introduction</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -125,12 +124,11 @@
   <div class="section" id="intro-to-workflows-for-efficient-automated-data-analysis-using-snakemake">
 <h1>1. Intro to Workflows for Efficient Automated Data Analysis, using Snakemake<a class="headerlink" href="#intro-to-workflows-for-efficient-automated-data-analysis-using-snakemake" title="Permalink to this headline">¶</a></h1>
 <p><img alt="_images/smake_logo.png" src="_images/smake_logo.png" />logo</p>
-<p><strong>Snakemake is designed specifically for computationally intensive and/or complex data analysis pipelines. The name is a reference to the programming language Python, which forms the basis for the Snakemake syntax.</strong></p>
+<p>The Snakemake workflow management system is a tool to create reproducible and scalable data analyses. Workflows are described via a human readable, Python based language. They can be seamlessly scaled to server, cluster, grid and cloud environments, without the need to modify the workflow definition. Finally, Snakemake workflows can entail a description of required software, which will be automatically deployed to any execution environment.</p>
 <blockquote>
 <div>You don’t need to be an expert at Python to use Snakemake, but it can sometimes be very useful.</div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">No</span> <span class="n">license</span><span class="p">;</span> <span class="n">the</span> <span class="n">below</span> <span class="n">content</span> <span class="ow">is</span> <span class="n">under</span> <span class="n">CC0</span><span class="o">.</span>
-</pre></div>
-</div>
+<blockquote>
+<div>No license; the below content is availalbe under CC0 general license.</div></blockquote>
 <div class="section" id="author">
 <h2>1.1. Author:<a class="headerlink" href="#author" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -140,8 +138,8 @@
 <h2>1.2. Credits<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h2>
 <p>The content for this website has been compiled from tutorials put together by:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://twitter.com/ctitusbrown">Titus Brown</a> - <a class="reference external" href="https://github.com/ctb/2019-snakemake-ucdavis">Link to Tutorial</a></li>
-<li><a class="reference external" href="https://twitter.com/johanneskoester">Johannes Koster</a> - <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html">Link to Tutorial</a></li>
+<li><a class="reference external" href="https://twitter.com/ctitusbrown">Titus Brown</a> - Link to <a class="reference external" href="https://github.com/ctb/2019-snakemake-ucdavis">Tutorial</a></li>
+<li><a class="reference external" href="https://twitter.com/johanneskoester">Johannes Koster</a> - Link to <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html">Tutorial</a></li>
 </ul>
 </div>
 </div>
@@ -151,22 +149,26 @@
 <h2>2.1. Working on Binder<a class="headerlink" href="#working-on-binder" title="Permalink to this headline">¶</a></h2>
 <p>We’re going to use <a class="reference external" href="https://mybinder.org/">mybinder.org</a> , a fantastic service that lets us run demonstrations and short workshops in the cloud!</p>
 <blockquote>
-<div><strong>Click on the button below to open a pre-configured Binder file that is rendered via a Rstudio interface.</strong></div></blockquote>
-<p>===&gt; <a class="reference external" href="https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/master?urlpath=rstudio"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" />Binder</a> &lt;===</p>
-<p><strong>We’re mostly going to work in the file editor and the terminal; to get started, open the terminal, and execute:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PS1</span><span class="o">=</span><span class="s1">&#39;$ &#39;</span>
-</pre></div>
-</div>
-<p>to get a shorter prompt.</p>
+<div><strong>Click on this <a class="reference external" href="https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/binder?urlpath=rstudio"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" />Binder</a> button to launch a pre-configured Binder file that is rendered via a Rstudio interface.</strong></div></blockquote>
+<ul class="simple">
+<li>The binder is built using this ‘conda’ <a class="reference external" href="https://github.com/sateeshperi/snakemake2019/blob/master/binder/environment.yml">environment.yml</a>.</li>
+</ul>
+<blockquote>
+<div>No support for ‘–use-singularity’</div></blockquote>
 </div>
 <div class="section" id="working-on-cloud">
 <h2>2.2. Working on Cloud<a class="headerlink" href="#working-on-cloud" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html"><strong>CyVerse Atmosphere</strong></a></p>
-<div class="section" id="software-we-re-going-to-use">
-<h3>2.2.1. Software we’re going to use<a class="headerlink" href="#software-we-re-going-to-use" title="Permalink to this headline">¶</a></h3>
-<p>We’re going to be using <a class="reference external" href="https://conda.io/en/latest/"><strong>conda</strong></a>, <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/"><strong>snakemake</strong></a>, packages from <a class="reference external" href="https://bioconda.github.io/"><strong>bioconda</strong></a> and <a class="reference external" href="https://www.sylabs.io/singularity/"><strong>singularity</strong></a>. If you wanted to run all of this on your own computer, you’ll need to follow the bioconda install instructions.</p>
+<p>To run snakemake jobs via Singularity/Docker containers in the cloud, we are going to use <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html"><strong>CyVerse Atmosphere</strong></a></p>
+<blockquote>
+<div>Support for ‘snakemake –use-singularity’</div></blockquote>
+<blockquote>
+<div>Support running Singularity (shub://) &amp; Docker (docker://) containers</div></blockquote>
+</div>
+<div class="section" id="custom-install">
+<h2>2.3. Custom Install<a class="headerlink" href="#custom-install" title="Permalink to this headline">¶</a></h2>
+<p>We’re going to be using <a class="reference external" href="https://conda.io/en/latest/"><strong>conda</strong></a>, <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/"><strong>snakemake</strong></a> and packages from <a class="reference external" href="https://bioconda.github.io/"><strong>bioconda</strong></a>. If you wanted to run all of this on your own computer, you’ll need to follow the bioconda install instructions.</p>
 <p>We’ll be implementing a short read quality check and trimming pipeline, using <a class="reference external" href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/"><strong>fastqc</strong></a>, <a class="reference external" href="http://www.usadellab.org/cms/?page=trimmomatic"><strong>trimmomatic</strong></a>, and <a class="reference external" href="https://multiqc.info/"><strong>multiqc</strong></a>.</p>
-<p><strong>Note: Singularity installation needs ‘sudo’ rights and instructions can be found <a class="reference external" href="https://www.sylabs.io/guides/3.0/user-guide/installation.html#installation">here</a></strong></p>
+<p>Singularity installation needs ‘sudo’ rights and instructions can be found <a class="reference external" href="https://www.sylabs.io/guides/3.0/user-guide/installation.html#installation">here</a></p>
 <p>You can see the full set of installed software requirements <a class="reference external" href="https://github.com/sateeshperi/snakemake2019/blob/master/binder/environment.yml">here</a>, in a conda environment.yml file.</p>
 <p>You could use this install file to run everything we’re doing today on your laptop, with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">--</span><span class="n">file</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span> <span class="o">-</span><span class="n">n</span> <span class="n">smake</span>
@@ -175,18 +177,20 @@
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="introduction">
-<h1>3. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/introduction.html"><strong>Introduction</strong></a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<h1>3. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/introduction.html">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 </div>
 <div class="section" id="basic-tutorial">
-<h1>4. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html"><strong>Basic Tutorial</strong></a><a class="headerlink" href="#basic-tutorial" title="Permalink to this headline">¶</a></h1>
+<h1>4. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html">Basic Tutorial</a><a class="headerlink" href="#basic-tutorial" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="atmosphere-cloud">
+<h1>5. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html">Atmosphere Cloud</a><a class="headerlink" href="#atmosphere-cloud" title="Permalink to this headline">¶</a></h1>
 </div>
 <div class="section" id="container-tutorial">
-<h1>5. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html"><strong>Container Tutorial</strong></a><a class="headerlink" href="#container-tutorial" title="Permalink to this headline">¶</a></h1>
+<h1>6. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html">Container Tutorial</a><a class="headerlink" href="#container-tutorial" title="Permalink to this headline">¶</a></h1>
 </div>
 <div class="section" id="awesome">
-<h1>6. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/awesome.html"><strong>Awesome</strong></a><a class="headerlink" href="#awesome" title="Permalink to this headline">¶</a></h1>
+<h1>7. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/awesome.html">Awesome</a><a class="headerlink" href="#awesome" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -199,7 +203,7 @@
       </div>
     
       <div class="pull-right">
-        <a class="btn btn-default" href="introduction.html" title="next chapter (use the right arrow)">7. Introduction</a>
+        <a class="btn btn-default" href="introduction.html" title="next chapter (use the right arrow)">8. Introduction</a>
       </div>
     </div>
     <div class="clearer"></div>
@@ -214,7 +218,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="introduction.html" title="7. Introduction"
+          <a href="introduction.html" title="8. Introduction"
              >next</a> |</li>
         <li class="right" >
           <a href="toc.html" title="&lt;no title&gt;"

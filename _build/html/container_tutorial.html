@@ -60,7 +60,10 @@
     <div class="sidebar-localtoc">
       <ul>
 <li><a class="reference internal" href="#">26. Running Jobs in containers</a></li>
-<li><a class="reference internal" href="#id1">27. Running jobs in containers</a></li>
+<li><a class="reference internal" href="#running-jobs-in-containers-1">27. Running jobs in containers [^1]</a><ul>
+<li><a class="reference internal" href="#activate-conda">27.1. Activate Conda</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -110,14 +113,37 @@
   <div class="section" id="running-jobs-in-containers">
 <h1>26. Running Jobs in containers<a class="headerlink" href="#running-jobs-in-containers" title="Permalink to this headline">¶</a></h1>
 </div>
-<div class="section" id="id1">
-<h1>27. Running jobs in containers<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="running-jobs-in-containers-1">
+<h1>27. Running jobs in containers [^1]<a class="headerlink" href="#running-jobs-in-containers-1" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html"><strong>CyVerse Atmosphere</strong></a></p>
+<div class="section" id="activate-conda">
+<h2>27.1. Activate Conda<a class="headerlink" href="#activate-conda" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo export PATH=$PATH:/opt/miniconda3/bin &gt;&gt; ~/.bashrc
+</pre></div>
+</div>
+<p>Then, run the following command (or start a new terminal session) in order to activate the conda environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/.</span><span class="n">bashrc</span>
+</pre></div>
+</div>
+<p>Add channels</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">defaults</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">bioconda</span>
+</pre></div>
+</div>
+<p>Try running a program pre-installed on this instance:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fastqc
+</pre></div>
+</div>
 <p>As an alternative to using Conda (see above), it is possible to define, for each rule, a docker or singularity container to use, e.g.,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fastqc_output</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;data/0Hour_001_1_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_001_1_fastqc.html&quot;</span><span class="p">,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fastqc_output</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;data/0Hour_001_1_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_001_1_fastqc.html&quot;</span><span class="p">,</span>
   <span class="s2">&quot;data/0Hour_001_2_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_001_2_fastqc.html&quot;</span><span class="p">,</span>
   <span class="s2">&quot;data/0Hour_002_1_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_002_1_fastqc.html&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;data/0Hour_002_2_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_002_2_fastqc.html&quot;</span><span class="p">]</span>
+  <span class="s2">&quot;data/0Hour_002_2_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_002_2_fastqc.html&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;data/0Hour_001_1.pe.qc_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/0Hour_002_1.pe.qc_fastqc.html&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;data/6Hour_001_1.pe.qc_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_002_1.pe.qc_fastqc.html&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;data/0Hour_001_2.pe.qc_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/0Hour_002_2.pe.qc_fastqc.html&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;data/0Hour_001_2.pe.qc_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/0Hour_002_2.pe.qc_fastqc.html&quot;</span><span class="p">]</span>
 
 <span class="n">rule</span> <span class="nb">all</span><span class="p">:</span>
   <span class="nb">input</span><span class="p">:</span>
@@ -125,14 +151,14 @@
         
 <span class="n">rule</span> <span class="n">fastqc</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="s2">&quot;</span><span class="si">{filename}</span><span class="s2">.fq.gz&quot;</span>
+        <span class="s2">&quot;{filename}.fq.gz&quot;</span>
     <span class="n">output</span><span class="p">:</span>
-        <span class="s2">&quot;</span><span class="si">{filename}</span><span class="s2">_fastqc.html&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;</span><span class="si">{filename}</span><span class="s2">_fastqc.zip&quot;</span>
+        <span class="s2">&quot;{filename}_fastqc.html&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;{filename}_fastqc.zip&quot;</span>
     <span class="n">singularity</span><span class="p">:</span>
         <span class="s2">&quot;docker://sateeshperi/fastqc_bioc&quot;</span>    
     <span class="n">shell</span><span class="p">:</span>
-        <span class="s2">&quot;fastqc </span><span class="si">{input}</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;fastqc {input}&quot;</span>
 
 <span class="n">rule</span> <span class="n">run_multiqc</span><span class="p">:</span>
   <span class="nb">input</span><span class="p">:</span>
@@ -144,6 +170,26 @@
     <span class="s2">&quot;docker://sateeshperi/multiqc_bioc&quot;</span>
   <span class="n">shell</span><span class="p">:</span>
     <span class="s2">&quot;multiqc data/&quot;</span>
+
+<span class="n">rule</span> <span class="n">trim_reads</span><span class="p">:</span>
+  <span class="nb">input</span><span class="p">:</span>
+    <span class="s2">&quot;{filename}_1.fq.gz&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;{filename}_2.fq.gz&quot;</span>
+  <span class="n">output</span><span class="p">:</span>
+    <span class="s2">&quot;{filename}_1.pe.qc.fq.gz&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;{filename}_1.se.qc.fq.gz&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;{filename}_2.pe.qc.fq.gz&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;{filename}_2.se.qc.fq.gz&quot;</span>
+  <span class="n">singularity</span><span class="p">:</span>
+    <span class="s2">&quot;docker://fjukstad/trimmomatic&quot;</span>
+  <span class="n">shell</span><span class="p">:</span>
+    <span class="s2">&quot;java -jar /tools/trimmomatic/trimmomatic-0.36.jar PE {input} {output} LEADING:2 TRAILING:2 </span><span class="se">\</span>
+<span class="s2">     SLIDINGWINDOW:4:15 </span><span class="se">\</span>
+<span class="s2">     MINLEN:25&quot;</span>    
+
+<span class="n">rule</span> <span class="n">clean</span><span class="p">:</span>
+  <span class="n">shell</span><span class="p">:</span>
+    <span class="s2">&quot;rm -f {fastqc_output} multiqc_report.html&quot;</span>     
 </pre></div>
 </div>
 <p>When executing Snakemake with</p>
@@ -184,6 +230,8 @@
 	        <span class="o">-</span> <span class="s2">&quot;clusterProfiler&quot;</span>
 	        <span class="o">-</span> <span class="s2">&quot;org.Mm.eg.db&quot;</span>
 </pre></div>
+</div>
+<p>[^1]: A container image is an encapsulated, portable environment that is created to distribute a scientific analysis or a general function. Containers help with reproducibility of such content as they nicely package software and data dependencies, along with libraries that are needed.</p>
 </div>
 </div>
 

@@ -1,7 +1,14 @@
 Basic Tutorial
 ===
 
-# Running snakemake in binder
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/binder?urlpath=rstudio)
+
+**We're mostly going to work in the file editor and the terminal; to get started, open the terminal, and execute:**
+
+```
+PS1='$ '
+```
+to get a shorter prompt.
 
 ### Getting started - your first Snakefile
 
