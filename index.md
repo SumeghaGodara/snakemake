@@ -18,7 +18,18 @@ The content for this website has been compiled from tutorials put together by:
 
 + [Johannes Koster](https://twitter.com/johanneskoester) - Link to [Tutorial](https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html)
 
++ [CyVerse](https://user.cyverse.org/)
+
 # Setup
+
+This tutorial uses
+	+ [**conda**](https://conda.io/en/latest/) for Environment Management
+		+ [**bioconda**](https://bioconda.github.io/) Channel for packages
+			+ [**fastqc**](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+			+ [**trimmomatic**](http://www.usadellab.org/cms/?page=trimmomatic)
+			+ [**multiqc**](https://multiqc.info/)
+	+ [**Snakemake**](https://snakemake.readthedocs.io/en/stable/) for Workflow Management
+    + [**Singularity**](https://www.sylabs.io/docs/) for Container Management
 
 ## Working on Binder
 
@@ -35,25 +46,32 @@ We're going to use [mybinder.org](https://mybinder.org/) , a fantastic service t
 To run snakemake jobs via Singularity/Docker containers in the cloud, we are going to use [**CyVerse Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html) 
 
 > Support for 'snakemake --use-singularity'
-
-> Support running Singularity (shub://) & Docker (docker://) containers
+> >Support running Singularity (shub://) & Docker (docker://) containers
 
 ## Custom Install
 
-We're going to be using [**conda**](https://conda.io/en/latest/), [**snakemake**](https://snakemake.readthedocs.io/en/stable/) and packages from [**bioconda**](https://bioconda.github.io/). If you wanted to run all of this on your own computer, you'll need to follow the bioconda install instructions.
+We recommend [**conda**](https://conda.io/en/latest/), an open source package management system and environment management system that runs on Windows, macOS and Linux. 
 
-We'll be implementing a short read quality check and trimming pipeline, using [**fastqc**](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), [**trimmomatic**](http://www.usadellab.org/cms/?page=trimmomatic), and [**multiqc**](https://multiqc.info/).
+Download conda [environment.yml](https://github.com/sateeshperi/snakemake2019/blob/master/binder/environment.yml) file, designed for this tutorial
 
-Singularity installation needs 'sudo' rights and instructions can be found [here](https://www.sylabs.io/guides/3.0/user-guide/installation.html#installation)
-
-You can see the full set of installed software requirements [here](https://github.com/sateeshperi/snakemake2019/blob/master/binder/environment.yml), in a conda environment.yml file.
-
-You could use this install file to run everything we're doing today on your laptop, with:
+Install tools in a new conda environment 'smake' using downloaded file
 
 ```
 conda env create --file environment.yml -n smake
+```
+To activate the environment for tutorial
+```
 conda activate smake
 ```
+TO deactivate environment after use
+```
+conda deactivate
+```
+
+Singularity installation needs 'sudo' rights and instructions can be found [here](https://www.sylabs.io/guides/3.0/user-guide/installation.html#installation)
+
+> Singularity modules in HPCs
+
 # [Introduction](https://snakemake2019.readthedocs.io/en/latest/introduction.html)
 
 # [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html)
