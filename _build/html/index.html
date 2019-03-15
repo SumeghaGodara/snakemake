@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="8. Introduction" href="introduction.html" />
+    <link rel="next" title="9. Introduction" href="introduction.html" />
     <link rel="prev" title="&lt;no title&gt;" href="toc.html" />
   
    
@@ -39,7 +39,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="introduction.html" title="8. Introduction"
+          <a href="introduction.html" title="9. Introduction"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="toc.html" title="&lt;no title&gt;"
@@ -69,7 +69,8 @@
 <li><a class="reference internal" href="#working-on-binder">4. Working on Binder</a></li>
 <li><a class="reference internal" href="#working-on-cloud">5. Working on Cloud</a></li>
 <li><a class="reference internal" href="#custom-install">6. Custom Install</a></li>
-<li><a class="reference internal" href="#awesome">7. Awesome</a></li>
+<li><a class="reference internal" href="#awesome">7. [Awesome]</a></li>
+<li><a class="reference internal" href="#coming-soon">8. Coming Soon</a></li>
 </ul>
 
     </div>
@@ -80,7 +81,7 @@
                         title="previous chapter">&lt;no title&gt;</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="introduction.html"
-                        title="next chapter">8. Introduction</a></p>
+                        title="next chapter">9. Introduction</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -148,8 +149,10 @@
 <div class="section" id="learning-objectives">
 <h1>2. Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span> <span class="n">Understand</span> <span class="n">snakemake</span> <span class="n">syntax</span>
+<span class="o">+</span> <span class="n">Understand</span> <span class="n">the</span> <span class="n">components</span> <span class="n">of</span> <span class="n">a</span> <span class="n">Snakefile</span><span class="p">:</span> <span class="n">rules</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span><span class="p">,</span> <span class="ow">and</span> <span class="n">actions</span>
 <span class="o">+</span> <span class="n">Understand</span> <span class="n">the</span> <span class="n">idea</span> <span class="n">of</span> <span class="n">containers</span>
-<span class="o">+</span>
+<span class="o">+</span> <span class="n">Understand</span> <span class="n">snakemake</span> <span class="n">wildcards</span> <span class="ow">and</span> <span class="n">pattern</span> <span class="n">rules</span>
+<span class="o">+</span> <span class="n">Understand</span> <span class="n">how</span> <span class="n">snakemake</span> <span class="n">manages</span> <span class="n">dependencies</span> <span class="ow">and</span> <span class="n">outputs</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -162,7 +165,10 @@
 </ul>
 </div>
 <div class="section" id="introduction">
-<h1>3. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/introduction.html">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<h1>3. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>(https://snakemake2019.readthedocs.io/en/latest/introduction.html)</li>
+</ul>
 </div>
 <div class="section" id="working-on-binder">
 <h1>4. Working on Binder<a class="headerlink" href="#working-on-binder" title="Permalink to this headline">¶</a></h1>
@@ -182,9 +188,9 @@
 <div class="section" id="working-on-cloud">
 <h1>5. Working on Cloud<a class="headerlink" href="#working-on-cloud" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div>Support for ‘–use-singularity’ (shub://) &amp; (docker://) containers</div></blockquote>
+<div>Note: Supports ‘–use-singularity’ Singularity / docker containers</div></blockquote>
 <ul class="simple">
-<li>To run snakemake jobs via <a class="reference external" href="#">Singularity</a> / <a class="reference external" href="#">Docker</a> containers in the cloud, we recommend <a class="reference external" href="https://www.cyverse.org/atmosphere"><strong>Atmosphere</strong></a>, CyVerse’s cloud-computing platform which provides easy-to-use web-access to cloud resources and is designed to accommodate computationally and data-intensive tasks.</li>
+<li>To run snakemake jobs via <a class="reference external" href="https://singularity-hub.org/">Singularity</a> / <a class="reference external" href="https://hub.docker.com/">Docker</a> containers in the cloud, we recommend <a class="reference external" href="https://www.cyverse.org/atmosphere"><strong>Atmosphere</strong></a>, CyVerse’s cloud-computing platform which provides easy-to-use web-access to cloud resources and is designed to accommodate computationally and data-intensive tasks.</li>
 </ul>
 <blockquote>
 <div><a class="reference external" href="https://user.cyverse.org/register"><strong>1. Register for a free account on CyVerse</strong></a></div></blockquote>
@@ -193,7 +199,7 @@
 <blockquote>
 <div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html"><strong>3. Snakemake Tutorial using containers on Atmosphere</strong></a></div></blockquote>
 <ul class="simple">
-<li><em>Atmosphere Key Features:</em><ul>
+<li><em>Atmosphere Key Features:</em> <img alt="_images/atmosphere_icon.png" src="_images/atmosphere_icon.png" />logo<ul>
 <li>Access virtual machine images preconfigured with an operating system and software to help you do scientific computations in domain-specific tasks</li>
 <li>Find and use tools with the intuitive self-service portal</li>
 <li>Easily manage virtual machines</li>
@@ -254,16 +260,23 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">deactivate</span>
 </pre></div>
 </div>
-<blockquote>
-<div>To run jobs in containers:</div></blockquote>
 <ul class="simple">
 <li>Singularity installation needs <strong>sudo</strong> permissions and instructions can be found <a class="reference external" href="https://www.sylabs.io/guides/3.0/user-guide/installation.html#installation">here</a></li>
 </ul>
-<blockquote>
-<div>Singularity modules in HPCs</div></blockquote>
 </div>
 <div class="section" id="awesome">
-<h1>7. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/awesome.html">Awesome</a><a class="headerlink" href="#awesome" title="Permalink to this headline">¶</a></h1>
+<h1>7. [Awesome]<a class="headerlink" href="#awesome" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/awesome.html">Awesome list of Snakemake resources</a></li>
+</ul>
+</div>
+<div class="section" id="coming-soon">
+<h1>8. Coming Soon<a class="headerlink" href="#coming-soon" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><em>Kubernetes</em></li>
+<li>Singularity modules in HPCs</li>
+<li>Building containers from scratch</li>
+</ul>
 </div>
 
 
@@ -276,7 +289,7 @@
       </div>
     
       <div class="pull-right">
-        <a class="btn btn-default" href="introduction.html" title="next chapter (use the right arrow)">8. Introduction</a>
+        <a class="btn btn-default" href="introduction.html" title="next chapter (use the right arrow)">9. Introduction</a>
       </div>
     </div>
     <div class="clearer"></div>
@@ -291,7 +304,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="introduction.html" title="8. Introduction"
+          <a href="introduction.html" title="9. Introduction"
              >next</a> |</li>
         <li class="right" >
           <a href="toc.html" title="&lt;no title&gt;"

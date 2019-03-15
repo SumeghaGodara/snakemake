@@ -283,10 +283,9 @@ rule fastqc_a_file:
     "{filename}_fastqc.zip"
   shell:
     "fastqc {input}"
-
 ```
 
-and THAT should now work just fine!
+> and THAT should now work just fine!
 
 ### Adding some more files
 
@@ -531,9 +530,10 @@ It's kind of annoying to have to delete things explicitly. Snakemake should take
 rule clean:
   shell:
     "rm -f {fastqc_output} multiqc_report.html"
+    "rmdir -fr multiqc_data/"    
 ```
 
-and now try rerunning things:
+and now try re-running things:
 
 ```bash
 snakemake -p clean
@@ -581,9 +581,9 @@ rule trim_reads:
     "{filename}_2.pe.qc.fq.gz",
     "{filename}_2.se.qc.fq.gz"
   shell:
-    """trimmomatic PE {input} {output} LEADING:2 TRAILING:2 \
-      SLIDINGWINDOW:4:15 \
-      MINLEN:25"""
+    "trimmomatic PE {input} {output} LEADING:2 TRAILING:2 \
+     SLIDINGWINDOW:4:15 \
+     MINLEN:25"
 ```
 
 Points to make:
@@ -679,21 +679,23 @@ snakemake --use-conda
 ```bash
 snakemake --dag | dot -Tpng > dag.png
 ```
-The DAG png file should look something like this,
+- The DAG png file should look something like this,
 ![dag](/img/dag.png)
 
 ### Snakemake Report
 
-Snakemake can automatically generate detailed self-contained HTML reports that encompass runtime statistics, provenance information, workflow topology and results.
+> Snakemake can automatically generate detailed self-contained HTML reports that encompass runtime statistics, provenance information, workflow topology and results.
 
-To create the report simply run
+- To create the report simply run
 ```bash
 snakemake --report report.html
 ```
 
+- Sample report here
+
 ### Adding in some Python...
 
-You can add in some Python to load in the input files, like so:
+- You can add in some Python to load in the input files, like so:
 
 ```python
 import glob, sys
@@ -750,16 +752,18 @@ rule trim_reads:
     "{filename}_2.pe.qc.fq.gz",
     "{filename}_2.se.qc.fq.gz"
   shell:
-    """trimmomatic PE {input} {output} LEADING:2 TRAILING:2 \
-      SLIDINGWINDOW:4:15 \
-      MINLEN:25"""
+    "trimmomatic PE {input} {output} LEADING:2 TRAILING:2 \
+     SLIDINGWINDOW:4:15 \
+     MINLEN:25"
 ```
 
-Take a look at [glob_wildcards](https://snakemake.readthedocs.io/en/stable/project_info/faq.html#how-do-i-run-my-rule-on-all-files-of-a-certain-directory) as well.
+> Take a look at [glob_wildcards](https://snakemake.readthedocs.io/en/stable/project_info/faq.html#how-do-i-run-my-rule-on-all-files-of-a-certain-directory) as well.
 
 # Final thoughts - writing your own snakefile
 
-**Just like scripting, or writing an R script, writing a snakefile is a kind of programming. So you'll have to do a lot of debugging :) :(.** A few thoughts for you on how to do this:
+> **Just like scripting, or writing an R script, writing a snakefile is a kind of programming. So you'll have to do a lot of debugging :) :(.**
+
+- A few thoughts for you on how to do this:
 * start small, grow your snakefile!
 * DO copy and paste from this tutorial and others you find online!
 * it rarely hurts to just re-run snakemake!**

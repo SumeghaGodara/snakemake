@@ -3,15 +3,13 @@ Introduction
 
 ![hate_research](img/hate_research.png)
 
-### Why invest time in a workflow management system? 
+# Why Snakemake? 
 
 - **A common pattern in scientific computing involves the execution of many computational or data manipulation tasks. Those tasks are usually coupled, i.e., data produced by of one task are consumed by one or more other tasks. Thus execution of such tasks often requires a non-trivial coordination (orchestration) to satisfy their data dependencies.**
 
-- **A workflow management system (WMS) is a piece of software that sets up, performs and monitors a defined sequence of computational tasks (i.e. "a workflow").**
-
-# Snakemake
-
 **[Snakemake](https://snakemake.readthedocs.io/en/stable/index.html) is a workflow management system that helps you build pipelines between the scripts of your project.**
+
+> Snakemake [slides](http://slides.com/johanneskoester/snakemake-tutorial#/)
 
 **Snakemake allows you to create a set of rules, each one defining a "step" of your analysis. Rules can either use shell commands, plain Python code or external Python or R scripts to create output files from input files. Read original paper [here](https://academic.oup.com/bioinformatics/article/28/19/2520/290322)** 
 
@@ -51,18 +49,18 @@ rule myname:
 
 [**The Rationale**](https://hackmd.io/4useBM-tQHGGBg-i_2eAIw#)
 
-### Other Workflow Managers
-
-- [Nextflow](https://www.nextflow.io/)
-	+ Dockers with Nextflow documentation is [here](https://www.nextflow.io/docs/latest/docker.html)
-
-- [Pegasus](https://pegasus.isi.edu/) - [Pegasus_Paper](https://www.sciencedirect.com/science/article/pii/S0167739X14002015)
-
-### Containers
+# Why Containers?
 
 Container:
 A container image is an encapsulated, portable environment that is created to distribute a scientific analysis or a general function. Containers help with reproducibility of such content as they nicely package software and data dependencies, along with libraries that are needed.
 
-### What are containers
+- Hubs hosts over 100,000 pre-built, ready-to-use containers
 
-- **Containers are running instances of Singularity/Docker images — containers run the actual applications. A container includes an application and all of its dependencies. It shares the kernel with other containers, and runs as an isolated process in user space on the host OS.**
+- examples of things you can do with containers:
+	+ Package an analysis pipeline so that it runs on your laptop, in the cloud, and in a high performance computing (HPC) environment to produce the same result.
+    + Publish a paper and include a link to a container with all of the data and software that you used so that others can easily reproduce your results.
+    + Install and run an application that requires a complicated stack of dependencies with a few keystrokes.
+    + Create a pipeline or complex workflow where each individual program is meant to run on a different operating system.
+
+
+- [Singularity Slides](https://docs.google.com/presentation/d/14-iKKUpGJC_1qpVFVUyUaitc8xFSw9Rp3v_UE9IGgjM/pub?start=false&loop=false&delayms=3000&slide=id.g1c1cec989b_0_154)

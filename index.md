@@ -29,8 +29,10 @@ The content for this website has been compiled from tutorials put together by:
 # Learning Objectives
 
 	+ Understand snakemake syntax
+	+ Understand the components of a Snakefile: rules, inputs, outputs, and actions
 	+ Understand the idea of containers
-	+
+	+ Understand snakemake wildcards and pattern rules
+	+ Understand how snakemake manages dependencies and outputs
 
 - This tutorial is designed to introduce 'building reproducible workflows' using:
 	+ [**conda**](https://conda.io/en/latest/) and [**bioconda**](https://bioconda.github.io/) for **Environment Management**
@@ -39,7 +41,9 @@ The content for this website has been compiled from tutorials put together by:
 
 	+ [**Singularity**](https://www.sylabs.io/docs/) for **Container Management**
 
-# [Introduction](https://snakemake2019.readthedocs.io/en/latest/introduction.html)
+# Introduction
+
+- (https://snakemake2019.readthedocs.io/en/latest/introduction.html)
 
 # Working on Binder
 
@@ -55,9 +59,9 @@ The content for this website has been compiled from tutorials put together by:
 
 # Working on Cloud
 
-> Support for '--use-singularity' (shub://) & (docker://) containers
+> Note: Supports '--use-singularity' Singularity / docker containers
 
-- To run snakemake jobs via [Singularity]() / [Docker]() containers in the cloud, we recommend [**Atmosphere**](https://www.cyverse.org/atmosphere), CyVerse's cloud-computing platform which provides easy-to-use web-access to cloud resources and is designed to accommodate computationally and data-intensive tasks.
+- To run snakemake jobs via [Singularity](https://singularity-hub.org/) / [Docker](https://hub.docker.com/) containers in the cloud, we recommend [**Atmosphere**](https://www.cyverse.org/atmosphere), CyVerse's cloud-computing platform which provides easy-to-use web-access to cloud resources and is designed to accommodate computationally and data-intensive tasks.
 
 > [**1. Register for a free account on CyVerse**](https://user.cyverse.org/register)
 
@@ -65,7 +69,7 @@ The content for this website has been compiled from tutorials put together by:
 
 > [**3. Snakemake Tutorial using containers on Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html)
 
-- *Atmosphere Key Features:*
+- *Atmosphere Key Features:* ![logo](/img/atmosphere_icon.png)
 
 	+ Access virtual machine images preconfigured with an operating system and software to help you do scientific computations in domain-specific tasks
 
@@ -128,11 +132,15 @@ conda activate smake
 ```
 conda deactivate
 ```
-> To run jobs in containers:
 
 - Singularity installation needs **sudo** permissions and instructions can be found [here](https://www.sylabs.io/guides/3.0/user-guide/installation.html#installation)
 
-> Singularity modules in HPCs
+# [Awesome]
 
++ [Awesome list of Snakemake resources](https://snakemake2019.readthedocs.io/en/latest/awesome.html)
 
-# [Awesome](https://snakemake2019.readthedocs.io/en/latest/awesome.html)
+# Coming Soon
+
++ *Kubernetes*
++  Singularity modules in HPCs
++ Building containers from scratch
