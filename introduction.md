@@ -62,3 +62,7 @@ rule myname:
 
 Container:
 A container image is an encapsulated, portable environment that is created to distribute a scientific analysis or a general function. Containers help with reproducibility of such content as they nicely package software and data dependencies, along with libraries that are needed.
+
+### What are containers
+
+- **Containers are running instances of Singularity/Docker images — containers run the actual applications. A container includes an application and all of its dependencies. It shares the kernel with other containers, and runs as an isolated process in user space on the host OS.**

@@ -1,32 +1,29 @@
 Running Jobs in containers
 ===
 
-### What are containers
-
-- **Containers are running instances of Singularity/Docker images — containers run the actual applications. A container includes an application and all of its dependencies. It shares the kernel with other containers, and runs as an isolated process in user space on the host OS.**
-
-- We will be executing the same workflow **(fastqc--->multiqc--->trimmomatic)** as in [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html) **but, with tools being executed in singularity containers based on either Docker or Singularity builds**
-
 > [**Guide to Launching Atmosphere Instances**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html)
 
 
-### Login to CyVerse [Atmosphere](https://atmo.cyverse.org/application/images)
+> **We will be executing the same workflow (fastqc--->multiqc--->trimmomatic) as in [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html) but, with tools being executed in singularity containers based on either Docker or Singularity builds**
 
-### Launch a medium 'm1' instance with the 'DCG-UNR-RNAseq' v3.0 base image
 
-### Activate Conda
+# Login to CyVerse [Atmosphere](https://atmo.cyverse.org/application/images)
+
+# Launch a medium 'm1' instance with the 'DCG-UNR-RNAseq' v3.0 base image
+
+# Activate Conda
 
 ```
 echo export PATH=$PATH:/opt/miniconda3/bin >> ~/.bashrc
 ```
 
-Then, run the following command (or start a new terminal session) in order to activate the conda environment:
+- Then, run the following command (or start a new terminal session) in order to activate the conda environment:
 
 ```
 source ~/.bashrc
 ```
 
-Add channels
+- Add channels
 
 ```
 conda config --add channels defaults
@@ -34,22 +31,21 @@ conda config --add channels conda-forge
 conda config --add channels bioconda
 ```
 
-Try running a program pre-installed on this instance:
+- Try running a program pre-installed on this instance:
 
 ```bash
-snakemake
+which snakemake
 ```
+> it should show the absolute path of snakemake '/usr/'
 
-### Test singularity 
-
-Singularity is pre-installed in this image. Test installation by
+- Test singularity 
 
 ```bash
-singularity --version
+which singularity
 ```
-> 2.6.1-HEAD.9103f015
+> It should show the absolute path of singularity '/local/'
 
-### Download data
+# Download data
 
 ```bash
 mkdir data
@@ -59,10 +55,11 @@ unzip data.zip
 rm data.zip
 cd ..
 ```
+> EXERCISE: write a snakemake rule to download data and unzip it as above
 
-### Run snakemake
+# Run snakemake
 
-Create Snakefile
+- Create Snakefile using text editor nano:
 
 ```bash
 nano Snakefile
@@ -126,7 +123,7 @@ rule clean:
     "rm -f {fastqc_output} multiqc_report.html"     
 ```
 
-### Execute Snakemake with
+- Execute Snakemake with
 
 ```
 snakemake --use-singularity
@@ -134,49 +131,18 @@ snakemake --use-singularity
 
 > Snakemake will pull the containers and execute each rule individually in the containers specified
 
-### Generate Report
+> Note how each singularity container is activated for each rule
+
+# Generate Report
 
 ```bash
 snakemake --report report.html
 ```
 
-> **Note: It is advisable to delete the machine if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it.**
+> **Note: It is advisable to delete your instance if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it. See [**Instance Maintenace**]() for more info**
 
 ---------------------------
 
 ```
-DCG-UNR-RNAseq v3.0 Atmosphere Image Specifications
-
-Software:
-		    - Miniconda 4.6.8
-		    - Rstudio 1.1.453
-		    - Singularity 2.6.1
-		    - Snakemake 5.4.0
-Conda tools:
-		    - fastqc 0.11.8
-		    - multiqc 1.6
-		    - trimmomatic 0.38
-		    - salmon 0.11.3
-		    - trinity 2.8.4
-R_Packages:
-	        - "BiocGenerics"
-	        - "S4Vectors"
-	        - "knitr"
-	        - "readr"
-	        - "GenomicFeatures"
-	        - "rjson"
-	        - "tximport"
-	        - "DESeq2"
-	        - "magrittr"
-	        - "ggplot2"
-	        - "org.Hs.eg.db"
-	        - "dplyr"
-	        - "GO.db"
-	        - "formatR"
-	        - "caTools"
-	        - "rprojroot"
-	        - "rmarkdown"
-	        - "AnnotationDbi"
-	        - "clusterProfiler"
-	        - "org.Mm.eg.db"
+**DCG-UNR-RNAseq v3.0** [Atmosphere Image Specifications](https://atmo.cyverse.org/application/images/1679)
 ```

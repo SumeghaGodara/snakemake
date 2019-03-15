@@ -1,7 +1,5 @@
-Logging onto Atmosphere Cloud
+Accessing The Atmosphere Cloud
 ===
-
-# Accessing The Cloud
 
 ![](/img/setup1.png)
 
@@ -51,19 +49,18 @@ Logging onto Atmosphere Cloud
 ![](/img/login7.png)
 
 - Basic options
-	- 	Instance Name: e.x., "workshop" or you can leave it default which is the image name.
+	+ Instance Name: e.x., "workshop" or you can leave it default which is the image name.
 
-	-	Base Image Version: "3.0"
+	+	Base Image Version: "3.0"
 
-	-	Project: select project folder to host the instance
+	+	Project: select project folder to host the instance
 
-	-	Allocation Source: should be your cyverse account
+	+	Allocation Source: should be your cyverse account
 
-	-	Provider: "CyVerse Cloud - Marana"
+	+	Provider: "CyVerse Cloud - Marana"
 
-	- 	Instance size: **Depending on your allocations, choose most suitable one.**
-
-	-	Recommended for this workshop: "medium2 (CPU: 4, Mem: 16GB, Disk: 160GB)"
+	+ Instance size: **Depending on your allocations, choose most suitable one.**
+  	+ Recommended for this tutorial: "medium2 (CPU: 4, Mem: 16GB, Disk: 160GB)"
 
 ![](/img/login8.png)
 
