@@ -51,7 +51,7 @@ The content for this website has been compiled from tutorials put together by:
 
 - The binder is built using this 'conda' [environment.yml](https://github.com/sateeshperi/snakemake2019/blob/master/binder/environment.yml).
 
-> [**Basic Tutorial using Binder**](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html)
+> [**Snakemake Tutorial using Binder**](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html)
 
 # Working on Cloud
 
@@ -63,7 +63,7 @@ The content for this website has been compiled from tutorials put together by:
 
 > [**2. Guide to Launching Atmosphere Instances**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html)
 
-> [**3. Container Tutorial using Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html)
+> [**3. Snakemake Tutorial using containers on Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html)
 
 - *Atmosphere Key Features:*
 
