@@ -1,34 +1,34 @@
 Basic Tutorial
 ===
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/binder?urlpath=rstudio)
+- [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/binder?urlpath=rstudio)
 
-**We're mostly going to work in the file editor and the terminal; to get started, open the terminal, and execute:**
+- We're mostly going to work in the file editor and the terminal of Rstudio; to get started, open the terminal, and execute:**
 
 ```
 PS1='$ '
 ```
-to get a shorter prompt.
+to get a shorter terminal prompt.
 
-### Getting started - your first Snakefile
+# Getting started - your first Snakefile
 
-Create a new text file (`File`, `New File`, `Text file`) and write:
+- Create a new text file (`File`, `New File`, `Text file`) and write:
 
 ```
 rule fastqc_a_file:
   shell:
     "fastqc data/0Hour_001_1.fq.gz"
 ```
-(I suggest copy/pasting this into RStudio.)
+*(I suggest copy/pasting this into RStudio.)*
 
-Then save it as a file named `Snakefile`.
+- Then save it as a file named `Snakefile`.
 
-Now, run snakemake:
+- Now, run snakemake:
 ```
 snakemake
 ```
 
-and you should see:
+- and you should see:
 ```
 Building DAG of jobs...
 Using shell: /bin/bash
@@ -42,21 +42,21 @@ Finished job 0.
 1 of 1 steps (100%) done
 Complete log: /home/jovyan/.snakemake/log/2019-02-27T130941.260352.snakemake.log
 ```
-and there will be two new files,
+> Upon execution there will be two new files, '0Hour_001_1_fastqc.html' & '0Hour_001_1_fastqc.zip'
 
-> Point to note: snakemake configuration file is by default called `Snakefile`
+> Note: snakemake configuration file is by default called `Snakefile`
 
 ### Updating the Snakefile to track inputs and outputs 
 
-At the moment this is basically just a shell script with extra syntax... what's the point?
+> At the moment this is basically just a shell script with extra syntax... what's the point?
 
-Well, **shell scripts - and this snakefile, too - will rerun the command every time you run the file, even if there's no reason to do so because the file hasn't changed.**
+> Well, **shell scripts - and this snakefile, too - will rerun the command every time you run the file, even if there's no reason to do so because the file hasn't changed.**
 
-**Digression:** This is particularly important for large or long workflows, where you're dealing with 10s to 100s of files that may take hours to days to process! It can be hard to figure out which files to rerun, but (spoiler alert) snakemake can really help you do this!
+> **Digression:** This is particularly important for large or long workflows, where you're dealing with 10s to 100s of files that may take hours to days to process! It can be hard to figure out which files to rerun, but (spoiler alert) snakemake can really help you do this!
 
-**It's hard to track this kind of thing in a shell script - I usually just comment out the lines I don't want run, or break my commands up into multiple shell scripts so they don't take so long - but with snakemake, you can annotate the rule with input and output files!**
+> **It's hard to track this kind of thing in a shell script - I usually just comment out the lines I don't want run, or break my commands up into multiple shell scripts so they don't take so long - but with snakemake, you can annotate the rule with input and output files!**
 
-Change your snakefile to look like this:
+- Change your snakefile to look like this:
 
 ```
 rule fastqc_a_file:
@@ -69,11 +69,11 @@ rule fastqc_a_file:
     "fastqc data/0Hour_001_1.fq.gz"
 ```
 
-here, we've annotated the rule with the required **input** file, as well as the expected **output** files.
+>here, we've annotated the rule with the required **input** file, as well as the expected **output** files.
 
-Question: how do we know what the output files are?
+> Question: how do we know what the output files are?
 
-Now run:
+- Now run:
 ```
 snakemake
 ```
@@ -85,19 +85,18 @@ Nothing to be done.
 Complete log: /home/jovyan/.snakemake/log/2019-02-27T132031.813143.snakemake.log
 ```
 
-What happened??
-
-snakemake looked at the file, saw that the output files existed, and figured out that it didn't need to do anything!
+> What happened??
+> >snakemake looked at the file, saw that the output files existed, and figured out that it didn't need to do anything!
 
 ### Forcibly re-running things
 
-You can tell snakemake to run the rule no matter what with `-f`:
+- You can tell snakemake to run the rule no matter what with `-f`:
 
 ```
 snakemake -f
 ```
 
-You can also remove an output file and it will automatically re-run:
+- You can also remove an output file and it will automatically re-run:
 
 ```
 rm data/*.html
@@ -105,18 +104,18 @@ snakemake
 ```
 > Note that you don't need to remove *all* the output files to rerun a command - just remove *one* of them.
 
-You can *also* update the timestamp on an *input* file, and snakemake will figure out that the output file is older than the input file, and rerun things.
+- You can *also* update the timestamp on an *input* file, and snakemake will figure out that the output file is older than the input file, and rerun things.
 
 ```
 touch data/*.fq.gz
 snakemake
 ```
 
-This will become important later :)
+> This will become important later :)
 
 # Multiple rules
 
-Let's add a rule to run fastqc on a second file:
+- Let's add a rule to run fastqc on a second file:
 
 ```
 rule fastqc_a_file:
@@ -138,27 +137,27 @@ rule fastqc_a_file2:
     "fastqc data/6Hour_001_1.fq.gz"
 ```
 
-Now, if you run this, the Right Thing won't happen: snakemake will do nothing.  Why?
+> Now, if you run this, the Right Thing won't happen: snakemake will do nothing.  Why?
 
-Well, **snakemake only runs the *first* rule in a Snakefile, by default. You can give a rule name on the command line, if you like, or you can tell snakemake what output file(s) you want**. Let's do the latter:
+- Well, **snakemake only runs the *first* rule in a Snakefile, by default. You can give a rule name on the command line, if you like, or you can tell snakemake what output file(s) you want**. Let's do the latter:
 
 ```
 snakemake data/0Hour_001_1_fastqc.html data/6Hour_001_1_fastqc.html
 ```
 
-and now you should see the second fastqc command run, with the appropriate output files!
+> and now you should see the second fastqc command run, with the appropriate output files!
 
-**Note that snakemake only runs the second rule, because it looks at the output files and sees that the first file you wanted, `0Hour_001_1_fastqc.html` already exists!**
+> **Note that snakemake only runs the second rule, because it looks at the output files and sees that the first file you wanted, `0Hour_001_1_fastqc.html` already exists!**
 
-Points to note:
-* this is pretty long compared to the same shell script...
-* specifying which file or rule you want is kind of annoying...
+> Points to note:
+  * this is pretty long compared to the same shell script...
+  * specifying which file or rule you want is kind of annoying...
 
 # A first refactoring: adding a better default rule
 
-Let's start refactoring (cleaning up) this Snakefile.
+> Let's start refactoring (cleaning up) this Snakefile.
 
-First, let's add a rule at the top:
+- First, let's add a rule at the top:
 
 ```
 rule all:

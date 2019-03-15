@@ -1,6 +1,12 @@
 Awesome
 ===
 
+# Reproducibility Toolkit
+
+![](/img/rep_toolkit.svg)
+
+# [Snakemake Carpentry](https://hpc-carpentry.github.io/hpc-python/)
+
 # [CyVerse Container Camp](https://singularity-tutorial.github.io/)
 
 ### Awesome list of workflow-management systems
@@ -10,6 +16,3 @@ Awesome
 2. [curated list of awesome pipeline toolkits](https://github.com/pditommaso/awesome-pipeline)
 
 
-### Reproducibility Toolkit
-
-![](/img/rep_toolkit.svg)

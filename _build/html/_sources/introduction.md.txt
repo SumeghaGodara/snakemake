@@ -1,24 +1,23 @@
 Introduction
 ===
 
+![hate_research](img/hate_research.png)
 
 ### Why invest time in a workflow management system? 
 
-![hate_research](img/hate_research.png)
+- **A common pattern in scientific computing involves the execution of many computational or data manipulation tasks. Those tasks are usually coupled, i.e., data produced by of one task are consumed by one or more other tasks. Thus execution of such tasks often requires a non-trivial coordination (orchestration) to satisfy their data dependencies.**
 
-**A common pattern in scientific computing involves the execution of many computational or data manipulation tasks. Those tasks are usually coupled, i.e., data produced by of one task are consumed by one or more other tasks. Thus execution of such tasks often requires a non-trivial coordination (orchestration) to satisfy their data dependencies.**
+- **A workflow management system (WMS) is a piece of software that sets up, performs and monitors a defined sequence of computational tasks (i.e. "a workflow").**
 
-**A workflow management system (WMS) is a piece of software that sets up, performs and monitors a defined sequence of computational tasks (i.e. "a workflow").**
+# Snakemake
 
-[**The Rationale**](https://hackmd.io/4useBM-tQHGGBg-i_2eAIw#)
+**[Snakemake](https://snakemake.readthedocs.io/en/stable/index.html) is a workflow management system that helps you build pipelines between the scripts of your project.**
 
-# [**Snakemake**](https://snakemake.readthedocs.io/en/stable/index.html)
+**Snakemake allows you to create a set of rules, each one defining a "step" of your analysis. Rules can either use shell commands, plain Python code or external Python or R scripts to create output files from input files. Read original paper [here](https://academic.oup.com/bioinformatics/article/28/19/2520/290322)** 
 
-**Snakemake is a workflow management system that helps you build pipelines between the scripts of your project.**
+**The workflow is implied by dependencies between the rules that arise from one rule needing an output file of another as an input file.**
 
-**Snakemake allows you to create a set of rules, each one defining a "step" of your analysis. Rules can either use shell commands, plain Python code or external Python or R scripts to create output files from input files.** 
-
-For each step you need to provide:
+For each rule you need to provide:
 
 + **Input** : Data files, scripts, executables or any other files.
 
@@ -32,7 +31,6 @@ rule myname:
     output: ['myoutput']
     shell: 'Some command to go from in to out'
 ```
-> The rules need to be written in a file called "**Snakefile**".
 
 ### Snakemake Advantages:
 
@@ -51,12 +49,16 @@ rule myname:
 + Snakemake can use Amazon S3, Google Storage, Dropbox, FTP, WebDAV, SFTP and iRODS to access input or output files and further access input files via HTTP and HTTPS.
 
 
-[**Snakemake Paper**](https://academic.oup.com/bioinformatics/article/28/19/2520/290322)
+[**The Rationale**](https://hackmd.io/4useBM-tQHGGBg-i_2eAIw#)
 
-# [Nextflow](https://www.nextflow.io/)
+### Other Workflow Managers
 
-> Dockers with Nextflow documentation is [here](https://www.nextflow.io/docs/latest/docker.html)
+- [Nextflow](https://www.nextflow.io/)
+	+ Dockers with Nextflow documentation is [here](https://www.nextflow.io/docs/latest/docker.html)
 
-# [Pegasus](https://pegasus.isi.edu/)
+- [Pegasus](https://pegasus.isi.edu/) - [Pegasus_Paper](https://www.sciencedirect.com/science/article/pii/S0167739X14002015)
 
-> [Pegasus_Paper](https://www.sciencedirect.com/science/article/pii/S0167739X14002015)
+### Containers
+
+Container:
+A container image is an encapsulated, portable environment that is created to distribute a scientific analysis or a general function. Containers help with reproducibility of such content as they nicely package software and data dependencies, along with libraries that are needed.

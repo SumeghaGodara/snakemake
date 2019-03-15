@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="_static/css/bootstrap-theme.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>20. Logging onto Atmosphere Cloud &#8212; snakemake2019 0.0.1 documentation</title>
+    <title>19. Logging onto Atmosphere Cloud &#8212; snakemake2019 0.0.1 documentation</title>
     <link rel="stylesheet" href="_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="26. Running Jobs in containers" href="container_tutorial.html" />
-    <link rel="prev" title="12. Basic Tutorial" href="basic_tutorial.html" />
+    <link rel="next" title="25. Running Jobs in containers" href="container_tutorial.html" />
+    <link rel="prev" title="10. Basic Tutorial" href="basic_tutorial.html" />
   
    
 
@@ -39,10 +39,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="container_tutorial.html" title="26. Running Jobs in containers"
+          <a href="container_tutorial.html" title="25. Running Jobs in containers"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="basic_tutorial.html" title="12. Basic Tutorial"
+          <a href="basic_tutorial.html" title="10. Basic Tutorial"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="toc.html">snakemake2019 0.0.1 documentation</a> &#187;</li> 
       </ul>
@@ -59,26 +59,26 @@
     <h2>Contents</h2>
     <div class="sidebar-localtoc">
       <ul>
-<li><a class="reference internal" href="#">20. Logging onto Atmosphere Cloud</a></li>
-<li><a class="reference internal" href="#setup">21. Setup</a><ul>
-<li><a class="reference internal" href="#windows-unix-terminal-setup">21.1. Windows UNIX Terminal Setup</a></li>
+<li><a class="reference internal" href="#">19. Logging onto Atmosphere Cloud</a></li>
+<li><a class="reference internal" href="#accessing-the-cloud">20. Accessing The Cloud</a><ul>
+<li><a class="reference internal" href="#ssh-client-for-windows-users">20.1. SSH Client for WINDOWS users</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#login-launch-instance">22. Login &amp; Launch Instance</a></li>
-<li><a class="reference internal" href="#ssh-secure-login">23. SSH Secure-Login</a></li>
-<li><a class="reference internal" href="#instance-maintenance">24. Instance Maintenance</a><ul>
-<li><a class="reference internal" href="#atmosphere-dashboard">24.1. Atmosphere Dashboard</a></li>
-<li><a class="reference internal" href="#delete-instance">24.2. Delete Instance</a></li>
-<li><a class="reference internal" href="#suspend-instance">24.3. Suspend Instance</a></li>
-<li><a class="reference internal" href="#request-more-aus">24.4. Request More AUs</a></li>
+<li><a class="reference internal" href="#login-launch-instance">21. Login &amp; Launch Instance</a></li>
+<li><a class="reference internal" href="#ssh-secure-login">22. SSH Secure-Login</a></li>
+<li><a class="reference internal" href="#instance-maintenance">23. Instance Maintenance</a><ul>
+<li><a class="reference internal" href="#atmosphere-dashboard">23.1. Atmosphere Dashboard</a></li>
+<li><a class="reference internal" href="#delete-instance">23.2. Delete Instance</a></li>
+<li><a class="reference internal" href="#suspend-instance">23.3. Suspend Instance</a></li>
+<li><a class="reference internal" href="#request-more-aus">23.4. Request More AUs</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#additional-features">25. Additional Features</a><ul>
-<li><a class="reference internal" href="#web-shell">25.1. Web Shell</a></li>
-<li><a class="reference internal" href="#web-desktop">25.2. Web Desktop</a></li>
-<li><a class="reference internal" href="#transferring-data-to-and-from-an-instance">25.3. Transferring Data to and from an Instance</a></li>
-<li><a class="reference internal" href="#custom-images">25.4. Custom Images</a></li>
-<li><a class="reference internal" href="#deposit-rsa-key">25.5. Deposit rsa-key</a></li>
+<li><a class="reference internal" href="#additional-features">24. Additional Features</a><ul>
+<li><a class="reference internal" href="#web-shell">24.1. Web Shell</a></li>
+<li><a class="reference internal" href="#web-desktop">24.2. Web Desktop</a></li>
+<li><a class="reference internal" href="#transferring-data-to-and-from-an-instance">24.3. Transferring Data to and from an Instance</a></li>
+<li><a class="reference internal" href="#custom-images">24.4. Custom Images</a></li>
+<li><a class="reference internal" href="#deposit-rsa-key">24.5. Deposit rsa-key</a></li>
 </ul>
 </li>
 </ul>
@@ -88,10 +88,10 @@
 </div>
   <h4>Previous topic</h4>
   <p class="topless"><a href="basic_tutorial.html"
-                        title="previous chapter">12. Basic Tutorial</a></p>
+                        title="previous chapter">10. Basic Tutorial</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="container_tutorial.html"
-                        title="next chapter">26. Running Jobs in containers</a></p>
+                        title="next chapter">25. Running Jobs in containers</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -121,48 +121,38 @@
             <ol class="breadcrumb">
               <li><a href="toc.html">Docs</a></li>
               
-              <li>20. Logging onto Atmosphere Cloud</li>
+              <li>19. Logging onto Atmosphere Cloud</li>
             </ol>
           </div>
           
           <div class="document clearer body">
             
   <div class="section" id="logging-onto-atmosphere-cloud">
-<h1>20. Logging onto Atmosphere Cloud<a class="headerlink" href="#logging-onto-atmosphere-cloud" title="Permalink to this headline">¶</a></h1>
+<h1>19. Logging onto Atmosphere Cloud<a class="headerlink" href="#logging-onto-atmosphere-cloud" title="Permalink to this headline">¶</a></h1>
 </div>
-<div class="section" id="setup">
-<h1>21. Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>For the duration of this workshop, we will be accessing data and tools required to analyze our data on a remote computer using the <strong>CyVerse’s Atmosphere cloud</strong>.</li>
-</ul>
+<div class="section" id="accessing-the-cloud">
+<h1>20. Accessing The Cloud<a class="headerlink" href="#accessing-the-cloud" title="Permalink to this headline">¶</a></h1>
 <p><img alt="_images/setup1.png" src="_images/setup1.png" /></p>
 <ul class="simple">
-<li>Atmosphere, CyVerse’s cloud-computing platform allows you to launch your own isolated virtual machine (VM) image and software, using compute resources such as CyVerse-provided software suites, and pre-configured, frequently used analysis routines, relevant algorithms, and datasets.</li>
+<li><strong>Atmosphere, CyVerse’s cloud-computing platform allows you to launch your own isolated virtual machine (VM) image and software, using compute resources such as CyVerse-provided software suites, and pre-configured, frequently used analysis routines, relevant algorithms, and datasets.</strong></li>
 </ul>
 <blockquote>
-<div>To request access to Atmosphere, login to the <code class="docutils literal notranslate"><span class="pre">CyVerse</span> <span class="pre">User</span> <span class="pre">Portal</span></code>(https://user.cyverse.org/). In the <code class="docutils literal notranslate"><span class="pre">Services</span> <span class="pre">Menu</span> <span class="pre">&lt;https://user.cyverse.org/services/mine&gt;</span></code> under ‘MY
-SERVICES’ you should see Atmosphere listed as an option you can launch. If
-not, look uner the <code class="docutils literal notranslate"><span class="pre">Available</span> <span class="pre">&lt;https://user.cyverse.org/services/available&gt;</span></code>_
-menu, and click the ‘REQUEST ACCESS’ link. You will receive an email
-requesting additional information.</div></blockquote>
+<div>To request access to Atmosphere, login to the <a class="reference external" href="https://user.cyverse.org/">CyVerse User Portal</a>. In the <a class="reference external" href="https://user.cyverse.org/services/mine%3E">Services</a> menu under ‘MY SERVICES’ you should see Atmosphere listed as an option you can launch. If not, look uner the <a class="reference external" href="https://user.cyverse.org/services/available">Available</a> menu, and click the ‘REQUEST ACCESS’ link. You will receive an email requesting additional information.</div></blockquote>
 <ul class="simple">
 <li>This is the first and last place in these lessons where it will matter if you are using PC, Mac, or Linux. After we connect to our virtual machines built using the same image; we will all be on the same operating system/computing environment.</li>
-<li>Cyverse documentation on how to use Atmosphere resources can be found <a class="reference external" href="https://learning.cyverse.org/projects/atmosphere-guide/en/latest/index.html">here</a></li>
+<li>Documentation on how to use Atmosphere resources can be found <a class="reference external" href="https://learning.cyverse.org/projects/atmosphere-guide/en/latest/index.html">here</a></li>
 </ul>
-<div class="section" id="windows-unix-terminal-setup">
-<h2>21.1. Windows UNIX Terminal Setup<a class="headerlink" href="#windows-unix-terminal-setup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ssh-client-for-windows-users">
+<h2>20.1. SSH Client for WINDOWS users<a class="headerlink" href="#ssh-client-for-windows-users" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Windows-users will need to install UNIX-ready terminal.</li>
 <li>Download &amp; Install <a class="reference external" href="http://mobaxterm.mobatek.net/download-home-edition.html">mobaxterm home edition</a></li>
-</ul>
-<p><img alt="_images/setup2.png" src="_images/setup2.png" /></p>
-<ul class="simple">
 <li>Start a new session; Fill in your “remote host” the IP address of your virtual machine. Then select “specify username” and enter your cyverse username; Click OK.</li>
 </ul>
 </div>
 </div>
 <div class="section" id="login-launch-instance">
-<h1>22. Login &amp; Launch Instance<a class="headerlink" href="#login-launch-instance" title="Permalink to this headline">¶</a></h1>
+<h1>21. Login &amp; Launch Instance<a class="headerlink" href="#login-launch-instance" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li>Login to <a class="reference external" href="https://atmo.cyverse.org/application/images">Atmosphere</a> by clicking the “login” butoon (right-upper corner).</li>
 </ul>
@@ -214,7 +204,7 @@ requesting additional information.</div></blockquote>
 <p><img alt="_images/login10.png" src="_images/login10.png" /></p>
 </div>
 <div class="section" id="ssh-secure-login">
-<h1>23. SSH Secure-Login<a class="headerlink" href="#ssh-secure-login" title="Permalink to this headline">¶</a></h1>
+<h1>22. SSH Secure-Login<a class="headerlink" href="#ssh-secure-login" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li>MACOS &amp; LINUX users can open a Terminal window and Windows users start a new session in mobaxterm (see # Setup)</li>
 <li>Establish a secure-login to the instance by typing the following:</li>
@@ -240,13 +230,13 @@ requesting additional information.</div></blockquote>
 <p><img alt="_images/ssh3.png" src="_images/ssh3.png" /></p>
 </div>
 <div class="section" id="instance-maintenance">
-<h1>24. Instance Maintenance<a class="headerlink" href="#instance-maintenance" title="Permalink to this headline">¶</a></h1>
+<h1>23. Instance Maintenance<a class="headerlink" href="#instance-maintenance" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="atmosphere-dashboard">
-<h2>24.1. Atmosphere Dashboard<a class="headerlink" href="#atmosphere-dashboard" title="Permalink to this headline">¶</a></h2>
+<h2>23.1. Atmosphere Dashboard<a class="headerlink" href="#atmosphere-dashboard" title="Permalink to this headline">¶</a></h2>
 <p><img alt="_images/maintain1.png" src="_images/maintain1.png" /></p>
 </div>
 <div class="section" id="delete-instance">
-<h2>24.2. Delete Instance<a class="headerlink" href="#delete-instance" title="Permalink to this headline">¶</a></h2>
+<h2>23.2. Delete Instance<a class="headerlink" href="#delete-instance" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>To completely remove your instance, you can select the “Delete” button from the instance details page.</li>
 <li>This will open up a dialogue window. Select the “Yes, delete this instance” button.</li>
@@ -255,33 +245,33 @@ requesting additional information.</div></blockquote>
 <p><img alt="_images/maintain3.png" src="_images/maintain3.png" /></p>
 </div>
 <div class="section" id="suspend-instance">
-<h2>24.3. Suspend Instance<a class="headerlink" href="#suspend-instance" title="Permalink to this headline">¶</a></h2>
+<h2>23.3. Suspend Instance<a class="headerlink" href="#suspend-instance" title="Permalink to this headline">¶</a></h2>
 <p><img alt="_images/maintain2.png" src="_images/maintain2.png" /></p>
 <p><strong>Note: It is advisable to delete the machine if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it. Notice: IP address changes</strong></p>
 </div>
 <div class="section" id="request-more-aus">
-<h2>24.4. Request More AUs<a class="headerlink" href="#request-more-aus" title="Permalink to this headline">¶</a></h2>
+<h2>23.4. Request More AUs<a class="headerlink" href="#request-more-aus" title="Permalink to this headline">¶</a></h2>
 <p><img alt="_images/maintain4.png" src="_images/maintain4.png" /></p>
 </div>
 </div>
 <div class="section" id="additional-features">
-<h1>25. Additional Features<a class="headerlink" href="#additional-features" title="Permalink to this headline">¶</a></h1>
+<h1>24. Additional Features<a class="headerlink" href="#additional-features" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="web-shell">
-<h2>25.1. Web Shell<a class="headerlink" href="#web-shell" title="Permalink to this headline">¶</a></h2>
+<h2>24.1. Web Shell<a class="headerlink" href="#web-shell" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Access Command-Line Directly from your browser</li>
 </ul>
 <p><img alt="_images/additional1.png" src="_images/additional1.png" /></p>
 </div>
 <div class="section" id="web-desktop">
-<h2>25.2. Web Desktop<a class="headerlink" href="#web-desktop" title="Permalink to this headline">¶</a></h2>
+<h2>24.2. Web Desktop<a class="headerlink" href="#web-desktop" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Access your instance through a web desktop version from your browser</li>
 </ul>
 <p><img alt="_images/additional2.png" src="_images/additional2.png" /></p>
 </div>
 <div class="section" id="transferring-data-to-and-from-an-instance">
-<h2>25.3. Transferring Data to and from an Instance<a class="headerlink" href="#transferring-data-to-and-from-an-instance" title="Permalink to this headline">¶</a></h2>
+<h2>24.3. Transferring Data to and from an Instance<a class="headerlink" href="#transferring-data-to-and-from-an-instance" title="Permalink to this headline">¶</a></h2>
 <p>An Atmosphere instance only contains data that were included in the original image that was used to make that instance. You can transfer data to/from the CyVerse Data Store, an Atmosphere Volume, a sever, or your local machine. In this guide, we will only cover data transfer using iCommands. iCommands is installed on every Atmosphere instance.</p>
 <blockquote>
 <div><strong>Related Links</strong></div></blockquote>
@@ -334,10 +324,10 @@ recursively, and more. See additional <a class="reference external" href="https:
 <p>===</p>
 </div>
 <div class="section" id="custom-images">
-<h2>25.4. Custom Images<a class="headerlink" href="#custom-images" title="Permalink to this headline">¶</a></h2>
+<h2>24.4. Custom Images<a class="headerlink" href="#custom-images" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="deposit-rsa-key">
-<h2>25.5. Deposit rsa-key<a class="headerlink" href="#deposit-rsa-key" title="Permalink to this headline">¶</a></h2>
+<h2>24.5. Deposit rsa-key<a class="headerlink" href="#deposit-rsa-key" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Concerning Keys:
 Cryptographic keys are a convenient and secure way to authenticate without having to use passwords. They consist of a pair of files called the public and private keys: the public part can be shared with whoever you’d like to authenticate with (in our case, CyVerse Atmosphere!), and the private part is kept “secret” on your machine. Things that are encrypted with the public key can be be decrypted with the private key, but it is computationally intractable (ie, it would take on the order of thousands of years) to determine a private key from a public key. You can read more about it <a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2">here</a></li>
@@ -398,11 +388,11 @@ Cryptographic keys are a convenient and secure way to authenticate without havin
   <div class="footer-relations">
     
       <div class="pull-left">
-        <a class="btn btn-default" href="basic_tutorial.html" title="previous chapter (use the left arrow)">12. Basic Tutorial</a>
+        <a class="btn btn-default" href="basic_tutorial.html" title="previous chapter (use the left arrow)">10. Basic Tutorial</a>
       </div>
     
       <div class="pull-right">
-        <a class="btn btn-default" href="container_tutorial.html" title="next chapter (use the right arrow)">26. Running Jobs in containers</a>
+        <a class="btn btn-default" href="container_tutorial.html" title="next chapter (use the right arrow)">25. Running Jobs in containers</a>
       </div>
     </div>
     <div class="clearer"></div>
@@ -417,10 +407,10 @@ Cryptographic keys are a convenient and secure way to authenticate without havin
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="container_tutorial.html" title="26. Running Jobs in containers"
+          <a href="container_tutorial.html" title="25. Running Jobs in containers"
              >next</a> |</li>
         <li class="right" >
-          <a href="basic_tutorial.html" title="12. Basic Tutorial"
+          <a href="basic_tutorial.html" title="10. Basic Tutorial"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="toc.html">snakemake2019 0.0.1 documentation</a> &#187;</li> 
       </ul>

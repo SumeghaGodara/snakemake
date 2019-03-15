@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="_static/css/bootstrap-theme.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>26. Running Jobs in containers &#8212; snakemake2019 0.0.1 documentation</title>
+    <title>25. Running Jobs in containers &#8212; snakemake2019 0.0.1 documentation</title>
     <link rel="stylesheet" href="_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="27. Awesome" href="awesome.html" />
-    <link rel="prev" title="20. Logging onto Atmosphere Cloud" href="Atmosphere_Cloud.html" />
+    <link rel="next" title="26. Awesome" href="awesome.html" />
+    <link rel="prev" title="19. Logging onto Atmosphere Cloud" href="Atmosphere_Cloud.html" />
   
    
 
@@ -39,10 +39,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="awesome.html" title="27. Awesome"
+          <a href="awesome.html" title="26. Awesome"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="Atmosphere_Cloud.html" title="20. Logging onto Atmosphere Cloud"
+          <a href="Atmosphere_Cloud.html" title="19. Logging onto Atmosphere Cloud"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="toc.html">snakemake2019 0.0.1 documentation</a> &#187;</li> 
       </ul>
@@ -59,16 +59,16 @@
     <h2>Contents</h2>
     <div class="sidebar-localtoc">
       <ul>
-<li><a class="reference internal" href="#">26. Running Jobs in containers</a><ul>
-<li><a class="reference internal" href="#what-are-containers">26.1. What are containers</a></li>
-<li><a class="reference internal" href="#login-to-cyverse-atmosphere">26.2. Login to CyVerse Atmosphere</a></li>
-<li><a class="reference internal" href="#launch-a-medium-m1-instance-with-the-dcg-unr-rnaseq-v3-0-base-image">26.3. Launch a medium ‘m1’ instance with the ‘DCG-UNR-RNAseq’ v3.0 base image</a></li>
-<li><a class="reference internal" href="#activate-conda">26.4. Activate Conda</a></li>
-<li><a class="reference internal" href="#test-singularity">26.5. Test singularity</a></li>
-<li><a class="reference internal" href="#download-data">26.6. Download data</a></li>
-<li><a class="reference internal" href="#run-snakemake">26.7. Run snakemake</a></li>
-<li><a class="reference internal" href="#execute-snakemake-with">26.8. Execute Snakemake with</a></li>
-<li><a class="reference internal" href="#generate-report">26.9. Generate Report</a></li>
+<li><a class="reference internal" href="#">25. Running Jobs in containers</a><ul>
+<li><a class="reference internal" href="#what-are-containers">25.1. What are containers</a></li>
+<li><a class="reference internal" href="#login-to-cyverse-atmosphere">25.2. Login to CyVerse Atmosphere</a></li>
+<li><a class="reference internal" href="#launch-a-medium-m1-instance-with-the-dcg-unr-rnaseq-v3-0-base-image">25.3. Launch a medium ‘m1’ instance with the ‘DCG-UNR-RNAseq’ v3.0 base image</a></li>
+<li><a class="reference internal" href="#activate-conda">25.4. Activate Conda</a></li>
+<li><a class="reference internal" href="#test-singularity">25.5. Test singularity</a></li>
+<li><a class="reference internal" href="#download-data">25.6. Download data</a></li>
+<li><a class="reference internal" href="#run-snakemake">25.7. Run snakemake</a></li>
+<li><a class="reference internal" href="#execute-snakemake-with">25.8. Execute Snakemake with</a></li>
+<li><a class="reference internal" href="#generate-report">25.9. Generate Report</a></li>
 </ul>
 </li>
 </ul>
@@ -78,10 +78,10 @@
 </div>
   <h4>Previous topic</h4>
   <p class="topless"><a href="Atmosphere_Cloud.html"
-                        title="previous chapter">20. Logging onto Atmosphere Cloud</a></p>
+                        title="previous chapter">19. Logging onto Atmosphere Cloud</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="awesome.html"
-                        title="next chapter">27. Awesome</a></p>
+                        title="next chapter">26. Awesome</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -111,32 +111,31 @@
             <ol class="breadcrumb">
               <li><a href="toc.html">Docs</a></li>
               
-              <li>26. Running Jobs in containers</li>
+              <li>25. Running Jobs in containers</li>
             </ol>
           </div>
           
           <div class="document clearer body">
             
   <div class="section" id="running-jobs-in-containers">
-<h1>26. Running Jobs in containers<a class="headerlink" href="#running-jobs-in-containers" title="Permalink to this headline">¶</a></h1>
+<h1>25. Running Jobs in containers<a class="headerlink" href="#running-jobs-in-containers" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-are-containers">
-<h2>26.1. What are containers<a class="headerlink" href="#what-are-containers" title="Permalink to this headline">¶</a></h2>
-<p>Containers are running instances of Singularity/Docker images — containers run the actual applications. A container includes an application and all of its dependencies. It shares the kernel with other containers, and runs as an isolated process in user space on the host OS.</p>
-<p>And</p>
-<p>Snakemake with Singularity (installed separately)
-<strong>Snakemake can automatically deploy required software dependencies of a workflow using Conda or Singularity.</strong></p>
-<p>We will be executing the same workflow <strong>(fastqc—&gt;multiqc—&gt;trimmomatic)</strong> as in <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html">Basic Tutorial</a> but, with each tool being executed in singularity containers based on either Docker or Singularity builds</p>
+<h2>25.1. What are containers<a class="headerlink" href="#what-are-containers" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>Containers are running instances of Singularity/Docker images — containers run the actual applications. A container includes an application and all of its dependencies. It shares the kernel with other containers, and runs as an isolated process in user space on the host OS.</strong></li>
+<li>We will be executing the same workflow <strong>(fastqc—&gt;multiqc—&gt;trimmomatic)</strong> as in <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html">Basic Tutorial</a> <strong>but, with tools being executed in singularity containers based on either Docker or Singularity builds</strong></li>
+</ul>
 <blockquote>
 <div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html"><strong>Guide to Launching Atmosphere Instances</strong></a></div></blockquote>
 </div>
 <div class="section" id="login-to-cyverse-atmosphere">
-<h2>26.2. Login to CyVerse <a class="reference external" href="https://atmo.cyverse.org/application/images">Atmosphere</a><a class="headerlink" href="#login-to-cyverse-atmosphere" title="Permalink to this headline">¶</a></h2>
+<h2>25.2. Login to CyVerse <a class="reference external" href="https://atmo.cyverse.org/application/images">Atmosphere</a><a class="headerlink" href="#login-to-cyverse-atmosphere" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="launch-a-medium-m1-instance-with-the-dcg-unr-rnaseq-v3-0-base-image">
-<h2>26.3. Launch a medium ‘m1’ instance with the ‘DCG-UNR-RNAseq’ v3.0 base image<a class="headerlink" href="#launch-a-medium-m1-instance-with-the-dcg-unr-rnaseq-v3-0-base-image" title="Permalink to this headline">¶</a></h2>
+<h2>25.3. Launch a medium ‘m1’ instance with the ‘DCG-UNR-RNAseq’ v3.0 base image<a class="headerlink" href="#launch-a-medium-m1-instance-with-the-dcg-unr-rnaseq-v3-0-base-image" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="activate-conda">
-<h2>26.4. Activate Conda<a class="headerlink" href="#activate-conda" title="Permalink to this headline">¶</a></h2>
+<h2>25.4. Activate Conda<a class="headerlink" href="#activate-conda" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo export PATH=$PATH:/opt/miniconda3/bin &gt;&gt; ~/.bashrc
 </pre></div>
 </div>
@@ -156,7 +155,7 @@
 </div>
 </div>
 <div class="section" id="test-singularity">
-<h2>26.5. Test singularity<a class="headerlink" href="#test-singularity" title="Permalink to this headline">¶</a></h2>
+<h2>25.5. Test singularity<a class="headerlink" href="#test-singularity" title="Permalink to this headline">¶</a></h2>
 <p>Singularity is pre-installed in this image. Test installation by</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity --version
 </pre></div>
@@ -165,13 +164,10 @@
 <div>2.6.1-HEAD.9103f015</div></blockquote>
 </div>
 <div class="section" id="download-data">
-<h2>26.6. Download data<a class="headerlink" href="#download-data" title="Permalink to this headline">¶</a></h2>
+<h2>25.6. Download data<a class="headerlink" href="#download-data" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir data
 <span class="nb">cd</span> data/
-</pre></div>
-</div>
-<p>Download the test reads by</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -L https://osf.io/er5tb/download -o data.zip
+curl -L https://osf.io/er5tb/download -o data.zip
 unzip data.zip
 rm data.zip
 <span class="nb">cd</span> ..
@@ -179,7 +175,7 @@ rm data.zip
 </div>
 </div>
 <div class="section" id="run-snakemake">
-<h2>26.7. Run snakemake<a class="headerlink" href="#run-snakemake" title="Permalink to this headline">¶</a></h2>
+<h2>25.7. Run snakemake<a class="headerlink" href="#run-snakemake" title="Permalink to this headline">¶</a></h2>
 <p>Create Snakefile</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano Snakefile
 </pre></div>
@@ -243,52 +239,57 @@ rm data.zip
 </div>
 </div>
 <div class="section" id="execute-snakemake-with">
-<h2>26.8. Execute Snakemake with<a class="headerlink" href="#execute-snakemake-with" title="Permalink to this headline">¶</a></h2>
+<h2>25.8. Execute Snakemake with<a class="headerlink" href="#execute-snakemake-with" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">snakemake</span> <span class="o">--</span><span class="n">use</span><span class="o">-</span><span class="n">singularity</span>
 </pre></div>
 </div>
-<p>Snakemake will pull the containers and execute each rule individually in the containers specified</p>
+<blockquote>
+<div>Snakemake will pull the containers and execute each rule individually in the containers specified</div></blockquote>
 </div>
 <div class="section" id="generate-report">
-<h2>26.9. Generate Report<a class="headerlink" href="#generate-report" title="Permalink to this headline">¶</a></h2>
+<h2>25.9. Generate Report<a class="headerlink" href="#generate-report" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake --report report.html
 </pre></div>
 </div>
+<blockquote>
+<div><strong>Note: It is advisable to delete the machine if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it.</strong></div></blockquote>
 <hr class="docutils" />
-<p>[^1]: DCG-UNR-RNAseq v3.0 Atmosphere Image Specifications</p>
-<p>Software:
-- Miniconda 4.6.8
-- Rstudio 1.1.453
-- Singularity 2.6.1
-- Snakemake 5.4.0
-Conda tools:
-- fastqc 0.11.8
-- multiqc 1.6
-- trimmomatic 0.38
-- salmon 0.11.3
-- trinity 2.8.4
-R_Packages:
-- “BiocGenerics”
-- “S4Vectors”
-- “knitr”
-- “readr”
-- “GenomicFeatures”
-- “rjson”
-- “tximport”
-- “DESeq2”
-- “magrittr”
-- “ggplot2”
-- “org.Hs.eg.db”
-- “dplyr”
-- “GO.db”
-- “formatR”
-- “caTools”
-- “rprojroot”
-- “rmarkdown”
-- “AnnotationDbi”
-- “clusterProfiler”
-- “org.Mm.eg.db”</p>
-<p>[^2]: A container image is an encapsulated, portable environment that is created to distribute a scientific analysis or a general function. Containers help with reproducibility of such content as they nicely package software and data dependencies, along with libraries that are needed.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DCG</span><span class="o">-</span><span class="n">UNR</span><span class="o">-</span><span class="n">RNAseq</span> <span class="n">v3</span><span class="o">.</span><span class="mi">0</span> <span class="n">Atmosphere</span> <span class="n">Image</span> <span class="n">Specifications</span>
+
+<span class="n">Software</span><span class="p">:</span>
+		    <span class="o">-</span> <span class="n">Miniconda</span> <span class="mf">4.6</span><span class="o">.</span><span class="mi">8</span>
+		    <span class="o">-</span> <span class="n">Rstudio</span> <span class="mf">1.1</span><span class="o">.</span><span class="mi">453</span>
+		    <span class="o">-</span> <span class="n">Singularity</span> <span class="mf">2.6</span><span class="o">.</span><span class="mi">1</span>
+		    <span class="o">-</span> <span class="n">Snakemake</span> <span class="mf">5.4</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">Conda</span> <span class="n">tools</span><span class="p">:</span>
+		    <span class="o">-</span> <span class="n">fastqc</span> <span class="mf">0.11</span><span class="o">.</span><span class="mi">8</span>
+		    <span class="o">-</span> <span class="n">multiqc</span> <span class="mf">1.6</span>
+		    <span class="o">-</span> <span class="n">trimmomatic</span> <span class="mf">0.38</span>
+		    <span class="o">-</span> <span class="n">salmon</span> <span class="mf">0.11</span><span class="o">.</span><span class="mi">3</span>
+		    <span class="o">-</span> <span class="n">trinity</span> <span class="mf">2.8</span><span class="o">.</span><span class="mi">4</span>
+<span class="n">R_Packages</span><span class="p">:</span>
+	        <span class="o">-</span> <span class="s2">&quot;BiocGenerics&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;S4Vectors&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;knitr&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;readr&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;GenomicFeatures&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;rjson&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;tximport&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;DESeq2&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;magrittr&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;ggplot2&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;org.Hs.eg.db&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;dplyr&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;GO.db&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;formatR&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;caTools&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;rprojroot&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;rmarkdown&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;AnnotationDbi&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;clusterProfiler&quot;</span>
+	        <span class="o">-</span> <span class="s2">&quot;org.Mm.eg.db&quot;</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -298,11 +299,11 @@ R_Packages:
   <div class="footer-relations">
     
       <div class="pull-left">
-        <a class="btn btn-default" href="Atmosphere_Cloud.html" title="previous chapter (use the left arrow)">20. Logging onto Atmosphere Cloud</a>
+        <a class="btn btn-default" href="Atmosphere_Cloud.html" title="previous chapter (use the left arrow)">19. Logging onto Atmosphere Cloud</a>
       </div>
     
       <div class="pull-right">
-        <a class="btn btn-default" href="awesome.html" title="next chapter (use the right arrow)">27. Awesome</a>
+        <a class="btn btn-default" href="awesome.html" title="next chapter (use the right arrow)">26. Awesome</a>
       </div>
     </div>
     <div class="clearer"></div>
@@ -317,10 +318,10 @@ R_Packages:
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="awesome.html" title="27. Awesome"
+          <a href="awesome.html" title="26. Awesome"
              >next</a> |</li>
         <li class="right" >
-          <a href="Atmosphere_Cloud.html" title="20. Logging onto Atmosphere Cloud"
+          <a href="Atmosphere_Cloud.html" title="19. Logging onto Atmosphere Cloud"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="toc.html">snakemake2019 0.0.1 documentation</a> &#187;</li> 
       </ul>

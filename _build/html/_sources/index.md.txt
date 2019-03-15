@@ -1,24 +1,25 @@
 Reproducible Workflows using Snakemake and Singularity
 ===
-![logo](/img/smake_logo.png)
+![logo](/img/tutorial_logo.png)
 
-**The Snakemake workflow management system is a tool to create reproducible and scalable data analyses.**
+- **The Snakemake workflow management system is a tool to create reproducible and scalable data analyses.**
 
-**Workflows are described via a human readable, Python based language. They can be seamlessly scaled to server, cluster, grid and cloud environments, without the need to modify the workflow definition.**
+- **Workflows are described via a human readable, Python based language. They can be seamlessly scaled to server, cluster, grid and cloud environments, without the need to modify the workflow definition.**
 
-**Snakemake workflows can entail a description of required software, which will be automatically deployed to any execution environment.**
+- **Snakemake workflows can entail a description of required software, which will be automatically deployed to any execution environment.**
 
-> Basic UNIX command-line experience [required]().  
-> > You don't need to be an expert at Python to use Snakemake, but it can sometimes be very useful.
+> Basic UNIX command-line experience required.
 
-> No license; the below content is availalbe under CC0 general license.
+> You don't need to be an expert at Python to use Snakemake, but it can sometimes be very useful.
 
+> No license; the below content is available under CC0 general license.
 
 ### Author:
 > [Sateesh Peri](https://twitter.com/perisateesh)
 
 ### Credits
 The content for this website has been compiled from tutorials put together by:
+
 + [Titus Brown](https://twitter.com/ctitusbrown) - Link to [Tutorial](https://github.com/ctb/2019-snakemake-ucdavis)
 
 + [Johannes Koster](https://twitter.com/johanneskoester) - Link to [Tutorial](https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html)
@@ -39,13 +40,13 @@ This tutorial uses
 
 ## Working on Binder
 
-We're going to use [mybinder.org](https://mybinder.org/) , a fantastic service that lets us run demonstrations and short workshops in the cloud! 
+- We're going to use [mybinder.org](https://mybinder.org/) , a fantastic service that lets us run demonstrations and short workshops in the cloud! 
 
 > **Click on this [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/binder?urlpath=rstudio) button to launch a pre-configured Binder file that is rendered via a Rstudio interface.**
 
 - The binder is built using this 'conda' [environment.yml](https://github.com/sateeshperi/snakemake2019/blob/master/binder/environment.yml).
 
-> Note: No support for '--use-singularity'
+> Note:  No support for '--use-singularity'
 
 ## Working on Cloud
 
@@ -76,7 +77,7 @@ conda activate smake
 conda deactivate
 ```
 
-- Singularity installation needs 'sudo' rights and instructions can be found [here](https://www.sylabs.io/guides/3.0/user-guide/installation.html#installation)
+- [**Singularity installation**] needs 'sudo' rights and instructions can be found [here](https://www.sylabs.io/guides/3.0/user-guide/installation.html#installation)
 
 > Singularity modules in HPCs
 

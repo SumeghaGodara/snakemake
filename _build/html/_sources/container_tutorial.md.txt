@@ -3,14 +3,9 @@ Running Jobs in containers
 
 ### What are containers
 
-Containers are running instances of Singularity/Docker images — containers run the actual applications. A container includes an application and all of its dependencies. It shares the kernel with other containers, and runs as an isolated process in user space on the host OS.
+- **Containers are running instances of Singularity/Docker images — containers run the actual applications. A container includes an application and all of its dependencies. It shares the kernel with other containers, and runs as an isolated process in user space on the host OS.**
 
-And
-
-Snakemake with Singularity (installed separately) 
-**Snakemake can automatically deploy required software dependencies of a workflow using Conda or Singularity.**
-
-We will be executing the same workflow **(fastqc--->multiqc--->trimmomatic)** as in [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html) but, with each tool being executed in singularity containers based on either Docker or Singularity builds
+- We will be executing the same workflow **(fastqc--->multiqc--->trimmomatic)** as in [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html) **but, with tools being executed in singularity containers based on either Docker or Singularity builds**
 
 > [**Guide to Launching Atmosphere Instances**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html)
 
@@ -59,11 +54,6 @@ singularity --version
 ```bash
 mkdir data
 cd data/
-```
-
-Download the test reads by
-
-```bash
 curl -L https://osf.io/er5tb/download -o data.zip
 unzip data.zip
 rm data.zip
@@ -142,7 +132,7 @@ rule clean:
 snakemake --use-singularity
 ```
 
-Snakemake will pull the containers and execute each rule individually in the containers specified
+> Snakemake will pull the containers and execute each rule individually in the containers specified
 
 ### Generate Report
 
@@ -150,9 +140,12 @@ Snakemake will pull the containers and execute each rule individually in the con
 snakemake --report report.html
 ```
 
+> **Note: It is advisable to delete the machine if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it.**
+
 ---------------------------
 
-[^1]: DCG-UNR-RNAseq v3.0 Atmosphere Image Specifications
+```
+DCG-UNR-RNAseq v3.0 Atmosphere Image Specifications
 
 Software:
 		    - Miniconda 4.6.8
@@ -186,10 +179,4 @@ R_Packages:
 	        - "AnnotationDbi"
 	        - "clusterProfiler"
 	        - "org.Mm.eg.db"
-
-
-
-
-
-
-[^2]: A container image is an encapsulated, portable environment that is created to distribute a scientific analysis or a general function. Containers help with reproducibility of such content as they nicely package software and data dependencies, along with libraries that are needed.
+```

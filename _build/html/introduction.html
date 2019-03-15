@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="12. Basic Tutorial" href="basic_tutorial.html" />
+    <link rel="next" title="10. Basic Tutorial" href="basic_tutorial.html" />
     <link rel="prev" title="1. Reproducible Workflows using Snakemake and Singularity" href="index.html" />
   
    
@@ -39,7 +39,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="basic_tutorial.html" title="12. Basic Tutorial"
+          <a href="basic_tutorial.html" title="10. Basic Tutorial"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="1. Reproducible Workflows using Snakemake and Singularity"
@@ -63,12 +63,12 @@
 <li><a class="reference internal" href="#why-invest-time-in-a-workflow-management-system">8.1. Why invest time in a workflow management system?</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#snakemake">9. <strong>Snakemake</strong></a><ul>
+<li><a class="reference internal" href="#snakemake">9. Snakemake</a><ul>
 <li><a class="reference internal" href="#snakemake-advantages">9.1. Snakemake Advantages:</a></li>
+<li><a class="reference internal" href="#other-workflow-managers">9.2. Other Workflow Managers</a></li>
+<li><a class="reference internal" href="#containers">9.3. Containers</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#nextflow">10. Nextflow</a></li>
-<li><a class="reference internal" href="#pegasus">11. Pegasus</a></li>
 </ul>
 
     </div>
@@ -79,7 +79,7 @@
                         title="previous chapter">1. Reproducible Workflows using Snakemake and Singularity</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="basic_tutorial.html"
-                        title="next chapter">12. Basic Tutorial</a></p>
+                        title="next chapter">10. Basic Tutorial</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -117,19 +117,21 @@
             
   <div class="section" id="introduction">
 <h1>8. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p><img alt="_images/hate_research.png" src="_images/hate_research.png" />hate_research</p>
 <div class="section" id="why-invest-time-in-a-workflow-management-system">
 <h2>8.1. Why invest time in a workflow management system?<a class="headerlink" href="#why-invest-time-in-a-workflow-management-system" title="Permalink to this headline">¶</a></h2>
-<p><img alt="_images/hate_research.png" src="_images/hate_research.png" />hate_research</p>
-<p><strong>A common pattern in scientific computing involves the execution of many computational or data manipulation tasks. Those tasks are usually coupled, i.e., data produced by of one task are consumed by one or more other tasks. Thus execution of such tasks often requires a non-trivial coordination (orchestration) to satisfy their data dependencies.</strong></p>
-<p><strong>A workflow management system (WMS) is a piece of software that sets up, performs and monitors a defined sequence of computational tasks (i.e. “a workflow”).</strong></p>
-<p><a class="reference external" href="https://hackmd.io/4useBM-tQHGGBg-i_2eAIw#"><strong>The Rationale</strong></a></p>
+<ul class="simple">
+<li><strong>A common pattern in scientific computing involves the execution of many computational or data manipulation tasks. Those tasks are usually coupled, i.e., data produced by of one task are consumed by one or more other tasks. Thus execution of such tasks often requires a non-trivial coordination (orchestration) to satisfy their data dependencies.</strong></li>
+<li><strong>A workflow management system (WMS) is a piece of software that sets up, performs and monitors a defined sequence of computational tasks (i.e. “a workflow”).</strong></li>
+</ul>
 </div>
 </div>
 <div class="section" id="snakemake">
-<h1>9. <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/index.html"><strong>Snakemake</strong></a><a class="headerlink" href="#snakemake" title="Permalink to this headline">¶</a></h1>
-<p><strong>Snakemake is a workflow management system that helps you build pipelines between the scripts of your project.</strong></p>
-<p><strong>Snakemake allows you to create a set of rules, each one defining a “step” of your analysis. Rules can either use shell commands, plain Python code or external Python or R scripts to create output files from input files.</strong></p>
-<p>For each step you need to provide:</p>
+<h1>9. Snakemake<a class="headerlink" href="#snakemake" title="Permalink to this headline">¶</a></h1>
+<p><strong><a class="reference external" href="https://snakemake.readthedocs.io/en/stable/index.html">Snakemake</a> is a workflow management system that helps you build pipelines between the scripts of your project.</strong></p>
+<p><strong>Snakemake allows you to create a set of rules, each one defining a “step” of your analysis. Rules can either use shell commands, plain Python code or external Python or R scripts to create output files from input files. Read original paper <a class="reference external" href="https://academic.oup.com/bioinformatics/article/28/19/2520/290322">here</a></strong></p>
+<p><strong>The workflow is implied by dependencies between the rules that arise from one rule needing an output file of another as an input file.</strong></p>
+<p>For each rule you need to provide:</p>
 <ul class="simple">
 <li><strong>Input</strong> : Data files, scripts, executables or any other files.</li>
 <li><strong>Expected output</strong>. It’s not required to list all possible outputs. Just those that you want to monitor or that are used by a subsequent step as inputs.</li>
@@ -141,8 +143,6 @@
     <span class="n">shell</span><span class="p">:</span> <span class="s1">&#39;Some command to go from in to out&#39;</span>
 </pre></div>
 </div>
-<blockquote>
-<div>The rules need to be written in a file called “<strong>Snakefile</strong>”.</div></blockquote>
 <div class="section" id="snakemake-advantages">
 <h2>9.1. Snakemake Advantages:<a class="headerlink" href="#snakemake-advantages" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -154,18 +154,23 @@
 <li><strong>Snakemake can automatically deploy required software dependencies of a workflow using Conda or Singularity.</strong></li>
 <li>Snakemake can use Amazon S3, Google Storage, Dropbox, FTP, WebDAV, SFTP and iRODS to access input or output files and further access input files via HTTP and HTTPS.</li>
 </ul>
-<p><a class="reference external" href="https://academic.oup.com/bioinformatics/article/28/19/2520/290322"><strong>Snakemake Paper</strong></a></p>
+<p><a class="reference external" href="https://hackmd.io/4useBM-tQHGGBg-i_2eAIw#"><strong>The Rationale</strong></a></p>
 </div>
+<div class="section" id="other-workflow-managers">
+<h2>9.2. Other Workflow Managers<a class="headerlink" href="#other-workflow-managers" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.nextflow.io/">Nextflow</a><ul>
+<li>Dockers with Nextflow documentation is <a class="reference external" href="https://www.nextflow.io/docs/latest/docker.html">here</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="https://pegasus.isi.edu/">Pegasus</a> - <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0167739X14002015">Pegasus_Paper</a></li>
+</ul>
 </div>
-<div class="section" id="nextflow">
-<h1>10. <a class="reference external" href="https://www.nextflow.io/">Nextflow</a><a class="headerlink" href="#nextflow" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div>Dockers with Nextflow documentation is <a class="reference external" href="https://www.nextflow.io/docs/latest/docker.html">here</a></div></blockquote>
+<div class="section" id="containers">
+<h2>9.3. Containers<a class="headerlink" href="#containers" title="Permalink to this headline">¶</a></h2>
+<p>Container:
+A container image is an encapsulated, portable environment that is created to distribute a scientific analysis or a general function. Containers help with reproducibility of such content as they nicely package software and data dependencies, along with libraries that are needed.</p>
 </div>
-<div class="section" id="pegasus">
-<h1>11. <a class="reference external" href="https://pegasus.isi.edu/">Pegasus</a><a class="headerlink" href="#pegasus" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0167739X14002015">Pegasus_Paper</a></div></blockquote>
 </div>
 
 
@@ -178,7 +183,7 @@
       </div>
     
       <div class="pull-right">
-        <a class="btn btn-default" href="basic_tutorial.html" title="next chapter (use the right arrow)">12. Basic Tutorial</a>
+        <a class="btn btn-default" href="basic_tutorial.html" title="next chapter (use the right arrow)">10. Basic Tutorial</a>
       </div>
     </div>
     <div class="clearer"></div>
@@ -193,7 +198,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="basic_tutorial.html" title="12. Basic Tutorial"
+          <a href="basic_tutorial.html" title="10. Basic Tutorial"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="1. Reproducible Workflows using Snakemake and Singularity"
