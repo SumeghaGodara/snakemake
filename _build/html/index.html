@@ -68,8 +68,8 @@
 <li><a class="reference internal" href="#introduction">3. Introduction</a></li>
 <li><a class="reference internal" href="#working-on-binder">4. Working on Binder</a></li>
 <li><a class="reference internal" href="#working-on-cloud">5. Working on Cloud</a></li>
-<li><a class="reference internal" href="#custom-install">6. Custom Install</a></li>
-<li><a class="reference internal" href="#awesome">7. [Awesome]</a></li>
+<li><a class="reference internal" href="#working-locally">6. Working Locally</a></li>
+<li><a class="reference internal" href="#awesome">7. Awesome</a></li>
 <li><a class="reference internal" href="#coming-soon">8. Coming Soon</a></li>
 </ul>
 
@@ -156,7 +156,7 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li>This tutorial is designed to introduce ‘building reproducible workflows’ using:<ul>
+<li>This tutorial is designed to introduce <em>building reproducible workflows</em> using:<ul>
 <li><a class="reference external" href="https://conda.io/en/latest/"><strong>conda</strong></a> and <a class="reference external" href="https://bioconda.github.io/"><strong>bioconda</strong></a> for <strong>Environment Management</strong></li>
 <li><a class="reference external" href="https://snakemake.readthedocs.io/en/stable/"><strong>Snakemake</strong></a> for <strong>Workflow Management</strong></li>
 <li><a class="reference external" href="https://www.sylabs.io/docs/"><strong>Singularity</strong></a> for <strong>Container Management</strong></li>
@@ -167,7 +167,7 @@
 <div class="section" id="introduction">
 <h1>3. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>(https://snakemake2019.readthedocs.io/en/latest/introduction.html)</li>
+<li><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/introduction.html">Why…Why…Why???</a></li>
 </ul>
 </div>
 <div class="section" id="working-on-binder">
@@ -210,19 +210,20 @@
 </ul>
 </li>
 </ul>
+<p><img alt="_images/cyverse_logo.png" src="_images/cyverse_logo.png" />cyverse_logo</p>
 <blockquote>
-<div><img alt="_images/cyverse_logo.png" src="_images/cyverse_logo.png" />cyverse_logo <strong><a class="reference external" href="https://www.cyverse.org/about"><strong>CyVerse</strong></a> is a cyber-infrastructure initiative funded by the National Science Foundation’s Directorate for Biological Sciences to address the growing needs for highly configurable and customized computational infrastructure to support research efforts in data sciences.</strong></div></blockquote>
+<div><strong><a class="reference external" href="https://www.cyverse.org/about"><strong>CyVerse</strong></a> is a cyber-infrastructure initiative funded by the National Science Foundation’s Directorate for Biological Sciences to address the growing needs for highly configurable and customized computational infrastructure to support research efforts in data sciences.</strong></div></blockquote>
 <p><img alt="_images/cyverse_services.png" src="_images/cyverse_services.png" />cyverse_services</p>
 </div>
-<div class="section" id="custom-install">
-<h1>6. Custom Install<a class="headerlink" href="#custom-install" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="working-locally">
+<h1>6. Working Locally<a class="headerlink" href="#working-locally" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div>We recommend <a class="reference external" href="https://conda.io/en/latest/"><strong>conda</strong></a>, an open source package management system and environment management system that runs on Windows, macOS and Linux.</div></blockquote>
 <ul class="simple">
 <li>Download and install conda:</li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">O</span> <span class="o">-</span><span class="n">L</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">continuum</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">miniconda</span><span class="o">/</span><span class="n">Miniconda3</span><span class="o">-</span><span class="n">latest</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
-<span class="n">bash</span> <span class="n">Miniconda3</span><span class="o">-</span><span class="n">latest</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -O -L https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
 </pre></div>
 </div>
 <blockquote>
@@ -230,34 +231,34 @@
 <ul class="simple">
 <li>When the installation is complete and the regular prompt returns, run the following command (or start a new terminal session) in order to activate the conda environment:</li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.bashrc
 </pre></div>
 </div>
 <ul class="simple">
 <li>Next, enable various “channels” for software install, including bioconda:</li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">defaults</span>
-<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
-<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">bioconda</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --add channels defaults
+conda config --add channels conda-forge
+conda config --add channels bioconda
 </pre></div>
 </div>
 <ul class="simple">
 <li>Next, download conda ‘environment.yml’ file, designed for this tutorial <a class="reference external" href="https://github.com/sateeshperi/snakemake2019/blob/master/binder/environment.yml">here</a></li>
 <li>Install tools in a new conda environment ‘smake’ using downloaded environemnt file</li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">--</span><span class="n">file</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span> <span class="o">-</span><span class="n">n</span> <span class="n">smake</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env create --file environment.yml -n smake
 </pre></div>
 </div>
 <ul class="simple">
 <li>To activate the environment for tutorial</li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">smake</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate smake
 </pre></div>
 </div>
 <ul class="simple">
 <li>To deactivate environment after use</li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">deactivate</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda deactivate
 </pre></div>
 </div>
 <ul class="simple">
@@ -265,7 +266,7 @@
 </ul>
 </div>
 <div class="section" id="awesome">
-<h1>7. [Awesome]<a class="headerlink" href="#awesome" title="Permalink to this headline">¶</a></h1>
+<h1>7. Awesome<a class="headerlink" href="#awesome" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/awesome.html">Awesome list of Snakemake resources</a></li>
 </ul>
@@ -273,9 +274,10 @@
 <div class="section" id="coming-soon">
 <h1>8. Coming Soon<a class="headerlink" href="#coming-soon" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><em>Kubernetes</em></li>
 <li>Singularity modules in HPCs</li>
 <li>Building containers from scratch</li>
+<li></li>
+<li>Did someone say <em>Kubernetes</em> !!!</li>
 </ul>
 </div>
 

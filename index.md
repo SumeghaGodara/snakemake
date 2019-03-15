@@ -34,7 +34,7 @@ The content for this website has been compiled from tutorials put together by:
 	+ Understand snakemake wildcards and pattern rules
 	+ Understand how snakemake manages dependencies and outputs
 
-- This tutorial is designed to introduce 'building reproducible workflows' using:
+- This tutorial is designed to introduce *building reproducible workflows* using:
 	+ [**conda**](https://conda.io/en/latest/) and [**bioconda**](https://bioconda.github.io/) for **Environment Management**
 
 	+ [**Snakemake**](https://snakemake.readthedocs.io/en/stable/) for **Workflow Management**
@@ -43,7 +43,7 @@ The content for this website has been compiled from tutorials put together by:
 
 # Introduction
 
-- (https://snakemake2019.readthedocs.io/en/latest/introduction.html)
+- [Why...Why...Why???](https://snakemake2019.readthedocs.io/en/latest/introduction.html)
 
 # Working on Binder
 
@@ -86,17 +86,19 @@ The content for this website has been compiled from tutorials put together by:
 	+ Easily generate and manage statistical reporting of user resources for total CPU hours and memory usages, total instances and applications launched by user, cloud monitoring, and on-demand intelligence resource allocation
 
 
-> ![cyverse_logo](/img/cyverse_logo.png) **[**CyVerse**](https://www.cyverse.org/about) is a cyber-infrastructure initiative funded by the National Science Foundation’s Directorate for Biological Sciences to address the growing needs for highly configurable and customized computational infrastructure to support research efforts in data sciences.**
+![cyverse_logo](/img/cyverse_logo.png) 
+
+> **[**CyVerse**](https://www.cyverse.org/about) is a cyber-infrastructure initiative funded by the National Science Foundation’s Directorate for Biological Sciences to address the growing needs for highly configurable and customized computational infrastructure to support research efforts in data sciences.**
 
 ![cyverse_services](/img/cyverse_services.png)
 
-# Custom Install
+# Working Locally
 
 > We recommend [**conda**](https://conda.io/en/latest/), an open source package management system and environment management system that runs on Windows, macOS and Linux.
 
 - Download and install conda:
 
-```
+```bash
 curl -O -L https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 ```
@@ -104,12 +106,12 @@ bash Miniconda3-latest-Linux-x86_64.sh
 
 - When the installation is complete and the regular prompt returns, run the following command (or start a new terminal session) in order to activate the conda environment:
 
-```
+```bash
 source ~/.bashrc
 ```
 - Next, enable various “channels” for software install, including bioconda:
 
-```
+```bash
 conda config --add channels defaults
 conda config --add channels conda-forge
 conda config --add channels bioconda
@@ -119,28 +121,29 @@ conda config --add channels bioconda
 
 - Install tools in a new conda environment 'smake' using downloaded environemnt file
 
-```
+```bash
 conda env create --file environment.yml -n smake
 ```
 
 - To activate the environment for tutorial
-```
+```bash
 conda activate smake
 ```
 
 - To deactivate environment after use
-```
+```bash
 conda deactivate
 ```
 
 - Singularity installation needs **sudo** permissions and instructions can be found [here](https://www.sylabs.io/guides/3.0/user-guide/installation.html#installation)
 
-# [Awesome]
+# Awesome
 
 + [Awesome list of Snakemake resources](https://snakemake2019.readthedocs.io/en/latest/awesome.html)
 
 # Coming Soon
 
-+ *Kubernetes*
-+  Singularity modules in HPCs
++ Singularity modules in HPCs
 + Building containers from scratch
++
++ Did someone say *Kubernetes* !!!
