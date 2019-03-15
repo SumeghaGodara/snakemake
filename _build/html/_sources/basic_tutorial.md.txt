@@ -5,7 +5,7 @@ Basic Tutorial
 
 - We're mostly going to work in the file editor and the terminal of Rstudio; to get started, open the terminal, and execute:**
 
-```
+```bash
 PS1='$ '
 ```
 to get a shorter terminal prompt.
@@ -14,7 +14,7 @@ to get a shorter terminal prompt.
 
 - Create a new text file (`File`, `New File`, `Text file`) and write:
 
-```
+```python
 rule fastqc_a_file:
   shell:
     "fastqc data/0Hour_001_1.fq.gz"
@@ -24,12 +24,12 @@ rule fastqc_a_file:
 - Then save it as a file named `Snakefile`.
 
 - Now, run snakemake:
-```
+```bash
 snakemake
 ```
 
 - and you should see:
-```
+```bash
 Building DAG of jobs...
 Using shell: /bin/bash
 Provided cores: 1
@@ -58,7 +58,7 @@ Complete log: /home/jovyan/.snakemake/log/2019-02-27T130941.260352.snakemake.log
 
 - Change your snakefile to look like this:
 
-```
+```python
 rule fastqc_a_file:
   input:
     "data/0Hour_001_1.fq.gz"
@@ -74,12 +74,12 @@ rule fastqc_a_file:
 > Question: how do we know what the output files are?
 
 - Now run:
-```
+```bash
 snakemake
 ```
 
 and you should see:
-```
+```bash
 Building DAG of jobs...
 Nothing to be done.
 Complete log: /home/jovyan/.snakemake/log/2019-02-27T132031.813143.snakemake.log
@@ -98,7 +98,7 @@ snakemake -f
 
 - You can also remove an output file and it will automatically re-run:
 
-```
+```bash
 rm data/*.html
 snakemake
 ```
@@ -106,7 +106,7 @@ snakemake
 
 - You can *also* update the timestamp on an *input* file, and snakemake will figure out that the output file is older than the input file, and rerun things.
 
-```
+```bash
 touch data/*.fq.gz
 snakemake
 ```
@@ -117,7 +117,7 @@ snakemake
 
 - Let's add a rule to run fastqc on a second file:
 
-```
+```python
 rule fastqc_a_file:
   input:
     "data/0Hour_001_1.fq.gz"
@@ -141,7 +141,7 @@ rule fastqc_a_file2:
 
 - Well, **snakemake only runs the *first* rule in a Snakefile, by default. You can give a rule name on the command line, if you like, or you can tell snakemake what output file(s) you want**. Let's do the latter:
 
-```
+```bash
 snakemake data/0Hour_001_1_fastqc.html data/6Hour_001_1_fastqc.html
 ```
 
@@ -159,7 +159,7 @@ snakemake data/0Hour_001_1_fastqc.html data/6Hour_001_1_fastqc.html
 
 - First, let's add a rule at the top:
 
-```
+```python
 rule all:
   input:
     "data/0Hour_001_1_fastqc.html",
@@ -196,7 +196,7 @@ Note that `snakemake -f` no longer works properly, because `-f` only forces reru
 
 **There's a lot of repetition in each of these rules. Let's collapse it down a little bit by replacing the filename in the fastqc command with a magic variable, `{input}`.**
 
-```
+```python
 rule all:
   input:
     "data/0Hour_001_1_fastqc.html",
@@ -231,7 +231,7 @@ Well, the output **filenames ALSO depend on the input file names in some way - s
 
 Let's rewrite the rule using some **snakemake pattern matching**:
 
-```
+```python
 rule all:
   input:
     "data/0Hour_001_1_fastqc.html",
@@ -259,7 +259,7 @@ rule fastqc_a_file2:
 **What we've done here is tell snakemake that anytime we say we *want* a file that ends with `_fastqc.html`, it should look for a file that ends in `.fq.gz` and then run `fastqc` on it.**
 
 Try running this:
-```
+```bash
 snakemake
 ```
 
@@ -269,7 +269,7 @@ snakemake
 
 Let's remove one, to get a trimmer, leaner, and above all *functional* snakefile:
 
-```
+```python
 rule all:
   input:
     "data/0Hour_001_1_fastqc.html",
@@ -294,7 +294,7 @@ Now here's the fun bit -- if you look in the data directory, you'll see that the
 
 How should we do that? (Give it a try!)
 
-```
+```python
 rule all:
   input:
     "data/0Hour_001_1_fastqc.html",
@@ -315,7 +315,7 @@ rule fastqc_a_file:
 
 Note you can just run snakemake whenever you want. It won't do anything unless something's changed.
 
-```
+```bash
 snakemake
 ```
 
@@ -328,12 +328,12 @@ So, we've gotten fastqc sorted out. What's next?
 multiqc takes a directory name under which there are one or more fastqc reports, and then summarizes them.
 
 Running it on the command line,
-```
+```bash
 multiqc data
 ```
 **you can see that it creates two outputs, `multiqc_report.html` and the directory `multiqc_data/` which contains a bunch of files. Let's create a snakemake rule for this; add:**
 
-```
+```python
 rule run_multiqc:
   output:
     "multiqc_report.html",
@@ -344,7 +344,7 @@ rule run_multiqc:
 **to the bottom of the file. (Note, you need to tell snakemake if an output is a directory.)**
 
 Now run it:
-```
+```bash
 snakemake run_multiqc
 ```
 
@@ -363,7 +363,7 @@ Let's fix the first two things first:
 
 Your snakefile should look like:
 
-```
+```python
 rule all:
   input:
     "data/0Hour_001_1_fastqc.html",
@@ -402,7 +402,7 @@ Yay, that seems to work!
 
 Basically we need to tell snakemake _all_ of the files that we want. On the face of it, that's easy -- change the rule like so:
 
-```
+```python
 rule run_multiqc:
   input:
     "data/0Hour_001_1_fastqc.html",
@@ -424,7 +424,7 @@ This will work, but there are two reasons this is not great.
 
 To use variables, let's make a Python list at the very top, containing all of our expected output files from fastqc:
 
-```
+```python
 fastqc_output = ["data/0Hour_001_1_fastqc.html", "data/6Hour_001_1_fastqc.html",
   "data/0Hour_001_2_fastqc.html", "data/6Hour_001_2_fastqc.html",
   "data/0Hour_002_1_fastqc.html", "data/6Hour_002_1_fastqc.html",
@@ -433,7 +433,7 @@ fastqc_output = ["data/0Hour_001_1_fastqc.html", "data/6Hour_001_1_fastqc.html",
 
 and modify the `all` and `multiqc` rules to contain this list. The final snakefile looks like this:
 
-```
+```python
 fastqc_output = ["data/0Hour_001_1_fastqc.html", "data/6Hour_001_1_fastqc.html",
   "data/0Hour_001_2_fastqc.html", "data/6Hour_001_2_fastqc.html",
   "data/0Hour_002_1_fastqc.html", "data/6Hour_002_1_fastqc.html",
@@ -478,7 +478,7 @@ Well, `multiqc_report.html` is already in the all rule, and the multiqc rule dep
 
 The Snakefile now looks like this:
 
-```
+```python
 fastqc_output = ["data/0Hour_001_1_fastqc.html", "data/6Hour_001_1_fastqc.html",
   "data/0Hour_001_2_fastqc.html", "data/6Hour_001_2_fastqc.html",
   "data/0Hour_002_1_fastqc.html", "data/6Hour_002_1_fastqc.html",
@@ -509,7 +509,7 @@ rule run_multiqc:
 
 and we can rerun it from scratch by doing:
 
-```
+```bash
 rm data/*.html multiqc_report.html
 snakemake
 ```
@@ -527,7 +527,7 @@ rerun the workflow.**
 
 It's kind of annoying to have to delete things explicitly. Snakemake should take care of that for us. Let's add a new rule, `clean`, that forces rerunning of things --
 
-``` 
+```bash
 rule clean:
   shell:
     "rm -f {fastqc_output} multiqc_report.html"
@@ -535,7 +535,7 @@ rule clean:
 
 and now try rerunning things:
 
-```
+```bash
 snakemake -p clean
 snakemake
 ```
@@ -559,7 +559,7 @@ So, we've put all this work into making this snakefile with its input rules and 
 
 Try:
 
-```
+```bash
 snakemake clean
 snakemake -j 4
 ```
@@ -570,7 +570,7 @@ this will run up to four things in parallel!
 
 Let's add some trimming!
 
-```
+```python
 rule trim_reads:
   input:
     "{filename}_1.fq.gz",
@@ -592,7 +592,7 @@ Points to make:
 
 Now add the appropriate files into the fastc output list too -- change it to:
 
-```
+```python
 fastqc_output = ["data/0Hour_001_1_fastqc.html", "data/6Hour_001_1_fastqc.html",
   "data/0Hour_001_2_fastqc.html", "data/6Hour_001_2_fastqc.html",
   "data/0Hour_002_1_fastqc.html", "data/6Hour_002_1_fastqc.html",
@@ -605,7 +605,7 @@ fastqc_output = ["data/0Hour_001_1_fastqc.html", "data/6Hour_001_1_fastqc.html",
 
 and re-run everything:
 
-```
+```bash
 snakemake clean
 snakemake -j 4
 ```
@@ -620,7 +620,7 @@ and voila - you've got a pile of trimmed output files, and a nice multiqc report
 
 **You can use `snakemake -n` to see what *would* be run, without actually running it! This is called a "dry run". This is useful when you have really big compute.**
 
-```
+```bash
 snakemake clean
 snakemake -n
 ```
@@ -649,7 +649,7 @@ dependencies:
 
 and then change the fastqc rule to look like this:
 
-```
+```python
 rule fastqc_a_file:
   input:
     "{filename}.fq.gz"
@@ -664,7 +664,7 @@ rule fastqc_a_file:
 
 you can now run snakemake like so,
 
-```
+```bash
 snakemake --use-conda
 ```
 **and for that rule, snakemake will install just that software, with the specified version.**
@@ -676,7 +676,7 @@ snakemake --use-conda
 
 **You can visualize your workflow like so!**
 
-```
+```bash
 snakemake --dag | dot -Tpng > dag.png
 ```
 The DAG png file should look something like this,
@@ -687,7 +687,7 @@ The DAG png file should look something like this,
 Snakemake can automatically generate detailed self-contained HTML reports that encompass runtime statistics, provenance information, workflow topology and results.
 
 To create the report simply run
-```
+```bash
 snakemake --report report.html
 ```
 
@@ -695,7 +695,7 @@ snakemake --report report.html
 
 You can add in some Python to load in the input files, like so:
 
-```
+```python
 import glob, sys
 fastqc_input = glob.glob('data/?Hour_00?_?.fq.gz')
 
@@ -763,32 +763,3 @@ Take a look at [glob_wildcards](https://snakemake.readthedocs.io/en/stable/proje
 * start small, grow your snakefile!
 * DO copy and paste from this tutorial and others you find online!
 * it rarely hurts to just re-run snakemake!**
-
-
-## Thinking about workflows - a strong(er) argument
-
-what do (snakemake) workflows do for me?
-
-A laundry list:
-
-- declarative vs procedural specification
-  - allows analysis of workflow graph, parallelization
-  - allows declaration of specific software needed, for later tracking
-  - can compare workflows more easily, in theory (=> reproducibility)
-  - can rerun failed steps
-- tracks dependencies on files
-  - allows rerunning just the bits that need to rerun
-- reusability, in theory
-- different conda environments for each step
-  - allows pinning of software versions
-  - allows use of potentially incompatible software
-
-For me, the main reason to use snakemake is that it lets be sure that my workflow completed properly. snakemake tracks which commands fails, and will stop the workflow in its tracks! This is not something that you usually do in shell scripts.
-
-### Dealing with complexity
-
-Workflows can get really complicated; [here](https://github.com/spacegraphcats/2018-paper-spacegraphcats/blob/master/pipeline-base/Snakefile), for example, is one for our most recent paper. But it's all just using the building blocks that I showed you above!
-
-If you want to see some good examples of how to build nice, clean, simple looking workflows, check out [this RNAseq example](https://github.com/snakemake-workflows/rna-seq-star-deseq2).
-
-### Go forth and Workflow!
