@@ -83,6 +83,7 @@ The content for this website has been compiled from tutorials put together by:
 
 
 > ![cyverse_logo](/img/cyverse_logo.png) **[**CyVerse**](https://www.cyverse.org/about) is a cyber-infrastructure initiative funded by the National Science Foundation’s Directorate for Biological Sciences to address the growing needs for highly configurable and customized computational infrastructure to support research efforts in data sciences.**
+
 ![cyverse_services](/img/cyverse_services.png)
 
 # Custom Install

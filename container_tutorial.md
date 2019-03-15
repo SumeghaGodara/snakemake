@@ -6,6 +6,10 @@ Running Jobs in containers
 
 > **We will be executing the same workflow (fastqc--->multiqc--->trimmomatic) as in [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html) but, with tools being executed in singularity containers based on either Docker or Singularity builds**
 
+- Dockerfiles
+  + [fastqc](https://github.com/sateeshperi/fastqc_bioc/blob/master/Dockerfile)
+  + [multiqc](https://github.com/sateeshperi/multiqc_bioc/blob/master/Dockerfile)
+  + [trimmomatic](https://hub.docker.com/r/fjukstad/trimmomatic/dockerfile)
 
 # Login to CyVerse [Atmosphere](https://atmo.cyverse.org/application/images)
 
