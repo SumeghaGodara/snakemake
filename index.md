@@ -59,11 +59,11 @@ The content for this website has been compiled from tutorials put together by:
 
 - To run snakemake jobs via [Singularity]() / [Docker]() containers in the cloud, we recommend [**Atmosphere**](https://www.cyverse.org/atmosphere), CyVerse's cloud-computing platform which provides easy-to-use web-access to cloud resources and is designed to accommodate computationally and data-intensive tasks.
 
-> [**Register for a free account on CyVerse**](https://user.cyverse.org/register)
+> [**1. Register for a free account on CyVerse**](https://user.cyverse.org/register)
 
-> [**Guide to Launching Atmosphere Instances**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html)
+> [**2. Guide to Launching Atmosphere Instances**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html)
 
-> [**Container Tutorial using Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html)
+> [**3. Container Tutorial using Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html)
 
 - *Atmosphere Key Features:*
 
