@@ -143,6 +143,5 @@ snakemake --report report.html
 
 ---------------------------
 
-```
+
 **DCG-UNR-RNAseq v3.0** [Atmosphere Image Specifications](https://atmo.cyverse.org/application/images/1679)
-```
