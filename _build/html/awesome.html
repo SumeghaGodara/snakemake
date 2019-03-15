@@ -55,7 +55,14 @@
     <h2>Contents</h2>
     <div class="sidebar-localtoc">
       <ul>
-<li><a class="reference internal" href="#">31. Awesome</a></li>
+<li><a class="reference internal" href="#">31. Awesome</a><ul>
+<li><a class="reference internal" href="#thinking-about-workflows-a-strong-er-argument">31.1. Thinking about workflows - a strong(er) argument</a><ul>
+<li><a class="reference internal" href="#dealing-with-complexity">31.1.1. Dealing with complexity</a></li>
+<li><a class="reference internal" href="#go-forth-and-workflow">31.1.2. Go forth and Workflow!</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#reproducibility-toolkit">32. Reproducibility Toolkit</a></li>
 <li><a class="reference internal" href="#snakemake-carpentry-lesson">33. Snakemake Carpentry Lesson</a></li>
 <li><a class="reference internal" href="#cyverse-container-camp">34. CyVerse Container Camp</a><ul>
@@ -107,6 +114,39 @@
             
   <div class="section" id="awesome">
 <h1>31. Awesome<a class="headerlink" href="#awesome" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="thinking-about-workflows-a-strong-er-argument">
+<h2>31.1. Thinking about workflows - a strong(er) argument<a class="headerlink" href="#thinking-about-workflows-a-strong-er-argument" title="Permalink to this headline">¶</a></h2>
+<p>what do (snakemake) workflows do for me?</p>
+<p>A laundry list:</p>
+<ul class="simple">
+<li>declarative vs procedural specification<ul>
+<li>allows analysis of workflow graph, parallelization</li>
+<li>allows declaration of specific software needed, for later tracking</li>
+<li>can compare workflows more easily, in theory (=&gt; reproducibility)</li>
+<li>can rerun failed steps</li>
+</ul>
+</li>
+<li>tracks dependencies on files<ul>
+<li>allows rerunning just the bits that need to rerun</li>
+</ul>
+</li>
+<li>reusability, in theory</li>
+<li>different conda environments for each step<ul>
+<li>allows pinning of software versions</li>
+<li>allows use of potentially incompatible software</li>
+</ul>
+</li>
+</ul>
+<p>For me, the main reason to use snakemake is that it lets be sure that my workflow completed properly. snakemake tracks which commands fails, and will stop the workflow in its tracks! This is not something that you usually do in shell scripts.</p>
+<div class="section" id="dealing-with-complexity">
+<h3>31.1.1. Dealing with complexity<a class="headerlink" href="#dealing-with-complexity" title="Permalink to this headline">¶</a></h3>
+<p>Workflows can get really complicated; <a class="reference external" href="https://github.com/spacegraphcats/2018-paper-spacegraphcats/blob/master/pipeline-base/Snakefile">here</a>, for example, is one for our most recent paper. But it’s all just using the building blocks that I showed you above!</p>
+<p>If you want to see some good examples of how to build nice, clean, simple looking workflows, check out <a class="reference external" href="https://github.com/snakemake-workflows/rna-seq-star-deseq2">this RNAseq example</a>.</p>
+</div>
+<div class="section" id="go-forth-and-workflow">
+<h3>31.1.2. Go forth and Workflow!<a class="headerlink" href="#go-forth-and-workflow" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 </div>
 <div class="section" id="reproducibility-toolkit">
 <h1>32. Reproducibility Toolkit<a class="headerlink" href="#reproducibility-toolkit" title="Permalink to this headline">¶</a></h1>

@@ -13,19 +13,19 @@ Running Jobs in containers
 
 # Activate Conda
 
-```
+```bash
 echo export PATH=$PATH:/opt/miniconda3/bin >> ~/.bashrc
 ```
 
 - Then, run the following command (or start a new terminal session) in order to activate the conda environment:
 
-```
+```bash
 source ~/.bashrc
 ```
 
 - Add channels
 
-```
+```bash
 conda config --add channels defaults
 conda config --add channels conda-forge
 conda config --add channels bioconda
@@ -125,7 +125,7 @@ rule clean:
 
 - Execute Snakemake with
 
-```
+```bash
 snakemake --use-singularity
 ```
 
@@ -139,7 +139,7 @@ snakemake --use-singularity
 snakemake --report report.html
 ```
 
-> **Note: It is advisable to delete your instance if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it. See [**Instance Maintenace**]() for more info**
+> **Note: It is advisable to delete your instance if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it. See [**Instance Maintenace**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html#instance-maintenance) for more info**
 
 ---------------------------
 

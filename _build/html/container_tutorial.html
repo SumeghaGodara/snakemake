@@ -127,21 +127,21 @@
 </div>
 <div class="section" id="activate-conda">
 <h1>27. Activate Conda<a class="headerlink" href="#activate-conda" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo export PATH=$PATH:/opt/miniconda3/bin &gt;&gt; ~/.bashrc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/opt/miniconda3/bin &gt;&gt; ~/.bashrc
 </pre></div>
 </div>
 <ul class="simple">
 <li>Then, run the following command (or start a new terminal session) in order to activate the conda environment:</li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.bashrc
 </pre></div>
 </div>
 <ul class="simple">
 <li>Add channels</li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">defaults</span>
-<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
-<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">bioconda</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --add channels defaults
+conda config --add channels conda-forge
+conda config --add channels bioconda
 </pre></div>
 </div>
 <ul class="simple">
@@ -242,7 +242,7 @@ rm data.zip
 <ul class="simple">
 <li>Execute Snakemake with</li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">snakemake</span> <span class="o">--</span><span class="n">use</span><span class="o">-</span><span class="n">singularity</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake --use-singularity
 </pre></div>
 </div>
 <blockquote>
@@ -256,7 +256,7 @@ rm data.zip
 </pre></div>
 </div>
 <blockquote>
-<div><strong>Note: It is advisable to delete your instance if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it. See <a class="reference external" href="#"><strong>Instance Maintenace</strong></a> for more info</strong></div></blockquote>
+<div><strong>Note: It is advisable to delete your instance if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it. See <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html#instance-maintenance"><strong>Instance Maintenace</strong></a> for more info</strong></div></blockquote>
 <hr class="docutils" />
 <p><strong>DCG-UNR-RNAseq v3.0</strong> <a class="reference external" href="https://atmo.cyverse.org/application/images/1679">Atmosphere Image Specifications</a></p>
 </div>

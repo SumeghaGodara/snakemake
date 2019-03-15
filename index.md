@@ -81,9 +81,8 @@ The content for this website has been compiled from tutorials put together by:
 
 	+ Easily generate and manage statistical reporting of user resources for total CPU hours and memory usages, total instances and applications launched by user, cloud monitoring, and on-demand intelligence resource allocation
 
-![cyverse_logo](/img/cyverse_logo.png)
 
-> **[**CyVerse**](https://www.cyverse.org/about) is a cyber-infrastructure initiative funded by the National Science Foundation’s Directorate for Biological Sciences to address the growing needs for highly configurable and customized computational infrastructure to support research efforts in data sciences.**
+> ![cyverse_logo](/img/cyverse_logo.png) **[**CyVerse**](https://www.cyverse.org/about) is a cyber-infrastructure initiative funded by the National Science Foundation’s Directorate for Biological Sciences to address the growing needs for highly configurable and customized computational infrastructure to support research efforts in data sciences.**
 ![cyverse_services](/img/cyverse_services.png)
 
 # Custom Install
