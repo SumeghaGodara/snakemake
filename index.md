@@ -6,7 +6,7 @@ Reproducible Workflows using Snakemake and Singularity
 
 > **Singularity is an open source-based container platform designed for scientific and high-performance computing (HPC) environments. Singularity supports Bring Your Own Environment (BYOE)—where entire Singularity environments can be transported between computational resources (e.g., users’ PCs) with reproducibility.**
 
-> + Basic [**UNIX command-line**](http://linuxcommand.org/lc3_learning_the_shell.php) experience required. [Bootcamp](http://rik.smith-unna.com/command_line_bootcamp/?id=6oprpl4mlf4)
++ Basic [**UNIX command-line**](http://linuxcommand.org/lc3_learning_the_shell.php) experience required. [Bootcamp](http://rik.smith-unna.com/command_line_bootcamp/?id=6oprpl4mlf4)
 + You don't need to be an expert at Python to use Snakemake, but it can sometimes be very useful.
 
 > No license; the below content is available under CC0 general license.
@@ -41,7 +41,7 @@ Reproducible Workflows using Snakemake and Singularity
 
 # Working on Binder
 
-###### Note: No support for '--use-singularity'
+> Note: No support for '--use-singularity'
 
 - We're going to use [mybinder.org](https://mybinder.org/), a fantastic service that lets us run demonstrations and short workshops in the cloud!
 
@@ -63,7 +63,7 @@ Reproducible Workflows using Snakemake and Singularity
 
 > [**3. Snakemake Tutorial using containers on Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html)
 
-###### Note: Supports '--use-singularity' and Singularity / docker containers
+> Note: Supports '--use-singularity' and Singularity / docker containers
 
 ## **Atmosphere / Jetstream Key Features:**
 
