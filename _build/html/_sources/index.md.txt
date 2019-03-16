@@ -37,7 +37,7 @@ The content for this website has been compiled from tutorials put together by:
                                                                                   
 - **Workflow Management**
 	+ Move from separate scripts to connected analysis
-		+[Snakemake](https://snakemake.readthedocs.io/en/stable/) 
+		+ [Snakemake](https://snakemake.readthedocs.io/en/stable/) 
                                                                                   
 - **Container Management**
  	+ Make your project self-sustainable and distributable
