@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="_static/css/bootstrap-theme.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>10. Introduction &#8212; snakemake2019 0.0.1 documentation</title>
+    <title>9. Introduction &#8212; snakemake2019 0.0.1 documentation</title>
     <link rel="stylesheet" href="_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="13. Basic Tutorial" href="basic_tutorial.html" />
+    <link rel="next" title="12. Basic Tutorial" href="basic_tutorial.html" />
     <link rel="prev" title="1. Reproducible Workflows using Snakemake and Singularity" href="index.html" />
   
    
@@ -39,7 +39,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="basic_tutorial.html" title="13. Basic Tutorial"
+          <a href="basic_tutorial.html" title="12. Basic Tutorial"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="1. Reproducible Workflows using Snakemake and Singularity"
@@ -59,12 +59,12 @@
     <h2>Contents</h2>
     <div class="sidebar-localtoc">
       <ul>
-<li><a class="reference internal" href="#">10. Introduction</a></li>
-<li><a class="reference internal" href="#why-snakemake">11. Why Snakemake?</a><ul>
-<li><a class="reference internal" href="#snakemake-advantages">11.1. Snakemake Advantages:</a></li>
+<li><a class="reference internal" href="#">9. Introduction</a></li>
+<li><a class="reference internal" href="#why-snakemake">10. Why Snakemake?</a><ul>
+<li><a class="reference internal" href="#snakemake-advantages">10.1. Snakemake Advantages:</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#why-containers">12. Why Containers?</a></li>
+<li><a class="reference internal" href="#why-containers">11. Why Containers?</a></li>
 </ul>
 
     </div>
@@ -75,7 +75,7 @@
                         title="previous chapter">1. Reproducible Workflows using Snakemake and Singularity</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="basic_tutorial.html"
-                        title="next chapter">13. Basic Tutorial</a></p>
+                        title="next chapter">12. Basic Tutorial</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -105,18 +105,18 @@
             <ol class="breadcrumb">
               <li><a href="toc.html">Docs</a></li>
               
-              <li>10. Introduction</li>
+              <li>9. Introduction</li>
             </ol>
           </div>
           
           <div class="document clearer body">
             
   <div class="section" id="introduction">
-<h1>10. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<h1>9. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <p><img alt="_images/hate_research.png" src="_images/hate_research.png" />hate_research</p>
 </div>
 <div class="section" id="why-snakemake">
-<h1>11. Why Snakemake?<a class="headerlink" href="#why-snakemake" title="Permalink to this headline">¶</a></h1>
+<h1>10. Why Snakemake?<a class="headerlink" href="#why-snakemake" title="Permalink to this headline">¶</a></h1>
 <p><strong>A common pattern in scientific computing involves the execution of many computational or data manipulation tasks. Those tasks are usually coupled, i.e., data produced by of one task are consumed by one or more other tasks. Thus execution of such tasks often requires a non-trivial coordination (orchestration) to satisfy their data dependencies.</strong></p>
 <p><strong><a class="reference external" href="https://snakemake.readthedocs.io/en/stable/index.html">Snakemake</a> is a workflow management system that .</strong></p>
 <blockquote>
@@ -138,7 +138,7 @@
 </pre></div>
 </div>
 <div class="section" id="snakemake-advantages">
-<h2>11.1. Snakemake Advantages:<a class="headerlink" href="#snakemake-advantages" title="Permalink to this headline">¶</a></h2>
+<h2>10.1. Snakemake Advantages:<a class="headerlink" href="#snakemake-advantages" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Memory: stores the architecture of the work and allows you to rapidly perform a complete or partial analysis.</li>
 <li>Portability: if built in a user-sensitive way, anyone working on the same analysis can obtain every results.</li>
@@ -151,7 +151,7 @@
 </div>
 </div>
 <div class="section" id="why-containers">
-<h1>12. Why Containers?<a class="headerlink" href="#why-containers" title="Permalink to this headline">¶</a></h1>
+<h1>11. Why Containers?<a class="headerlink" href="#why-containers" title="Permalink to this headline">¶</a></h1>
 <p><img alt="_images/sing_container.png" src="_images/sing_container.png" />sing_container</p>
 <blockquote>
 <div><strong>A container image is an encapsulated, portable environment that is created to distribute a scientific analysis or a general function. Containers help with reproducibility of such content as they nicely package software and data dependencies, along with libraries that are needed.</strong></div></blockquote>
@@ -165,6 +165,10 @@
 </ul>
 </li>
 </ul>
+<p><img alt="_images/sing_workflow.png" src="_images/sing_workflow.png" />sing_workflow</p>
+<ul class="simple">
+<li><a class="reference external" href="https://docs.google.com/presentation/d/14-iKKUpGJC_1qpVFVUyUaitc8xFSw9Rp3v_UE9IGgjM/pub?start=false&amp;loop=false&amp;delayms=3000#slide=id.g1c1cec989b_0_154">Amazing slides on Singularity</a> by <em>Vanessa Sochat</em></li>
+</ul>
 </div>
 
 
@@ -177,7 +181,7 @@
       </div>
     
       <div class="pull-right">
-        <a class="btn btn-default" href="basic_tutorial.html" title="next chapter (use the right arrow)">13. Basic Tutorial</a>
+        <a class="btn btn-default" href="basic_tutorial.html" title="next chapter (use the right arrow)">12. Basic Tutorial</a>
       </div>
     </div>
     <div class="clearer"></div>
@@ -192,7 +196,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="basic_tutorial.html" title="13. Basic Tutorial"
+          <a href="basic_tutorial.html" title="12. Basic Tutorial"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="1. Reproducible Workflows using Snakemake and Singularity"

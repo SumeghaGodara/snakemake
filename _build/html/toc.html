@@ -96,94 +96,82 @@
 <li class="toctree-l1"><a class="reference internal" href="index.html#working-on-binder">4. Working on Binder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#working-on-cloud">5. Working on Cloud</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#working-locally">6. Working Locally</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#singularity">7. Singularity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#awesome">8. Awesome</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#coming-soon">9. Coming Soon</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#credits">9.1. Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#awesome">7. Awesome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#coming-soon">8. Coming Soon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">9. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#why-snakemake">10. Why Snakemake?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#snakemake-advantages">10.1. Snakemake Advantages:</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">10. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#why-snakemake">11. Why Snakemake?</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#snakemake-advantages">11.1. Snakemake Advantages:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#why-containers">11. Why Containers?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html">12. Basic Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#getting-started-your-first-snakefile">13. Getting started - your first Snakefile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#updating-the-snakefile-to-track-inputs-and-outputs">13.1. Updating the Snakefile to track inputs and outputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#forcibly-re-running-things">13.2. Forcibly re-running things</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#why-containers">12. Why Containers?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html">13. Basic Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#getting-started-your-first-snakefile">14. Getting started - your first Snakefile</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#updating-the-snakefile-to-track-inputs-and-outputs">14.1. Updating the Snakefile to track inputs and outputs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#forcibly-re-running-things">14.2. Forcibly re-running things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#multiple-rules">14. Multiple rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#a-first-refactoring-adding-a-better-default-rule">15. A first refactoring: adding a better default rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#a-second-refactoring-doing-a-bit-of-templating">16. A second refactoring: doing a bit of templating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#refactoring-3-templating-output-files-too">17. Refactoring 3: templating output files, too</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#adding-some-more-files">17.1. Adding some more files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#rerunning-snakemake">17.2. Rerunning snakemake</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#multiple-rules">15. Multiple rules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#a-first-refactoring-adding-a-better-default-rule">16. A first refactoring: adding a better default rule</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#a-second-refactoring-doing-a-bit-of-templating">17. A second refactoring: doing a bit of templating</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#refactoring-3-templating-output-files-too">18. Refactoring 3: templating output files, too</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#adding-some-more-files">18.1. Adding some more files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#rerunning-snakemake">18.2. Rerunning snakemake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#building-out-the-workflow">18. Building out the workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#providing-input-files-explicitly-to-the-multiqc-rule">18.1. Providing input files explicitly to the multiqc rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#refactoring-this-to-make-it-slightly-more-concise">18.2. Refactoring this to make it slightly more concise –</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#digression-what-files-does-snakemake-check-in-order-to-decide-about-rerunning">18.3. Digression: what files does snakemake check in order to decide about rerunning?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#making-a-clean-rule">18.4. Making a <code class="docutils literal notranslate"><span class="pre">clean</span></code> rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#digression-running-things-in-parallel">18.5. Digression: running things in parallel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#doing-more-things-in-our-workflow">18.6. Doing more things in our workflow.</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#building-out-the-workflow">19. Building out the workflow</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#providing-input-files-explicitly-to-the-multiqc-rule">19.1. Providing input files explicitly to the multiqc rule</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#refactoring-this-to-make-it-slightly-more-concise">19.2. Refactoring this to make it slightly more concise –</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#digression-what-files-does-snakemake-check-in-order-to-decide-about-rerunning">19.3. Digression: what files does snakemake check in order to decide about rerunning?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#making-a-clean-rule">19.4. Making a <code class="docutils literal notranslate"><span class="pre">clean</span></code> rule</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#digression-running-things-in-parallel">19.5. Digression: running things in parallel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#doing-more-things-in-our-workflow">19.6. Doing more things in our workflow.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#more-advanced-snakemake">19. More advanced snakemake</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#dry-run">19.1. Dry run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#running-things-in-parallel-revisited">19.2. Running things in parallel, revisited</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#specifying-software-required-for-a-rule">19.3. Specifying software required for a rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#outputting-the-entire-workflow-diagram">19.4. Outputting the entire workflow diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#snakemake-report">19.5. Snakemake Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#adding-in-some-python">19.6. Adding in some Python…</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#more-advanced-snakemake">20. More advanced snakemake</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#dry-run">20.1. Dry run</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#running-things-in-parallel-revisited">20.2. Running things in parallel, revisited</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#specifying-software-required-for-a-rule">20.3. Specifying software required for a rule</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#outputting-the-entire-workflow-diagram">20.4. Outputting the entire workflow diagram</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#snakemake-report">20.5. Snakemake Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#adding-in-some-python">20.6. Adding in some Python…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#final-thoughts-writing-your-own-snakefile">20. Final thoughts - writing your own snakefile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#dealing-with-complexity">20.1. Dealing with complexity</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#final-thoughts-writing-your-own-snakefile">21. Final thoughts - writing your own snakefile</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basic_tutorial.html#dealing-with-complexity">21.1. Dealing with complexity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#thinking-about-workflows-a-strong-er-argument">21. Thinking about workflows - a strong(er) argument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#go-forth-and-workflow">22. Go forth and Workflow!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Atmosphere_Cloud.html">23. Accessing The Atmosphere Cloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#ssh-client-for-windows-users">23.1. SSH Client for WINDOWS users</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#thinking-about-workflows-a-strong-er-argument">22. Thinking about workflows - a strong(er) argument</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_tutorial.html#go-forth-and-workflow">23. Go forth and Workflow!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Atmosphere_Cloud.html">24. Accessing The Atmosphere Cloud</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#ssh-client-for-windows-users">24.1. SSH Client for WINDOWS users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Atmosphere_Cloud.html#login-launch-instance">24. Login &amp; Launch Instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Atmosphere_Cloud.html#ssh-secure-login">25. SSH Secure-Login</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Atmosphere_Cloud.html#instance-maintenance">26. Instance Maintenance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#atmosphere-dashboard">26.1. Atmosphere Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#delete-instance">26.2. Delete Instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#suspend-instance">26.3. Suspend Instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#request-more-allocation-units">26.4. Request More Allocation Units</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Atmosphere_Cloud.html#login-launch-instance">25. Login &amp; Launch Instance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Atmosphere_Cloud.html#ssh-secure-login">26. SSH Secure-Login</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Atmosphere_Cloud.html#instance-maintenance">27. Instance Maintenance</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#atmosphere-dashboard">27.1. Atmosphere Dashboard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#delete-instance">27.2. Delete Instance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#suspend-instance">27.3. Suspend Instance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#request-more-allocation-units">27.4. Request More Allocation Units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Atmosphere_Cloud.html#additional-features">27. Additional Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#web-shell">27.1. Web Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#web-desktop">27.2. Web Desktop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#transferring-data-to-and-from-an-instance">27.3. Transferring Data to and from an Instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#custom-images">27.4. Custom Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#deposit-rsa-key">27.5. Deposit rsa-key</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Atmosphere_Cloud.html#additional-features">28. Additional Features</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#web-shell">28.1. Web Shell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#web-desktop">28.2. Web Desktop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#transferring-data-to-and-from-an-instance">28.3. Transferring Data to and from an Instance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#custom-images">28.4. Custom Images</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Atmosphere_Cloud.html#deposit-rsa-key">28.5. Deposit rsa-key</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="container_tutorial.html">29. Running Jobs in containers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="container_tutorial.html#login-to-cyverse-atmosphere">30. Login to CyVerse Atmosphere</a></li>
-<li class="toctree-l1"><a class="reference internal" href="container_tutorial.html#launch-a-tiny-t1-instance-with-the-dcg-unr-rnaseq-v3-0-base-image">31. Launch a tiny ‘t1’ instance with the ‘DCG-UNR-RNAseq’ v3.0 base image</a></li>
-<li class="toctree-l1"><a class="reference internal" href="container_tutorial.html#activate-conda">32. Activate Conda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="container_tutorial.html#download-data">33. Download data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="container_tutorial.html#run-snakemake">34. Run snakemake</a></li>
-<li class="toctree-l1"><a class="reference internal" href="container_tutorial.html#generate-report">35. Generate Report</a></li>
-<li class="toctree-l1"><a class="reference internal" href="awesome.html">36. Awesome</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="awesome.html#thinking-about-workflows-a-strong-er-argument">36.1. Thinking about workflows - a strong(er) argument</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="awesome.html#reproducibility-toolkit">37. Reproducibility Toolkit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="awesome.html#snakemake-carpentry-lesson">38. Snakemake Carpentry Lesson</a></li>
-<li class="toctree-l1"><a class="reference internal" href="awesome.html#cyverse-container-camp">39. CyVerse Container Camp</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="awesome.html#awesome-list-of-workflow-management-systems">39.1. Awesome list of workflow-management systems</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="container_tutorial.html">28. Running Jobs in containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="container_tutorial.html#login-to-cyverse-atmosphere">29. Login to CyVerse Atmosphere</a></li>
+<li class="toctree-l1"><a class="reference internal" href="container_tutorial.html#launch-a-tiny-t1-instance-with-the-dcg-unr-rnaseq-v3-0-base-image">30. Launch a tiny ‘t1’ instance with the ‘DCG-UNR-RNAseq’ v3.0 base image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="container_tutorial.html#activate-conda">31. Activate Conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="container_tutorial.html#download-data">32. Download data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="container_tutorial.html#run-snakemake">33. Run snakemake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="container_tutorial.html#generate-report">34. Generate Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="awesome.html">35. Awesome List of Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="awesome.html#reproducibility-toolkit">36. Reproducibility Toolkit</a></li>
 </ul>
 </div>
 

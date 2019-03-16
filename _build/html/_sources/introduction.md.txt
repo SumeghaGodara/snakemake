@@ -60,6 +60,8 @@ rule myname:
     + Install and run an application that requires a complicated stack of dependencies with a few keystrokes.
     + Create a pipeline or complex workflow where each individual program is meant to run on a different operating system.
 
+![sing_workflow](/img/sing_workflow.png)
 
+- [Amazing slides on Singularity](https://docs.google.com/presentation/d/14-iKKUpGJC_1qpVFVUyUaitc8xFSw9Rp3v_UE9IGgjM/pub?start=false&loop=false&delayms=3000#slide=id.g1c1cec989b_0_154) by *Vanessa Sochat*
 
 [^1]: https://academic.oup.com/bioinformatics/article/28/19/2520/290322

@@ -89,11 +89,11 @@ Reproducible Workflows using Snakemake and Singularity
 
 ![cyverse_services](/img/cyverse_services.png)
 
-> [**Jetstream**]
+> **Jetstream**
 
-https://jetstream-cloud.org/
+- [Jetstream Cloud](https://jetstream-cloud.org/)
 
-https://portal.xsede.org/jetstream
+- [XSEDE portal](https://portal.xsede.org/jetstream)
 
 # Working Locally
 
@@ -140,29 +140,14 @@ conda deactivate
 
 - Singularity installation needs **sudo** permissions and instructions can be found [here](https://www.sylabs.io/guides/3.0/user-guide/installation.html#installation)
 
-# Singularity
-
-![singularity_bot](/img/singularity_bot.png)
-
-- [Amazing slides on Singularity](https://docs.google.com/presentation/d/14-iKKUpGJC_1qpVFVUyUaitc8xFSw9Rp3v_UE9IGgjM/pub?start=false&loop=false&delayms=3000#slide=id.g1c1cec989b_0_154) by *Vanessa Sochat*
-
 # Awesome
 
 + [Awesome list of Snakemake & Singularity resources](https://snakemake2019.readthedocs.io/en/latest/awesome.html)
 
 # Coming Soon
-
+![singularity_bot](/img/singularity_bot.png)
 + Singularity modules in HPCs
 + Building containers from scratch
 + Version Control
 + Markdown
 + Did someone say *Kubernetes* !!!
-
-### Credits
-The content for this website has been compiled from tutorials put together by:
-
-+ [Titus Brown](https://twitter.com/ctitusbrown) - Link to [Tutorial](https://github.com/ctb/2019-snakemake-ucdavis)
-
-+ [Johannes Koster](https://twitter.com/johanneskoester) - Link to [Tutorial](https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html)
-
-+ [CyVerse](https://www.cyverse.org/about)
