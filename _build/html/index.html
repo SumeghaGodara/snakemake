@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="9. Introduction" href="introduction.html" />
+    <link rel="next" title="10. Introduction" href="introduction.html" />
     <link rel="prev" title="&lt;no title&gt;" href="toc.html" />
   
    
@@ -39,7 +39,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="introduction.html" title="9. Introduction"
+          <a href="introduction.html" title="10. Introduction"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="toc.html" title="&lt;no title&gt;"
@@ -61,12 +61,23 @@
       <ul>
 <li><a class="reference internal" href="#">1. Reproducible Workflows using Snakemake and Singularity</a></li>
 <li><a class="reference internal" href="#learning-objectives">2. Learning Objectives</a></li>
-<li><a class="reference internal" href="#introduction">3. Introduction</a></li>
-<li><a class="reference internal" href="#working-on-binder">4. Working on Binder</a></li>
-<li><a class="reference internal" href="#working-on-cloud">5. Working on Cloud</a></li>
+<li><a class="reference internal" href="#introduction">3. Introduction</a><ul>
+<li><a class="reference internal" href="#what-why-how">3.1. <strong>What…Why…How???</strong></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#working-on-binder">4. Working on Binder</a><ul>
+<li><a class="reference internal" href="#note-no-support-for-use-singularity">4.1. Note: No support for ‘–use-singularity’</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#working-on-cloud">5. Working on Cloud</a><ul>
+<li><a class="reference internal" href="#note-supports-use-singularity-and-singularity-docker-containers">5.1. Note: Supports ‘–use-singularity’ and Singularity / docker containers</a></li>
+<li><a class="reference internal" href="#atmosphere-jetstream-key-features">5.2. <strong>Atmosphere / Jetstream Key Features:</strong></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#working-locally">6. Working Locally</a></li>
 <li><a class="reference internal" href="#awesome">7. Awesome</a></li>
-<li><a class="reference internal" href="#coming-soon">8. Coming Soon</a></li>
+<li><a class="reference internal" href="#credits">8. Credits</a></li>
+<li><a class="reference internal" href="#coming-soon">9. Coming Soon</a></li>
 </ul>
 
     </div>
@@ -77,7 +88,7 @@
                         title="previous chapter">&lt;no title&gt;</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="introduction.html"
-                        title="next chapter">9. Introduction</a></p>
+                        title="next chapter">10. Introduction</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -116,15 +127,18 @@
   <div class="section" id="reproducible-workflows-using-snakemake-and-singularity">
 <h1>1. Reproducible Workflows using Snakemake and Singularity<a class="headerlink" href="#reproducible-workflows-using-snakemake-and-singularity" title="Permalink to this headline">¶</a></h1>
 <p><img alt="_images/tutorial_logo.png" src="_images/tutorial_logo.png" />logo</p>
-<ul class="simple">
-<li><strong>The Snakemake workflow management system is a tool to create reproducible and scalable data analyses and can be seamlessly scaled to server, cluster, grid and cloud environments, without the need to modify the workflow definition.</strong></li>
-<li><strong>Singularity</strong></li>
+<blockquote>
+<div><strong>The Snakemake workflow management system is a tool to create reproducible and scalable data analyses and can be seamlessly scaled to server, cluster, grid and cloud environments, without the need to modify the workflow definition.</strong></div></blockquote>
+<blockquote>
+<div><strong>Singularity is an open source-based container platform designed for scientific and high-performance computing (HPC) environments. Singularity supports Bring Your Own Environment (BYOE)—where entire Singularity environments can be transported between computational resources (e.g., users’ PCs) with reproducibility.</strong></div></blockquote>
+<blockquote>
+<div><ul class="simple">
+<li>Basic <a class="reference external" href="http://linuxcommand.org/lc3_learning_the_shell.php"><strong>UNIX command-line</strong></a> experience required. <a class="reference external" href="http://rik.smith-unna.com/command_line_bootcamp/?id=6oprpl4mlf4">Bootcamp</a></li>
 </ul>
-<blockquote>
-<div><p>Basic UNIX command-line experience required.</p>
-<blockquote>
-<div>You don’t need to be an expert at Python to use Snakemake, but it can sometimes be very useful.</div></blockquote>
 </div></blockquote>
+<ul class="simple">
+<li>You don’t need to be an expert at Python to use Snakemake, but it can sometimes be very useful.</li>
+</ul>
 <blockquote>
 <div>No license; the below content is available under CC0 general license.</div></blockquote>
 <blockquote>
@@ -132,57 +146,44 @@
 </div>
 <div class="section" id="learning-objectives">
 <h1>2. Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div>This tutorial is designed to introduce <em>building reproducible workflows</em> using:</div></blockquote>
 <ul class="simple">
-<li><strong>Environment Management</strong><ul>
-<li>Set up and manage the project environment<ul>
-<li><a class="reference external" href="https://conda.io/en/latest/">conda</a></li>
-<li><a class="reference external" href="https://bioconda.github.io/">bioconda</a></li>
+<li><strong>Environment Management</strong> using <a class="reference external" href="https://conda.io/en/latest/"><strong>conda</strong></a> &amp; <a class="reference external" href="https://bioconda.github.io/"><strong>bioconda</strong></a></li>
 </ul>
-</li>
+<ul class="simple">
+<li>Set up and manage the project environment</li>
+<li>Understand conda environments</li>
 </ul>
-</li>
-<li><strong>Workflow Management</strong><ul>
-<li>Move from separate scripts to connected analysis<ul>
-<li><a class="reference external" href="https://snakemake.readthedocs.io/en/stable/">Snakemake</a></li>
+<ul class="simple">
+<li><strong>Workflow Management</strong> using <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/"><strong>Snakemake</strong></a></li>
 </ul>
-</li>
-</ul>
-</li>
-<li><strong>Container Management</strong><ul>
-<li>Make your project self-sustainable and distributable<ul>
-<li><a class="reference external" href="https://www.sylabs.io/docs/">Singularity</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Snakemake</strong><ul>
+<ul class="simple">
+<li>Move from separate scripts to connected analysis</li>
 <li>Understand snakemake syntax</li>
 <li>Understand the components of a Snakefile: rules, inputs, outputs, and actions</li>
 <li>Understand snakemake wildcards and pattern rules</li>
 <li>Understand how snakemake manages dependencies and outputs</li>
 </ul>
-</li>
-<li><strong>Singularity</strong><ul>
+<ul class="simple">
+<li><strong>Container Management</strong> using <a class="reference external" href="https://www.sylabs.io/docs/"><strong>Singularity</strong></a></li>
+</ul>
+<ul class="simple">
+<li>Make your project self-sustainable and distributable</li>
 <li>Understand what containers are</li>
 <li>Understand what Dockers are</li>
 <li>Understand why Singularity</li>
 <li>How to pull &amp; run singularity containers</li>
 </ul>
-</li>
-</ul>
 </div>
 <div class="section" id="introduction">
 <h1>3. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/introduction.html"><strong>Why…Why…Why???</strong></a></li>
-</ul>
+<div class="section" id="what-why-how">
+<h2>3.1. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/introduction.html"><strong>What…Why…How???</strong></a><a class="headerlink" href="#what-why-how" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 <div class="section" id="working-on-binder">
 <h1>4. Working on Binder<a class="headerlink" href="#working-on-binder" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div>Note: No support for ‘–use-singularity’</div></blockquote>
+<div class="section" id="note-no-support-for-use-singularity">
+<h2>4.1. Note: No support for ‘–use-singularity’<a class="headerlink" href="#note-no-support-for-use-singularity" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>We’re going to use <a class="reference external" href="https://mybinder.org/">mybinder.org</a>, a fantastic service that lets us run demonstrations and short workshops in the cloud!</li>
 </ul>
@@ -194,23 +195,24 @@
 <blockquote>
 <div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html"><strong>Snakemake Tutorial using Binder</strong></a></div></blockquote>
 </div>
+</div>
 <div class="section" id="working-on-cloud">
 <h1>5. Working on Cloud<a class="headerlink" href="#working-on-cloud" title="Permalink to this headline">¶</a></h1>
-<p><img alt="_images/cloud_computing.png" src="_images/cloud_computing.png" />cloud_computing</p>
 <blockquote>
-<div>Note: Supports ‘–use-singularity’ and Singularity / docker containers</div></blockquote>
-<ul class="simple">
-<li>To run snakemake jobs via <a class="reference external" href="https://singularity-hub.org/">Singularity</a> / <a class="reference external" href="https://hub.docker.com/">Docker</a> containers in the cloud, we recommend <a class="reference external" href="https://www.cyverse.org/atmosphere"><strong>Atmosphere</strong></a>, CyVerse’s cloud-computing platform which provides easy-to-use web-access to cloud resources and is designed to accommodate computationally and data-intensive tasks.</li>
-</ul>
+<div><strong>To run snakemake jobs via <a class="reference external" href="https://singularity-hub.org/">Singularity</a> / <a class="reference external" href="https://hub.docker.com/">Docker</a> containers in the cloud, we recommend <a class="reference external" href="https://www.cyverse.org/atmosphere">Atmosphere</a>, CyVerse’s cloud-computing platform which provides easy-to-use web-access to cloud resources and is designed to accommodate computationally and data-intensive tasks.</strong></div></blockquote>
+<p><img alt="_images/cloud_computing.png" src="_images/cloud_computing.png" />cloud_computing</p>
 <blockquote>
 <div><a class="reference external" href="https://user.cyverse.org/register"><strong>1. Register for a free account on CyVerse</strong></a></div></blockquote>
 <blockquote>
 <div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html"><strong>2. Guide to Launching Atmosphere Instances</strong></a></div></blockquote>
 <blockquote>
 <div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html"><strong>3. Snakemake Tutorial using containers on Atmosphere</strong></a></div></blockquote>
-<p><img alt="_images/cyverse_logo.png" src="_images/cyverse_logo.png" />cyverse_logo <img alt="_images/atmosphere_icon.png" src="_images/atmosphere_icon.png" />logo</p>
+<div class="section" id="note-supports-use-singularity-and-singularity-docker-containers">
+<h2>5.1. Note: Supports ‘–use-singularity’ and Singularity / docker containers<a class="headerlink" href="#note-supports-use-singularity-and-singularity-docker-containers" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="atmosphere-jetstream-key-features">
+<h2>5.2. <strong>Atmosphere / Jetstream Key Features:</strong><a class="headerlink" href="#atmosphere-jetstream-key-features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><strong>Atmosphere Key Features:</strong><ul>
 <li>Access virtual machine images preconfigured with an operating system and software to help you do scientific computations in domain-specific tasks</li>
 <li>Find and use tools with the intuitive self-service portal</li>
 <li>Easily manage virtual machines</li>
@@ -219,23 +221,21 @@
 <li>Integrate with existing infrastructure components using API services</li>
 <li>Easily generate and manage statistical reporting of user resources for total CPU hours and memory usages, total instances and applications launched by user, cloud monitoring, and on-demand intelligence resource allocation</li>
 </ul>
-</li>
-</ul>
 <blockquote>
-<div><strong><a class="reference external" href="https://www.cyverse.org/about"><strong>CyVerse</strong></a> is a cyber-infrastructure initiative funded by the National Science Foundation’s Directorate for Biological Sciences to address the growing needs for highly configurable and customized computational infrastructure to support research efforts in data sciences.</strong></div></blockquote>
-<p><img alt="_images/cyverse_services.png" src="_images/cyverse_services.png" />cyverse_services</p>
+<div><a class="reference external" href="https://www.cyverse.org/about"><strong>CyVerse</strong></a> is a cyber-infrastructure initiative funded by the National Science Foundation’s Directorate for Biological Sciences to address the growing needs for highly configurable and customized computational infrastructure to support research efforts in data sciences.</div></blockquote>
 <blockquote>
-<div><strong>Jetstream</strong></div></blockquote>
+<div><a class="reference external" href="https://jetstream-cloud.org/"><strong>Jetstream</strong></a> is an [NSF/XSEDE] resource designed to promote and provide configurable cyberinfrastructure in the form of cloud computing to both novice and experienced users. Jetstream features a web-based user interface based on the popular Atmosphere cloud computing environment developed by CyVerse.**</div></blockquote>
+<blockquote>
+<div><a class="reference external" href="https://portal.xsede.org/web/xup/my-xsede?p_p_id=58&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;saveLastPath=0&amp;_58_struts_action=%2Flogin%2Fcreate_account"><strong>1. Register for an account on XSEDE User Portal</strong></a></div></blockquote>
 <ul class="simple">
-<li><a class="reference external" href="https://jetstream-cloud.org/">Jetstream Cloud</a></li>
-<li><a class="reference external" href="https://portal.xsede.org/jetstream">XSEDE portal</a></li>
+<li><a class="reference external" href="https://portal.xsede.org/my-xsede?p_p_state=maximized&amp;p_p_mode=view&amp;saveLastPath=0&amp;_58_struts_action=%2Flogin%2Flogin&amp;p_p_id=58&amp;p_p_lifecycle=0&amp;_58_redirect=%2Fgroup%2Fxup%2Fjetstream-rapid-access">Jetstream Trial Access Allocation</a></li>
 </ul>
+</div>
 </div>
 <div class="section" id="working-locally">
 <h1>6. Working Locally<a class="headerlink" href="#working-locally" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div>We recommend <a class="reference external" href="https://conda.io/en/latest/"><strong>conda</strong></a>, an open source package management system and environment management system that runs on Windows, macOS and Linux.</div></blockquote>
 <ul class="simple">
+<li>We recommend installing <a class="reference external" href="https://conda.io/en/latest/"><strong>conda</strong></a>, an open source package management system and environment management system that runs on Windows, macOS and Linux.</li>
 <li>Download and install conda:</li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -O -L https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -278,7 +278,7 @@ conda config --add channels bioconda
 </pre></div>
 </div>
 <ul class="simple">
-<li>Singularity installation needs <strong>sudo</strong> permissions and instructions can be found <a class="reference external" href="https://www.sylabs.io/guides/3.0/user-guide/installation.html#installation">here</a></li>
+<li>Singularity installation needs <em>sudo</em> permissions and instructions can be found <a class="reference external" href="https://www.sylabs.io/guides/3.0/user-guide/quick_start.html#quick-installation-steps">here</a></li>
 </ul>
 </div>
 <div class="section" id="awesome">
@@ -287,8 +287,19 @@ conda config --add channels bioconda
 <li><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/awesome.html">Awesome list of Snakemake &amp; Singularity resources</a></li>
 </ul>
 </div>
+<div class="section" id="credits">
+<h1>8. Credits<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h1>
+<p>The content for this website has been compiled from tutorials put together by:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://twitter.com/ctitusbrown">Titus Brown</a> - Link to <a class="reference external" href="https://github.com/ctb/2019-snakemake-ucdavis">Tutorial</a></li>
+<li><a class="reference external" href="https://twitter.com/johanneskoester">Johannes Koster</a> - Link to <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html">Tutorial</a></li>
+<li><a class="reference external" href="https://www.cyverse.org/about">CyVerse</a></li>
+</ul>
+<blockquote>
+<div>Please report new issues in <a class="reference external" href="https://github.com/sateeshperi/snakemake2019/issues">GitHub</a></div></blockquote>
+</div>
 <div class="section" id="coming-soon">
-<h1>8. Coming Soon<a class="headerlink" href="#coming-soon" title="Permalink to this headline">¶</a></h1>
+<h1>9. Coming Soon<a class="headerlink" href="#coming-soon" title="Permalink to this headline">¶</a></h1>
 <p><img alt="_images/singularity_bot.png" src="_images/singularity_bot.png" />singularity_bot</p>
 <ul class="simple">
 <li>Singularity modules in HPCs</li>
@@ -309,7 +320,7 @@ conda config --add channels bioconda
       </div>
     
       <div class="pull-right">
-        <a class="btn btn-default" href="introduction.html" title="next chapter (use the right arrow)">9. Introduction</a>
+        <a class="btn btn-default" href="introduction.html" title="next chapter (use the right arrow)">10. Introduction</a>
       </div>
     </div>
     <div class="clearer"></div>
@@ -324,7 +335,7 @@ conda config --add channels bioconda
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="introduction.html" title="9. Introduction"
+          <a href="introduction.html" title="10. Introduction"
              >next</a> |</li>
         <li class="right" >
           <a href="toc.html" title="&lt;no title&gt;"
