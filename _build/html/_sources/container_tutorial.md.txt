@@ -13,7 +13,7 @@ Running Jobs in containers
 
 # Login to CyVerse [Atmosphere](https://atmo.cyverse.org/application/images)
 
-# Launch a medium 'm1' instance with the 'DCG-UNR-RNAseq' v3.0 base image
+# Launch a tiny 't1' instance with the 'DCG-UNR-RNAseq' v3.0 base image
 
 # Activate Conda
 

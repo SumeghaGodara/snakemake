@@ -28,23 +28,28 @@ The content for this website has been compiled from tutorials put together by:
 
 # Learning Objectives
 
-| Tool		  | Learning Objective |
-| ---------	  | ------------------ |
-| Snakemake   | Understand snakemake syntax |
-|		 	  | Understand the components of a Snakefile: rules, inputs, outputs, and actions |
-|			  | Understand snakemake wildcards and pattern rules |
-|			  | Understand how snakemake manages dependencies and outputs |
-| Singularity | Understand what containers are |
-|			  | Understand what Dockers are |
-|		 	  | Understand why Singularity |
-|			  | How to pull & run singularity containers |
-
 - This tutorial is designed to introduce *building reproducible workflows* using:
-	+ [**conda**](https://conda.io/en/latest/) and [**bioconda**](https://bioconda.github.io/) for **Environment Management**
 
-	+ [**Snakemake**](https://snakemake.readthedocs.io/en/stable/) for **Workflow Management**
+| Environment Management 	| [conda](https://conda.io/en/latest/)                     	|
+|------------------------	|----------------------------------------------------------	|
+|                        	| [bioconda](https://bioconda.github.io/)                  	|
+|                        	|                                                          	|
+| Workflow Management    	| [Snakemake](https://snakemake.readthedocs.io/en/stable/) 	|
+|                        	|                                                          	|
+| Container Management   	| [Singularity](https://www.sylabs.io/docs/)               	|
 
-	+ [**Singularity**](https://www.sylabs.io/docs/) for **Container Management**
+
+| Tool        	| Learning Objective                                                            	|
+|-------------	|-------------------------------------------------------------------------------	|
+| Snakemake   	| Understand snakemake syntax                                                   	|
+|             	| Understand the components of a Snakefile: rules, inputs, outputs, and actions 	|
+|             	| Understand snakemake wildcards and pattern rules                              	|
+|             	| Understand how snakemake manages dependencies and outputs                     	|
+| Singularity 	| Understand what containers are                                                	|
+|             	| Understand what Dockers are                                                   	|
+|             	| Understand why Singularity                                                    	|
+|             	| How to pull & run singularity containers                                      	|
+
 
 # Introduction
 
@@ -66,7 +71,7 @@ Note:  No support for '--use-singularity'
 
 # Working on Cloud
 
-![cloud_computing]()
+![cloud_computing](/img/cloud_computing.png)
 
 > Note: Supports '--use-singularity' Singularity / docker containers
 
