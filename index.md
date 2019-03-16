@@ -28,27 +28,32 @@ The content for this website has been compiled from tutorials put together by:
 
 # Learning Objectives
 
-- This tutorial is designed to introduce *building reproducible workflows* using:
+> This tutorial is designed to introduce *building reproducible workflows* using:
 
-| Environment Management 	| [conda](https://conda.io/en/latest/)                     	|
-|------------------------	|----------------------------------------------------------	|
-|                        	| [bioconda](https://bioconda.github.io/)                  	|
-|                        	|                                                          	|
-| Workflow Management    	| [Snakemake](https://snakemake.readthedocs.io/en/stable/) 	|
-|                        	|                                                          	|
-| Container Management   	| [Singularity](https://www.sylabs.io/docs/)               	|
+- **Environment Management**
+	+ Set up and manage the project environment
+		+ [conda](https://conda.io/en/latest/)                     
+    	+ [bioconda](https://bioconda.github.io/)                  
+                                                                                  
+- **Workflow Management**
+	+ Move from separate scripts to connected analysis
+		+[Snakemake](https://snakemake.readthedocs.io/en/stable/) 
+                                                                                  
+- **Container Management**
+ 	+ Make your project self-sustainable and distributable
+ 		+ [Singularity](https://www.sylabs.io/docs/)               
 
+- **Snakemake**
+	+ Understand snakemake syntax                                                   
+    + Understand the components of a Snakefile: rules, inputs, outputs, and actions 
+    + Understand snakemake wildcards and pattern rules                              
+    + Understand how snakemake manages dependencies and outputs 
 
-| Tool        	| Learning Objective                                                            	|
-|-------------	|-------------------------------------------------------------------------------	|
-| Snakemake   	| Understand snakemake syntax                                                   	|
-|             	| Understand the components of a Snakefile: rules, inputs, outputs, and actions 	|
-|             	| Understand snakemake wildcards and pattern rules                              	|
-|             	| Understand how snakemake manages dependencies and outputs                     	|
-| Singularity 	| Understand what containers are                                                	|
-|             	| Understand what Dockers are                                                   	|
-|             	| Understand why Singularity                                                    	|
-|             	| How to pull & run singularity containers                                      	|
+ - **Singularity**
+ 	+ Understand what containers are                                                
+    + Understand what Dockers are                                                   
+    + Understand why Singularity                                                    
+    + How to pull & run singularity containers                                      
 
 
 # Introduction
@@ -57,9 +62,7 @@ The content for this website has been compiled from tutorials put together by:
 
 # Working on Binder
 
-::warning
-Note:  No support for '--use-singularity'
-:
+> Note: No support for '--use-singularity'
 
 - We're going to use [mybinder.org](https://mybinder.org/), a fantastic service that lets us run demonstrations and short workshops in the cloud! 
 
@@ -73,7 +76,7 @@ Note:  No support for '--use-singularity'
 
 ![cloud_computing](/img/cloud_computing.png)
 
-> Note: Supports '--use-singularity' Singularity / docker containers
+> Note: Supports '--use-singularity' and Singularity / docker containers
 
 - To run snakemake jobs via [Singularity](https://singularity-hub.org/) / [Docker](https://hub.docker.com/) containers in the cloud, we recommend [**Atmosphere**](https://www.cyverse.org/atmosphere), CyVerse's cloud-computing platform which provides easy-to-use web-access to cloud resources and is designed to accommodate computationally and data-intensive tasks.
 
@@ -83,7 +86,7 @@ Note:  No support for '--use-singularity'
 
 > [**3. Snakemake Tutorial using containers on Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html)
 
-![cyverse_logo](/img/cyverse_logo.png =200x20) ![logo](/img/atmosphere_icon.png)
+![cyverse_logo](/img/cyverse_logo.png) ![logo](/img/atmosphere_icon.png)
 
 - **Atmosphere Key Features:** 
 
@@ -97,11 +100,13 @@ Note:  No support for '--use-singularity'
 
 > **[**CyVerse**](https://www.cyverse.org/about) is a cyber-infrastructure initiative funded by the National Science Foundation’s Directorate for Biological Sciences to address the growing needs for highly configurable and customized computational infrastructure to support research efforts in data sciences.**
 
-			![cyverse_services](/img/cyverse_services.png)
+![cyverse_services](/img/cyverse_services.png)
 
 > [**Jetstream**]
 
+https://jetstream-cloud.org/
 
+https://portal.xsede.org/jetstream
 
 # Working Locally
 

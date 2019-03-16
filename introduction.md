@@ -11,9 +11,9 @@ Introduction
 
 > Snakemake [slides](http://slides.com/johanneskoester/snakemake-tutorial#/)
 
-- Snakemake allows you to create a set of rules, each one defining a "step" of your analysis. Rules can either use shell commands, plain Python code or external Python or R scripts to create output files from input files[^smake_paper].
+- Snakemake allows you to create a set of rules, each one defining a "step" of your analysis. Rules can either use shell commands, plain Python code or external Python or R scripts to create output files from input files [^1].
 
-[^smake_paper]: https://academic.oup.com/bioinformatics/article/28/19/2520/290322
+[^1]: https://academic.oup.com/bioinformatics/article/28/19/2520/290322
 
 **The workflow is implied by dependencies between the rules that arise from one rule needing an output file of another as an input file.**
 

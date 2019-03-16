@@ -149,26 +149,44 @@
 </div>
 <div class="section" id="learning-objectives">
 <h1>2. Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div>This tutorial is designed to introduce <em>building reproducible workflows</em> using:</div></blockquote>
 <ul class="simple">
-<li>This tutorial is designed to introduce <em>building reproducible workflows</em> using:</li>
+<li><strong>Environment Management</strong><ul>
+<li>Set up and manage the project environment<ul>
+<li><a class="reference external" href="https://conda.io/en/latest/">conda</a></li>
+<li><a class="reference external" href="https://bioconda.github.io/">bioconda</a></li>
 </ul>
-<p>| Environment Management 	| <a class="reference external" href="https://conda.io/en/latest/">conda</a>                     	|
-|————————	|———————————————————-	|
-|                        	| <a class="reference external" href="https://bioconda.github.io/">bioconda</a>                  	|
-|                        	|                                                          	|
-| Workflow Management    	| <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/">Snakemake</a> 	|
-|                        	|                                                          	|
-| Container Management   	| <a class="reference external" href="https://www.sylabs.io/docs/">Singularity</a>               	|</p>
-<p>| Tool        	| Learning Objective                                                            	|
-|————-	|——————————————————————————-	|
-| Snakemake   	| Understand snakemake syntax                                                   	|
-|             	| Understand the components of a Snakefile: rules, inputs, outputs, and actions 	|
-|             	| Understand snakemake wildcards and pattern rules                              	|
-|             	| Understand how snakemake manages dependencies and outputs                     	|
-| Singularity 	| Understand what containers are                                                	|
-|             	| Understand what Dockers are                                                   	|
-|             	| Understand why Singularity                                                    	|
-|             	| How to pull &amp; run singularity containers                                      	|</p>
+</li>
+</ul>
+</li>
+<li><strong>Workflow Management</strong><ul>
+<li>Move from separate scripts to connected analysis
++<a class="reference external" href="https://snakemake.readthedocs.io/en/stable/">Snakemake</a></li>
+</ul>
+</li>
+<li><strong>Container Management</strong><ul>
+<li>Make your project self-sustainable and distributable<ul>
+<li><a class="reference external" href="https://www.sylabs.io/docs/">Singularity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Snakemake</strong><ul>
+<li>Understand snakemake syntax</li>
+<li>Understand the components of a Snakefile: rules, inputs, outputs, and actions</li>
+<li>Understand snakemake wildcards and pattern rules</li>
+<li>Understand how snakemake manages dependencies and outputs</li>
+</ul>
+</li>
+<li><strong>Singularity</strong><ul>
+<li>Understand what containers are</li>
+<li>Understand what Dockers are</li>
+<li>Understand why Singularity</li>
+<li>How to pull &amp; run singularity containers</li>
+</ul>
+</li>
+</ul>
 </div>
 <div class="section" id="introduction">
 <h1>3. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
@@ -178,9 +196,8 @@
 </div>
 <div class="section" id="working-on-binder">
 <h1>4. Working on Binder<a class="headerlink" href="#working-on-binder" title="Permalink to this headline">¶</a></h1>
-<p>::warning
-Note:  No support for ‘–use-singularity’
-:</p>
+<blockquote>
+<div>Note: No support for ‘–use-singularity’</div></blockquote>
 <ul class="simple">
 <li>We’re going to use <a class="reference external" href="https://mybinder.org/">mybinder.org</a>, a fantastic service that lets us run demonstrations and short workshops in the cloud!</li>
 </ul>
@@ -196,7 +213,7 @@ Note:  No support for ‘–use-singularity’
 <h1>5. Working on Cloud<a class="headerlink" href="#working-on-cloud" title="Permalink to this headline">¶</a></h1>
 <p><img alt="_images/cloud_computing.png" src="_images/cloud_computing.png" />cloud_computing</p>
 <blockquote>
-<div>Note: Supports ‘–use-singularity’ Singularity / docker containers</div></blockquote>
+<div>Note: Supports ‘–use-singularity’ and Singularity / docker containers</div></blockquote>
 <ul class="simple">
 <li>To run snakemake jobs via <a class="reference external" href="https://singularity-hub.org/">Singularity</a> / <a class="reference external" href="https://hub.docker.com/">Docker</a> containers in the cloud, we recommend <a class="reference external" href="https://www.cyverse.org/atmosphere"><strong>Atmosphere</strong></a>, CyVerse’s cloud-computing platform which provides easy-to-use web-access to cloud resources and is designed to accommodate computationally and data-intensive tasks.</li>
 </ul>
@@ -206,7 +223,7 @@ Note:  No support for ‘–use-singularity’
 <div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html"><strong>2. Guide to Launching Atmosphere Instances</strong></a></div></blockquote>
 <blockquote>
 <div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html"><strong>3. Snakemake Tutorial using containers on Atmosphere</strong></a></div></blockquote>
-<p>![cyverse_logo](/img/cyverse_logo.png =200x20) <img alt="_images/atmosphere_icon.png" src="_images/atmosphere_icon.png" />logo</p>
+<p><img alt="_images/cyverse_logo.png" src="_images/cyverse_logo.png" />cyverse_logo <img alt="_images/atmosphere_icon.png" src="_images/atmosphere_icon.png" />logo</p>
 <ul class="simple">
 <li><strong>Atmosphere Key Features:</strong><ul>
 <li>Access virtual machine images preconfigured with an operating system and software to help you do scientific computations in domain-specific tasks</li>
@@ -221,11 +238,11 @@ Note:  No support for ‘–use-singularity’
 </ul>
 <blockquote>
 <div><strong><a class="reference external" href="https://www.cyverse.org/about"><strong>CyVerse</strong></a> is a cyber-infrastructure initiative funded by the National Science Foundation’s Directorate for Biological Sciences to address the growing needs for highly configurable and customized computational infrastructure to support research efforts in data sciences.</strong></div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>		![cyverse_services](/img/cyverse_services.png)
-</pre></div>
-</div>
+<p><img alt="_images/cyverse_services.png" src="_images/cyverse_services.png" />cyverse_services</p>
 <blockquote>
 <div>[<strong>Jetstream</strong>]</div></blockquote>
+<p>https://jetstream-cloud.org/</p>
+<p>https://portal.xsede.org/jetstream</p>
 </div>
 <div class="section" id="working-locally">
 <h1>6. Working Locally<a class="headerlink" href="#working-locally" title="Permalink to this headline">¶</a></h1>
