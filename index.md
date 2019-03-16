@@ -4,10 +4,11 @@ Reproducible Workflows using Snakemake and Singularity
 
 - **The Snakemake workflow management system is a tool to create reproducible and scalable data analyses and can be seamlessly scaled to server, cluster, grid and cloud environments, without the need to modify the workflow definition.**
 
-- **Singularity** is an open source-based container platform designed for scientific and high-performance computing (HPC) environments. Singularity supports **Bring Your Own Environment (BYOE)**—where entire Singularity environments can be transported between computational resources (e.g., users’ PCs) with reproducibility.
+- **Singularity** is an open source-based container platform designed for scientific and high-performance computing (HPC) environments. Singularity supports Bring Your Own Environment (BYOE)—where entire Singularity environments can be transported between computational resources (e.g., users’ PCs) with reproducibility.**
 
-> Basic [**UNIX command-line**](http://linuxcommand.org/lc3_learning_the_shell.php) experience required. [UNIX Bootcamp](http://rik.smith-unna.com/command_line_bootcamp/?id=6oprpl4mlf4)
-> > You don't need to be an expert at Python to use Snakemake, but it can sometimes be very useful.
+> Basic [**UNIX command-line**](http://linuxcommand.org/lc3_learning_the_shell.php) experience required.
++ [UNIX Bootcamp](http://rik.smith-unna.com/command_line_bootcamp/?id=6oprpl4mlf4)
++ You don't need to be an expert at Python to use Snakemake, but it can sometimes be very useful.
 
 > No license; the below content is available under CC0 general license.
 
@@ -15,7 +16,7 @@ Reproducible Workflows using Snakemake and Singularity
 
 # Learning Objectives
 
-- **Environment Management** using [**conda**](https://conda.io/en/latest/) & [**bioconda**](https://bioconda.github.io/) 
+- **Environment Management** using [**conda**](https://conda.io/en/latest/) & [**bioconda**](https://bioconda.github.io/)
 	+ Set up and manage the project environment        
 	+ Understand conda environments
 	+
@@ -23,10 +24,10 @@ Reproducible Workflows using Snakemake and Singularity
 - **Workflow Management** using [**Snakemake**](https://snakemake.readthedocs.io/en/stable/)
 	+ Move from separate scripts to connected analysis
 	+ Understand snakemake syntax                                                   
-	+ Understand the components of a Snakefile: rules, inputs, outputs, and actions 
+	+ Understand the components of a Snakefile: rules, inputs, outputs, and actions
 	+ Understand snakemake wildcards and pattern rules                              
-	+ Understand how snakemake manages dependencies and outputs 
-                                                                                  
+	+ Understand how snakemake manages dependencies and outputs
+
 - **Container Management** using [**Singularity**](https://www.sylabs.io/docs/)
  	+ Make your project self-sustainable and distributable
  	+ Understand what containers are                                                
@@ -42,7 +43,7 @@ Reproducible Workflows using Snakemake and Singularity
 
 > Note: No support for '--use-singularity'
 
-- We're going to use [mybinder.org](https://mybinder.org/), a fantastic service that lets us run demonstrations and short workshops in the cloud! 
+- We're going to use [mybinder.org](https://mybinder.org/), a fantastic service that lets us run demonstrations and short workshops in the cloud!
 
 > **Click on this [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/binder?urlpath=rstudio) button to launch a pre-configured Binder file that is rendered via a Rstudio interface.**
 
@@ -54,7 +55,7 @@ Reproducible Workflows using Snakemake and Singularity
 
 ![cloud_computing](/img/cloud_computing.png)
 
-> Note: Supports '--use-singularity' and Singularity / docker containers
+
 
 - To run snakemake jobs via [Singularity](https://singularity-hub.org/) / [Docker](https://hub.docker.com/) containers in the cloud, we recommend [**Atmosphere**](https://www.cyverse.org/atmosphere), CyVerse's cloud-computing platform which provides easy-to-use web-access to cloud resources and is designed to accommodate computationally and data-intensive tasks.
 
@@ -64,9 +65,9 @@ Reproducible Workflows using Snakemake and Singularity
 
 > [**3. Snakemake Tutorial using containers on Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html)
 
-![cyverse_logo](/img/cyverse_logo.png) ![logo](/img/atmosphere_icon.png)
+> Note: Supports '--use-singularity' and Singularity / docker containers
 
-- **Atmosphere Key Features:** 
+## **Atmosphere / Jetstream Key Features:**
 
 	+ Access virtual machine images preconfigured with an operating system and software to help you do scientific computations in domain-specific tasks
 	+ Find and use tools with the intuitive self-service portal
@@ -76,15 +77,11 @@ Reproducible Workflows using Snakemake and Singularity
 	+ Integrate with existing infrastructure components using API services
 	+ Easily generate and manage statistical reporting of user resources for total CPU hours and memory usages, total instances and applications launched by user, cloud monitoring, and on-demand intelligence resource allocation
 
-> **[**CyVerse**](https://www.cyverse.org/about) is a cyber-infrastructure initiative funded by the National Science Foundation’s Directorate for Biological Sciences to address the growing needs for highly configurable and customized computational infrastructure to support research efforts in data sciences.**
+> [**CyVerse**](https://www.cyverse.org/about) is a cyber-infrastructure initiative funded by the National Science Foundation’s Directorate for Biological Sciences to address the growing needs for highly configurable and customized computational infrastructure to support research efforts in data sciences.
 
-![cyverse_services](/img/cyverse_services.png)
+> [**Jetstream**](https://jetstream-cloud.org/) is an [NSF/XSEDE] resource designed to promote and provide configurable cyberinfrastructure in the form of cloud computing to both novice and experienced users. Jetstream features a web-based user interface based on the popular Atmosphere cloud computing environment developed by CyVerse.**
 
-> [**Jetstream**](https://jetstream-cloud.org/)
-
-- **Jetstream is an [NSF/XSEDE] resource designed to promote and provide configurable cyberinfrastructure in the form of cloud computing to both novice and experienced users. Jetstream features a web-based user interface based on the popular Atmosphere cloud computing environment developed by CyVerse.**
-
-> [**1. Register for a free account on XSEDE User Portal**](https://portal.xsede.org/web/xup/my-xsede?p_p_id=58&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&saveLastPath=0&_58_struts_action=%2Flogin%2Fcreate_account)
+> [**1. Register for an account on XSEDE User Portal**](https://portal.xsede.org/web/xup/my-xsede?p_p_id=58&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&saveLastPath=0&_58_struts_action=%2Flogin%2Fcreate_account)
 
 > [Jetstream Trial Access Allocation](https://portal.xsede.org/my-xsede?p_p_state=maximized&p_p_mode=view&saveLastPath=0&_58_struts_action=%2Flogin%2Flogin&p_p_id=58&p_p_lifecycle=0&_58_redirect=%2Fgroup%2Fxup%2Fjetstream-rapid-access)
 
@@ -155,4 +152,4 @@ The content for this website has been compiled from tutorials put together by:
 
 + [CyVerse](https://www.cyverse.org/about)
 
-> Feedback and suggestions are welcome. 
+> Feedback and suggestions are welcome.
