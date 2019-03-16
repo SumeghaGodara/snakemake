@@ -4,9 +4,9 @@ Reproducible Workflows using Snakemake and Singularity
 
 - **The Snakemake workflow management system is a tool to create reproducible and scalable data analyses and can be seamlessly scaled to server, cluster, grid and cloud environments, without the need to modify the workflow definition.**
 
-- **Singularity**
+- **Singularity** is an open source-based container platform designed for scientific and high-performance computing (HPC) environments. Singularity supports **Bring Your Own Environment (BYOE)**—where entire Singularity environments can be transported between computational resources (e.g., users’ PCs) with reproducibility.
 
-> Basic UNIX command-line experience required.
+> Basic [**UNIX command-line**](http://linuxcommand.org/lc3_learning_the_shell.php) experience required. [UNIX Bootcamp](http://rik.smith-unna.com/command_line_bootcamp/?id=6oprpl4mlf4)
 > > You don't need to be an expert at Python to use Snakemake, but it can sometimes be very useful.
 
 > No license; the below content is available under CC0 general license.
@@ -15,33 +15,24 @@ Reproducible Workflows using Snakemake and Singularity
 
 # Learning Objectives
 
-> This tutorial is designed to introduce *building reproducible workflows* using:
+- **Environment Management** using [**conda**](https://conda.io/en/latest/) & [**bioconda**](https://bioconda.github.io/) 
+	+ Set up and manage the project environment        
+	+ Understand conda environments
+	+
 
-- **Environment Management**
-	+ Set up and manage the project environment
-		+ [conda](https://conda.io/en/latest/)                     
-    	+ [bioconda](https://bioconda.github.io/)                  
-                                                                                  
-- **Workflow Management**
+- **Workflow Management** using [**Snakemake**](https://snakemake.readthedocs.io/en/stable/)
 	+ Move from separate scripts to connected analysis
-		+ [Snakemake](https://snakemake.readthedocs.io/en/stable/) 
-                                                                                  
-- **Container Management**
- 	+ Make your project self-sustainable and distributable
- 		+ [Singularity](https://www.sylabs.io/docs/)               
-
-- **Snakemake**
 	+ Understand snakemake syntax                                                   
-    + Understand the components of a Snakefile: rules, inputs, outputs, and actions 
-    + Understand snakemake wildcards and pattern rules                              
-    + Understand how snakemake manages dependencies and outputs 
-
- - **Singularity**
+	+ Understand the components of a Snakefile: rules, inputs, outputs, and actions 
+	+ Understand snakemake wildcards and pattern rules                              
+	+ Understand how snakemake manages dependencies and outputs 
+                                                                                  
+- **Container Management** using [**Singularity**](https://www.sylabs.io/docs/)
+ 	+ Make your project self-sustainable and distributable
  	+ Understand what containers are                                                
     + Understand what Dockers are                                                   
     + Understand why Singularity                                                    
     + How to pull & run singularity containers                                      
-
 
 # Introduction
 
@@ -89,11 +80,13 @@ Reproducible Workflows using Snakemake and Singularity
 
 ![cyverse_services](/img/cyverse_services.png)
 
-> **Jetstream**
+> [**Jetstream**](https://jetstream-cloud.org/)
 
-- [Jetstream Cloud](https://jetstream-cloud.org/)
+- **Jetstream is an [NSF/XSEDE] resource designed to promote and provide configurable cyberinfrastructure in the form of cloud computing to both novice and experienced users. Jetstream features a web-based user interface based on the popular Atmosphere cloud computing environment developed by CyVerse.**
 
-- [XSEDE portal](https://portal.xsede.org/jetstream)
+> [**1. Register for a free account on XSEDE User Portal**](https://portal.xsede.org/web/xup/my-xsede?p_p_id=58&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&saveLastPath=0&_58_struts_action=%2Flogin%2Fcreate_account)
+
+> [Jetstream Trial Access Allocation](https://portal.xsede.org/my-xsede?p_p_state=maximized&p_p_mode=view&saveLastPath=0&_58_struts_action=%2Flogin%2Flogin&p_p_id=58&p_p_lifecycle=0&_58_redirect=%2Fgroup%2Fxup%2Fjetstream-rapid-access)
 
 # Working Locally
 
@@ -138,7 +131,7 @@ conda activate smake
 conda deactivate
 ```
 
-- Singularity installation needs **sudo** permissions and instructions can be found [here](https://www.sylabs.io/guides/3.0/user-guide/installation.html#installation)
+- Singularity installation needs **sudo** permissions and instructions can be found [here](https://www.sylabs.io/guides/3.0/user-guide/quick_start.html#quick-installation-steps)
 
 # Awesome
 
@@ -151,3 +144,15 @@ conda deactivate
 + Version Control
 + Markdown
 + Did someone say *Kubernetes* !!!
+
+# Credits
+
+The content for this website has been compiled from tutorials put together by:
+
++ [Titus Brown](https://twitter.com/ctitusbrown) - Link to [Tutorial](https://github.com/ctb/2019-snakemake-ucdavis)
+
++ [Johannes Koster](https://twitter.com/johanneskoester) - Link to [Tutorial](https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html)
+
++ [CyVerse](https://www.cyverse.org/about)
+
+> Feedback and suggestions are welcome. 
