@@ -5,15 +5,13 @@ Introduction
 
 # Why Snakemake? 
 
-- **A common pattern in scientific computing involves the execution of many computational or data manipulation tasks. Those tasks are usually coupled, i.e., data produced by of one task are consumed by one or more other tasks. Thus execution of such tasks often requires a non-trivial coordination (orchestration) to satisfy their data dependencies.**
+**A common pattern in scientific computing involves the execution of many computational or data manipulation tasks. Those tasks are usually coupled, i.e., data produced by of one task are consumed by one or more other tasks. Thus execution of such tasks often requires a non-trivial coordination (orchestration) to satisfy their data dependencies.**
 
-**[Snakemake](https://snakemake.readthedocs.io/en/stable/index.html) is a workflow management system that helps you build pipelines between the scripts of your project.**
+**[Snakemake](https://snakemake.readthedocs.io/en/stable/index.html) is a workflow management system that .**
 
 > Snakemake [slides](http://slides.com/johanneskoester/snakemake-tutorial#/)
 
 - Snakemake allows you to create a set of rules, each one defining a "step" of your analysis. Rules can either use shell commands, plain Python code or external Python or R scripts to create output files from input files [^1].
-
-[^1]: https://academic.oup.com/bioinformatics/article/28/19/2520/290322
 
 **The workflow is implied by dependencies between the rules that arise from one rule needing an output file of another as an input file.**
 
@@ -50,11 +48,9 @@ rule myname:
 
 # Why Containers?
 
-![]
+![sing_container](/img/sing_container.png)
 
-Container
-
-:	A container image is an encapsulated, portable environment that is created to distribute a scientific analysis or a general function. Containers help with reproducibility of such content as they nicely package software and data dependencies, along with libraries that are needed.
+> **A container image is an encapsulated, portable environment that is created to distribute a scientific analysis or a general function. Containers help with reproducibility of such content as they nicely package software and data dependencies, along with libraries that are needed.**
 
 - Hubs hosts over 100,000 pre-built, ready-to-use containers
 
@@ -65,4 +61,5 @@ Container
     + Create a pipeline or complex workflow where each individual program is meant to run on a different operating system.
 
 
-- [Singularity Slides](https://docs.google.com/presentation/d/14-iKKUpGJC_1qpVFVUyUaitc8xFSw9Rp3v_UE9IGgjM/pub?start=false&loop=false&delayms=3000&slide=id.g1c1cec989b_0_154)
+
+[^1]: https://academic.oup.com/bioinformatics/article/28/19/2520/290322

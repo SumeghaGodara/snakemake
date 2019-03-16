@@ -7,6 +7,7 @@ Basic Tutorial
 ```bash
 PS1='$ '
 ```
+![Rstudio](/img/rstudio1.png)
 
 # Getting started - your first Snakefile
 
@@ -109,7 +110,7 @@ touch data/*.fq.gz
 snakemake
 ```
 
-> This will become important later :)
+This will become important later :)
 
 # Multiple rules
 
