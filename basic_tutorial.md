@@ -9,6 +9,10 @@ PS1='$ '
 ```
 ![Rstudio](/img/rstudio1.png)
 
+# Background
+
+The genome of a living organism encodes its hereditary information. It serves as a blueprint for proteins, which form living cells, carry information and drive chemical reactions. DNA sequencing, producing gigabytes of data from a single biological sample (e.g. a biopsy of some tissue). For technical reasons, DNA sequencing cuts the DNA of a sample into millions of small pieces, called reads. In order to recover the genome of the sample, one has to map these reads against a known reference genome (e.g., the human one obtained during the famous human genome project). This task is called read mapping.
+
 # Getting started - your first Snakefile
 
 - Create a new text file (`File`, `New File`, `Text file`) and write:
