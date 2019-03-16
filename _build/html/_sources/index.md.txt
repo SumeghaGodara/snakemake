@@ -2,29 +2,16 @@ Reproducible Workflows using Snakemake and Singularity
 ===
 ![logo](/img/tutorial_logo.png)
 
-- **The Snakemake workflow management system is a tool to create reproducible and scalable data analyses.**
+- **The Snakemake workflow management system is a tool to create reproducible and scalable data analyses and can be seamlessly scaled to server, cluster, grid and cloud environments, without the need to modify the workflow definition.**
 
-- **Workflows are described via a human readable, Python based language. They can be seamlessly scaled to server, cluster, grid and cloud environments, without the need to modify the workflow definition.**
-
-- **Snakemake workflows can entail a description of required software, which will be automatically deployed to any execution environment.**
+- **Singularity**
 
 > Basic UNIX command-line experience required.
-
-> You don't need to be an expert at Python to use Snakemake, but it can sometimes be very useful.
+> > You don't need to be an expert at Python to use Snakemake, but it can sometimes be very useful.
 
 > No license; the below content is available under CC0 general license.
 
-### Author:
-> [Sateesh Peri](https://twitter.com/perisateesh)
-
-### Credits
-The content for this website has been compiled from tutorials put together by:
-
-+ [Titus Brown](https://twitter.com/ctitusbrown) - Link to [Tutorial](https://github.com/ctb/2019-snakemake-ucdavis)
-
-+ [Johannes Koster](https://twitter.com/johanneskoester) - Link to [Tutorial](https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html)
-
-+ [CyVerse](https://www.cyverse.org/about)
+> Author: [Sateesh Peri](https://twitter.com/perisateesh)
 
 # Learning Objectives
 
@@ -167,5 +154,15 @@ conda deactivate
 
 + Singularity modules in HPCs
 + Building containers from scratch
-+
++ Version Control
++ Markdown
 + Did someone say *Kubernetes* !!!
+
+### Credits
+The content for this website has been compiled from tutorials put together by:
+
++ [Titus Brown](https://twitter.com/ctitusbrown) - Link to [Tutorial](https://github.com/ctb/2019-snakemake-ucdavis)
+
++ [Johannes Koster](https://twitter.com/johanneskoester) - Link to [Tutorial](https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html)
+
++ [CyVerse](https://www.cyverse.org/about)

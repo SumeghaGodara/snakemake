@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="22. Accessing The Atmosphere Cloud" href="Atmosphere_Cloud.html" />
+    <link rel="next" title="24. Accessing The Atmosphere Cloud" href="Atmosphere_Cloud.html" />
     <link rel="prev" title="10. Introduction" href="introduction.html" />
   
    
@@ -39,7 +39,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="Atmosphere_Cloud.html" title="22. Accessing The Atmosphere Cloud"
+          <a href="Atmosphere_Cloud.html" title="24. Accessing The Atmosphere Cloud"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="introduction.html" title="10. Introduction"
@@ -91,7 +91,12 @@
 <li><a class="reference internal" href="#adding-in-some-python">20.6. Adding in some Python…</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#final-thoughts-writing-your-own-snakefile">21. Final thoughts - writing your own snakefile</a></li>
+<li><a class="reference internal" href="#final-thoughts-writing-your-own-snakefile">21. Final thoughts - writing your own snakefile</a><ul>
+<li><a class="reference internal" href="#dealing-with-complexity">21.1. Dealing with complexity</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#thinking-about-workflows-a-strong-er-argument">22. Thinking about workflows - a strong(er) argument</a></li>
+<li><a class="reference internal" href="#go-forth-and-workflow">23. Go forth and Workflow!</a></li>
 </ul>
 
     </div>
@@ -102,7 +107,7 @@
                         title="previous chapter">10. Introduction</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="Atmosphere_Cloud.html"
-                        title="next chapter">22. Accessing The Atmosphere Cloud</a></p>
+                        title="next chapter">24. Accessing The Atmosphere Cloud</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -142,7 +147,7 @@
 <h1>13. Basic Tutorial<a class="headerlink" href="#basic-tutorial" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><a class="reference external" href="https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/binder?urlpath=rstudio"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" />Binder</a></li>
-<li>We’re mostly going to work in the file editor and the terminal of Rstudio; to get started, open the terminal, and execute following to to get a shorter terminal prompt.**</li>
+<li>We’re mostly going to work in the file editor and the terminal of Rstudio; to get started, open the terminal, and execute following to to get a shorter terminal prompt.</li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;$ &#39;</span>
 </pre></div>
@@ -860,6 +865,38 @@ snakemake -n
 <li>DO copy and paste from this tutorial and others you find online!</li>
 <li>it rarely hurts to just re-run snakemake!**</li>
 </ul>
+<div class="section" id="dealing-with-complexity">
+<h2>21.1. Dealing with complexity<a class="headerlink" href="#dealing-with-complexity" title="Permalink to this headline">¶</a></h2>
+<p>Workflows can get really complicated; <a class="reference external" href="https://github.com/spacegraphcats/2018-paper-spacegraphcats/blob/master/pipeline-base/Snakefile">here</a>, for example, is one for our most recent paper. But it’s all just using the building blocks that I showed you above!</p>
+<p>If you want to see some good examples of how to build nice, clean, simple looking workflows, check out <a class="reference external" href="https://github.com/snakemake-workflows/rna-seq-star-deseq2">this RNAseq example</a>.</p>
+</div>
+</div>
+<div class="section" id="thinking-about-workflows-a-strong-er-argument">
+<h1>22. Thinking about workflows - a strong(er) argument<a class="headerlink" href="#thinking-about-workflows-a-strong-er-argument" title="Permalink to this headline">¶</a></h1>
+<p>what do (snakemake) workflows do for me?</p>
+<ul class="simple">
+<li>declarative vs procedural specification<ul>
+<li>allows analysis of workflow graph, parallelization</li>
+<li>allows declaration of specific software needed, for later tracking</li>
+<li>can compare workflows more easily, in theory (=&gt; reproducibility)</li>
+<li>can rerun failed steps</li>
+</ul>
+</li>
+<li>tracks dependencies on files<ul>
+<li>allows rerunning just the bits that need to rerun</li>
+</ul>
+</li>
+<li>reusability, in theory</li>
+<li>different conda environments for each step<ul>
+<li>allows pinning of software versions</li>
+<li>allows use of potentially incompatible software</li>
+</ul>
+</li>
+</ul>
+<p>For me, the main reason to use snakemake is that it lets be sure that my workflow completed properly. snakemake tracks which commands fails, and will stop the workflow in its tracks! This is not something that you usually do in shell scripts.</p>
+</div>
+<div class="section" id="go-forth-and-workflow">
+<h1>23. Go forth and Workflow!<a class="headerlink" href="#go-forth-and-workflow" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -872,7 +909,7 @@ snakemake -n
       </div>
     
       <div class="pull-right">
-        <a class="btn btn-default" href="Atmosphere_Cloud.html" title="next chapter (use the right arrow)">22. Accessing The Atmosphere Cloud</a>
+        <a class="btn btn-default" href="Atmosphere_Cloud.html" title="next chapter (use the right arrow)">24. Accessing The Atmosphere Cloud</a>
       </div>
     </div>
     <div class="clearer"></div>
@@ -887,7 +924,7 @@ snakemake -n
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="Atmosphere_Cloud.html" title="22. Accessing The Atmosphere Cloud"
+          <a href="Atmosphere_Cloud.html" title="24. Accessing The Atmosphere Cloud"
              >next</a> |</li>
         <li class="right" >
           <a href="introduction.html" title="10. Introduction"
