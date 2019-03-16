@@ -28,11 +28,16 @@ The content for this website has been compiled from tutorials put together by:
 
 # Learning Objectives
 
-	+ Understand snakemake syntax
-	+ Understand the components of a Snakefile: rules, inputs, outputs, and actions
-	+ Understand the idea of containers
-	+ Understand snakemake wildcards and pattern rules
-	+ Understand how snakemake manages dependencies and outputs
+| Tool		  | Learning Objective |
+| ---------	  | ------------------ |
+| Snakemake   | Understand snakemake syntax |
+|		 	  | Understand the components of a Snakefile: rules, inputs, outputs, and actions |
+|			  | Understand snakemake wildcards and pattern rules |
+|			  | Understand how snakemake manages dependencies and outputs |
+| Singularity | Understand what containers are |
+|			  | Understand what Dockers are |
+|		 	  | Understand why Singularity |
+|			  | How to pull & run singularity containers |
 
 - This tutorial is designed to introduce *building reproducible workflows* using:
 	+ [**conda**](https://conda.io/en/latest/) and [**bioconda**](https://bioconda.github.io/) for **Environment Management**
@@ -43,11 +48,13 @@ The content for this website has been compiled from tutorials put together by:
 
 # Introduction
 
-- [Why...Why...Why???](https://snakemake2019.readthedocs.io/en/latest/introduction.html)
+- [**Why...Why...Why???**](https://snakemake2019.readthedocs.io/en/latest/introduction.html)
 
 # Working on Binder
 
-> Note:  No support for '--use-singularity'
+::warning
+Note:  No support for '--use-singularity'
+:
 
 - We're going to use [mybinder.org](https://mybinder.org/), a fantastic service that lets us run demonstrations and short workshops in the cloud! 
 
@@ -59,6 +66,8 @@ The content for this website has been compiled from tutorials put together by:
 
 # Working on Cloud
 
+![cloud_computing](/img/cloud_computing.png)
+
 > Note: Supports '--use-singularity' Singularity / docker containers
 
 - To run snakemake jobs via [Singularity](https://singularity-hub.org/) / [Docker](https://hub.docker.com/) containers in the cloud, we recommend [**Atmosphere**](https://www.cyverse.org/atmosphere), CyVerse's cloud-computing platform which provides easy-to-use web-access to cloud resources and is designed to accommodate computationally and data-intensive tasks.
@@ -69,28 +78,25 @@ The content for this website has been compiled from tutorials put together by:
 
 > [**3. Snakemake Tutorial using containers on Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html)
 
-- *Atmosphere Key Features:* ![logo](/img/atmosphere_icon.png)
+![cyverse_logo](/img/cyverse_logo.png =200x20) ![logo](/img/atmosphere_icon.png)
+
+- **Atmosphere Key Features:** 
 
 	+ Access virtual machine images preconfigured with an operating system and software to help you do scientific computations in domain-specific tasks
-
 	+ Find and use tools with the intuitive self-service portal
-
 	+ Easily manage virtual machines
-
 	+ Publish your own software suites, create your own work environments, and run the software for community use
-
 	+ Access your data in the Data Store, including high-performance computing (HPC) and grid computing environments
-
 	+ Integrate with existing infrastructure components using API services
-
 	+ Easily generate and manage statistical reporting of user resources for total CPU hours and memory usages, total instances and applications launched by user, cloud monitoring, and on-demand intelligence resource allocation
-
-
-![cyverse_logo](/img/cyverse_logo.png) 
 
 > **[**CyVerse**](https://www.cyverse.org/about) is a cyber-infrastructure initiative funded by the National Science Foundation’s Directorate for Biological Sciences to address the growing needs for highly configurable and customized computational infrastructure to support research efforts in data sciences.**
 
-![cyverse_services](/img/cyverse_services.png)
+			![cyverse_services](/img/cyverse_services.png)
+
+> [**Jetstream**]
+
+
 
 # Working Locally
 
@@ -137,9 +143,14 @@ conda deactivate
 
 - Singularity installation needs **sudo** permissions and instructions can be found [here](https://www.sylabs.io/guides/3.0/user-guide/installation.html#installation)
 
+# Singularity
+
+![singularity_bot]
+- [Amazing slides on Singularity](https://docs.google.com/presentation/d/14-iKKUpGJC_1qpVFVUyUaitc8xFSw9Rp3v_UE9IGgjM/pub?start=false&loop=false&delayms=3000#slide=id.g1c1cec989b_0_154) by *Vanessa Sochat*
+
 # Awesome
 
-+ [Awesome list of Snakemake resources](https://snakemake2019.readthedocs.io/en/latest/awesome.html)
++ [Awesome list of Snakemake & Singularity resources](https://snakemake2019.readthedocs.io/en/latest/awesome.html)
 
 # Coming Soon
 

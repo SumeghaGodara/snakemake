@@ -11,7 +11,9 @@ Introduction
 
 > Snakemake [slides](http://slides.com/johanneskoester/snakemake-tutorial#/)
 
-**Snakemake allows you to create a set of rules, each one defining a "step" of your analysis. Rules can either use shell commands, plain Python code or external Python or R scripts to create output files from input files. Read original paper [here](https://academic.oup.com/bioinformatics/article/28/19/2520/290322)** 
+- Snakemake allows you to create a set of rules, each one defining a "step" of your analysis. Rules can either use shell commands, plain Python code or external Python or R scripts to create output files from input files[^smake_paper].
+
+[^smake_paper]: https://academic.oup.com/bioinformatics/article/28/19/2520/290322
 
 **The workflow is implied by dependencies between the rules that arise from one rule needing an output file of another as an input file.**
 
@@ -46,13 +48,13 @@ rule myname:
 
 + Snakemake can use Amazon S3, Google Storage, Dropbox, FTP, WebDAV, SFTP and iRODS to access input or output files and further access input files via HTTP and HTTPS.
 
-
-[**The Rationale**](https://hackmd.io/4useBM-tQHGGBg-i_2eAIw#)
-
 # Why Containers?
 
-Container:
-A container image is an encapsulated, portable environment that is created to distribute a scientific analysis or a general function. Containers help with reproducibility of such content as they nicely package software and data dependencies, along with libraries that are needed.
+![]
+
+Container
+
+:	A container image is an encapsulated, portable environment that is created to distribute a scientific analysis or a general function. Containers help with reproducibility of such content as they nicely package software and data dependencies, along with libraries that are needed.
 
 - Hubs hosts over 100,000 pre-built, ready-to-use containers
 

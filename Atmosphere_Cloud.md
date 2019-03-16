@@ -60,7 +60,7 @@ Accessing The Atmosphere Cloud
 	+	Provider: "CyVerse Cloud - Marana"
 
 	+ Instance size: **Depending on your allocations, choose most suitable one.**
-  	+ Recommended for this tutorial: "medium2 (CPU: 4, Mem: 16GB, Disk: 160GB)"
+  	+ Recommended for this tutorial: "tiny1 (CPU: 1, Mem: 4GB, Disk: 30GB)"
 
 ![](/img/login8.png)
 
@@ -123,7 +123,7 @@ ssh your_cyverseusername@ip_address
 
 **Note: It is advisable to delete the machine if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it. Notice: IP address changes**
 
-#### Request More AUs
+#### Request More Allocation Units
 
 ![](/img/maintain4.png)
 

@@ -3,12 +3,10 @@ Basic Tutorial
 
 - [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/binder?urlpath=rstudio)
 
-- We're mostly going to work in the file editor and the terminal of Rstudio; to get started, open the terminal, and execute:**
-
+- We're mostly going to work in the file editor and the terminal of Rstudio; to get started, open the terminal, and execute following to to get a shorter terminal prompt.**
 ```bash
 PS1='$ '
 ```
-to get a shorter terminal prompt.
 
 # Getting started - your first Snakefile
 

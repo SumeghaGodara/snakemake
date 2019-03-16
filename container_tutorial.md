@@ -13,7 +13,7 @@ Running Jobs in containers
 
 # Login to CyVerse [Atmosphere](https://atmo.cyverse.org/application/images)
 
-# Launch a medium 'm1' instance with the 'DCG-UNR-RNAseq' v3.0 base image
+# Launch a tiny 't1' instance with the 'DCG-UNR-RNAseq' v3.0 base image
 
 # Activate Conda
 
@@ -35,19 +35,20 @@ conda config --add channels conda-forge
 conda config --add channels bioconda
 ```
 
-- Try running a program pre-installed on this instance:
+- Try running the following UNIX command 'which', which returns the pathnames of the files (or links) which would be executed in the current environment:
 
 ```bash
 which snakemake
 ```
-> it should show the absolute path of snakemake '/usr/'
+> it should show the absolute path of snakemake as '/opt/miniconda3/bin/snakemake'
 
-- Test singularity 
+- Check if singularity is available in your $PATH and print version:
 
 ```bash
 which singularity
+singularity --version
 ```
-> It should show the absolute path of singularity '/local/'
+> It should show the absolute path of singularity '/usr/local/bin/singularity'
 
 # Download data
 
@@ -70,7 +71,7 @@ nano Snakefile
 ```
  and paste the code below we have from [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html)
 
-```python
+```python=
 fastqc_output = ["data/0Hour_001_1_fastqc.html", "data/6Hour_001_1_fastqc.html",
   "data/0Hour_001_2_fastqc.html", "data/6Hour_001_2_fastqc.html",
   "data/0Hour_002_1_fastqc.html", "data/6Hour_002_1_fastqc.html",

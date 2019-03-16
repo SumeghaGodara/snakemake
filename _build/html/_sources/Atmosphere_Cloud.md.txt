@@ -123,7 +123,7 @@ ssh your_cyverseusername@ip_address
 
 **Note: It is advisable to delete the machine if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it. Notice: IP address changes**
 
-#### Request More AUs
+#### Request More Allocation Units
 
 ![](/img/maintain4.png)
 
