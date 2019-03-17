@@ -1,8 +1,6 @@
 Accessing The Atmosphere Cloud
 ===
 
-![](/img/setup1.png)
-
 - **Atmosphere, CyVerse's cloud-computing platform allows you to launch your own isolated virtual machine (VM) image and software, using compute resources such as CyVerse-provided software suites, and pre-configured, frequently used analysis routines, relevant algorithms, and datasets.**
 
 > To request access to Atmosphere, login to the [CyVerse User Portal](https://user.cyverse.org/). In the [Services](https://user.cyverse.org/services/mine>) menu under 'MY SERVICES' you should see Atmosphere listed as an option you can launch. If not, look uner the [Available](https://user.cyverse.org/services/available) menu, and click the 'REQUEST ACCESS' link. You will receive an email requesting additional information.
@@ -13,15 +11,14 @@ Accessing The Atmosphere Cloud
 
 ### SSH Client for WINDOWS users
 
-- Windows-users will need to install UNIX-ready terminal.
+- Windows-users will need to install a UNIX-ready terminal.
 
-- Download & Install [mobaxterm home edition](http://mobaxterm.mobatek.net/download-home-edition.html)
-
-- Start a new session; Fill in your "remote host" the IP address of your virtual machine. Then select "specify username" and enter your cyverse username; Click OK.
+- We recommend - [mobaxterm home edition](http://mobaxterm.mobatek.net/download-home-edition.html)
+	- Start a new session; Fill in your "remote host" the IP address of your virtual machine(see below). Then select "specify username" and enter your cyverse username; Click OK.
 
 # Login & Launch Instance
 
-- Login to [Atmosphere](https://atmo.cyverse.org/application/images) by clicking the "login" butoon (right-upper corner).
+- Login to [Atmosphere](https://atmo.cyverse.org/application/images) by clicking the "login" button towards the right-upper corner of the screen.
 
 ![](/img/login1.png)
 
@@ -59,14 +56,15 @@ Accessing The Atmosphere Cloud
 
 	+	Provider: "CyVerse Cloud - Marana"
 
-	+ Instance size: **Depending on your allocations, choose most suitable one.**
+	+ Instance size: Depending on your allocations, choose most suitable one.
   	+ Recommended for this tutorial: "tiny1 (CPU: 1, Mem: 4GB, Disk: 30GB)"
 
 ![](/img/login8.png)
 
-- Launch instance and wait for the build to be deployed.
+- Launch instance and wait for the build to be deployed (~ 5-10 minutes).
+	> Note: During the build process..Be patient! Don't reload!. Once the virtual machine is ready, the "Activity" column will show "N/A" and the "Status" column will turn green and "Active".
 
-- The virtual machine should now be booting up! and should take ~ 5-10 minutes. **Note: During the build process..Be patient! Don't reload or do anything. Once the virtual machine is ready, the "Activity" column will show "N/A" and the "Status" column will turn green and "Active" (see below)**
+	`building-->spawning-->deploying-->N/A`
 
 ![](/img/login9.png)
 
@@ -93,13 +91,13 @@ ssh your_cyverseusername@ip_address
 
 > Your cursor will not move or indicate you are typing as you enter your password. If you make a mistake, hit enter and you will be prompted again.
 
-- Successful login should look something like below 
+- Successful login should look something like below
 
 ![](/img/ssh2.png)
 
-> To close your current session and end SSH connection, type 'exit'
+> To end your current session and close SSH connection, type 'exit'
 
-![](/img/ssh3.png) 
+![](/img/ssh3.png)
 
 # Instance Maintenance
 
@@ -110,9 +108,7 @@ ssh your_cyverseusername@ip_address
 #### Delete Instance
 
 - To completely remove your instance, you can select the "Delete" button from the instance details page.
-
 - This will open up a dialogue window. Select the "Yes, delete this instance" button.
-
 - It may take Atmosphere a few minutes to process your request. The instance should disappear from the project when it has been successfully deleted.
 
 ![](/img/maintain3.png)
@@ -142,132 +138,8 @@ ssh your_cyverseusername@ip_address
 
 ![](/img/additional2.png)
 
-#### Transferring Data to and from an Instance
+# [Advanced Topics](https://snakemake2019.readthedocs.io/en/latest/advanced_topics.html)
 
-An Atmosphere instance only contains data that were included in the original image that was used to make that instance. You can transfer data to/from the CyVerse Data Store, an Atmosphere Volume, a sever, or your local machine. In this guide, we will only cover data transfer using iCommands. iCommands is installed on every Atmosphere instance.
-
-
-> **Related Links**
-
-- [**iCommands Guide:**](https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html)
-- [**iCommands Download:**](https://wiki.cyverse.org/wiki/display/DS/Setting+Up+iCommands)
-
-
-**Transferring Data to/from an Instance using iCommands**
-
-You can execute to the instance's icommand if you are connected via SSH or if you are connected to the desktop via VNC, open the instance's terminal application.
-
-
-  1. At the instance's terminal, start the iCommands configuration using the
-     'iinit' command and enter configure.
-
-      .. important::
-          This configuration is a one-time step on your first use with this
-          instance.
-
-        .. code:: bash
-
-          $ iinit
-
-          # As prompted, enter the following values:
-          # Host: data.cyverse.org
-          # Port: 1247
-          # User: your_cyverse_username
-          # Zone: iplant
-          # Password: your_cyverse_password
-
-        If you make a mistake in your configuration you can edit `~/.irods/irods_environment.json`
-        on your instance.
-
-  2. Test your configuration by listing your Data Store contents with the "ils"
-     command.
-
-      .. code:: bash
-
-        $ ils
-
-      .. Tip::
-          If you made a mistake during the configuration, you can edit your
-          icommands configuration file.
-
-  3. To download a file from the Data Store to your instance, use "iget"
-
-      .. code:: bash
-
-        $iget data_store_file
-
-  4. To upload file from your instance to the Data Store use "iput"
-
-      .. code:: bash
-
-        $iget file_on_instance location_on_data_store
-
-
-.. tip::
-    iCommands has a variety of options, to see progress of transfers, operate
-    recursively, and more. See additional [iCommands documentation](https://wiki.cyverse.org/wiki/display/DS/Using+iCommands) on the CyVerse wiki.
-
-===
-
-#### Custom Images
-
-- [Jetstream](https://hackmd.io/im0eDxViQgmxTL4zYBfGoQ#)
-
-#### Deposit rsa-key
-
--	Concerning Keys: 
-	Cryptographic keys are a convenient and secure way to authenticate without having to use passwords. They consist of a pair of files called the public and private keys: the public part can be shared with whoever you’d like to authenticate with (in our case, CyVerse Atmosphere!), and the private part is kept “secret” on your machine. Things that are encrypted with the public key can be be decrypted with the private key, but it is computationally intractable (ie, it would take on the order of thousands of years) to determine a private key from a public key. You can read more about it [here](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2)
-
-- Create the RSA Key Pair on your laptop/computer:
-
-```
-$ ssh-keygen -t rsa
-```
-
-- Store the Keys and Passphrase. Once you have entered the Gen Key command, you will get a few more questions:
-
-```
-$ Enter file in which to save the key (/home/demo/.ssh/id_rsa):
-```
-
-- You can press enter here, saving the file to the user home (in this case, my example user is called demo).
-
-```
-$ Enter passphrase (empty for no passphrase):
-```
-
-- It's up to you whether you want to use a passphrase though we recommend NOT to!.
-
-- The public key is now located in /home/demo/.ssh/id_rsa.pub. The private key (identification) is now located in /home/demo/.ssh/id_rsa
-
-- Copy the Public Key
-
-- Once the key pair is generated, it's time to place the public key on the server that we want to use.
-
-```
-$ cat ~/.ssh/id_rsa.pub
-```
-
-- Copy all of the text that constitutes your public key and we will place it in our Atmosphere accounts.
-
-- **Deposit key on Atmosphere**
-
-- You are now ready to deposit your generated public key onto your Atmosphere account, to gain secure login each time you build and use an instance on Atmosphere.
-
-- Click on your username on the Atmosphere page and navigate to 'Settings' page
-
-![](/img/additional3.png)
-
-- Scroll down to the advanced section and click on 'Show More'
-
-![](/img/additional4.png)
-
-- In the 'SSH Configuration' section, click on the '+' sign 
-
-![](/img/additional5.png)
-
-- Paste your public key generated earlier and give this key a name
-
-![](/img/additional6.png)
-
-- **You can now securely login to all the instances you launch on Atmosphere without having to type your password each-time you ssh login.**
++ Transferring Data to and from an Instance
++ Creating custom Atmosphere Images
++ ssh-rsa-key for password-less login

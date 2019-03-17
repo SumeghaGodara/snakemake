@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="30. Running Jobs in containers" href="container_tutorial.html" />
+    <link rel="next" title="31. Running Jobs in containers" href="container_tutorial.html" />
     <link rel="prev" title="13. Basic Tutorial" href="basic_tutorial.html" />
   
    
@@ -39,7 +39,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="container_tutorial.html" title="30. Running Jobs in containers"
+          <a href="container_tutorial.html" title="31. Running Jobs in containers"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="basic_tutorial.html" title="13. Basic Tutorial"
@@ -75,11 +75,9 @@
 <li><a class="reference internal" href="#additional-features">29. Additional Features</a><ul>
 <li><a class="reference internal" href="#web-shell">29.1. Web Shell</a></li>
 <li><a class="reference internal" href="#web-desktop">29.2. Web Desktop</a></li>
-<li><a class="reference internal" href="#transferring-data-to-and-from-an-instance">29.3. Transferring Data to and from an Instance</a></li>
-<li><a class="reference internal" href="#custom-images">29.4. Custom Images</a></li>
-<li><a class="reference internal" href="#deposit-rsa-key">29.5. Deposit rsa-key</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#advanced-topics">30. Advanced Topics</a></li>
 </ul>
 
     </div>
@@ -90,7 +88,7 @@
                         title="previous chapter">13. Basic Tutorial</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="container_tutorial.html"
-                        title="next chapter">30. Running Jobs in containers</a></p>
+                        title="next chapter">31. Running Jobs in containers</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -128,7 +126,6 @@
             
   <div class="section" id="accessing-the-atmosphere-cloud">
 <h1>25. Accessing The Atmosphere Cloud<a class="headerlink" href="#accessing-the-atmosphere-cloud" title="Permalink to this headline">¶</a></h1>
-<p><img alt="_images/setup1.png" src="_images/setup1.png" /></p>
 <ul class="simple">
 <li><strong>Atmosphere, CyVerse’s cloud-computing platform allows you to launch your own isolated virtual machine (VM) image and software, using compute resources such as CyVerse-provided software suites, and pre-configured, frequently used analysis routines, relevant algorithms, and datasets.</strong></li>
 </ul>
@@ -141,16 +138,18 @@
 <div class="section" id="ssh-client-for-windows-users">
 <h2>25.1. SSH Client for WINDOWS users<a class="headerlink" href="#ssh-client-for-windows-users" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Windows-users will need to install UNIX-ready terminal.</li>
-<li>Download &amp; Install <a class="reference external" href="http://mobaxterm.mobatek.net/download-home-edition.html">mobaxterm home edition</a></li>
-<li>Start a new session; Fill in your “remote host” the IP address of your virtual machine. Then select “specify username” and enter your cyverse username; Click OK.</li>
+<li>Windows-users will need to install a UNIX-ready terminal.</li>
+<li>We recommend - <a class="reference external" href="http://mobaxterm.mobatek.net/download-home-edition.html">mobaxterm home edition</a><ul>
+<li>Start a new session; Fill in your “remote host” the IP address of your virtual machine(see below). Then select “specify username” and enter your cyverse username; Click OK.</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div class="section" id="login-launch-instance">
 <h1>26. Login &amp; Launch Instance<a class="headerlink" href="#login-launch-instance" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>Login to <a class="reference external" href="https://atmo.cyverse.org/application/images">Atmosphere</a> by clicking the “login” butoon (right-upper corner).</li>
+<li>Login to <a class="reference external" href="https://atmo.cyverse.org/application/images">Atmosphere</a> by clicking the “login” button towards the right-upper corner of the screen.</li>
 </ul>
 <p><img alt="_images/login1.png" src="_images/login1.png" /></p>
 <ul class="simple">
@@ -182,15 +181,19 @@
 <li>Project: select project folder to host the instance</li>
 <li>Allocation Source: should be your cyverse account</li>
 <li>Provider: “CyVerse Cloud - Marana”</li>
-<li>Instance size: <strong>Depending on your allocations, choose most suitable one.</strong></li>
+<li>Instance size: Depending on your allocations, choose most suitable one.</li>
 <li>Recommended for this tutorial: “tiny1 (CPU: 1, Mem: 4GB, Disk: 30GB)”</li>
 </ul>
 </li>
 </ul>
 <p><img alt="_images/login8.png" src="_images/login8.png" /></p>
-<ul class="simple">
-<li>Launch instance and wait for the build to be deployed.</li>
-<li>The virtual machine should now be booting up! and should take ~ 5-10 minutes. <strong>Note: During the build process..Be patient! Don’t reload or do anything. Once the virtual machine is ready, the “Activity” column will show “N/A” and the “Status” column will turn green and “Active” (see below)</strong></li>
+<ul>
+<li><p class="first">Launch instance and wait for the build to be deployed (~ 5-10 minutes).</p>
+<blockquote>
+<div><p>Note: During the build process..Be patient! Don’t reload!. Once the virtual machine is ready, the “Activity” column will show “N/A” and the “Status” column will turn green and “Active”.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">building--&gt;spawning--&gt;deploying--&gt;N/A</span></code></p>
+</li>
 </ul>
 <p><img alt="_images/login9.png" src="_images/login9.png" /></p>
 <ul class="simple">
@@ -222,7 +225,7 @@
 </ul>
 <p><img alt="_images/ssh2.png" src="_images/ssh2.png" /></p>
 <blockquote>
-<div>To close your current session and end SSH connection, type ‘exit’</div></blockquote>
+<div>To end your current session and close SSH connection, type ‘exit’</div></blockquote>
 <p><img alt="_images/ssh3.png" src="_images/ssh3.png" /></p>
 </div>
 <div class="section" id="instance-maintenance">
@@ -266,119 +269,14 @@
 </ul>
 <p><img alt="_images/additional2.png" src="_images/additional2.png" /></p>
 </div>
-<div class="section" id="transferring-data-to-and-from-an-instance">
-<h2>29.3. Transferring Data to and from an Instance<a class="headerlink" href="#transferring-data-to-and-from-an-instance" title="Permalink to this headline">¶</a></h2>
-<p>An Atmosphere instance only contains data that were included in the original image that was used to make that instance. You can transfer data to/from the CyVerse Data Store, an Atmosphere Volume, a sever, or your local machine. In this guide, we will only cover data transfer using iCommands. iCommands is installed on every Atmosphere instance.</p>
-<blockquote>
-<div><strong>Related Links</strong></div></blockquote>
-<ul class="simple">
-<li><a class="reference external" href="https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html"><strong>iCommands Guide:</strong></a></li>
-<li><a class="reference external" href="https://wiki.cyverse.org/wiki/display/DS/Setting+Up+iCommands"><strong>iCommands Download:</strong></a></li>
-</ul>
-<p><strong>Transferring Data to/from an Instance using iCommands</strong></p>
-<p>You can execute to the instance’s icommand if you are connected via SSH or if you are connected to the desktop via VNC, open the instance’s terminal application.</p>
-<ol>
-<li><p class="first">At the instance’s terminal, start the iCommands configuration using the
-‘iinit’ command and enter configure.</p>
-<p>.. important::
-This configuration is a one-time step on your first use with this
-instance.</p>
-<p>.. code:: bash</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> $ iinit
-
- # As prompted, enter the following values:
- # Host: data.cyverse.org
- # Port: 1247
- # User: your_cyverse_username
- # Zone: iplant
- # Password: your_cyverse_password
-</pre></div>
 </div>
-<p>If you make a mistake in your configuration you can edit <code class="docutils literal notranslate"><span class="pre">~/.irods/irods_environment.json</span></code>
-on your instance.</p>
-</li>
-<li><p class="first">Test your configuration by listing your Data Store contents with the “ils”
-command.</p>
-<p>.. code:: bash</p>
-<p>$ ils</p>
-<p>.. Tip::
-If you made a mistake during the configuration, you can edit your
-icommands configuration file.</p>
-</li>
-<li><p class="first">To download a file from the Data Store to your instance, use “iget”</p>
-<p>.. code:: bash</p>
-<p>$iget data_store_file</p>
-</li>
-<li><p class="first">To upload file from your instance to the Data Store use “iput”</p>
-<p>.. code:: bash</p>
-<p>$iget file_on_instance location_on_data_store</p>
-</li>
-</ol>
-<p>.. tip::
-iCommands has a variety of options, to see progress of transfers, operate
-recursively, and more. See additional <a class="reference external" href="https://wiki.cyverse.org/wiki/display/DS/Using+iCommands">iCommands documentation</a> on the CyVerse wiki.</p>
-<p>===</p>
-</div>
-<div class="section" id="custom-images">
-<h2>29.4. Custom Images<a class="headerlink" href="#custom-images" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="advanced-topics">
+<h1>30. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/advanced_topics.html">Advanced Topics</a><a class="headerlink" href="#advanced-topics" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><a class="reference external" href="https://hackmd.io/im0eDxViQgmxTL4zYBfGoQ#">Jetstream</a></li>
+<li>Transferring Data to and from an Instance</li>
+<li>Creating custom Atmosphere Images</li>
+<li>ssh-rsa-key for password-less login</li>
 </ul>
-</div>
-<div class="section" id="deposit-rsa-key">
-<h2>29.5. Deposit rsa-key<a class="headerlink" href="#deposit-rsa-key" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Concerning Keys:
-Cryptographic keys are a convenient and secure way to authenticate without having to use passwords. They consist of a pair of files called the public and private keys: the public part can be shared with whoever you’d like to authenticate with (in our case, CyVerse Atmosphere!), and the private part is kept “secret” on your machine. Things that are encrypted with the public key can be be decrypted with the private key, but it is computationally intractable (ie, it would take on the order of thousands of years) to determine a private key from a public key. You can read more about it <a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2">here</a></li>
-<li>Create the RSA Key Pair on your laptop/computer:</li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh-keygen -t rsa
-</pre></div>
-</div>
-<ul class="simple">
-<li>Store the Keys and Passphrase. Once you have entered the Gen Key command, you will get a few more questions:</li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ Enter file in which to save the key (/home/demo/.ssh/id_rsa):
-</pre></div>
-</div>
-<ul class="simple">
-<li>You can press enter here, saving the file to the user home (in this case, my example user is called demo).</li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ Enter passphrase (empty for no passphrase):
-</pre></div>
-</div>
-<ul class="simple">
-<li>It’s up to you whether you want to use a passphrase though we recommend NOT to!.</li>
-<li>The public key is now located in /home/demo/.ssh/id_rsa.pub. The private key (identification) is now located in /home/demo/.ssh/id_rsa</li>
-<li>Copy the Public Key</li>
-<li>Once the key pair is generated, it’s time to place the public key on the server that we want to use.</li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat ~/.ssh/id_rsa.pub
-</pre></div>
-</div>
-<ul class="simple">
-<li>Copy all of the text that constitutes your public key and we will place it in our Atmosphere accounts.</li>
-<li><strong>Deposit key on Atmosphere</strong></li>
-<li>You are now ready to deposit your generated public key onto your Atmosphere account, to gain secure login each time you build and use an instance on Atmosphere.</li>
-<li>Click on your username on the Atmosphere page and navigate to ‘Settings’ page</li>
-</ul>
-<p><img alt="_images/additional3.png" src="_images/additional3.png" /></p>
-<ul class="simple">
-<li>Scroll down to the advanced section and click on ‘Show More’</li>
-</ul>
-<p><img alt="_images/additional4.png" src="_images/additional4.png" /></p>
-<ul class="simple">
-<li>In the ‘SSH Configuration’ section, click on the ‘+’ sign</li>
-</ul>
-<p><img alt="_images/additional5.png" src="_images/additional5.png" /></p>
-<ul class="simple">
-<li>Paste your public key generated earlier and give this key a name</li>
-</ul>
-<p><img alt="_images/additional6.png" src="_images/additional6.png" /></p>
-<ul class="simple">
-<li><strong>You can now securely login to all the instances you launch on Atmosphere without having to type your password each-time you ssh login.</strong></li>
-</ul>
-</div>
 </div>
 
 
@@ -391,7 +289,7 @@ Cryptographic keys are a convenient and secure way to authenticate without havin
       </div>
     
       <div class="pull-right">
-        <a class="btn btn-default" href="container_tutorial.html" title="next chapter (use the right arrow)">30. Running Jobs in containers</a>
+        <a class="btn btn-default" href="container_tutorial.html" title="next chapter (use the right arrow)">31. Running Jobs in containers</a>
       </div>
     </div>
     <div class="clearer"></div>
@@ -406,7 +304,7 @@ Cryptographic keys are a convenient and secure way to authenticate without havin
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="container_tutorial.html" title="30. Running Jobs in containers"
+          <a href="container_tutorial.html" title="31. Running Jobs in containers"
              >next</a> |</li>
         <li class="right" >
           <a href="basic_tutorial.html" title="13. Basic Tutorial"

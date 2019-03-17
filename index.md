@@ -63,11 +63,9 @@ Reproducible Workflows using Snakemake and Singularity
 
 > [**3. Snakemake Tutorial using containers on Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html)
 
-> Note: Supports '--use-singularity' and Singularity / docker containers
-
 ## **Atmosphere / Jetstream Key Features:**
 
-+ Access virtual machine images preconfigured with an operating system and software to help you do scientific computations in domain-specific tasks
++ Access virtual machine images pre-configured with an operating system and software to help you do scientific computations in domain-specific tasks
 + Find and use tools with the intuitive self-service portal
 + Easily manage virtual machines
 + Publish your own software suites, create your own work environments, and run the software for community use
@@ -110,7 +108,7 @@ conda config --add channels bioconda
 
 - Next, download conda 'environment.yml' file, designed for this tutorial [here](https://github.com/sateeshperi/snakemake2019/blob/master/binder/environment.yml)
 
-- Install tools in a new conda environment 'smake' using downloaded environemnt file
+- Install tools in a new conda environment 'smake' using downloaded environment file
 
 ```bash
 conda env create --file environment.yml -n smake

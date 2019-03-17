@@ -12,4 +12,6 @@
 
    container_tutorial.md
 
+   advanced_topics.md
+
    awesome.md

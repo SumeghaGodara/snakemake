@@ -65,13 +65,9 @@
 <li><a class="reference internal" href="#what-why-how">3.1. <strong>What…Why…How???</strong></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#working-on-binder">4. Working on Binder</a><ul>
-<li><a class="reference internal" href="#note-no-support-for-use-singularity">4.1. Note: No support for ‘–use-singularity’</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#working-on-binder">4. Working on Binder</a></li>
 <li><a class="reference internal" href="#working-on-cloud">5. Working on Cloud</a><ul>
-<li><a class="reference internal" href="#note-supports-use-singularity-and-singularity-docker-containers">5.1. Note: Supports ‘–use-singularity’ and Singularity / docker containers</a></li>
-<li><a class="reference internal" href="#atmosphere-jetstream-key-features">5.2. <strong>Atmosphere / Jetstream Key Features:</strong></a></li>
+<li><a class="reference internal" href="#atmosphere-jetstream-key-features">5.1. <strong>Atmosphere / Jetstream Key Features:</strong></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#working-locally">6. Working Locally</a></li>
@@ -131,12 +127,8 @@
 <div><strong>The Snakemake workflow management system is a tool to create reproducible and scalable data analyses and can be seamlessly scaled to server, cluster, grid and cloud environments, without the need to modify the workflow definition.</strong></div></blockquote>
 <blockquote>
 <div><strong>Singularity is an open source-based container platform designed for scientific and high-performance computing (HPC) environments. Singularity supports Bring Your Own Environment (BYOE)—where entire Singularity environments can be transported between computational resources (e.g., users’ PCs) with reproducibility.</strong></div></blockquote>
-<blockquote>
-<div><ul class="simple">
-<li>Basic <a class="reference external" href="http://linuxcommand.org/lc3_learning_the_shell.php"><strong>UNIX command-line</strong></a> experience required. <a class="reference external" href="http://rik.smith-unna.com/command_line_bootcamp/?id=6oprpl4mlf4">Bootcamp</a></li>
-</ul>
-</div></blockquote>
 <ul class="simple">
+<li>Basic <a class="reference external" href="http://linuxcommand.org/lc3_learning_the_shell.php"><strong>UNIX command-line</strong></a> experience required. <a class="reference external" href="http://rik.smith-unna.com/command_line_bootcamp/?id=6oprpl4mlf4">Bootcamp</a></li>
 <li>You don’t need to be an expert at Python to use Snakemake, but it can sometimes be very useful.</li>
 </ul>
 <blockquote>
@@ -182,8 +174,8 @@
 </div>
 <div class="section" id="working-on-binder">
 <h1>4. Working on Binder<a class="headerlink" href="#working-on-binder" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="note-no-support-for-use-singularity">
-<h2>4.1. Note: No support for ‘–use-singularity’<a class="headerlink" href="#note-no-support-for-use-singularity" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Note: No support for ‘–use-singularity’</div></blockquote>
 <ul class="simple">
 <li>We’re going to use <a class="reference external" href="https://mybinder.org/">mybinder.org</a>, a fantastic service that lets us run demonstrations and short workshops in the cloud!</li>
 </ul>
@@ -194,7 +186,6 @@
 </ul>
 <blockquote>
 <div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html"><strong>Snakemake Tutorial using Binder</strong></a></div></blockquote>
-</div>
 </div>
 <div class="section" id="working-on-cloud">
 <h1>5. Working on Cloud<a class="headerlink" href="#working-on-cloud" title="Permalink to this headline">¶</a></h1>
@@ -207,13 +198,10 @@
 <div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html"><strong>2. Guide to Launching Atmosphere Instances</strong></a></div></blockquote>
 <blockquote>
 <div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html"><strong>3. Snakemake Tutorial using containers on Atmosphere</strong></a></div></blockquote>
-<div class="section" id="note-supports-use-singularity-and-singularity-docker-containers">
-<h2>5.1. Note: Supports ‘–use-singularity’ and Singularity / docker containers<a class="headerlink" href="#note-supports-use-singularity-and-singularity-docker-containers" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="atmosphere-jetstream-key-features">
-<h2>5.2. <strong>Atmosphere / Jetstream Key Features:</strong><a class="headerlink" href="#atmosphere-jetstream-key-features" title="Permalink to this headline">¶</a></h2>
+<h2>5.1. <strong>Atmosphere / Jetstream Key Features:</strong><a class="headerlink" href="#atmosphere-jetstream-key-features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Access virtual machine images preconfigured with an operating system and software to help you do scientific computations in domain-specific tasks</li>
+<li>Access virtual machine images pre-configured with an operating system and software to help you do scientific computations in domain-specific tasks</li>
 <li>Find and use tools with the intuitive self-service portal</li>
 <li>Easily manage virtual machines</li>
 <li>Publish your own software suites, create your own work environments, and run the software for community use</li>
@@ -260,7 +248,7 @@ conda config --add channels bioconda
 </div>
 <ul class="simple">
 <li>Next, download conda ‘environment.yml’ file, designed for this tutorial <a class="reference external" href="https://github.com/sateeshperi/snakemake2019/blob/master/binder/environment.yml">here</a></li>
-<li>Install tools in a new conda environment ‘smake’ using downloaded environemnt file</li>
+<li>Install tools in a new conda environment ‘smake’ using downloaded environment file</li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env create --file environment.yml -n smake
 </pre></div>

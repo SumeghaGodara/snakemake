@@ -6,7 +6,7 @@ Reproducible Workflows using Snakemake and Singularity
 
 > **Singularity is an open source-based container platform designed for scientific and high-performance computing (HPC) environments. Singularity supports Bring Your Own Environment (BYOE)—where entire Singularity environments can be transported between computational resources (e.g., users’ PCs) with reproducibility.**
 
-> + Basic [**UNIX command-line**](http://linuxcommand.org/lc3_learning_the_shell.php) experience required. [Bootcamp](http://rik.smith-unna.com/command_line_bootcamp/?id=6oprpl4mlf4)
++ Basic [**UNIX command-line**](http://linuxcommand.org/lc3_learning_the_shell.php) experience required. [Bootcamp](http://rik.smith-unna.com/command_line_bootcamp/?id=6oprpl4mlf4)
 + You don't need to be an expert at Python to use Snakemake, but it can sometimes be very useful.
 
 > No license; the below content is available under CC0 general license.
@@ -41,7 +41,7 @@ Reproducible Workflows using Snakemake and Singularity
 
 # Working on Binder
 
-###### Note: No support for '--use-singularity'
+> Note: No support for '--use-singularity'
 
 - We're going to use [mybinder.org](https://mybinder.org/), a fantastic service that lets us run demonstrations and short workshops in the cloud!
 
@@ -63,11 +63,9 @@ Reproducible Workflows using Snakemake and Singularity
 
 > [**3. Snakemake Tutorial using containers on Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html)
 
-###### Note: Supports '--use-singularity' and Singularity / docker containers
-
 ## **Atmosphere / Jetstream Key Features:**
 
-+ Access virtual machine images preconfigured with an operating system and software to help you do scientific computations in domain-specific tasks
++ Access virtual machine images pre-configured with an operating system and software to help you do scientific computations in domain-specific tasks
 + Find and use tools with the intuitive self-service portal
 + Easily manage virtual machines
 + Publish your own software suites, create your own work environments, and run the software for community use
@@ -110,7 +108,7 @@ conda config --add channels bioconda
 
 - Next, download conda 'environment.yml' file, designed for this tutorial [here](https://github.com/sateeshperi/snakemake2019/blob/master/binder/environment.yml)
 
-- Install tools in a new conda environment 'smake' using downloaded environemnt file
+- Install tools in a new conda environment 'smake' using downloaded environment file
 
 ```bash
 conda env create --file environment.yml -n smake
