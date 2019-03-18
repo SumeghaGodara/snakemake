@@ -138,6 +138,10 @@ $ cat ~/.ssh/id_rsa.pub
 
 - **You can now securely login to all the instances you launch on Atmosphere without having to type your password each-time you ssh login.**
 
+# Tmux & Screen
+
+Have you ever faced the situation where you perform a long-running task on a remote machine and suddenly your connection drops, the SSH session is terminated and your work is lost. Well it has happened to all of us at some point, hasn’t it? Luckily, there are utilities like [Tmux](https://linuxize.com/post/getting-started-with-tmux/#what-is-tmux) & [Screen](https://linuxize.com/post/how-to-use-linux-screen/) that allow us to the resume our sessions.
+
 # SSH Remote host ID Changed Error
 
 - When we suspend an instance and re-start it, the IP address might change. But, when two instances get the same address this login-error might pop-up

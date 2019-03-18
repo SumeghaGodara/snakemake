@@ -81,6 +81,8 @@ Reproducible Workflows using Snakemake and Singularity
 
 > [**1. Register for an account on XSEDE User Portal**](https://portal.xsede.org/web/xup/my-xsede?p_p_id=58&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&saveLastPath=0&_58_struts_action=%2Flogin%2Fcreate_account)
 
++ [angus 2018 jetstream login](https://angus.readthedocs.io/en/2018/jetstream/boot.html)
+
 + [Jetstream Allocations Guide](https://portal.xsede.org/my-xsede?p_p_state=maximized&p_p_mode=view&saveLastPath=0&_58_struts_action=%2Flogin%2Flogin&p_p_id=58&p_p_lifecycle=0&_58_redirect=%2Fgroup%2Fxup%2Fjetstream-rapid-access)
 
 # Working Locally

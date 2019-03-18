@@ -39,7 +39,7 @@ Accessing The Atmosphere Cloud
 
 - Click on your newly created project.
 
-- Click "NEW" and then "Instance" from the dropdown menu to start up a new virtual machine.
+- Click "NEW" and then "Instance" from the drop-down menu to start up a new virtual machine.
 
 ![](/img/atmosphere/login6.png)
 
@@ -58,8 +58,7 @@ Accessing The Atmosphere Cloud
 
 	+	Provider: "CyVerse Cloud - Marana"
 
-	+ Instance size:
-	> We recommend "tiny1 (CPU: 1, Mem: 4GB, Disk: 30GB)"for this tutorial; Though  depending on your allocations, choose most suitable one. [Click here]() to read more about allocations.
+	+ Instance size: We recommend "**tiny1** (CPU: 1, Mem: 4GB, Disk: 30GB)"for this tutorial; Though  depending on your allocations, choose most suitable one. [Click here](https://wiki.cyverse.org/wiki/display/atmman/Requesting+More+Atmosphere+Resources) to read more about allocations.
 
 ![](/img/atmosphere/login8.png)
 
