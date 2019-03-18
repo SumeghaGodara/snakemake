@@ -20,35 +20,35 @@ Accessing The Atmosphere Cloud
 
 - Login to [Atmosphere](https://atmo.cyverse.org/application/images) by clicking the "login" button towards the right-upper corner of the screen.
 
-![](/img/login1.png)
+![](/img/atmosphere/login1.png)
 
 - Fill in your CyVerse username and password and click "LOGIN"
 
-![](/img/login2.png)
+![](/img/atmosphere/login2.png)
 
 - Select the "Projects" tab and then click the "CREATE NEW PROJECT" button
 
-![](/img/login3.png)
-![](/img/login4.png)
+![](/img/atmosphere/login3.png)
+![](/img/atmosphere/login4.png)
 
 - Give your Project folder a name (Description is optional). Then click "CREATE".
 
-![](/img/login5.png)
+![](/img/atmosphere/login5.png)
 
 - Click on your newly created project.
 
 - Click "NEW" and then "Instance" from the dropdown menu to start up a new virtual machine.
 
-![](/img/login6.png)
+![](/img/atmosphere/login6.png)
 
-- To select an image click on **"Show All"** tab and Search for **"DCG-UNR-RNAseq"** and choose the "DCG-UNR-RNAseq" image created by 'sateeshp'.
+- To select an image click on **"Show All"** tab and Search for **"snakemake2019"** and choose the "Snakemake2019" image created by 'sateeshp'.
 
-![](/img/login7.png)
+![](/img/atmosphere/login7.png)
 
 - Basic options
-	+ Instance Name: e.x., "workshop" or you can leave it default which is the image name.
+	+ Instance Name: e.x., "Smake Tutorial" or you can leave it default which is the image name.
 
-	+	Base Image Version: "3.0"
+	+	Base Image Version: "1.0"
 
 	+	Project: select project folder to host the instance
 
@@ -56,27 +56,24 @@ Accessing The Atmosphere Cloud
 
 	+	Provider: "CyVerse Cloud - Marana"
 
-	+ Instance size: Depending on your allocations, choose most suitable one.
-  	+ Recommended for this tutorial: "tiny1 (CPU: 1, Mem: 4GB, Disk: 30GB)"
+	+ Instance size:
+	> We recommend "tiny1 (CPU: 1, Mem: 4GB, Disk: 30GB)"for this tutorial; Though  depending on your allocations, choose most suitable one. [Click here]() to read more about allocations.
 
-![](/img/login8.png)
+![](/img/atmosphere/login8.png)
 
 - Launch instance and wait for the build to be deployed (~ 5-10 minutes).
-	> Note: During the build process..Be patient! Don't reload!. Once the virtual machine is ready, the "Activity" column will show "N/A" and the "Status" column will turn green and "Active".
+	> Note: During the build process: `building-->spawning-->deploying-->N/A`; Be patient! Don't reload!. Once the virtual machine is ready, the "Activity" column will show "N/A" and the "Status" column will turn green and "Active".
 
-	`building-->spawning-->deploying-->N/A`
-
-![](/img/login9.png)
+![](/img/atmosphere/login9.png)
 
 - Navigate back to 'Projects' and click on your new instance's name to see more information related to the instance you just created!
 
 - Copy the IP address of your instance.
 
-![](/img/login10.png)
-
 # SSH Secure-Login
 
-- MACOS & LINUX users can open a Terminal window and Windows users start a new session in mobaxterm (see # Setup)
+> MACOS & LINUX users can open a Terminal window and Windows users start a new session in [mobaxterm home edition](http://mobaxterm.mobatek.net/download-home-edition.html)
+	+ Start a new session; Fill in your "remote host" the IP address of your virtual machine. Then select "specify username" and enter your cyverse username; Click OK.
 
 - Establish a secure-login to the instance by typing the following:
 
@@ -85,25 +82,19 @@ ssh your_cyverseusername@ip_address
 ```
 - This should log you into CyVerse and you should see a screen like this:
 
-![](/img/ssh1.png)
-
 - Enter 'yes' and then you will be asked for your CyVerse password.
 
 > Your cursor will not move or indicate you are typing as you enter your password. If you make a mistake, hit enter and you will be prompted again.
 
-- Successful login should look something like below
-
-![](/img/ssh2.png)
-
-> To end your current session and close SSH connection, type 'exit'
-
-![](/img/ssh3.png)
+![](/img/atmosphere/ssh_pass.png)
 
 # Instance Maintenance
 
+> To end your current session on an Instance and close SSH connection, type 'exit'
+
 #### Atmosphere Dashboard
 
-![](/img/maintain1.png)
+![](/img/atmosphere/dashboard.png)
 
 #### Delete Instance
 
@@ -111,18 +102,13 @@ ssh your_cyverseusername@ip_address
 - This will open up a dialogue window. Select the "Yes, delete this instance" button.
 - It may take Atmosphere a few minutes to process your request. The instance should disappear from the project when it has been successfully deleted.
 
-![](/img/maintain3.png)
+![](/img/atmosphere/delete.png)
 
 #### Suspend Instance
 
-![](/img/maintain2.png)
+![](/img/atmosphere/suspend.png)
 
 **Note: It is advisable to delete the machine if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it. Notice: IP address changes**
-
-#### Request More Allocation Units
-
-![](/img/maintain4.png)
-
 
 # Additional Features
 
@@ -130,13 +116,13 @@ ssh your_cyverseusername@ip_address
 
 - Access Command-Line Directly from your browser
 
-![](/img/additional1.png)
+![](/img/atmosphere/webshell.png)
 
 #### Web Desktop
 
 - Access your instance through a web desktop version from your browser
 
-![](/img/additional2.png)
+![](/img/atmosphere/webdesktop.png)
 
 # [Advanced Topics](https://snakemake2019.readthedocs.io/en/latest/advanced_topics.html)
 

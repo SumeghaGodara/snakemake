@@ -49,7 +49,7 @@ Complete log: /home/jovyan/.snakemake/log/2019-02-27T130941.260352.snakemake.log
 
 > Note: snakemake configuration file is by default called `Snakefile`
 
-### Updating the Snakefile to track inputs and outputs 
+### Updating the Snakefile to track inputs and outputs
 
 > At the moment this is basically just a shell script with extra syntax... what's the point?
 
@@ -371,7 +371,7 @@ rule all:
     "data/0Hour_001_1_fastqc.html",
     "data/6Hour_001_1_fastqc.html",
     "multiqc_report.html"
-    
+
 rule fastqc_a_file:
   input:
     "{filename}.fq.gz"
@@ -380,7 +380,7 @@ rule fastqc_a_file:
     "{filename}_fastqc.zip"
   shell:
     "fastqc {input}"
-    
+
 rule run_multiqc:
   output:
     "multiqc_report.html",
@@ -445,7 +445,7 @@ rule all:
   input:
     fastqc_output,
     "multiqc_report.html"
-    
+
 rule fastqc_a_file:
   input:
     "{filename}.fq.gz"
@@ -454,7 +454,7 @@ rule fastqc_a_file:
     "{filename}_fastqc.zip"
   shell:
     "fastqc {input}"
-    
+
 rule run_multiqc:
   input:
     fastqc_output
@@ -489,7 +489,7 @@ fastqc_output = ["data/0Hour_001_1_fastqc.html", "data/6Hour_001_1_fastqc.html",
 rule all:
   input:
     "multiqc_report.html"
-    
+
 rule fastqc_a_file:
   input:
     "{filename}.fq.gz"
@@ -498,7 +498,7 @@ rule fastqc_a_file:
     "{filename}_fastqc.zip"
   shell:
     "fastqc {input}"
-    
+
 rule run_multiqc:
   input:
     fastqc_output
@@ -630,7 +630,7 @@ snakemake -n
 
 ### Running things in parallel, revisited
 
-Above, we saw that you can use `snakemake -j 4` to run four jobs in parallel. Here are some other 
+Above, we saw that you can use `snakemake -j 4` to run four jobs in parallel. Here are some other
 
 * all the output is sort of smushed together... if a rule fails, it may be hard to figure out what happened. You can always just rerun snakemake.
 * still need to be careful about how much memory and processor you're using!
@@ -712,14 +712,14 @@ for filename in fastqc_input:
 for filename in fastqc_input:
   new_filename = filename.split('.')[0] + '.pe.qc_fastqc.html'
   fastqc_output.append(new_filename)
-  
+
 print('from these input files', fastqc_input, file=sys.stderr)
 print('I constructed these output filenames', fastqc_output, file=sys.stderr)
 
 rule all:
   input:
     "multiqc_report.html"
-    
+
 rule clean:
   shell:
     "rm -f {fastqc_output} multiqc_report.html"
@@ -735,7 +735,7 @@ rule fastqc_a_file:
   shell:
     "fastqc {input}"
 
-    
+
 rule run_multiqc:
   input:
     fastqc_output
@@ -773,9 +773,9 @@ rule trim_reads:
 
 ### Dealing with complexity
 
-Workflows can get really complicated; [here](https://github.com/spacegraphcats/2018-paper-spacegraphcats/blob/master/pipeline-base/Snakefile), for example, is one for our most recent paper. But it's all just using the building blocks that I showed you above!
+- Workflows can get really complicated; [here](https://github.com/spacegraphcats/2018-paper-spacegraphcats/blob/master/pipeline-base/Snakefile), for example, is one for our most recent paper. But it's all just using the building blocks that I showed you above!
 
-If you want to see some good examples of how to build nice, clean, simple looking workflows, check out [this RNAseq example](https://github.com/snakemake-workflows/rna-seq-star-deseq2).
+- If you want to see some good examples of how to build nice, clean, simple looking workflows, check out [this RNAseq example](https://github.com/snakemake-workflows/rna-seq-star-deseq2).
 
 # Thinking about workflows - a strong(er) argument
 
@@ -793,8 +793,6 @@ what do (snakemake) workflows do for me?
   - allows pinning of software versions
   - allows use of potentially incompatible software
 
-For me, the main reason to use snakemake is that it lets be sure that my workflow completed properly. snakemake tracks which commands fails, and will stop the workflow in its tracks! This is not something that you usually do in shell scripts.
-
-
+> A word from [Titus Brown](https://twitter.com/ctitusbrown) - "the main reason to use snakemake is that it lets be sure that my workflow completed properly. snakemake tracks which commands fails, and will stop the workflow in its tracks! This is not something that you usually do in shell scripts."
 
 # Go forth and Workflow!

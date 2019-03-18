@@ -20,29 +20,26 @@ Advanced Topics
 ```
 $ iinit
 # As prompted, enter the following values:
-+ **Host: data.cyverse.org**
-+ Port: 1247
-+ User: your_cyverse_username
-+ Zone: iplant
-+ Password: your_cyverse_password
+$ **Host: data.cyverse.org**
+$ **Port: 1247**
+$ **User: your_cyverse_username**
+$ **Zone: iplant**
+$ **Password: your_cyverse_password**
 ```
 
 > If you make a mistake in your configuration you can edit `~/.irods/irods_environment.json` on your instance.
 
 - Test your configuration by listing your Data Store contents with the "ils" command.
-
 ```
 $ ils
 ```
 
 - To download a file from the Data Store to your instance, use "iget"
-
 ```
 $ iget data_store_file
 ```
 
 - To upload file from your instance to the Data Store use "iput"
-
 ```
 $ iget file_on_instance location_on_data_store
 ```
@@ -52,6 +49,37 @@ $ iget file_on_instance location_on_data_store
 # Creating custom Atmosphere Images
 
 - [Jetstream](https://hackmd.io/im0eDxViQgmxTL4zYBfGoQ#)
+
+- [Ubuntu 18.04 NO-GUI Atmosphere Image](https://atmo.cyverse.org/application/images/1552)
+
+```
+cd /opt
+
+sudo su
+
+curl -O -L https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh #install in /opt/miniconda3
+
+echo export PATH=$PATH:/opt/miniconda3/bin >> ~/.bashrc
+source ~/.bashrc
+
+conda config --add channels defaults
+conda config --add channels conda-forge
+conda config --add channels bioconda
+
+conda install -y fastqc multiqc trimmomatic trinity time salmon
+
+apt-get install tree sl
+
+apt-get update && sudo apt-get -y install gdebi-core r-base
+
+wget https://download2.rstudio.org/rstudio-server-1.1.463-amd64.deb
+gdebi -n rstudio-server-1.1.463-amd64.deb
+
+RSTUDIO_LATEST=$(wget --no-check-certificate -qO- https://s3.amazonaws.com/rstudio-server/current.ver)
+```
+
+`echo http://$(hostname):8787/`
 
 
 # ssh-rsa-key for password-less login
@@ -94,19 +122,19 @@ $ cat ~/.ssh/id_rsa.pub
 
 - Click on your username on the Atmosphere page and navigate to 'Settings' page
 
-![](/img/additional3.png)
+![](/img/atmosphere/settings.png)
 
 - Scroll down to the advanced section and click on 'Show More'
 
-![](/img/additional4.png)
+![](/img/atmosphere/settings_advanced.png)
 
 - In the 'SSH Configuration' section, click on the '+' sign
 
-![](/img/additional5.png)
+![](/img/atmosphere/settings_ssh.png)
 
 - Paste your public key generated earlier and give this key a name
 
-![](/img/additional6.png)
+![](/img/atmosphere/settings_deposit_key.png)
 
 - **You can now securely login to all the instances you launch on Atmosphere without having to type your password each-time you ssh login.**
 

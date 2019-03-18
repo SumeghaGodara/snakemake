@@ -1,6 +1,6 @@
 Reproducible Workflows using Snakemake and Singularity
 ===
-![logo](/img/tutorial_logo.png)
+![logo](/img/logos/rep_research_logo.png)
 
 > **The Snakemake workflow management system is a tool to create reproducible and scalable data analyses and can be seamlessly scaled to server, cluster, grid and cloud environments, without the need to modify the workflow definition.**
 
@@ -37,7 +37,7 @@ Reproducible Workflows using Snakemake and Singularity
 
 # Introduction
 
-#### [**What...Why...How???**](https://snakemake2019.readthedocs.io/en/latest/introduction.html)
+> [**What...Why...How???**](https://snakemake2019.readthedocs.io/en/latest/introduction.html)
 
 # Working on Binder
 
@@ -63,7 +63,7 @@ Reproducible Workflows using Snakemake and Singularity
 
 > [**3. Snakemake Tutorial using containers on Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html)
 
-## **Atmosphere / Jetstream Key Features:**
+ **Atmosphere / Jetstream Key Features:**
 
 + Access virtual machine images pre-configured with an operating system and software to help you do scientific computations in domain-specific tasks
 + Find and use tools with the intuitive self-service portal
@@ -75,7 +75,7 @@ Reproducible Workflows using Snakemake and Singularity
 
 > [**CyVerse**](https://www.cyverse.org/about) is a cyber-infrastructure initiative funded by the National Science Foundation’s Directorate for Biological Sciences to address the growing needs for highly configurable and customized computational infrastructure to support research efforts in data sciences.
 
-> [**Jetstream**](https://jetstream-cloud.org/) is an [NSF/XSEDE] resource designed to promote and provide configurable cyberinfrastructure in the form of cloud computing to both novice and experienced users. Jetstream features a web-based user interface based on the popular Atmosphere cloud computing environment developed by CyVerse.**
+> [**Jetstream**](https://jetstream-cloud.org/) is an [NSF/XSEDE] resource designed to promote and provide configurable cyberinfrastructure in the form of cloud computing to both novice and experienced users. Jetstream features a web-based user interface based on the popular Atmosphere cloud computing environment developed by CyVerse.
 
 > [**1. Register for an account on XSEDE User Portal**](https://portal.xsede.org/web/xup/my-xsede?p_p_id=58&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&saveLastPath=0&_58_struts_action=%2Flogin%2Fcreate_account)
 
@@ -136,7 +136,7 @@ The content for this website has been compiled from tutorials put together by:
 
 + [Johannes Koster](https://twitter.com/johanneskoester) - Link to [Tutorial](https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html)
 
-+ [CyVerse](https://www.cyverse.org/about)
++ [CyVerse](https://www.cyverse.org/about) -Link to [Container Camp](https://cyverse-container-camp-workshop-2019.readthedocs-hosted.com/en/latest/index.html)
 
 > Please report new issues in [GitHub](https://github.com/sateeshperi/snakemake2019/issues)
 

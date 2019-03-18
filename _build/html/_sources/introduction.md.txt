@@ -3,7 +3,7 @@ Introduction
 
 ![hate_research](img/hate_research.png)
 
-# Why Snakemake? 
+# Why Snakemake?
 
 **A common pattern in scientific computing involves the execution of many computational or data manipulation tasks. Those tasks are usually coupled, i.e., data produced by of one task are consumed by one or more other tasks. Thus execution of such tasks often requires a non-trivial coordination (orchestration) to satisfy their data dependencies.**
 
@@ -48,7 +48,7 @@ rule myname:
 
 # Why Containers?
 
-![sing_container](/img/sing_container.png)
+![sing_container](/img/logos/sing_container.png)
 
 > **A container image is an encapsulated, portable environment that is created to distribute a scientific analysis or a general function. Containers help with reproducibility of such content as they nicely package software and data dependencies, along with libraries that are needed.**
 
@@ -64,4 +64,4 @@ rule myname:
 
 - [Amazing slides on Singularity](https://docs.google.com/presentation/d/14-iKKUpGJC_1qpVFVUyUaitc8xFSw9Rp3v_UE9IGgjM/pub?start=false&loop=false&delayms=3000#slide=id.g1c1cec989b_0_154) by *Vanessa Sochat*
 
-[^1]: https://academic.oup.com/bioinformatics/article/28/19/2520/290322
+- [Paper](https://academic.oup.com/bioinformatics/article/28/19/2520/290322)

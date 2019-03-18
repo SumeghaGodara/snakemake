@@ -135,11 +135,11 @@
 instance.</div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ iinit
 # As prompted, enter the following values:
-+ **Host: data.cyverse.org**
-+ Port: 1247
-+ User: your_cyverse_username
-+ Zone: iplant
-+ Password: your_cyverse_password
+$ **Host: data.cyverse.org**
+$ **Port: 1247**
+$ **User: your_cyverse_username**
+$ **Zone: iplant**
+$ **Password: your_cyverse_password**
 </pre></div>
 </div>
 <blockquote>
@@ -170,7 +170,35 @@ instance.</div></blockquote>
 <h1>40. Creating custom Atmosphere Images<a class="headerlink" href="#creating-custom-atmosphere-images" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><a class="reference external" href="https://hackmd.io/im0eDxViQgmxTL4zYBfGoQ#">Jetstream</a></li>
+<li><a class="reference external" href="https://atmo.cyverse.org/application/images/1552">Ubuntu 18.04 NO-GUI Atmosphere Image</a></li>
 </ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /opt
+
+sudo su
+
+curl -O -L https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh #install in /opt/miniconda3
+
+echo export PATH=$PATH:/opt/miniconda3/bin &gt;&gt; ~/.bashrc
+source ~/.bashrc
+
+conda config --add channels defaults
+conda config --add channels conda-forge
+conda config --add channels bioconda
+
+conda install -y fastqc multiqc trimmomatic trinity time salmon
+
+apt-get install tree sl
+
+apt-get update &amp;&amp; sudo apt-get -y install gdebi-core r-base
+
+wget https://download2.rstudio.org/rstudio-server-1.1.463-amd64.deb
+gdebi -n rstudio-server-1.1.463-amd64.deb
+
+RSTUDIO_LATEST=$(wget --no-check-certificate -qO- https://s3.amazonaws.com/rstudio-server/current.ver)
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">http://$(hostname):8787/</span></code></p>
 </div>
 <div class="section" id="ssh-rsa-key-for-password-less-login">
 <h1>41. ssh-rsa-key for password-less login<a class="headerlink" href="#ssh-rsa-key-for-password-less-login" title="Permalink to this headline">¶</a></h1>
@@ -207,19 +235,19 @@ instance.</div></blockquote>
 <li>You are now ready to deposit your generated public key onto your Atmosphere account, to gain secure login each time you build and use an instance on Atmosphere.</li>
 <li>Click on your username on the Atmosphere page and navigate to ‘Settings’ page</li>
 </ul>
-<p><img alt="_images/additional3.png" src="_images/additional3.png" /></p>
+<p><img alt="_images/settings.png" src="_images/settings.png" /></p>
 <ul class="simple">
 <li>Scroll down to the advanced section and click on ‘Show More’</li>
 </ul>
-<p><img alt="_images/additional4.png" src="_images/additional4.png" /></p>
+<p><img alt="img/atmosphere/settings_advanced.png" src="img/atmosphere/settings_advanced.png" /></p>
 <ul class="simple">
 <li>In the ‘SSH Configuration’ section, click on the ‘+’ sign</li>
 </ul>
-<p><img alt="_images/additional5.png" src="_images/additional5.png" /></p>
+<p><img alt="_images/settings_ssh.png" src="_images/settings_ssh.png" /></p>
 <ul class="simple">
 <li>Paste your public key generated earlier and give this key a name</li>
 </ul>
-<p><img alt="_images/additional6.png" src="_images/additional6.png" /></p>
+<p><img alt="_images/settings_deposit_key.png" src="_images/settings_deposit_key.png" /></p>
 <ul class="simple">
 <li><strong>You can now securely login to all the instances you launch on Atmosphere without having to type your password each-time you ssh login.</strong></li>
 </ul>

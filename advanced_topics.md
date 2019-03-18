@@ -20,29 +20,26 @@ Advanced Topics
 ```
 $ iinit
 # As prompted, enter the following values:
-+ **Host: data.cyverse.org**
-+ Port: 1247
-+ User: your_cyverse_username
-+ Zone: iplant
-+ Password: your_cyverse_password
+$ **Host: data.cyverse.org**
+$ **Port: 1247**
+$ **User: your_cyverse_username**
+$ **Zone: iplant**
+$ **Password: your_cyverse_password**
 ```
 
 > If you make a mistake in your configuration you can edit `~/.irods/irods_environment.json` on your instance.
 
 - Test your configuration by listing your Data Store contents with the "ils" command.
-
 ```
 $ ils
 ```
 
 - To download a file from the Data Store to your instance, use "iget"
-
 ```
 $ iget data_store_file
 ```
 
 - To upload file from your instance to the Data Store use "iput"
-
 ```
 $ iget file_on_instance location_on_data_store
 ```
@@ -53,8 +50,7 @@ $ iget file_on_instance location_on_data_store
 
 - [Jetstream](https://hackmd.io/im0eDxViQgmxTL4zYBfGoQ#)
 
-Launch instance: “Ubuntu 18.04 Devel and Docker” base image (Oct 1, 2018 by jfischer), m1.large (CPU: 10, Mem: 30 GB, Disk: 60 GB)
-Allocation Source: TG-MCG180142
+- [Ubuntu 18.04 NO-GUI Atmosphere Image](https://atmo.cyverse.org/application/images/1552)
 
 ```
 cd /opt
@@ -71,7 +67,7 @@ conda config --add channels defaults
 conda config --add channels conda-forge
 conda config --add channels bioconda
 
-conda install -y fastqc multiqc trimmomatic trinity time osfclient salmon
+conda install -y fastqc multiqc trimmomatic trinity time salmon
 
 apt-get install tree sl
 
@@ -126,19 +122,19 @@ $ cat ~/.ssh/id_rsa.pub
 
 - Click on your username on the Atmosphere page and navigate to 'Settings' page
 
-![](/img/additional3.png)
+![](/img/atmosphere/settings.png)
 
 - Scroll down to the advanced section and click on 'Show More'
 
-![](/img/additional4.png)
+![](/img/atmosphere/settings_advanced.png)
 
 - In the 'SSH Configuration' section, click on the '+' sign
 
-![](/img/additional5.png)
+![](/img/atmosphere/settings_ssh.png)
 
 - Paste your public key generated earlier and give this key a name
 
-![](/img/additional6.png)
+![](/img/atmosphere/settings_deposit_key.png)
 
 - **You can now securely login to all the instances you launch on Atmosphere without having to type your password each-time you ssh login.**
 

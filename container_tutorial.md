@@ -3,12 +3,12 @@ Running Jobs in containers
 
 > [**Guide to Launching Atmosphere Instances**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html)
 
-> **We will be executing the same workflow (fastqc--->multiqc--->trimmomatic) as in [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html) but, with tools being executed in singularity containers based on either Docker or Singularity builds**
+> **We will be executing the same workflow [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)--->[multiqc]()--->[trimmomatic]() as in [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html) but, with tools being executed in singularity containers based on either Docker or Singularity builds**
 
 - Dockerfiles
-  + [fastqc](https://github.com/sateeshperi/fastqc_bioc/blob/master/Dockerfile)
-  + [multiqc](https://github.com/sateeshperi/multiqc_bioc/blob/master/Dockerfile)
-  + [trimmomatic](https://hub.docker.com/r/fjukstad/trimmomatic/dockerfile)
+  + [fastqc](https://github.com/sateeshperi/fastqc_docker/blob/master/Dockerfile)
+  + [multiqc](https://github.com/sateeshperi/multiqc_docker/blob/master/Dockerfile)
+  + [trimmomatic](https://github.com/sateeshperi/trimmomatic_docker/Dockerfile)
 
 # Login to CyVerse [Atmosphere](https://atmo.cyverse.org/application/images)
 
@@ -83,7 +83,7 @@ fastqc_output = ["data/0Hour_001_1_fastqc.html", "data/6Hour_001_1_fastqc.html",
 rule all:
   input:
     "multiqc_report.html"
-        
+
 rule fastqc:
     input:
         "{filename}.fq.gz"
@@ -148,4 +148,4 @@ snakemake --report report.html
 ---------------------------
 
 
-**DCG-UNR-RNAseq v3.0** [Atmosphere Image Specifications](https://atmo.cyverse.org/application/images/1679)
+**Snakemake2019 v1.0** [Atmosphere Image Specifications]()

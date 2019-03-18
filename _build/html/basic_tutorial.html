@@ -498,7 +498,7 @@ snakemake
     <span class="s2">&quot;data/0Hour_001_1_fastqc.html&quot;</span><span class="p">,</span>
     <span class="s2">&quot;data/6Hour_001_1_fastqc.html&quot;</span><span class="p">,</span>
     <span class="s2">&quot;multiqc_report.html&quot;</span>
-    
+
 <span class="n">rule</span> <span class="n">fastqc_a_file</span><span class="p">:</span>
   <span class="nb">input</span><span class="p">:</span>
     <span class="s2">&quot;{filename}.fq.gz&quot;</span>
@@ -507,7 +507,7 @@ snakemake
     <span class="s2">&quot;{filename}_fastqc.zip&quot;</span>
   <span class="n">shell</span><span class="p">:</span>
     <span class="s2">&quot;fastqc {input}&quot;</span>
-    
+
 <span class="n">rule</span> <span class="n">run_multiqc</span><span class="p">:</span>
   <span class="n">output</span><span class="p">:</span>
     <span class="s2">&quot;multiqc_report.html&quot;</span><span class="p">,</span>
@@ -559,7 +559,7 @@ snakemake
   <span class="nb">input</span><span class="p">:</span>
     <span class="n">fastqc_output</span><span class="p">,</span>
     <span class="s2">&quot;multiqc_report.html&quot;</span>
-    
+
 <span class="n">rule</span> <span class="n">fastqc_a_file</span><span class="p">:</span>
   <span class="nb">input</span><span class="p">:</span>
     <span class="s2">&quot;{filename}.fq.gz&quot;</span>
@@ -568,7 +568,7 @@ snakemake
     <span class="s2">&quot;{filename}_fastqc.zip&quot;</span>
   <span class="n">shell</span><span class="p">:</span>
     <span class="s2">&quot;fastqc {input}&quot;</span>
-    
+
 <span class="n">rule</span> <span class="n">run_multiqc</span><span class="p">:</span>
   <span class="nb">input</span><span class="p">:</span>
     <span class="n">fastqc_output</span>
@@ -600,7 +600,7 @@ snakemake
 <span class="n">rule</span> <span class="nb">all</span><span class="p">:</span>
   <span class="nb">input</span><span class="p">:</span>
     <span class="s2">&quot;multiqc_report.html&quot;</span>
-    
+
 <span class="n">rule</span> <span class="n">fastqc_a_file</span><span class="p">:</span>
   <span class="nb">input</span><span class="p">:</span>
     <span class="s2">&quot;{filename}.fq.gz&quot;</span>
@@ -609,7 +609,7 @@ snakemake
     <span class="s2">&quot;{filename}_fastqc.zip&quot;</span>
   <span class="n">shell</span><span class="p">:</span>
     <span class="s2">&quot;fastqc {input}&quot;</span>
-    
+
 <span class="n">rule</span> <span class="n">run_multiqc</span><span class="p">:</span>
   <span class="nb">input</span><span class="p">:</span>
     <span class="n">fastqc_output</span>
@@ -773,7 +773,7 @@ snakemake -n
 </div>
 <ul class="simple">
 <li>The DAG png file should look something like this,
-<img alt="_images/dag.png" src="_images/dag.png" />dag</li>
+<img alt="img/dag.png" src="img/dag.png" />dag</li>
 </ul>
 </div>
 <div class="section" id="snakemake-report">
@@ -806,14 +806,14 @@ snakemake -n
 <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">fastqc_input</span><span class="p">:</span>
   <span class="n">new_filename</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;.pe.qc_fastqc.html&#39;</span>
   <span class="n">fastqc_output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_filename</span><span class="p">)</span>
-  
+
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;from these input files&#39;</span><span class="p">,</span> <span class="n">fastqc_input</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;I constructed these output filenames&#39;</span><span class="p">,</span> <span class="n">fastqc_output</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
 
 <span class="n">rule</span> <span class="nb">all</span><span class="p">:</span>
   <span class="nb">input</span><span class="p">:</span>
     <span class="s2">&quot;multiqc_report.html&quot;</span>
-    
+
 <span class="n">rule</span> <span class="n">clean</span><span class="p">:</span>
   <span class="n">shell</span><span class="p">:</span>
     <span class="s2">&quot;rm -f {fastqc_output} multiqc_report.html&quot;</span>
@@ -829,7 +829,7 @@ snakemake -n
   <span class="n">shell</span><span class="p">:</span>
     <span class="s2">&quot;fastqc {input}&quot;</span>
 
-    
+
 <span class="n">rule</span> <span class="n">run_multiqc</span><span class="p">:</span>
   <span class="nb">input</span><span class="p">:</span>
     <span class="n">fastqc_output</span>
@@ -872,8 +872,10 @@ snakemake -n
 </ul>
 <div class="section" id="dealing-with-complexity">
 <h2>22.1. Dealing with complexity<a class="headerlink" href="#dealing-with-complexity" title="Permalink to this headline">¶</a></h2>
-<p>Workflows can get really complicated; <a class="reference external" href="https://github.com/spacegraphcats/2018-paper-spacegraphcats/blob/master/pipeline-base/Snakefile">here</a>, for example, is one for our most recent paper. But it’s all just using the building blocks that I showed you above!</p>
-<p>If you want to see some good examples of how to build nice, clean, simple looking workflows, check out <a class="reference external" href="https://github.com/snakemake-workflows/rna-seq-star-deseq2">this RNAseq example</a>.</p>
+<ul class="simple">
+<li>Workflows can get really complicated; <a class="reference external" href="https://github.com/spacegraphcats/2018-paper-spacegraphcats/blob/master/pipeline-base/Snakefile">here</a>, for example, is one for our most recent paper. But it’s all just using the building blocks that I showed you above!</li>
+<li>If you want to see some good examples of how to build nice, clean, simple looking workflows, check out <a class="reference external" href="https://github.com/snakemake-workflows/rna-seq-star-deseq2">this RNAseq example</a>.</li>
+</ul>
 </div>
 </div>
 <div class="section" id="thinking-about-workflows-a-strong-er-argument">
@@ -898,7 +900,8 @@ snakemake -n
 </ul>
 </li>
 </ul>
-<p>For me, the main reason to use snakemake is that it lets be sure that my workflow completed properly. snakemake tracks which commands fails, and will stop the workflow in its tracks! This is not something that you usually do in shell scripts.</p>
+<blockquote>
+<div>A word from <a class="reference external" href="https://twitter.com/ctitusbrown">Titus Brown</a> - “the main reason to use snakemake is that it lets be sure that my workflow completed properly. snakemake tracks which commands fails, and will stop the workflow in its tracks! This is not something that you usually do in shell scripts.”</div></blockquote>
 </div>
 <div class="section" id="go-forth-and-workflow">
 <h1>24. Go forth and Workflow!<a class="headerlink" href="#go-forth-and-workflow" title="Permalink to this headline">¶</a></h1>

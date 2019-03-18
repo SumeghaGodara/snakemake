@@ -7,10 +7,8 @@ Awesome List of Resources
 
 + [Snakemake Carpentry Lesson](https://hpc-carpentry.github.io/hpc-python/)
 
-+ [CyVerse Container Camp](https://singularity-tutorial.github.io/)
++ [NIH-NPC Singularity Tutorial](https://singularity-tutorial.github.io/)
 
 + [Snakemake Wrapper Repository](https://snakemake-wrappers.readthedocs.io/en/stable/index.html)
 
 + [curated list of awesome pipeline toolkits](https://github.com/pditommaso/awesome-pipeline)
-
-
