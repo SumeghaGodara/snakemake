@@ -12,7 +12,7 @@ Running Jobs in containers
 
 # Login to CyVerse [Atmosphere](https://atmo.cyverse.org/application/images)
 
-# Launch a tiny 't1' instance with the 'DCG-UNR-RNAseq' v3.0 base image
+# Launch a tiny 't1' instance with the 'Snakemake2019' v1.0 base image
 
 # Activate Conda
 
@@ -91,7 +91,7 @@ rule fastqc:
         "{filename}_fastqc.html",
         "{filename}_fastqc.zip"
     singularity:
-        "docker://sateeshperi/fastqc_bioc"    
+        "docker://sateeshperi/fastqc"    
     shell:
         "fastqc {input}"
 
@@ -102,7 +102,7 @@ rule run_multiqc:
     "multiqc_report.html",
     directory("multiqc_data")
   singularity:
-    "docker://sateeshperi/multiqc_bioc"
+    "docker://sateeshperi/multiqc"
   shell:
     "multiqc data/"
 
@@ -116,7 +116,7 @@ rule trim_reads:
     "{filename}_2.pe.qc.fq.gz",
     "{filename}_2.se.qc.fq.gz"
   singularity:
-    "docker://fjukstad/trimmomatic"
+    "docker://sateeshperi/trimmomatic"
   shell:
     "java -jar /tools/trimmomatic/trimmomatic-0.36.jar PE {input} {output} LEADING:2 TRAILING:2 \
      SLIDINGWINDOW:4:15 \
