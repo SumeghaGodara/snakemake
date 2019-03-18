@@ -1,0 +1,325 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>36. Snakemake Tutorial on Atmosphere Cloud &#8212; snakemake2019 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="44. Singularity" href="singularity_tutorial.html" />
+    <link rel="prev" title="31. Advanced Topics" href="advanced_atmosphere.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="singularity_tutorial.html" title="44. Singularity"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="advanced_atmosphere.html" title="31. Advanced Topics"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="toc.html">snakemake2019 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Contents</h2>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">36. Snakemake Tutorial on Atmosphere Cloud</a></li>
+<li><a class="reference internal" href="#login-to-cyverse-atmosphere">37. Login to CyVerse Atmosphere</a></li>
+<li><a class="reference internal" href="#launch-a-tiny-t1-instance-with-the-snakemake2019-v1-0-base-image">38. Launch a tiny ‘t1’ instance with the ‘Snakemake2019’ v1.0 base image</a></li>
+<li><a class="reference internal" href="#activate-conda">39. Activate Conda</a></li>
+<li><a class="reference internal" href="#download-data">40. Download data</a></li>
+<li><a class="reference internal" href="#open-rstudio">41. Open Rstudio</a></li>
+<li><a class="reference internal" href="#run-snakemake">42. Run snakemake</a></li>
+<li><a class="reference internal" href="#generate-report">43. Generate Report</a></li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="advanced_atmosphere.html"
+                        title="previous chapter">31. Advanced Topics</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="singularity_tutorial.html"
+                        title="next chapter">44. Singularity</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/smake_cloud_tutorial.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="toc.html">Docs</a></li>
+              
+              <li>36. Snakemake Tutorial on Atmosphere Cloud</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="snakemake-tutorial-on-atmosphere-cloud">
+<h1>36. Snakemake Tutorial on Atmosphere Cloud<a class="headerlink" href="#snakemake-tutorial-on-atmosphere-cloud" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html"><strong>Guide to Launching Atmosphere Instances</strong></a></div></blockquote>
+<blockquote>
+<div><strong>We will be executing the same workflow <a class="reference external" href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">fastqc</a>—&gt;<a class="reference external" href="#">multiqc</a>—&gt;<a class="reference external" href="#">trimmomatic</a> as in <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/smake_basic_tutorial.html">Basic Tutorial</a> but, with tools being executed in singularity containers based on either Docker or Singularity builds</strong></div></blockquote>
+<ul class="simple">
+<li>Dockerfiles<ul>
+<li><a class="reference external" href="https://github.com/sateeshperi/fastqc_docker/blob/master/Dockerfile">fastqc</a></li>
+<li><a class="reference external" href="https://github.com/sateeshperi/multiqc_docker/blob/master/Dockerfile">multiqc</a></li>
+<li><a class="reference external" href="https://github.com/sateeshperi/trimmomatic_docker/Dockerfile">trimmomatic</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="login-to-cyverse-atmosphere">
+<h1>37. Login to CyVerse <a class="reference external" href="https://atmo.cyverse.org/application/images">Atmosphere</a><a class="headerlink" href="#login-to-cyverse-atmosphere" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="launch-a-tiny-t1-instance-with-the-snakemake2019-v1-0-base-image">
+<h1>38. Launch a tiny ‘t1’ instance with the ‘Snakemake2019’ v1.0 base image<a class="headerlink" href="#launch-a-tiny-t1-instance-with-the-snakemake2019-v1-0-base-image" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="activate-conda">
+<h1>39. Activate Conda<a class="headerlink" href="#activate-conda" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/opt/miniconda3/bin &gt;&gt; ~/.bashrc
+</pre></div>
+</div>
+<ul class="simple">
+<li>Then, run the following command (or start a new terminal session) in order to activate the conda environment:</li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.bashrc
+</pre></div>
+</div>
+<ul class="simple">
+<li>Add channels</li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --add channels defaults
+conda config --add channels conda-forge
+conda config --add channels bioconda
+</pre></div>
+</div>
+<ul class="simple">
+<li>Try running the following UNIX command ‘which’, which returns the pathnames of the files (or links) which would be executed in the current environment:</li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which snakemake
+</pre></div>
+</div>
+<blockquote>
+<div>it should show the absolute path of snakemake as ‘/opt/miniconda3/bin/snakemake’</div></blockquote>
+<ul class="simple">
+<li>Check if singularity is available in your $PATH and print version:</li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which singularity
+singularity --version
+</pre></div>
+</div>
+<blockquote>
+<div>It should show the absolute path of singularity ‘/usr/local/bin/singularity’</div></blockquote>
+</div>
+<div class="section" id="download-data">
+<h1>40. Download data<a class="headerlink" href="#download-data" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir data
+<span class="nb">cd</span> data/
+curl -L https://osf.io/er5tb/download -o data.zip
+unzip data.zip
+rm data.zip
+<span class="nb">cd</span> ..
+</pre></div>
+</div>
+<blockquote>
+<div>EXERCISE: write a snakemake rule to download data and unzip it as above</div></blockquote>
+</div>
+<div class="section" id="open-rstudio">
+<h1>41. Open Rstudio<a class="headerlink" href="#open-rstudio" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo http://$(hostname):8787/
+</pre></div>
+</div>
+<blockquote>
+<div>click on the link generated to open Rstudio in your browser and login with your CyVerse credentials.</div></blockquote>
+</div>
+<div class="section" id="run-snakemake">
+<h1>42. Run snakemake<a class="headerlink" href="#run-snakemake" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Create Snakefile using text editor nano:</li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano Snakefile
+</pre></div>
+</div>
+<p>and paste the code below we have from <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/smake_basic_tutorial.html">Basic Tutorial</a></p>
+<div class="highlight-python= notranslate"><div class="highlight"><pre><span></span>fastqc_output = [&quot;data/0Hour_001_1_fastqc.html&quot;, &quot;data/6Hour_001_1_fastqc.html&quot;,
+  &quot;data/0Hour_001_2_fastqc.html&quot;, &quot;data/6Hour_001_2_fastqc.html&quot;,
+  &quot;data/0Hour_002_1_fastqc.html&quot;, &quot;data/6Hour_002_1_fastqc.html&quot;,
+  &quot;data/0Hour_002_2_fastqc.html&quot;, &quot;data/6Hour_002_2_fastqc.html&quot;,
+  &quot;data/0Hour_001_1.pe.qc_fastqc.html&quot;, &quot;data/0Hour_002_1.pe.qc_fastqc.html&quot;,
+  &quot;data/6Hour_001_1.pe.qc_fastqc.html&quot;, &quot;data/6Hour_002_1.pe.qc_fastqc.html&quot;,
+  &quot;data/0Hour_001_2.pe.qc_fastqc.html&quot;, &quot;data/0Hour_002_2.pe.qc_fastqc.html&quot;,
+  &quot;data/0Hour_001_2.pe.qc_fastqc.html&quot;, &quot;data/0Hour_002_2.pe.qc_fastqc.html&quot;]
+
+rule all:
+  input:
+    &quot;multiqc_report.html&quot;
+
+rule fastqc:
+    input:
+        &quot;{filename}.fq.gz&quot;
+    output:
+        &quot;{filename}_fastqc.html&quot;,
+        &quot;{filename}_fastqc.zip&quot;
+    singularity:
+        &quot;docker://sateeshperi/fastqc&quot;    
+    shell:
+        &quot;fastqc {input}&quot;
+
+rule run_multiqc:
+  input:
+    fastqc_output
+  output:
+    &quot;multiqc_report.html&quot;,
+    directory(&quot;multiqc_data&quot;)
+  singularity:
+    &quot;docker://sateeshperi/multiqc&quot;
+  shell:
+    &quot;multiqc data/&quot;
+
+rule trim_reads:
+  input:
+    &quot;{filename}_1.fq.gz&quot;,
+    &quot;{filename}_2.fq.gz&quot;
+  output:
+    &quot;{filename}_1.pe.qc.fq.gz&quot;,
+    &quot;{filename}_1.se.qc.fq.gz&quot;,
+    &quot;{filename}_2.pe.qc.fq.gz&quot;,
+    &quot;{filename}_2.se.qc.fq.gz&quot;
+  singularity:
+    &quot;docker://sateeshperi/trimmomatic&quot;
+  shell:
+    &quot;java -jar /tools/trimmomatic/trimmomatic-0.36.jar PE {input} {output} LEADING:2 TRAILING:2 \
+     SLIDINGWINDOW:4:15 \
+     MINLEN:25&quot;    
+
+rule clean:
+  shell:
+    &quot;rm -f {fastqc_output} multiqc_report.html&quot;     
+</pre></div>
+</div>
+<ul class="simple">
+<li>Execute Snakemake with</li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake --use-singularity
+</pre></div>
+</div>
+<blockquote>
+<div>Snakemake will pull the containers and execute each rule individually in the containers specified</div></blockquote>
+<blockquote>
+<div>Note how each singularity container is activated for each rule</div></blockquote>
+</div>
+<div class="section" id="generate-report">
+<h1>43. Generate Report<a class="headerlink" href="#generate-report" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake --report report.html
+</pre></div>
+</div>
+<blockquote>
+<div><strong>Note: It is advisable to delete your instance if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it. See <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html#instance-maintenance"><strong>Instance Maintenace</strong></a> for more info</strong></div></blockquote>
+<hr class="docutils" />
+<p><strong>Snakemake2019 v1.0</strong> <a class="reference external" href="#">Atmosphere Image Specifications</a></p>
+</div>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="advanced_atmosphere.html" title="previous chapter (use the left arrow)">31. Advanced Topics</a>
+      </div>
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="singularity_tutorial.html" title="next chapter (use the right arrow)">44. Singularity</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="singularity_tutorial.html" title="44. Singularity"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="advanced_atmosphere.html" title="31. Advanced Topics"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="toc.html">snakemake2019 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2019, Sateesh Peri. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>

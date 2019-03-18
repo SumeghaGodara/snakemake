@@ -162,5 +162,5 @@ texinfo_documents = [
 from recommonmark.parser import CommonMarkParser
 
 source_parsers = {
-    '.md': 'recommonmark.parser.CommonMarkParser',
+    '.md': CommonMarkParser,
 }

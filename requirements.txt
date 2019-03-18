@@ -1,5 +1,4 @@
 sphinx
-sphinx-markdown-tables
 recommonmark
 sphinxcontrib-images
 sphinx_bootstrap_theme

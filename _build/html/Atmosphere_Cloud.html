@@ -26,8 +26,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="31. Running Jobs in containers" href="container_tutorial.html" />
-    <link rel="prev" title="13. Basic Tutorial" href="basic_tutorial.html" />
+    <link rel="next" title="31. Advanced Topics" href="advanced_atmosphere.html" />
+    <link rel="prev" title="13. Basic Tutorial" href="smake_basic_tutorial.html" />
   
    
 
@@ -39,10 +39,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="container_tutorial.html" title="31. Running Jobs in containers"
+          <a href="advanced_atmosphere.html" title="31. Advanced Topics"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="basic_tutorial.html" title="13. Basic Tutorial"
+          <a href="smake_basic_tutorial.html" title="13. Basic Tutorial"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="toc.html">snakemake2019 0.0.1 documentation</a> &#187;</li> 
       </ul>
@@ -83,11 +83,11 @@
   </div>
 </div>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="basic_tutorial.html"
+  <p class="topless"><a href="smake_basic_tutorial.html"
                         title="previous chapter">13. Basic Tutorial</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="container_tutorial.html"
-                        title="next chapter">31. Running Jobs in containers</a></p>
+  <p class="topless"><a href="advanced_atmosphere.html"
+                        title="next chapter">31. Advanced Topics</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -125,9 +125,8 @@
             
   <div class="section" id="accessing-the-atmosphere-cloud">
 <h1>25. Accessing The Atmosphere Cloud<a class="headerlink" href="#accessing-the-atmosphere-cloud" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><strong>Atmosphere, CyVerse’s cloud-computing platform allows you to launch your own isolated virtual machine (VM) image and software, using compute resources such as CyVerse-provided software suites, and pre-configured, frequently used analysis routines, relevant algorithms, and datasets.</strong></li>
-</ul>
+<p><img alt="_images/cyverse_small_logo.png" src="_images/cyverse_small_logo.png" />CyVerse_logo</p>
+<p><strong>Atmosphere, CyVerse’s cloud-computing platform allows you to launch your own isolated virtual machine (VM) image and software, using compute resources such as CyVerse-provided software suites, and pre-configured, frequently used analysis routines, relevant algorithms, and datasets.</strong></p>
 <blockquote>
 <div>To request access to Atmosphere, login to the <a class="reference external" href="https://user.cyverse.org/">CyVerse User Portal</a>. In the <a class="reference external" href="https://user.cyverse.org/services/mine%3E">Services</a> menu under ‘MY SERVICES’ you should see Atmosphere listed as an option you can launch. If not, look uner the <a class="reference external" href="https://user.cyverse.org/services/available">Available</a> menu, and click the ‘REQUEST ACCESS’ link. You will receive an email requesting additional information.</div></blockquote>
 <ul class="simple">
@@ -176,7 +175,7 @@
 <ul>
 <li><p class="first">Basic options</p>
 <ul class="simple">
-<li>Instance Name: e.x., “Smake Tutorial” or you can leave it default which is the image name.</li>
+<li>Instance Name: e.x., “Smake-Tutorial” or you can leave it default which is the image name.</li>
 <li>Base Image Version: “1.0”</li>
 <li>Project: select project folder to host the instance</li>
 <li>Allocation Source: should be your cyverse account</li>
@@ -205,8 +204,10 @@
 <div class="section" id="ssh-secure-login">
 <h1>27. SSH Secure-Login<a class="headerlink" href="#ssh-secure-login" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div>MACOS &amp; LINUX users can open a Terminal window and Windows users start a new session in <a class="reference external" href="http://mobaxterm.mobatek.net/download-home-edition.html">mobaxterm home edition</a>
-+ Start a new session; Fill in your “remote host” the IP address of your virtual machine. Then select “specify username” and enter your cyverse username; Click OK.</div></blockquote>
+<div>MACOS &amp; LINUX users can open a Terminal window and Windows users start a new session in <a class="reference external" href="http://mobaxterm.mobatek.net/download-home-edition.html">mobaxterm home edition</a></div></blockquote>
+<ul class="simple">
+<li>Start a new session; Fill in your “remote host” the IP address of your virtual machine. Then select “specify username” and enter your cyverse username; Click OK.</li>
+</ul>
 <ul class="simple">
 <li>Establish a secure-login to the instance by typing the following:</li>
 </ul>
@@ -262,7 +263,10 @@
 </div>
 </div>
 <div class="section" id="advanced-topics">
-<h1>30. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/advanced_topics.html">Advanced Topics</a><a class="headerlink" href="#advanced-topics" title="Permalink to this headline">¶</a></h1>
+<h1>30. Advanced Topics<a class="headerlink" href="#advanced-topics" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/advanced_atmosphere.html">Advanced Topics</a></li>
+</ul>
 <ul class="simple">
 <li>Transferring Data to and from an Instance</li>
 <li>Creating custom Atmosphere Images</li>
@@ -276,11 +280,11 @@
   <div class="footer-relations">
     
       <div class="pull-left">
-        <a class="btn btn-default" href="basic_tutorial.html" title="previous chapter (use the left arrow)">13. Basic Tutorial</a>
+        <a class="btn btn-default" href="smake_basic_tutorial.html" title="previous chapter (use the left arrow)">13. Basic Tutorial</a>
       </div>
     
       <div class="pull-right">
-        <a class="btn btn-default" href="container_tutorial.html" title="next chapter (use the right arrow)">31. Running Jobs in containers</a>
+        <a class="btn btn-default" href="advanced_atmosphere.html" title="next chapter (use the right arrow)">31. Advanced Topics</a>
       </div>
     </div>
     <div class="clearer"></div>
@@ -295,10 +299,10 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="container_tutorial.html" title="31. Running Jobs in containers"
+          <a href="advanced_atmosphere.html" title="31. Advanced Topics"
              >next</a> |</li>
         <li class="right" >
-          <a href="basic_tutorial.html" title="13. Basic Tutorial"
+          <a href="smake_basic_tutorial.html" title="13. Basic Tutorial"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="toc.html">snakemake2019 0.0.1 documentation</a> &#187;</li> 
       </ul>

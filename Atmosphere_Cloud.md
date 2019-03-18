@@ -96,7 +96,7 @@ ssh your_cyverseusername@ip_address
 
 #### Atmosphere Dashboard
 
-![](/img/atmosphere/dashboard.png)
+![](/img/atmosphere/atmosphere_dashboard.png)
 
 #### Delete Instance
 

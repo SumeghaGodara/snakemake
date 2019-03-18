@@ -6,12 +6,14 @@
 
    introduction.md
 
-   basic_tutorial.md
+   smake_basic_tutorial.md
 
    Atmosphere_Cloud.md
 
-   container_tutorial.md
+   advanced_atmosphere.md
 
-   advanced_topics.md
+   smake_cloud_tutorial.md
+
+   singularity_tutorial.md
 
    awesome.md
