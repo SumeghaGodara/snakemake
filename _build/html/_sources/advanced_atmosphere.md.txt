@@ -14,8 +14,7 @@ Advanced Topics
 
 - Open terminal, start the iCommands configuration using the command `iinit` command and enter configure.
 
-> Note: This configuration is a one-time step on your first use with this
-          instance.
+> Note: This configuration is a one-time step on your first use with this instance.
 
 ```
 $ iinit
@@ -29,24 +28,40 @@ $ **Password: your_cyverse_password**
 
 > If you make a mistake in your configuration you can edit `~/.irods/irods_environment.json` on your instance.
 
-- Test your configuration by listing your Data Store contents with the "ils" command.
+- Verify that your iCommands installation works and is properly configured using the 'ils' command to list the contents of your Data Store home directory
 ```
 $ ils
 ```
 
 - To download a file from the Data Store to your instance, use "iget"
 ```
-$ iget data_store_file
+$ iget -option data_store_file
 ```
+
+> '-r' - recursive transfer of directories and their contents
+
+'-P' - display the progress of the upload
+
+'-f' - force the upload and overwrite
 
 - To upload file from your instance to the Data Store use "iput"
 ```
-$ iget file_on_instance location_on_data_store
+$ iput -option file_on_instance location_on_data_store
 ```
+
+- Additional Frequently used iCommands
+```
+$ ipwd print current directory
+$ imkdir create directory
+$ icd # change directory
+```
+
 
 > iCommands has a variety of options, to see progress of transfers, operate recursively, and more. See additional [iCommands documentation](https://wiki.cyverse.org/wiki/display/DS/Using+iCommands) on the CyVerse wiki.
 
 # Creating custom Atmosphere Images
+
+- [Snakemake2019 v1.0 Image](https://atmo.cyverse.org/application/images/1687)
 
 - [Jetstream](https://hackmd.io/im0eDxViQgmxTL4zYBfGoQ#)
 
@@ -137,6 +152,10 @@ $ cat ~/.ssh/id_rsa.pub
 ![](/img/atmosphere/settings_deposit_key.png)
 
 - **You can now securely login to all the instances you launch on Atmosphere without having to type your password each-time you ssh login.**
+
+# Tmux & Screen
+
+Have you ever faced the situation where you perform a long-running task on a remote machine and suddenly your connection drops, the SSH session is terminated and your work is lost. Well it has happened to all of us at some point, hasn’t it? Luckily, there are utilities like [Tmux](https://linuxize.com/post/getting-started-with-tmux/#what-is-tmux) & [Screen](https://linuxize.com/post/how-to-use-linux-screen/) that allow us to the resume our sessions.
 
 # SSH Remote host ID Changed Error
 

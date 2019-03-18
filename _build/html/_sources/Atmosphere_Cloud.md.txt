@@ -39,11 +39,11 @@ Accessing The Atmosphere Cloud
 
 - Click on your newly created project.
 
-- Click "NEW" and then "Instance" from the dropdown menu to start up a new virtual machine.
+- Click "NEW" and then "Instance" from the drop-down menu to start up a new virtual machine.
 
 ![](/img/atmosphere/login6.png)
 
-- To select an image click on **"Show All"** tab and Search for **"snakemake2019"** and choose the "Snakemake2019" image created by 'sateeshp'.
+- To select an image click on **"Show All"** tab and Search for **"Snakemake2019"** and choose the "Snakemake2019" image created by 'sateeshp'.
 
 ![](/img/atmosphere/login7.png)
 
@@ -58,13 +58,12 @@ Accessing The Atmosphere Cloud
 
 	+	Provider: "CyVerse Cloud - Marana"
 
-	+ Instance size:
-	> We recommend "tiny1 (CPU: 1, Mem: 4GB, Disk: 30GB)"for this tutorial; Though  depending on your allocations, choose most suitable one. [Click here]() to read more about allocations.
+	+ Instance size: We recommend "**tiny1** (CPU: 1, Mem: 4GB, Disk: 30GB)"for this tutorial; Though  depending on your allocations, choose most suitable one. [Click here](https://wiki.cyverse.org/wiki/display/atmman/Requesting+More+Atmosphere+Resources) to read more about allocations.
 
 ![](/img/atmosphere/login8.png)
 
 - Launch instance and wait for the build to be deployed (~ 5-10 minutes).
-	> Note: During the build process: `building-->spawning-->deploying-->N/A`; Be patient! Don't reload!. Once the virtual machine is ready, the "Activity" column will show "N/A" and the "Status" column will turn green and "Active".
+	> Note: During the build process: `scheduling-->building-->spawning-->deploying-->N/A`; Be patient! Don't reload!. Once the virtual machine is ready, the "Activity" column will show "N/A" and the "Status" column will turn green and "Active".
 
 ![](/img/atmosphere/login9.png)
 
@@ -96,7 +95,7 @@ ssh your_cyverseusername@ip_address
 
 #### Atmosphere Dashboard
 
-![](/img/atmosphere/dashboard.png)
+![](/img/atmosphere/atmosphere_dashboard.png)
 
 #### Delete Instance
 
@@ -128,7 +127,7 @@ ssh your_cyverseusername@ip_address
 
 # Advanced Topics
 
-- [Advanced Topics](https://snakemake2019.readthedocs.io/en/latest/advanced_atmosphere.html)
+#### [Atmosphere Advanced Topics](https://snakemake2019.readthedocs.io/en/latest/advanced_atmosphere.html)
  + Transferring Data to and from an Instance
  + Creating custom Atmosphere Images
  + ssh-rsa-key for password-less login

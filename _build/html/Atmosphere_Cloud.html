@@ -76,7 +76,10 @@
 <li><a class="reference internal" href="#web-desktop">29.2. Web Desktop</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#advanced-topics">30. Advanced Topics</a></li>
+<li><a class="reference internal" href="#advanced-topics">30. Advanced Topics</a><ul>
+<li><a class="reference internal" href="#atmosphere-advanced-topics">30.1. Atmosphere Advanced Topics</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -165,37 +168,33 @@
 <p><img alt="_images/login5.png" src="_images/login5.png" /></p>
 <ul class="simple">
 <li>Click on your newly created project.</li>
-<li>Click “NEW” and then “Instance” from the dropdown menu to start up a new virtual machine.</li>
+<li>Click “NEW” and then “Instance” from the drop-down menu to start up a new virtual machine.</li>
 </ul>
 <p><img alt="_images/login6.png" src="_images/login6.png" /></p>
 <ul class="simple">
-<li>To select an image click on <strong>“Show All”</strong> tab and Search for <strong>“snakemake2019”</strong> and choose the “Snakemake2019” image created by ‘sateeshp’.</li>
+<li>To select an image click on <strong>“Show All”</strong> tab and Search for <strong>“Snakemake2019”</strong> and choose the “Snakemake2019” image created by ‘sateeshp’.</li>
 </ul>
-<p><img alt="img/atmosphere/login7.png" src="img/atmosphere/login7.png" /></p>
-<ul>
-<li><p class="first">Basic options</p>
+<p><img alt="_images/login7.png" src="_images/login7.png" /></p>
 <ul class="simple">
+<li>Basic options<ul>
 <li>Instance Name: e.x., “Smake-Tutorial” or you can leave it default which is the image name.</li>
 <li>Base Image Version: “1.0”</li>
 <li>Project: select project folder to host the instance</li>
 <li>Allocation Source: should be your cyverse account</li>
 <li>Provider: “CyVerse Cloud - Marana”</li>
-<li>Instance size:</li>
+<li>Instance size: We recommend “<strong>tiny1</strong> (CPU: 1, Mem: 4GB, Disk: 30GB)”for this tutorial; Though  depending on your allocations, choose most suitable one. <a class="reference external" href="https://wiki.cyverse.org/wiki/display/atmman/Requesting+More+Atmosphere+Resources">Click here</a> to read more about allocations.</li>
 </ul>
-<blockquote>
-<div><p>We recommend “tiny1 (CPU: 1, Mem: 4GB, Disk: 30GB)”for this tutorial; Though  depending on your allocations, choose most suitable one. <a class="reference external" href="#">Click here</a> to read more about allocations.</p>
-</div></blockquote>
 </li>
 </ul>
-<p><img alt="img/atmosphere/login8.png" src="img/atmosphere/login8.png" /></p>
+<p><img alt="_images/login8.png" src="_images/login8.png" /></p>
 <ul>
 <li><p class="first">Launch instance and wait for the build to be deployed (~ 5-10 minutes).</p>
 <blockquote>
-<div><p>Note: During the build process: <code class="docutils literal notranslate"><span class="pre">building--&gt;spawning--&gt;deploying--&gt;N/A</span></code>; Be patient! Don’t reload!. Once the virtual machine is ready, the “Activity” column will show “N/A” and the “Status” column will turn green and “Active”.</p>
+<div><p>Note: During the build process: <code class="docutils literal notranslate"><span class="pre">scheduling--&gt;building--&gt;spawning--&gt;deploying--&gt;N/A</span></code>; Be patient! Don’t reload!. Once the virtual machine is ready, the “Activity” column will show “N/A” and the “Status” column will turn green and “Active”.</p>
 </div></blockquote>
 </li>
 </ul>
-<p><img alt="img/atmosphere/login9.png" src="img/atmosphere/login9.png" /></p>
+<p><img alt="_images/login9.png" src="_images/login9.png" /></p>
 <ul class="simple">
 <li>Navigate back to ‘Projects’ and click on your new instance’s name to see more information related to the instance you just created!</li>
 <li>Copy the IP address of your instance.</li>
@@ -228,7 +227,7 @@
 <div>To end your current session on an Instance and close SSH connection, type ‘exit’</div></blockquote>
 <div class="section" id="atmosphere-dashboard">
 <h2>28.1. Atmosphere Dashboard<a class="headerlink" href="#atmosphere-dashboard" title="Permalink to this headline">¶</a></h2>
-<p><img alt="img/atmosphere/dashboard.png" src="img/atmosphere/dashboard.png" /></p>
+<p><img alt="_images/atmosphere_dashboard.png" src="_images/atmosphere_dashboard.png" /></p>
 </div>
 <div class="section" id="delete-instance">
 <h2>28.2. Delete Instance<a class="headerlink" href="#delete-instance" title="Permalink to this headline">¶</a></h2>
@@ -264,14 +263,14 @@
 </div>
 <div class="section" id="advanced-topics">
 <h1>30. Advanced Topics<a class="headerlink" href="#advanced-topics" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/advanced_atmosphere.html">Advanced Topics</a></li>
-</ul>
+<div class="section" id="atmosphere-advanced-topics">
+<h2>30.1. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/advanced_atmosphere.html">Atmosphere Advanced Topics</a><a class="headerlink" href="#atmosphere-advanced-topics" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Transferring Data to and from an Instance</li>
 <li>Creating custom Atmosphere Images</li>
 <li>ssh-rsa-key for password-less login</li>
 </ul>
+</div>
 </div>
 
 

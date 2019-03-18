@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="36. Snakemake Tutorial on Atmosphere Cloud" href="smake_cloud_tutorial.html" />
+    <link rel="next" title="37. Snakemake Tutorial on Atmosphere Cloud" href="smake_cloud_tutorial.html" />
     <link rel="prev" title="25. Accessing The Atmosphere Cloud" href="Atmosphere_Cloud.html" />
   
    
@@ -39,7 +39,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="smake_cloud_tutorial.html" title="36. Snakemake Tutorial on Atmosphere Cloud"
+          <a href="smake_cloud_tutorial.html" title="37. Snakemake Tutorial on Atmosphere Cloud"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="Atmosphere_Cloud.html" title="25. Accessing The Atmosphere Cloud"
@@ -66,7 +66,8 @@
 </li>
 <li><a class="reference internal" href="#creating-custom-atmosphere-images">33. Creating custom Atmosphere Images</a></li>
 <li><a class="reference internal" href="#ssh-rsa-key-for-password-less-login">34. ssh-rsa-key for password-less login</a></li>
-<li><a class="reference internal" href="#ssh-remote-host-id-changed-error">35. SSH Remote host ID Changed Error</a></li>
+<li><a class="reference internal" href="#tmux-screen">35. Tmux &amp; Screen</a></li>
+<li><a class="reference internal" href="#ssh-remote-host-id-changed-error">36. SSH Remote host ID Changed Error</a></li>
 </ul>
 
     </div>
@@ -77,7 +78,7 @@
                         title="previous chapter">25. Accessing The Atmosphere Cloud</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="smake_cloud_tutorial.html"
-                        title="next chapter">36. Snakemake Tutorial on Atmosphere Cloud</a></p>
+                        title="next chapter">37. Snakemake Tutorial on Atmosphere Cloud</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -131,8 +132,7 @@
 <li>Open terminal, start the iCommands configuration using the command <code class="docutils literal notranslate"><span class="pre">iinit</span></code> command and enter configure.</li>
 </ul>
 <blockquote>
-<div>Note: This configuration is a one-time step on your first use with this
-instance.</div></blockquote>
+<div>Note: This configuration is a one-time step on your first use with this instance.</div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ iinit
 # As prompted, enter the following values:
 $ **Host: data.cyverse.org**
@@ -145,7 +145,7 @@ $ **Password: your_cyverse_password**
 <blockquote>
 <div>If you make a mistake in your configuration you can edit <code class="docutils literal notranslate"><span class="pre">~/.irods/irods_environment.json</span></code> on your instance.</div></blockquote>
 <ul class="simple">
-<li>Test your configuration by listing your Data Store contents with the “ils” command.</li>
+<li>Verify that your iCommands installation works and is properly configured using the ‘ils’ command to list the contents of your Data Store home directory</li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ils
 </pre></div>
@@ -153,13 +153,25 @@ $ **Password: your_cyverse_password**
 <ul class="simple">
 <li>To download a file from the Data Store to your instance, use “iget”</li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ iget data_store_file
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ iget -option data_store_file
 </pre></div>
 </div>
+<blockquote>
+<div>‘-r’ - recursive transfer of directories and their contents</div></blockquote>
+<p>‘-P’ - display the progress of the upload</p>
+<p>‘-f’ - force the upload and overwrite</p>
 <ul class="simple">
 <li>To upload file from your instance to the Data Store use “iput”</li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ iget file_on_instance location_on_data_store
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ iput -option file_on_instance location_on_data_store
+</pre></div>
+</div>
+<ul class="simple">
+<li>Additional Frequently used iCommands</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ipwd print current directory
+$ imkdir create directory
+$ icd # change directory
 </pre></div>
 </div>
 <blockquote>
@@ -169,6 +181,7 @@ $ **Password: your_cyverse_password**
 <div class="section" id="creating-custom-atmosphere-images">
 <h1>33. Creating custom Atmosphere Images<a class="headerlink" href="#creating-custom-atmosphere-images" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
+<li><a class="reference external" href="https://atmo.cyverse.org/application/images/1687">Snakemake2019 v1.0 Image</a></li>
 <li><a class="reference external" href="https://hackmd.io/im0eDxViQgmxTL4zYBfGoQ#">Jetstream</a></li>
 <li><a class="reference external" href="https://atmo.cyverse.org/application/images/1552">Ubuntu 18.04 NO-GUI Atmosphere Image</a></li>
 </ul>
@@ -252,8 +265,12 @@ RSTUDIO_LATEST=$(wget --no-check-certificate -qO- https://s3.amazonaws.com/rstud
 <li><strong>You can now securely login to all the instances you launch on Atmosphere without having to type your password each-time you ssh login.</strong></li>
 </ul>
 </div>
+<div class="section" id="tmux-screen">
+<h1>35. Tmux &amp; Screen<a class="headerlink" href="#tmux-screen" title="Permalink to this headline">¶</a></h1>
+<p>Have you ever faced the situation where you perform a long-running task on a remote machine and suddenly your connection drops, the SSH session is terminated and your work is lost. Well it has happened to all of us at some point, hasn’t it? Luckily, there are utilities like <a class="reference external" href="https://linuxize.com/post/getting-started-with-tmux/#what-is-tmux">Tmux</a> &amp; <a class="reference external" href="https://linuxize.com/post/how-to-use-linux-screen/">Screen</a> that allow us to the resume our sessions.</p>
+</div>
 <div class="section" id="ssh-remote-host-id-changed-error">
-<h1>35. SSH Remote host ID Changed Error<a class="headerlink" href="#ssh-remote-host-id-changed-error" title="Permalink to this headline">¶</a></h1>
+<h1>36. SSH Remote host ID Changed Error<a class="headerlink" href="#ssh-remote-host-id-changed-error" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li>When we suspend an instance and re-start it, the IP address might change. But, when two instances get the same address this login-error might pop-up</li>
 </ul>
@@ -289,7 +306,7 @@ Host key verification failed.
       </div>
     
       <div class="pull-right">
-        <a class="btn btn-default" href="smake_cloud_tutorial.html" title="next chapter (use the right arrow)">36. Snakemake Tutorial on Atmosphere Cloud</a>
+        <a class="btn btn-default" href="smake_cloud_tutorial.html" title="next chapter (use the right arrow)">37. Snakemake Tutorial on Atmosphere Cloud</a>
       </div>
     </div>
     <div class="clearer"></div>
@@ -304,7 +321,7 @@ Host key verification failed.
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="smake_cloud_tutorial.html" title="36. Snakemake Tutorial on Atmosphere Cloud"
+          <a href="smake_cloud_tutorial.html" title="37. Snakemake Tutorial on Atmosphere Cloud"
              >next</a> |</li>
         <li class="right" >
           <a href="Atmosphere_Cloud.html" title="25. Accessing The Atmosphere Cloud"
