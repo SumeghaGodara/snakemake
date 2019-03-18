@@ -127,7 +127,7 @@ ssh your_cyverseusername@ip_address
 
 # Advanced Topics
 
-- [Advanced Topics](https://snakemake2019.readthedocs.io/en/latest/advanced_atmosphere.html)
+#### [Atmosphere Advanced Topics](https://snakemake2019.readthedocs.io/en/latest/advanced_atmosphere.html)
  + Transferring Data to and from an Instance
  + Creating custom Atmosphere Images
  + ssh-rsa-key for password-less login

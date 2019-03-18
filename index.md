@@ -75,7 +75,7 @@ Reproducible Workflows using Snakemake and Singularity
 
 > [**CyVerse**](https://www.cyverse.org/about) is a cyber-infrastructure initiative funded by the National Science Foundation’s Directorate for Biological Sciences to address the growing needs for highly configurable and customized computational infrastructure to support research efforts in data sciences.
 
-+ [CyVerse Allocations Guide]()
++ [CyVerse Allocations Guide](https://wiki.cyverse.org/wiki/display/atmman/Requesting+More+Atmosphere+Resources)
 
 > [**Jetstream**](https://jetstream-cloud.org/) is an [NSF/XSEDE] resource designed to promote and provide configurable cyberinfrastructure in the form of cloud computing to both novice and experienced users. Jetstream features a web-based user interface based on the popular Atmosphere cloud computing environment developed by CyVerse.
 

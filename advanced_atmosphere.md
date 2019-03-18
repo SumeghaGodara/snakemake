@@ -61,6 +61,8 @@ $ icd # change directory
 
 # Creating custom Atmosphere Images
 
+- [Snakemake2019 v1.0 Image](https://atmo.cyverse.org/application/images/1687)
+
 - [Jetstream](https://hackmd.io/im0eDxViQgmxTL4zYBfGoQ#)
 
 - [Ubuntu 18.04 NO-GUI Atmosphere Image](https://atmo.cyverse.org/application/images/1552)
