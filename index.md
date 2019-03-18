@@ -61,7 +61,7 @@ Reproducible Workflows using Snakemake and Singularity
 
 > [**2. Guide to Launching Atmosphere Instances**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html)
 
-> [**3. Snakemake CLoud Tutorial on Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/smake_cloud_tutorial.html)
+> [**3. Snakemake Cloud Tutorial on Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/smake_cloud_tutorial.html)
 
  **Atmosphere / Jetstream Key Features:**
 

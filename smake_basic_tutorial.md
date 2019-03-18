@@ -769,7 +769,7 @@ rule trim_reads:
 - A few thoughts for you on how to do this:
 * start small, grow your snakefile!
 * DO copy and paste from this tutorial and others you find online!
-* it rarely hurts to just re-run snakemake!**
+* it rarely hurts to just re-run snakemake!
 
 ### Dealing with complexity
 
