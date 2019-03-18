@@ -1,4 +1,4 @@
-Running Jobs in containers
+Snakemake Tutorial on Atmosphere Cloud
 ===
 
 > [**Guide to Launching Atmosphere Instances**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html)
@@ -75,7 +75,7 @@ echo http://$(hostname):8787/
 ```bash
 nano Snakefile
 ```
- and paste the code below we have from [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html)
+ and paste the code below we have from [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/smake_basic_tutorial.html)
 
 ```python=
 fastqc_output = ["data/0Hour_001_1_fastqc.html", "data/6Hour_001_1_fastqc.html",

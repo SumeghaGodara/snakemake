@@ -49,7 +49,7 @@ Reproducible Workflows using Snakemake and Singularity
 
 - The binder is built using this 'conda' [environment.yml](https://github.com/sateeshperi/snakemake2019/blob/master/binder/environment.yml).
 
-> [**Snakemake Tutorial using Binder**](https://snakemake2019.readthedocs.io/en/latest/basic_tutorial.html)
+> [**Snakemake Tutorial using Binder**](https://snakemake2019.readthedocs.io/en/latest/smake_basic_tutorial.html)
 
 # Working on Cloud
 
@@ -61,7 +61,7 @@ Reproducible Workflows using Snakemake and Singularity
 
 > [**2. Guide to Launching Atmosphere Instances**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html)
 
-> [**3. Snakemake Tutorial using containers on Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/container_tutorial.html)
+> [**3. Snakemake CLoud Tutorial on Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/smake_cloud_tutorial.html)
 
  **Atmosphere / Jetstream Key Features:**
 

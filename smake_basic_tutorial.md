@@ -793,6 +793,6 @@ what do (snakemake) workflows do for me?
   - allows pinning of software versions
   - allows use of potentially incompatible software
 
-> A word from [Titus Brown](https://twitter.com/ctitusbrown) - "the main reason to use snakemake is that it lets be sure that my workflow completed properly. snakemake tracks which commands fails, and will stop the workflow in its tracks! This is not something that you usually do in shell scripts."
+> **The main reason to use snakemake is that it lets be sure that my workflow completed properly. snakemake tracks which commands fails, and will stop the workflow in its tracks! This is not something that you usually do in shell scripts.**
 
 # Go forth and Workflow!

@@ -1,7 +1,9 @@
 Accessing The Atmosphere Cloud
 ===
 
-- **Atmosphere, CyVerse's cloud-computing platform allows you to launch your own isolated virtual machine (VM) image and software, using compute resources such as CyVerse-provided software suites, and pre-configured, frequently used analysis routines, relevant algorithms, and datasets.**
+![CyVerse_logo](/img/logos/cyverse_small_logo.png)
+
+**Atmosphere, CyVerse's cloud-computing platform allows you to launch your own isolated virtual machine (VM) image and software, using compute resources such as CyVerse-provided software suites, and pre-configured, frequently used analysis routines, relevant algorithms, and datasets.**
 
 > To request access to Atmosphere, login to the [CyVerse User Portal](https://user.cyverse.org/). In the [Services](https://user.cyverse.org/services/mine>) menu under 'MY SERVICES' you should see Atmosphere listed as an option you can launch. If not, look uner the [Available](https://user.cyverse.org/services/available) menu, and click the 'REQUEST ACCESS' link. You will receive an email requesting additional information.
 
@@ -124,8 +126,9 @@ ssh your_cyverseusername@ip_address
 
 ![](/img/atmosphere/webdesktop.png)
 
-# [Advanced Topics](https://snakemake2019.readthedocs.io/en/latest/advanced_topics.html)
+# Advanced Topics
 
-+ Transferring Data to and from an Instance
-+ Creating custom Atmosphere Images
-+ ssh-rsa-key for password-less login
+- [Advanced Topics](https://snakemake2019.readthedocs.io/en/latest/advanced_atmosphere.html)
+ + Transferring Data to and from an Instance
+ + Creating custom Atmosphere Images
+ + ssh-rsa-key for password-less login
