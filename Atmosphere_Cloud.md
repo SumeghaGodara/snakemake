@@ -63,7 +63,7 @@ Accessing The Atmosphere Cloud
 ![](/img/atmosphere/login8.png)
 
 - Launch instance and wait for the build to be deployed (~ 5-10 minutes).
-	> Note: During the build process: `scheduling-->building-->spawning-->deploying-->N/A`; Be patient! Don't reload!. Once the virtual machine is ready, the "Activity" column will show "N/A" and the "Status" column will turn green and "Active".
+	> Note: During the build process: `scheduling-->building-->spawning-->deploying-->Networking-->N/A`; Be patient! Don't reload!. Once the virtual machine is ready, the "Activity" column will show "N/A" and the "Status" column will turn green and "Active".
 
 ![](/img/atmosphere/login9.png)
 

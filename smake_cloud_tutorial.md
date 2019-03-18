@@ -68,6 +68,8 @@ echo http://$(hostname):8787/
 ```
 > click on the link generated to open Rstudio in your browser and login with your CyVerse credentials.
 
+![Rstudio](/img/rstudio_interface.png)
+
 # Run snakemake
 
 - Create Snakefile using text editor nano:
