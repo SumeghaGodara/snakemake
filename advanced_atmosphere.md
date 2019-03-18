@@ -14,8 +14,7 @@ Advanced Topics
 
 - Open terminal, start the iCommands configuration using the command `iinit` command and enter configure.
 
-> Note: This configuration is a one-time step on your first use with this
-          instance.
+> Note: This configuration is a one-time step on your first use with this instance.
 
 ```
 $ iinit
@@ -29,20 +28,34 @@ $ **Password: your_cyverse_password**
 
 > If you make a mistake in your configuration you can edit `~/.irods/irods_environment.json` on your instance.
 
-- Test your configuration by listing your Data Store contents with the "ils" command.
+- Verify that your iCommands installation works and is properly configured using the 'ils' command to list the contents of your Data Store home directory
 ```
 $ ils
 ```
 
 - To download a file from the Data Store to your instance, use "iget"
 ```
-$ iget data_store_file
+$ iget -option data_store_file
 ```
+
+> '-r' - recursive transfer of directories and their contents
+
+'-P' - display the progress of the upload
+
+'-f' - force the upload and overwrite
 
 - To upload file from your instance to the Data Store use "iput"
 ```
-$ iget file_on_instance location_on_data_store
+$ iput -option file_on_instance location_on_data_store
 ```
+
+- Additional Frequently used iCommands
+```
+$ ipwd print current directory
+$ imkdir create directory
+$ icd # change directory
+```
+
 
 > iCommands has a variety of options, to see progress of transfers, operate recursively, and more. See additional [iCommands documentation](https://wiki.cyverse.org/wiki/display/DS/Using+iCommands) on the CyVerse wiki.
 
