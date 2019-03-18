@@ -143,7 +143,7 @@ The content for this website has been compiled from tutorials put together by:
 > Please report new issues in [GitHub](https://github.com/sateeshperi/snakemake2019/issues)
 
 # Coming Soon
-![singularity_bot](/img/singularity_bot.png)
+![singularity_bot](/img/logos/singularity_bot.png)
 + Singularity modules in HPCs
 + Building containers from scratch
 + Version Control

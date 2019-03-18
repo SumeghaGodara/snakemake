@@ -46,7 +46,7 @@ Accessing The Atmosphere Cloud
 ![](/img/atmosphere/login7.png)
 
 - Basic options
-	+ Instance Name: e.x., "Smake Tutorial" or you can leave it default which is the image name.
+	+ Instance Name: e.x., "Smake-Tutorial" or you can leave it default which is the image name.
 
 	+	Base Image Version: "1.0"
 
@@ -73,7 +73,7 @@ Accessing The Atmosphere Cloud
 # SSH Secure-Login
 
 > MACOS & LINUX users can open a Terminal window and Windows users start a new session in [mobaxterm home edition](http://mobaxterm.mobatek.net/download-home-edition.html)
-	+ Start a new session; Fill in your "remote host" the IP address of your virtual machine. Then select "specify username" and enter your cyverse username; Click OK.
++ Start a new session; Fill in your "remote host" the IP address of your virtual machine. Then select "specify username" and enter your cyverse username; Click OK.
 
 - Establish a secure-login to the instance by typing the following:
 

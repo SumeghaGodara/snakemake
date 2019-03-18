@@ -9,6 +9,8 @@ Introduction
 
 **[Snakemake](https://snakemake.readthedocs.io/en/stable/index.html) is a workflow management system that .**
 
+![](/img/workflow_management.png)
+
 > Snakemake [slides](http://slides.com/johanneskoester/snakemake-tutorial#/)
 
 - Snakemake allows you to create a set of rules, each one defining a "step" of your analysis. Rules can either use shell commands, plain Python code or external Python or R scripts to create output files from input files [^1].
