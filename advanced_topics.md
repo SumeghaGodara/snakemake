@@ -53,6 +53,38 @@ $ iget file_on_instance location_on_data_store
 
 - [Jetstream](https://hackmd.io/im0eDxViQgmxTL4zYBfGoQ#)
 
+Launch instance: “Ubuntu 18.04 Devel and Docker” base image (Oct 1, 2018 by jfischer), m1.large (CPU: 10, Mem: 30 GB, Disk: 60 GB)
+Allocation Source: TG-MCG180142
+
+```
+cd /opt
+
+sudo su
+
+curl -O -L https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh #install in /opt/miniconda3
+
+echo export PATH=$PATH:/opt/miniconda3/bin >> ~/.bashrc
+source ~/.bashrc
+
+conda config --add channels defaults
+conda config --add channels conda-forge
+conda config --add channels bioconda
+
+conda install -y fastqc multiqc trimmomatic trinity time osfclient salmon
+
+apt-get install tree sl
+
+apt-get update && sudo apt-get -y install gdebi-core r-base
+
+wget https://download2.rstudio.org/rstudio-server-1.1.463-amd64.deb
+gdebi -n rstudio-server-1.1.463-amd64.deb
+
+RSTUDIO_LATEST=$(wget --no-check-certificate -qO- https://s3.amazonaws.com/rstudio-server/current.ver)
+```
+
+`echo http://$(hostname):8787/`
+
 
 # ssh-rsa-key for password-less login
 
