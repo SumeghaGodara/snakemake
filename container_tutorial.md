@@ -61,6 +61,13 @@ cd ..
 ```
 > EXERCISE: write a snakemake rule to download data and unzip it as above
 
+# Open Rstudio
+
+```
+echo http://$(hostname):8787/
+```
+> click on the link generated to open Rstudio in your browser and login with your CyVerse credentials.
+
 # Run snakemake
 
 - Create Snakefile using text editor nano:
