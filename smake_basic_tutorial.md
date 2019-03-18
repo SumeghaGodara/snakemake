@@ -1,4 +1,4 @@
-Basic Tutorial
+Snakemake Basic Tutorial
 ===
 
 - [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/binder?urlpath=rstudio)
@@ -7,7 +7,7 @@ Basic Tutorial
 ```bash
 PS1='$ '
 ```
-![Rstudio](/img/rstudio_interface.png)
+![](/img/rstudio_interface.png)
 
 # Background
 

@@ -1,6 +1,6 @@
 Reproducible Workflows using Snakemake and Singularity
 ===
-![logo](/img/logos/rep_research_logo.png)
+![](/img/logos/rep_research_logo.png)
 
 > **The Snakemake workflow management system is a tool to create reproducible and scalable data analyses and can be seamlessly scaled to server, cluster, grid and cloud environments, without the need to modify the workflow definition.**
 

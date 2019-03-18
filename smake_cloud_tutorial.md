@@ -67,19 +67,13 @@ cd ..
 echo http://$(hostname):8787/
 ```
 > click on the link generated to open Rstudio in your browser and login with your CyVerse credentials.
-
-![Rstudio](/img/rstudio_interface.png)
+![](/img/rstudio_interface.png)
 
 # Run snakemake
 
-- Create Snakefile using text editor nano:
+- Create a new text file (`File`, `New File`, `Text file`) and and paste the code below we have from [Snakemake Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/smake_basic_tutorial.html)
 
-```bash
-nano Snakefile
-```
- and paste the code below we have from [Basic Tutorial](https://snakemake2019.readthedocs.io/en/latest/smake_basic_tutorial.html)
-
-```python=
+```python
 fastqc_output = ["data/0Hour_001_1_fastqc.html", "data/6Hour_001_1_fastqc.html",
   "data/0Hour_001_2_fastqc.html", "data/6Hour_001_2_fastqc.html",
   "data/0Hour_002_1_fastqc.html", "data/6Hour_002_1_fastqc.html",
@@ -136,15 +130,13 @@ rule clean:
     "rm -f {fastqc_output} multiqc_report.html"     
 ```
 
-- Execute Snakemake with
+- - Save the file as `Snakefile`and execute Snakemake in your terminal by:
 
 ```bash
 snakemake --use-singularity
 ```
 
-> Snakemake will pull the containers and execute each rule individually in the containers specified
-
-> Note how each singularity container is activated for each rule
+> **Snakemake will pull the containers and execute each rule individually in the containers specified**
 
 # Generate Report
 
