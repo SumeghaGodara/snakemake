@@ -7,7 +7,7 @@ Basic Tutorial
 ```bash
 PS1='$ '
 ```
-![Rstudio](/img/rstudio1.png)
+![Rstudio](/img/rstudio_interface.png)
 
 # Background
 
