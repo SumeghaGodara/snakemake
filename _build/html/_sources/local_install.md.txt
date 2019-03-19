@@ -1,4 +1,10 @@
-# Local Setup instructions
+Local Setup instructions
+===
+
+> Learning Objective
+-	**Environment Management** using [**conda**](https://conda.io/en/latest/) & [**bioconda**](https://bioconda.github.io/)
+ + Set up and manage the project environment        
+ + Understand conda environments
 
 - We recommend installing [**conda**](https://conda.io/en/latest/), an open source package management system and environment management system that runs on Windows, macOS and Linux.
 

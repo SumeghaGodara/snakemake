@@ -13,8 +13,13 @@ Reproducible Workflows using Snakemake and Singularity
 
 > Author: [Sateesh Peri](https://twitter.com/perisateesh)
 
-# Learning Objectives
+# Introduction
 
+> [**What...Why...How???**](https://snakemake2019.readthedocs.io/en/latest/introduction.html)
+
+# Snakemake Intro Tutorial using Binder
+
+> Learning Objectives
 -	**Workflow Management** using [**Snakemake**](https://snakemake.readthedocs.io/en/stable/)
  + Move from separate scripts to connected analysis
  + Understand snakemake syntax                                                   
@@ -22,32 +27,7 @@ Reproducible Workflows using Snakemake and Singularity
  + Understand snakemake wildcards and pattern rules                              
  + Understand how snakemake manages dependencies and outputs
 
-
--	**Environment Management** using [**conda**](https://conda.io/en/latest/) & [**bioconda**](https://bioconda.github.io/)
- + Set up and manage the project environment        
- + Understand conda environments
-
-
-- **Container Management** using [**Singularity**](https://www.sylabs.io/docs/)
- + Make your project self-sustainable and distributable
- + Understand what containers are                                                
- + Understand what Dockers are                                                   
- + Understand why Singularity                                                    
- + How to pull & run singularity containers                                      
-
-
-- **Cloud Computing**
- + Launch and work on remote instances (virtual machines) with pre-built images
- + Understand advantages / disadvantages of cloud computing
- +
-
-# Introduction
-
-> [**What...Why...How???**](https://snakemake2019.readthedocs.io/en/latest/introduction.html)
-
-# Snakemake Intro Tutorial using Binder
-
-- **Note:**
+> **Note:**
   + No setup necessary
   + Does not support 'Singularity' container execution
 
@@ -64,6 +44,7 @@ Reproducible Workflows using Snakemake and Singularity
   + Requires access to [CyVerse Atmosphere]()
   + Supports 'Singularity' container execution
 
+
 ![](/img/cloud_computing.png)
 
 > [**Click here for a guided tutorial on Running Snakemake jobs using Singularity Containers in Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/smake_cyverse.html)
@@ -73,7 +54,7 @@ Reproducible Workflows using Snakemake and Singularity
 # Working Locally
 
 > **Click [here](https://snakemake2019.readthedocs.io/en/latest/local_install.html) for local setup instructions.**
-> > Requires Administrator privileges 
+> > Requires *Administrator* privileges
 
 # Awesome
 

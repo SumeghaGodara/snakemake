@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10. Introduction" href="introduction.html" />
+    <link rel="next" title="9. Introduction" href="introduction.html" />
     <link rel="prev" title="&lt;no title&gt;" href="toc.html" />
   
    
@@ -39,7 +39,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="introduction.html" title="10. Introduction"
+          <a href="introduction.html" title="9. Introduction"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="toc.html" title="&lt;no title&gt;"
@@ -60,17 +60,16 @@
     <div class="sidebar-localtoc">
       <ul>
 <li><a class="reference internal" href="#">1. Reproducible Workflows using Snakemake and Singularity</a></li>
-<li><a class="reference internal" href="#learning-objectives">2. Learning Objectives</a></li>
-<li><a class="reference internal" href="#introduction">3. Introduction</a></li>
-<li><a class="reference internal" href="#snakemake-intro-tutorial-using-binder">4. Snakemake Intro Tutorial using Binder</a></li>
-<li><a class="reference internal" href="#snakemake-tutorial-on-cyverse-cloud">5. Snakemake Tutorial on Cyverse Cloud</a><ul>
-<li><a class="reference internal" href="#tutorial-on-jetstream-cloud">5.1. Tutorial on Jetstream cloud</a></li>
+<li><a class="reference internal" href="#introduction">2. Introduction</a></li>
+<li><a class="reference internal" href="#snakemake-intro-tutorial-using-binder">3. Snakemake Intro Tutorial using Binder</a></li>
+<li><a class="reference internal" href="#snakemake-tutorial-on-cyverse-cloud">4. Snakemake Tutorial on Cyverse Cloud</a><ul>
+<li><a class="reference internal" href="#tutorial-on-jetstream-cloud">4.1. Tutorial on Jetstream cloud</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#working-locally">6. Working Locally</a></li>
-<li><a class="reference internal" href="#awesome">7. Awesome</a></li>
-<li><a class="reference internal" href="#credits">8. Credits</a></li>
-<li><a class="reference internal" href="#coming-soon">9. Coming Soon</a></li>
+<li><a class="reference internal" href="#working-locally">5. Working Locally</a></li>
+<li><a class="reference internal" href="#awesome">6. Awesome</a></li>
+<li><a class="reference internal" href="#credits">7. Credits</a></li>
+<li><a class="reference internal" href="#coming-soon">8. Coming Soon</a></li>
 </ul>
 
     </div>
@@ -81,7 +80,7 @@
                         title="previous chapter">&lt;no title&gt;</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="introduction.html"
-                        title="next chapter">10. Introduction</a></p>
+                        title="next chapter">9. Introduction</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -133,8 +132,15 @@
 <blockquote>
 <div>Author: <a class="reference external" href="https://twitter.com/perisateesh">Sateesh Peri</a></div></blockquote>
 </div>
-<div class="section" id="learning-objectives">
-<h1>2. Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h1>2. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/introduction.html"><strong>What…Why…How???</strong></a></div></blockquote>
+</div>
+<div class="section" id="snakemake-intro-tutorial-using-binder">
+<h1>3. Snakemake Intro Tutorial using Binder<a class="headerlink" href="#snakemake-intro-tutorial-using-binder" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div>Learning Objectives</div></blockquote>
 <ul class="simple">
 <li><strong>Workflow Management</strong> using <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/"><strong>Snakemake</strong></a></li>
 </ul>
@@ -145,45 +151,11 @@
 <li>Understand snakemake wildcards and pattern rules</li>
 <li>Understand how snakemake manages dependencies and outputs</li>
 </ul>
-<ul class="simple">
-<li><strong>Environment Management</strong> using <a class="reference external" href="https://conda.io/en/latest/"><strong>conda</strong></a> &amp; <a class="reference external" href="https://bioconda.github.io/"><strong>bioconda</strong></a></li>
-</ul>
-<ul class="simple">
-<li>Set up and manage the project environment</li>
-<li>Understand conda environments</li>
-</ul>
-<ul class="simple">
-<li><strong>Container Management</strong> using <a class="reference external" href="https://www.sylabs.io/docs/"><strong>Singularity</strong></a></li>
-</ul>
-<ul class="simple">
-<li>Make your project self-sustainable and distributable</li>
-<li>Understand what containers are</li>
-<li>Understand what Dockers are</li>
-<li>Understand why Singularity</li>
-<li>How to pull &amp; run singularity containers</li>
-</ul>
-<ul class="simple">
-<li><strong>Cloud Computing</strong></li>
-</ul>
-<ul class="simple">
-<li>Launch and work on remote instances (virtual machines) with pre-built images</li>
-<li>Understand advantages / disadvantages of cloud computing</li>
-<li></li>
-</ul>
-</div>
-<div class="section" id="introduction">
-<h1>3. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/introduction.html"><strong>What…Why…How???</strong></a></div></blockquote>
-</div>
-<div class="section" id="snakemake-intro-tutorial-using-binder">
-<h1>4. Snakemake Intro Tutorial using Binder<a class="headerlink" href="#snakemake-intro-tutorial-using-binder" title="Permalink to this headline">¶</a></h1>
+<div><strong>Note:</strong></div></blockquote>
 <ul class="simple">
-<li><strong>Note:</strong><ul>
 <li>No setup necessary</li>
 <li>Does not support ‘Singularity’ container execution</li>
-</ul>
-</li>
 </ul>
 <blockquote>
 <div><strong>Click on this <a class="reference external" href="https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/binder?urlpath=rstudio"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" /></a> button to launch a Binder rendered as Rstudio interface pre-configured with conda and Snakemake.</strong></div></blockquote>
@@ -195,7 +167,7 @@
 <div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/smake_basic_tutorial.html"><strong>Click here for Introductory Snakemake Tutorial using Binder</strong></a></div></blockquote>
 </div>
 <div class="section" id="snakemake-tutorial-on-cyverse-cloud">
-<h1>5. Snakemake Tutorial on Cyverse Cloud<a class="headerlink" href="#snakemake-tutorial-on-cyverse-cloud" title="Permalink to this headline">¶</a></h1>
+<h1>4. Snakemake Tutorial on Cyverse Cloud<a class="headerlink" href="#snakemake-tutorial-on-cyverse-cloud" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><strong>Note:</strong></div></blockquote>
 <ul class="simple">
@@ -206,25 +178,25 @@
 <blockquote>
 <div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/smake_cyverse.html"><strong>Click here for a guided tutorial on Running Snakemake jobs using Singularity Containers in Atmosphere</strong></a></div></blockquote>
 <div class="section" id="tutorial-on-jetstream-cloud">
-<h2>5.1. Tutorial on Jetstream cloud<a class="headerlink" href="#tutorial-on-jetstream-cloud" title="Permalink to this headline">¶</a></h2>
+<h2>4.1. Tutorial on Jetstream cloud<a class="headerlink" href="#tutorial-on-jetstream-cloud" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 <div class="section" id="working-locally">
-<h1>6. Working Locally<a class="headerlink" href="#working-locally" title="Permalink to this headline">¶</a></h1>
+<h1>5. Working Locally<a class="headerlink" href="#working-locally" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p><strong>Click <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/local_install.html">here</a> for local setup instructions.</strong></p>
 <blockquote>
-<div>Requires Administrator privileges</div></blockquote>
+<div>Requires <em>Administrator</em> privileges</div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="awesome">
-<h1>7. Awesome<a class="headerlink" href="#awesome" title="Permalink to this headline">¶</a></h1>
+<h1>6. Awesome<a class="headerlink" href="#awesome" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/awesome.html">Awesome list of Snakemake &amp; Singularity resources</a></li>
 </ul>
 </div>
 <div class="section" id="credits">
-<h1>8. Credits<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h1>
+<h1>7. Credits<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h1>
 <p>The content for this website has been compiled from tutorials put together by:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://twitter.com/ctitusbrown">Titus Brown</a> - Link to <a class="reference external" href="https://github.com/ctb/2019-snakemake-ucdavis">Tutorial</a></li>
@@ -235,7 +207,7 @@
 <div>Please report new issues in <a class="reference external" href="https://github.com/sateeshperi/snakemake2019/issues">GitHub</a></div></blockquote>
 </div>
 <div class="section" id="coming-soon">
-<h1>9. Coming Soon<a class="headerlink" href="#coming-soon" title="Permalink to this headline">¶</a></h1>
+<h1>8. Coming Soon<a class="headerlink" href="#coming-soon" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li>Singularity modules in HPCs</li>
 <li>Building containers from scratch</li>
@@ -258,7 +230,7 @@
       </div>
     
       <div class="pull-right">
-        <a class="btn btn-default" href="introduction.html" title="next chapter (use the right arrow)">10. Introduction</a>
+        <a class="btn btn-default" href="introduction.html" title="next chapter (use the right arrow)">9. Introduction</a>
       </div>
     </div>
     <div class="clearer"></div>
@@ -273,7 +245,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="introduction.html" title="10. Introduction"
+          <a href="introduction.html" title="9. Introduction"
              >next</a> |</li>
         <li class="right" >
           <a href="toc.html" title="&lt;no title&gt;"
