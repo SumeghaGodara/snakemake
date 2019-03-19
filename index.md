@@ -55,7 +55,7 @@ Reproducible Workflows using Snakemake and Singularity
 
  > **To run snakemake jobs via [Singularity](https://singularity-hub.org/) / [Docker](https://hub.docker.com/) containers in the cloud, we recommend [Atmosphere](https://www.cyverse.org/atmosphere), CyVerse's cloud-computing platform which provides easy-to-use web-access to cloud resources and is designed to accommodate computationally and data-intensive tasks.**
 
-![cloud_computing](/img/cloud_computing.png)
+![](/img/cloud_computing.png)
 
 > [**1. Register for a free account on CyVerse**](https://user.cyverse.org/register)
 

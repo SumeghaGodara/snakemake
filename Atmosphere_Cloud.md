@@ -1,7 +1,7 @@
 Accessing The Atmosphere Cloud
 ===
 
-![CyVerse_logo](/img/logos/cyverse_small_logo.png)
+![](/img/logos/cyverse_small_logo.png)
 
 **Atmosphere, CyVerse's cloud-computing platform allows you to launch your own isolated virtual machine (VM) image and software, using compute resources such as CyVerse-provided software suites, and pre-configured, frequently used analysis routines, relevant algorithms, and datasets.**
 
