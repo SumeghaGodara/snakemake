@@ -77,11 +77,7 @@ echo http://$(hostname):8787/
 fastqc_output = ["data/0Hour_001_1_fastqc.html", "data/6Hour_001_1_fastqc.html",
   "data/0Hour_001_2_fastqc.html", "data/6Hour_001_2_fastqc.html",
   "data/0Hour_002_1_fastqc.html", "data/6Hour_002_1_fastqc.html",
-  "data/0Hour_002_2_fastqc.html", "data/6Hour_002_2_fastqc.html",
-  "data/0Hour_001_1.pe.qc_fastqc.html", "data/0Hour_002_1.pe.qc_fastqc.html",
-  "data/6Hour_001_1.pe.qc_fastqc.html", "data/6Hour_002_1.pe.qc_fastqc.html",
-  "data/0Hour_001_2.pe.qc_fastqc.html", "data/0Hour_002_2.pe.qc_fastqc.html",
-  "data/0Hour_001_2.pe.qc_fastqc.html", "data/0Hour_002_2.pe.qc_fastqc.html"]
+  "data/0Hour_002_2_fastqc.html", "data/6Hour_002_2_fastqc.html"]
 
 rule all:
   input:
@@ -109,22 +105,6 @@ rule run_multiqc:
   shell:
     "multiqc data/"
 
-rule trim_reads:
-  input:
-    "{filename}_1.fq.gz",
-    "{filename}_2.fq.gz"
-  output:
-    "{filename}_1.pe.qc.fq.gz",
-    "{filename}_1.se.qc.fq.gz",
-    "{filename}_2.pe.qc.fq.gz",
-    "{filename}_2.se.qc.fq.gz"
-  singularity:
-    "docker://sateeshperi/trimmomatic"
-  shell:
-    "java -jar /tools/trimmomatic/trimmomatic-0.36.jar PE {input} {output} LEADING:2 TRAILING:2 \
-     SLIDINGWINDOW:4:15 \
-     MINLEN:25"    
-
 rule clean:
   shell:
     "rm -f {fastqc_output} multiqc_report.html"     
@@ -138,11 +118,24 @@ snakemake --use-singularity
 
 > **Snakemake will pull the containers and execute each rule individually in the containers specified**
 
+# Visualize Workflow
+
+```bash
+snakemake --dag | dot -Tpng > dag.png
+```
+- Click on the dag.png image in FIle Explorer and open in web-browser
+
 # Generate Report
 
 ```bash
 snakemake --report report.html
 ```
+
+# Coming Soon
+
+> **In the next tutorial, we will learn how to build a Dockerfile for 'Trimmomatic app' from scratch and add it as a rule to our workflow. Stay Tuned !**
+
+![](/img/logos/minion.gif)
 
 > **Note: It is advisable to delete your instance if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it. See [**Instance Maintenace**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html#instance-maintenance) for more info**
 
