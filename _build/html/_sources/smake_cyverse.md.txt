@@ -5,11 +5,11 @@ Snakemake Tutorial on CyVerse cloud
 
 ![](/img/cloud_computing.png)
 
-> [**1. Register for a free account on CyVerse**](https://user.cyverse.org/register)
+> [**1. Register for a free account on CyVerse here**](https://user.cyverse.org/register)
 
-> [**2. Guide to Launching Atmosphere Instances**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html)
+> [**2. Follow this Guide to Launching Atmosphere Instances**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html)
 
-> [**3. Snakemake Cloud Tutorial on Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/smake_cloud_tutorial.html)
+> [**3. Click here for Snakemake Tutorial on Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/smake_cloud_tutorial.html)
 
 > The Snakemake2019 image supports: 1) Miniconda3 2) bio-conda 3) Snakemake 4) Singularity 5) Docker
 

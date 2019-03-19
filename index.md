@@ -47,19 +47,22 @@ Reproducible Workflows using Snakemake and Singularity
 
 # Snakemake Intro Tutorial using Binder
 
-- **Note: Does not support 'Singularity' container execution**
-
-- [MyBinder](https://mybinder.org/) is a fantastic service that lets us run demonstrations and short workshops in the cloud!
+- **Note:**
+  + No setup necessary
+  + Does not support 'Singularity' container execution
 
 > **Click on this [![](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/binder?urlpath=rstudio) button to launch a Binder rendered as Rstudio interface pre-configured with conda and Snakemake.**
 
+- [MyBinder](https://mybinder.org/) is a fantastic service that lets us run demonstrations and short workshops in the cloud!
 - The binder is built using this 'conda' [environment.yml](https://github.com/sateeshperi/snakemake2019/blob/master/binder/environment.yml).
 
 > [**Click here for Introductory Snakemake Tutorial using Binder**](https://snakemake2019.readthedocs.io/en/latest/smake_basic_tutorial.html)
 
-# Tutorial on Cyverse Cloud
+# Snakemake Tutorial on Cyverse Cloud
 
-- **Note: Supports 'Singularity' container execution**
+> **Note:**
+  + Requires access to [CyVerse Atmosphere]()
+  + Supports 'Singularity' container execution
 
 ![](/img/cloud_computing.png)
 
@@ -69,7 +72,8 @@ Reproducible Workflows using Snakemake and Singularity
 
 # Working Locally
 
-- **Click [here](https://snakemake2019.readthedocs.io/en/latest/local_install.html) for local setup instructions.**
+> **Click [here](https://snakemake2019.readthedocs.io/en/latest/local_install.html) for local setup instructions.**
+> > Requires Administrator privileges 
 
 # Awesome
 
