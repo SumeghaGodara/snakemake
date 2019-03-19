@@ -59,10 +59,10 @@ unzip data.zip
 rm data.zip
 cd ..
 ```
-> EXERCISE: write a snakemake rule to download data and unzip it as above
 
 # Open Rstudio
 
+- Type the following in your terminal to display a link to Rstudio web-server for your isntance's $(hostname)
 ```
 echo http://$(hostname):8787/
 ```
@@ -131,6 +131,8 @@ snakemake --dag | dot -Tpng > dag.png
 snakemake --report report.html
 ```
 
+> **EXERCISE**: Write a snakemake rule to download data and unzip it (as we did earlier using bash commands) and save it to your workflow.
+
 # Coming Soon
 
 > **In the next tutorial, we will learn how to build a Dockerfile for 'Trimmomatic app' from scratch and add it as a rule to our workflow. Stay Tuned !**
@@ -140,6 +142,5 @@ snakemake --report report.html
 > **Note: It is advisable to delete your instance if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it. See [**Instance Maintenace**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html#instance-maintenance) for more info**
 
 ---------------------------
-
 
 **Snakemake2019 v1.0** [Atmosphere Image Specifications](https://atmo.cyverse.org/application/images/1687)

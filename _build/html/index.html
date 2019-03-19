@@ -62,8 +62,11 @@
 <li><a class="reference internal" href="#">1. Reproducible Workflows using Snakemake and Singularity</a></li>
 <li><a class="reference internal" href="#learning-objectives">2. Learning Objectives</a></li>
 <li><a class="reference internal" href="#introduction">3. Introduction</a></li>
-<li><a class="reference internal" href="#working-on-binder">4. Working on Binder</a></li>
-<li><a class="reference internal" href="#working-on-cloud">5. Working on Cloud</a></li>
+<li><a class="reference internal" href="#snakemake-intro-tutorial-using-binder">4. Snakemake Intro Tutorial using Binder</a></li>
+<li><a class="reference internal" href="#tutorial-on-cyverse-cloud">5. Tutorial on Cyverse Cloud</a><ul>
+<li><a class="reference internal" href="#tutorial-on-jetstream-cloud">5.1. Tutorial on Jetstream cloud</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#working-locally">6. Working Locally</a></li>
 <li><a class="reference internal" href="#awesome">7. Awesome</a></li>
 <li><a class="reference internal" href="#credits">8. Credits</a></li>
@@ -133,13 +136,6 @@
 <div class="section" id="learning-objectives">
 <h1>2. Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><strong>Environment Management</strong> using <a class="reference external" href="https://conda.io/en/latest/"><strong>conda</strong></a> &amp; <a class="reference external" href="https://bioconda.github.io/"><strong>bioconda</strong></a></li>
-</ul>
-<ul class="simple">
-<li>Set up and manage the project environment</li>
-<li>Understand conda environments</li>
-</ul>
-<ul class="simple">
 <li><strong>Workflow Management</strong> using <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/"><strong>Snakemake</strong></a></li>
 </ul>
 <ul class="simple">
@@ -148,6 +144,13 @@
 <li>Understand the components of a Snakefile: rules, inputs, outputs, and actions</li>
 <li>Understand snakemake wildcards and pattern rules</li>
 <li>Understand how snakemake manages dependencies and outputs</li>
+</ul>
+<ul class="simple">
+<li><strong>Environment Management</strong> using <a class="reference external" href="https://conda.io/en/latest/"><strong>conda</strong></a> &amp; <a class="reference external" href="https://bioconda.github.io/"><strong>bioconda</strong></a></li>
+</ul>
+<ul class="simple">
+<li>Set up and manage the project environment</li>
+<li>Understand conda environments</li>
 </ul>
 <ul class="simple">
 <li><strong>Container Management</strong> using <a class="reference external" href="https://www.sylabs.io/docs/"><strong>Singularity</strong></a></li>
@@ -159,111 +162,50 @@
 <li>Understand why Singularity</li>
 <li>How to pull &amp; run singularity containers</li>
 </ul>
+<ul class="simple">
+<li><strong>Cloud Computing</strong></li>
+</ul>
+<ul class="simple">
+<li>Launch and work on remote instances (virtual machines) with pre-built images</li>
+<li>Understand advantages / disadvantages of cloud computing</li>
+<li></li>
+</ul>
 </div>
 <div class="section" id="introduction">
 <h1>3. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/introduction.html"><strong>What…Why…How???</strong></a></div></blockquote>
 </div>
-<div class="section" id="working-on-binder">
-<h1>4. Working on Binder<a class="headerlink" href="#working-on-binder" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div>Note: No support for ‘–use-singularity’</div></blockquote>
+<div class="section" id="snakemake-intro-tutorial-using-binder">
+<h1>4. Snakemake Intro Tutorial using Binder<a class="headerlink" href="#snakemake-intro-tutorial-using-binder" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>We’re going to use <a class="reference external" href="https://mybinder.org/">mybinder.org</a>, a fantastic service that lets us run demonstrations and short workshops in the cloud!</li>
+<li><strong>Note: Does not support ‘Singularity’ container execution</strong></li>
+<li><a class="reference external" href="https://mybinder.org/">MyBinder</a> is a fantastic service that lets us run demonstrations and short workshops in the cloud!</li>
 </ul>
 <blockquote>
-<div><strong>Click on this <a class="reference external" href="https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/binder?urlpath=rstudio"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" />Binder</a> button to launch a pre-configured Binder file that is rendered via a Rstudio interface.</strong></div></blockquote>
+<div><strong>Click on this <a class="reference external" href="https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/binder?urlpath=rstudio"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" /></a> button to launch a Binder rendered as Rstudio interface pre-configured with conda and Snakemake.</strong></div></blockquote>
 <ul class="simple">
 <li>The binder is built using this ‘conda’ <a class="reference external" href="https://github.com/sateeshperi/snakemake2019/blob/master/binder/environment.yml">environment.yml</a>.</li>
 </ul>
 <blockquote>
-<div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/smake_basic_tutorial.html"><strong>Snakemake Tutorial using Binder</strong></a></div></blockquote>
+<div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/smake_basic_tutorial.html"><strong>Click here for Introductory Snakemake Tutorial using Binder</strong></a></div></blockquote>
 </div>
-<div class="section" id="working-on-cloud">
-<h1>5. Working on Cloud<a class="headerlink" href="#working-on-cloud" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><strong>To run snakemake jobs via <a class="reference external" href="https://singularity-hub.org/">Singularity</a> / <a class="reference external" href="https://hub.docker.com/">Docker</a> containers in the cloud, we recommend <a class="reference external" href="https://www.cyverse.org/atmosphere">Atmosphere</a>, CyVerse’s cloud-computing platform which provides easy-to-use web-access to cloud resources and is designed to accommodate computationally and data-intensive tasks.</strong></div></blockquote>
+<div class="section" id="tutorial-on-cyverse-cloud">
+<h1>5. Tutorial on Cyverse Cloud<a class="headerlink" href="#tutorial-on-cyverse-cloud" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><strong>Note: Supports ‘Singularity’ container execution</strong></li>
+</ul>
 <p><img alt="_images/cloud_computing.png" src="_images/cloud_computing.png" /></p>
 <blockquote>
-<div><a class="reference external" href="https://user.cyverse.org/register"><strong>1. Register for a free account on CyVerse</strong></a></div></blockquote>
-<blockquote>
-<div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html"><strong>2. Guide to Launching Atmosphere Instances</strong></a></div></blockquote>
-<blockquote>
-<div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/smake_cloud_tutorial.html"><strong>3. Snakemake Cloud Tutorial on Atmosphere</strong></a></div></blockquote>
-<blockquote>
-<div>The Snakemake2019 image supports: 1) Miniconda3 2) bio-conda 3) Snakemake 4) Singularity 5) Docker</div></blockquote>
-<p><strong>Atmosphere / Jetstream Key Features:</strong></p>
-<ul class="simple">
-<li>Access virtual machine images pre-configured with an operating system and software to help you do scientific computations in domain-specific tasks</li>
-<li>Find and use tools with the intuitive self-service portal</li>
-<li>Easily manage virtual machines</li>
-<li>Publish your own software suites, create your own work environments, and run the software for community use</li>
-<li>Access your data in the Data Store, including high-performance computing (HPC) and grid computing environments</li>
-<li>Integrate with existing infrastructure components using API services</li>
-<li>Easily generate and manage statistical reporting of user resources for total CPU hours and memory usages, total instances and applications launched by user, cloud monitoring, and on-demand intelligence resource allocation</li>
-</ul>
-<blockquote>
-<div><a class="reference external" href="https://www.cyverse.org/about"><strong>CyVerse</strong></a> is a cyber-infrastructure initiative funded by the National Science Foundation’s Directorate for Biological Sciences to address the growing needs for highly configurable and customized computational infrastructure to support research efforts in data sciences.</div></blockquote>
-<ul class="simple">
-<li><a class="reference external" href="https://wiki.cyverse.org/wiki/display/atmman/Requesting+More+Atmosphere+Resources">CyVerse Allocations Guide</a></li>
-</ul>
-<blockquote>
-<div><a class="reference external" href="https://jetstream-cloud.org/"><strong>Jetstream</strong></a> is an [NSF/XSEDE] resource designed to promote and provide configurable cyberinfrastructure in the form of cloud computing to both novice and experienced users. Jetstream features a web-based user interface based on the popular Atmosphere cloud computing environment developed by CyVerse.</div></blockquote>
-<blockquote>
-<div><a class="reference external" href="https://portal.xsede.org/web/xup/my-xsede?p_p_id=58&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;saveLastPath=0&amp;_58_struts_action=%2Flogin%2Fcreate_account"><strong>1. Register for an account on XSEDE User Portal</strong></a></div></blockquote>
-<ul class="simple">
-<li><a class="reference external" href="https://angus.readthedocs.io/en/2018/jetstream/boot.html">angus 2018 jetstream login</a></li>
-<li><a class="reference external" href="https://portal.xsede.org/my-xsede?p_p_state=maximized&amp;p_p_mode=view&amp;saveLastPath=0&amp;_58_struts_action=%2Flogin%2Flogin&amp;p_p_id=58&amp;p_p_lifecycle=0&amp;_58_redirect=%2Fgroup%2Fxup%2Fjetstream-rapid-access">Jetstream Allocations Guide</a></li>
-</ul>
+<div><a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/smake_cyverse.html"><strong>Click here for a guided tutorial on Running Snakemake jobs using Singularity Containers in Atmosphere</strong></a></div></blockquote>
+<div class="section" id="tutorial-on-jetstream-cloud">
+<h2>5.1. Tutorial on Jetstream cloud<a class="headerlink" href="#tutorial-on-jetstream-cloud" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 <div class="section" id="working-locally">
 <h1>6. Working Locally<a class="headerlink" href="#working-locally" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>We recommend installing <a class="reference external" href="https://conda.io/en/latest/"><strong>conda</strong></a>, an open source package management system and environment management system that runs on Windows, macOS and Linux.</li>
-<li>Download and install conda:</li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -O -L https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh
-</pre></div>
-</div>
-<blockquote>
-<div>Say “yes” to everything the installer asks, and accept default locations by pressing enter when it says “Miniconda3 will now be installed into this location”. (If the prompt looks like this “&gt;&gt;&gt;”, then you are still within the installation process.)</div></blockquote>
-<ul class="simple">
-<li>When the installation is complete and the regular prompt returns, run the following command (or start a new terminal session) in order to activate the conda environment:</li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.bashrc
-</pre></div>
-</div>
-<ul class="simple">
-<li>Next, enable various “channels” for software install, including bioconda:</li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --add channels defaults
-conda config --add channels conda-forge
-conda config --add channels bioconda
-</pre></div>
-</div>
-<ul class="simple">
-<li>Next, download conda ‘environment.yml’ file, designed for this tutorial <a class="reference external" href="https://github.com/sateeshperi/snakemake2019/blob/master/binder/environment.yml">here</a></li>
-<li>Install tools in a new conda environment ‘smake’ using downloaded environment file</li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env create --file environment.yml -n smake
-</pre></div>
-</div>
-<ul class="simple">
-<li>To activate the environment for tutorial</li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate smake
-</pre></div>
-</div>
-<ul class="simple">
-<li>To deactivate environment after use</li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda deactivate
-</pre></div>
-</div>
-<ul class="simple">
-<li>Singularity installation needs <em>sudo</em> permissions and instructions can be found <a class="reference external" href="https://www.sylabs.io/guides/3.0/user-guide/quick_start.html#quick-installation-steps">here</a></li>
+<li><strong>Click <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/local_install.html">here</a> for local setup instructions.</strong></li>
 </ul>
 </div>
 <div class="section" id="awesome">
@@ -278,7 +220,7 @@ conda config --add channels bioconda
 <ul class="simple">
 <li><a class="reference external" href="https://twitter.com/ctitusbrown">Titus Brown</a> - Link to <a class="reference external" href="https://github.com/ctb/2019-snakemake-ucdavis">Tutorial</a></li>
 <li><a class="reference external" href="https://twitter.com/johanneskoester">Johannes Koster</a> - Link to <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html">Tutorial</a></li>
-<li><a class="reference external" href="https://www.cyverse.org/about">CyVerse</a> -Link to <a class="reference external" href="https://cyverse-container-camp-workshop-2019.readthedocs-hosted.com/en/latest/index.html">Container Camp</a></li>
+<li><a class="reference external" href="https://www.cyverse.org/about">CyVerse</a> - Link to <a class="reference external" href="https://cyverse-container-camp-workshop-2019.readthedocs-hosted.com/en/latest/index.html">Container Camp</a></li>
 </ul>
 <blockquote>
 <div>Please report new issues in <a class="reference external" href="https://github.com/sateeshperi/snakemake2019/issues">GitHub</a></div></blockquote>
@@ -288,11 +230,13 @@ conda config --add channels bioconda
 <ul class="simple">
 <li>Singularity modules in HPCs</li>
 <li>Building containers from scratch</li>
+</ul>
+<p><img alt="_images/minion.png" src="_images/minion.png" /></p>
+<ul class="simple">
 <li>Version Control</li>
 <li>Markdown</li>
 <li>Did someone say <em>Kubernetes</em> !!!</li>
 </ul>
-<p><img alt="_images/minion.png" src="_images/minion.png" /></p>
 </div>
 
 

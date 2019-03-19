@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="_static/css/bootstrap-theme.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>25. Accessing The Atmosphere Cloud &#8212; snakemake2019 0.0.1 documentation</title>
+    <title>26. Accessing The Atmosphere Cloud &#8212; snakemake2019 0.0.1 documentation</title>
     <link rel="stylesheet" href="_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="31. Advanced Topics" href="advanced_atmosphere.html" />
-    <link rel="prev" title="13. Snakemake Basic Tutorial" href="smake_basic_tutorial.html" />
+    <link rel="next" title="32. Advanced Topics" href="advanced_atmosphere.html" />
+    <link rel="prev" title="25. Snakemake Tutorial on CyVerse cloud" href="smake_cyverse.html" />
   
    
 
@@ -39,10 +39,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="advanced_atmosphere.html" title="31. Advanced Topics"
+          <a href="advanced_atmosphere.html" title="32. Advanced Topics"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="smake_basic_tutorial.html" title="13. Snakemake Basic Tutorial"
+          <a href="smake_cyverse.html" title="25. Snakemake Tutorial on CyVerse cloud"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="toc.html">snakemake2019 0.0.1 documentation</a> &#187;</li> 
       </ul>
@@ -59,25 +59,25 @@
     <h2>Contents</h2>
     <div class="sidebar-localtoc">
       <ul>
-<li><a class="reference internal" href="#">25. Accessing The Atmosphere Cloud</a><ul>
-<li><a class="reference internal" href="#ssh-client-for-windows-users">25.1. SSH Client for WINDOWS users</a></li>
+<li><a class="reference internal" href="#">26. Accessing The Atmosphere Cloud</a><ul>
+<li><a class="reference internal" href="#ssh-client-for-windows-users">26.1. SSH Client for WINDOWS users</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#login-launch-instance">26. Login &amp; Launch Instance</a></li>
-<li><a class="reference internal" href="#ssh-secure-login">27. SSH Secure-Login</a></li>
-<li><a class="reference internal" href="#instance-maintenance">28. Instance Maintenance</a><ul>
-<li><a class="reference internal" href="#atmosphere-dashboard">28.1. Atmosphere Dashboard</a></li>
-<li><a class="reference internal" href="#delete-instance">28.2. Delete Instance</a></li>
-<li><a class="reference internal" href="#suspend-instance">28.3. Suspend Instance</a></li>
+<li><a class="reference internal" href="#login-launch-instance">27. Login &amp; Launch Instance</a></li>
+<li><a class="reference internal" href="#ssh-secure-login">28. SSH Secure-Login</a></li>
+<li><a class="reference internal" href="#instance-maintenance">29. Instance Maintenance</a><ul>
+<li><a class="reference internal" href="#atmosphere-dashboard">29.1. Atmosphere Dashboard</a></li>
+<li><a class="reference internal" href="#delete-instance">29.2. Delete Instance</a></li>
+<li><a class="reference internal" href="#suspend-instance">29.3. Suspend Instance</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#additional-features">29. Additional Features</a><ul>
-<li><a class="reference internal" href="#web-shell">29.1. Web Shell</a></li>
-<li><a class="reference internal" href="#web-desktop">29.2. Web Desktop</a></li>
+<li><a class="reference internal" href="#additional-features">30. Additional Features</a><ul>
+<li><a class="reference internal" href="#web-shell">30.1. Web Shell</a></li>
+<li><a class="reference internal" href="#web-desktop">30.2. Web Desktop</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#advanced-topics">30. Advanced Topics</a><ul>
-<li><a class="reference internal" href="#atmosphere-advanced-topics">30.1. Atmosphere Advanced Topics</a></li>
+<li><a class="reference internal" href="#advanced-topics">31. Advanced Topics</a><ul>
+<li><a class="reference internal" href="#atmosphere-advanced-topics">31.1. Atmosphere Advanced Topics</a></li>
 </ul>
 </li>
 </ul>
@@ -86,11 +86,11 @@
   </div>
 </div>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="smake_basic_tutorial.html"
-                        title="previous chapter">13. Snakemake Basic Tutorial</a></p>
+  <p class="topless"><a href="smake_cyverse.html"
+                        title="previous chapter">25. Snakemake Tutorial on CyVerse cloud</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="advanced_atmosphere.html"
-                        title="next chapter">31. Advanced Topics</a></p>
+                        title="next chapter">32. Advanced Topics</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -120,14 +120,14 @@
             <ol class="breadcrumb">
               <li><a href="toc.html">Docs</a></li>
               
-              <li>25. Accessing The Atmosphere Cloud</li>
+              <li>26. Accessing The Atmosphere Cloud</li>
             </ol>
           </div>
           
           <div class="document clearer body">
             
   <div class="section" id="accessing-the-atmosphere-cloud">
-<h1>25. Accessing The Atmosphere Cloud<a class="headerlink" href="#accessing-the-atmosphere-cloud" title="Permalink to this headline">¶</a></h1>
+<h1>26. Accessing The Atmosphere Cloud<a class="headerlink" href="#accessing-the-atmosphere-cloud" title="Permalink to this headline">¶</a></h1>
 <p><img alt="_images/cyverse_small_logo.png" src="_images/cyverse_small_logo.png" /></p>
 <p><strong>Atmosphere, CyVerse’s cloud-computing platform allows you to launch your own isolated virtual machine (VM) image and software, using compute resources such as CyVerse-provided software suites, and pre-configured, frequently used analysis routines, relevant algorithms, and datasets.</strong></p>
 <blockquote>
@@ -137,7 +137,7 @@
 <li>CyVerse documentation on how to use Atmosphere resources can be found <a class="reference external" href="https://learning.cyverse.org/projects/atmosphere-guide/en/latest/index.html">here</a></li>
 </ul>
 <div class="section" id="ssh-client-for-windows-users">
-<h2>25.1. SSH Client for WINDOWS users<a class="headerlink" href="#ssh-client-for-windows-users" title="Permalink to this headline">¶</a></h2>
+<h2>26.1. SSH Client for WINDOWS users<a class="headerlink" href="#ssh-client-for-windows-users" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Windows-users will need to install a UNIX-ready terminal.</li>
 <li>We recommend - <a class="reference external" href="http://mobaxterm.mobatek.net/download-home-edition.html">mobaxterm home edition</a><ul>
@@ -148,7 +148,7 @@
 </div>
 </div>
 <div class="section" id="login-launch-instance">
-<h1>26. Login &amp; Launch Instance<a class="headerlink" href="#login-launch-instance" title="Permalink to this headline">¶</a></h1>
+<h1>27. Login &amp; Launch Instance<a class="headerlink" href="#login-launch-instance" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li>Login to <a class="reference external" href="https://atmo.cyverse.org/application/images">Atmosphere</a> by clicking the “login” button towards the right-upper corner of the screen.</li>
 </ul>
@@ -201,7 +201,7 @@
 </ul>
 </div>
 <div class="section" id="ssh-secure-login">
-<h1>27. SSH Secure-Login<a class="headerlink" href="#ssh-secure-login" title="Permalink to this headline">¶</a></h1>
+<h1>28. SSH Secure-Login<a class="headerlink" href="#ssh-secure-login" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div>MACOS &amp; LINUX users can open a Terminal window and Windows users start a new session in <a class="reference external" href="http://mobaxterm.mobatek.net/download-home-edition.html">mobaxterm home edition</a></div></blockquote>
 <ul class="simple">
@@ -222,15 +222,15 @@
 <p><img alt="_images/ssh_pass.png" src="_images/ssh_pass.png" /></p>
 </div>
 <div class="section" id="instance-maintenance">
-<h1>28. Instance Maintenance<a class="headerlink" href="#instance-maintenance" title="Permalink to this headline">¶</a></h1>
+<h1>29. Instance Maintenance<a class="headerlink" href="#instance-maintenance" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div>To end your current session on an Instance and close SSH connection, type ‘exit’</div></blockquote>
 <div class="section" id="atmosphere-dashboard">
-<h2>28.1. Atmosphere Dashboard<a class="headerlink" href="#atmosphere-dashboard" title="Permalink to this headline">¶</a></h2>
+<h2>29.1. Atmosphere Dashboard<a class="headerlink" href="#atmosphere-dashboard" title="Permalink to this headline">¶</a></h2>
 <p><img alt="_images/atmosphere_dashboard.png" src="_images/atmosphere_dashboard.png" /></p>
 </div>
 <div class="section" id="delete-instance">
-<h2>28.2. Delete Instance<a class="headerlink" href="#delete-instance" title="Permalink to this headline">¶</a></h2>
+<h2>29.2. Delete Instance<a class="headerlink" href="#delete-instance" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>To completely remove your instance, you can select the “Delete” button from the instance details page.</li>
 <li>This will open up a dialogue window. Select the “Yes, delete this instance” button.</li>
@@ -239,22 +239,22 @@
 <p><img alt="_images/delete.png" src="_images/delete.png" /></p>
 </div>
 <div class="section" id="suspend-instance">
-<h2>28.3. Suspend Instance<a class="headerlink" href="#suspend-instance" title="Permalink to this headline">¶</a></h2>
+<h2>29.3. Suspend Instance<a class="headerlink" href="#suspend-instance" title="Permalink to this headline">¶</a></h2>
 <p><img alt="_images/suspend.png" src="_images/suspend.png" /></p>
 <p><strong>Note: It is advisable to delete the machine if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it. Notice: IP address changes</strong></p>
 </div>
 </div>
 <div class="section" id="additional-features">
-<h1>29. Additional Features<a class="headerlink" href="#additional-features" title="Permalink to this headline">¶</a></h1>
+<h1>30. Additional Features<a class="headerlink" href="#additional-features" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="web-shell">
-<h2>29.1. Web Shell<a class="headerlink" href="#web-shell" title="Permalink to this headline">¶</a></h2>
+<h2>30.1. Web Shell<a class="headerlink" href="#web-shell" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Access Command-Line Directly from your browser</li>
 </ul>
 <p><img alt="_images/webshell.png" src="_images/webshell.png" /></p>
 </div>
 <div class="section" id="web-desktop">
-<h2>29.2. Web Desktop<a class="headerlink" href="#web-desktop" title="Permalink to this headline">¶</a></h2>
+<h2>30.2. Web Desktop<a class="headerlink" href="#web-desktop" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Access your instance through a web desktop version from your browser</li>
 </ul>
@@ -262,9 +262,9 @@
 </div>
 </div>
 <div class="section" id="advanced-topics">
-<h1>30. Advanced Topics<a class="headerlink" href="#advanced-topics" title="Permalink to this headline">¶</a></h1>
+<h1>31. Advanced Topics<a class="headerlink" href="#advanced-topics" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="atmosphere-advanced-topics">
-<h2>30.1. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/advanced_atmosphere.html">Atmosphere Advanced Topics</a><a class="headerlink" href="#atmosphere-advanced-topics" title="Permalink to this headline">¶</a></h2>
+<h2>31.1. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/advanced_atmosphere.html">Atmosphere Advanced Topics</a><a class="headerlink" href="#atmosphere-advanced-topics" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Transferring Data to and from an Instance</li>
 <li>Creating custom Atmosphere Images</li>
@@ -279,11 +279,11 @@
   <div class="footer-relations">
     
       <div class="pull-left">
-        <a class="btn btn-default" href="smake_basic_tutorial.html" title="previous chapter (use the left arrow)">13. Snakemake Basic Tutorial</a>
+        <a class="btn btn-default" href="smake_cyverse.html" title="previous chapter (use the left arrow)">25. Snakemake Tutorial on CyVerse cloud</a>
       </div>
     
       <div class="pull-right">
-        <a class="btn btn-default" href="advanced_atmosphere.html" title="next chapter (use the right arrow)">31. Advanced Topics</a>
+        <a class="btn btn-default" href="advanced_atmosphere.html" title="next chapter (use the right arrow)">32. Advanced Topics</a>
       </div>
     </div>
     <div class="clearer"></div>
@@ -298,10 +298,10 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="advanced_atmosphere.html" title="31. Advanced Topics"
+          <a href="advanced_atmosphere.html" title="32. Advanced Topics"
              >next</a> |</li>
         <li class="right" >
-          <a href="smake_basic_tutorial.html" title="13. Snakemake Basic Tutorial"
+          <a href="smake_cyverse.html" title="25. Snakemake Tutorial on CyVerse cloud"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="toc.html">snakemake2019 0.0.1 documentation</a> &#187;</li> 
       </ul>

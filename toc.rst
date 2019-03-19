@@ -8,6 +8,8 @@
 
    smake_basic_tutorial.md
 
+   smake_cyverse.md
+
    Atmosphere_Cloud.md
 
    advanced_atmosphere.md
@@ -17,3 +19,5 @@
    singularity_tutorial.md
 
    awesome.md
+
+   local_install.md
