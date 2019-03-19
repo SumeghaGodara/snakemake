@@ -1,7 +1,7 @@
 Introduction
 ===
 
-![hate_research](img/hate_research.png)
+![](img/hate_research.png)
 
 # Why Snakemake?
 
@@ -13,7 +13,7 @@ Introduction
 
 > Snakemake [slides](http://slides.com/johanneskoester/snakemake-tutorial#/)
 
-- Snakemake allows you to create a set of rules, each one defining a "step" of your analysis. Rules can either use shell commands, plain Python code or external Python or R scripts to create output files from input files [^1].
+- Snakemake allows you to create a set of rules, each one defining a "step" of your analysis. Rules can either use shell commands, plain Python code or external Python or R scripts to create output files from input files. [Original Paper](https://academic.oup.com/bioinformatics/article/28/19/2520/290322)
 
 **The workflow is implied by dependencies between the rules that arise from one rule needing an output file of another as an input file.**
 
@@ -50,7 +50,7 @@ rule myname:
 
 # Why Containers?
 
-![sing_container](/img/logos/sing_container.png)
+![](/img/logos/sing_container.png)
 
 > **A container image is an encapsulated, portable environment that is created to distribute a scientific analysis or a general function. Containers help with reproducibility of such content as they nicely package software and data dependencies, along with libraries that are needed.**
 
@@ -62,8 +62,6 @@ rule myname:
     + Install and run an application that requires a complicated stack of dependencies with a few keystrokes.
     + Create a pipeline or complex workflow where each individual program is meant to run on a different operating system.
 
-![sing_workflow](/img/sing_workflow.png)
+![](/img/sing_workflow.png)
 
 - [Amazing slides on Singularity](https://docs.google.com/presentation/d/14-iKKUpGJC_1qpVFVUyUaitc8xFSw9Rp3v_UE9IGgjM/pub?start=false&loop=false&delayms=3000#slide=id.g1c1cec989b_0_154) by *Vanessa Sochat*
-
-- [Paper](https://academic.oup.com/bioinformatics/article/28/19/2520/290322)

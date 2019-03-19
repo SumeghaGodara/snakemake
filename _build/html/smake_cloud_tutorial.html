@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="45. Singularity" href="singularity_tutorial.html" />
+    <link rel="next" title="47. Singularity" href="singularity_tutorial.html" />
     <link rel="prev" title="31. Advanced Topics" href="advanced_atmosphere.html" />
   
    
@@ -39,7 +39,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="singularity_tutorial.html" title="45. Singularity"
+          <a href="singularity_tutorial.html" title="47. Singularity"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="advanced_atmosphere.html" title="31. Advanced Topics"
@@ -66,7 +66,9 @@
 <li><a class="reference internal" href="#download-data">41. Download data</a></li>
 <li><a class="reference internal" href="#open-rstudio">42. Open Rstudio</a></li>
 <li><a class="reference internal" href="#run-snakemake">43. Run snakemake</a></li>
-<li><a class="reference internal" href="#generate-report">44. Generate Report</a></li>
+<li><a class="reference internal" href="#visualize-workflow">44. Visualize Workflow</a></li>
+<li><a class="reference internal" href="#generate-report">45. Generate Report</a></li>
+<li><a class="reference internal" href="#coming-soon">46. Coming Soon</a></li>
 </ul>
 
     </div>
@@ -77,7 +79,7 @@
                         title="previous chapter">31. Advanced Topics</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="singularity_tutorial.html"
-                        title="next chapter">45. Singularity</a></p>
+                        title="next chapter">47. Singularity</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -190,89 +192,82 @@ rm data.zip
 </pre></div>
 </div>
 <blockquote>
-<div>click on the link generated to open Rstudio in your browser and login with your CyVerse credentials.</div></blockquote>
+<div>click on the link generated to open Rstudio in your browser and login with your CyVerse credentials.
+<img alt="_images/rstudio_interface.png" src="_images/rstudio_interface.png" /></div></blockquote>
 </div>
 <div class="section" id="run-snakemake">
 <h1>43. Run snakemake<a class="headerlink" href="#run-snakemake" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>Create Snakefile using text editor nano:</li>
+<li>Create a new text file (<code class="docutils literal notranslate"><span class="pre">File</span></code>, <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">File</span></code>, <code class="docutils literal notranslate"><span class="pre">Text</span> <span class="pre">file</span></code>) and and paste the code below we have from <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/smake_basic_tutorial.html">Snakemake Basic Tutorial</a></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano Snakefile
-</pre></div>
-</div>
-<p>and paste the code below we have from <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/smake_basic_tutorial.html">Basic Tutorial</a></p>
-<div class="highlight-python= notranslate"><div class="highlight"><pre><span></span>fastqc_output = [&quot;data/0Hour_001_1_fastqc.html&quot;, &quot;data/6Hour_001_1_fastqc.html&quot;,
-  &quot;data/0Hour_001_2_fastqc.html&quot;, &quot;data/6Hour_001_2_fastqc.html&quot;,
-  &quot;data/0Hour_002_1_fastqc.html&quot;, &quot;data/6Hour_002_1_fastqc.html&quot;,
-  &quot;data/0Hour_002_2_fastqc.html&quot;, &quot;data/6Hour_002_2_fastqc.html&quot;,
-  &quot;data/0Hour_001_1.pe.qc_fastqc.html&quot;, &quot;data/0Hour_002_1.pe.qc_fastqc.html&quot;,
-  &quot;data/6Hour_001_1.pe.qc_fastqc.html&quot;, &quot;data/6Hour_002_1.pe.qc_fastqc.html&quot;,
-  &quot;data/0Hour_001_2.pe.qc_fastqc.html&quot;, &quot;data/0Hour_002_2.pe.qc_fastqc.html&quot;,
-  &quot;data/0Hour_001_2.pe.qc_fastqc.html&quot;, &quot;data/0Hour_002_2.pe.qc_fastqc.html&quot;]
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fastqc_output</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;data/0Hour_001_1_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_001_1_fastqc.html&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;data/0Hour_001_2_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_001_2_fastqc.html&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;data/0Hour_002_1_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_002_1_fastqc.html&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;data/0Hour_002_2_fastqc.html&quot;</span><span class="p">,</span> <span class="s2">&quot;data/6Hour_002_2_fastqc.html&quot;</span><span class="p">]</span>
 
-rule all:
-  input:
-    &quot;multiqc_report.html&quot;
+<span class="n">rule</span> <span class="nb">all</span><span class="p">:</span>
+  <span class="nb">input</span><span class="p">:</span>
+    <span class="s2">&quot;multiqc_report.html&quot;</span>
 
-rule fastqc:
-    input:
-        &quot;{filename}.fq.gz&quot;
-    output:
-        &quot;{filename}_fastqc.html&quot;,
-        &quot;{filename}_fastqc.zip&quot;
-    singularity:
-        &quot;docker://sateeshperi/fastqc&quot;    
-    shell:
-        &quot;fastqc {input}&quot;
+<span class="n">rule</span> <span class="n">fastqc</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="s2">&quot;{filename}.fq.gz&quot;</span>
+    <span class="n">output</span><span class="p">:</span>
+        <span class="s2">&quot;{filename}_fastqc.html&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;{filename}_fastqc.zip&quot;</span>
+    <span class="n">singularity</span><span class="p">:</span>
+        <span class="s2">&quot;docker://sateeshperi/fastqc&quot;</span>    
+    <span class="n">shell</span><span class="p">:</span>
+        <span class="s2">&quot;fastqc {input}&quot;</span>
 
-rule run_multiqc:
-  input:
-    fastqc_output
-  output:
-    &quot;multiqc_report.html&quot;,
-    directory(&quot;multiqc_data&quot;)
-  singularity:
-    &quot;docker://sateeshperi/multiqc&quot;
-  shell:
-    &quot;multiqc data/&quot;
+<span class="n">rule</span> <span class="n">run_multiqc</span><span class="p">:</span>
+  <span class="nb">input</span><span class="p">:</span>
+    <span class="n">fastqc_output</span>
+  <span class="n">output</span><span class="p">:</span>
+    <span class="s2">&quot;multiqc_report.html&quot;</span><span class="p">,</span>
+    <span class="n">directory</span><span class="p">(</span><span class="s2">&quot;multiqc_data&quot;</span><span class="p">)</span>
+  <span class="n">singularity</span><span class="p">:</span>
+    <span class="s2">&quot;docker://sateeshperi/multiqc&quot;</span>
+  <span class="n">shell</span><span class="p">:</span>
+    <span class="s2">&quot;multiqc data/&quot;</span>
 
-rule trim_reads:
-  input:
-    &quot;{filename}_1.fq.gz&quot;,
-    &quot;{filename}_2.fq.gz&quot;
-  output:
-    &quot;{filename}_1.pe.qc.fq.gz&quot;,
-    &quot;{filename}_1.se.qc.fq.gz&quot;,
-    &quot;{filename}_2.pe.qc.fq.gz&quot;,
-    &quot;{filename}_2.se.qc.fq.gz&quot;
-  singularity:
-    &quot;docker://sateeshperi/trimmomatic&quot;
-  shell:
-    &quot;java -jar /tools/trimmomatic/trimmomatic-0.36.jar PE {input} {output} LEADING:2 TRAILING:2 \
-     SLIDINGWINDOW:4:15 \
-     MINLEN:25&quot;    
-
-rule clean:
-  shell:
-    &quot;rm -f {fastqc_output} multiqc_report.html&quot;     
+<span class="n">rule</span> <span class="n">clean</span><span class="p">:</span>
+  <span class="n">shell</span><span class="p">:</span>
+    <span class="s2">&quot;rm -f {fastqc_output} multiqc_report.html&quot;</span>     
 </pre></div>
 </div>
 <ul class="simple">
-<li>Execute Snakemake with</li>
+<li><ul class="first">
+<li>Save the file as <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code>and execute Snakemake in your terminal by:</li>
+</ul>
+</li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake --use-singularity
 </pre></div>
 </div>
 <blockquote>
-<div>Snakemake will pull the containers and execute each rule individually in the containers specified</div></blockquote>
-<blockquote>
-<div>Note how each singularity container is activated for each rule</div></blockquote>
+<div><strong>Snakemake will pull the containers and execute each rule individually in the containers specified</strong></div></blockquote>
+</div>
+<div class="section" id="visualize-workflow">
+<h1>44. Visualize Workflow<a class="headerlink" href="#visualize-workflow" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake --dag <span class="p">|</span> dot -Tpng &gt; dag.png
+</pre></div>
+</div>
+<ul class="simple">
+<li>Click on the dag.png image in FIle Explorer and open in web-browser</li>
+</ul>
 </div>
 <div class="section" id="generate-report">
-<h1>44. Generate Report<a class="headerlink" href="#generate-report" title="Permalink to this headline">¶</a></h1>
+<h1>45. Generate Report<a class="headerlink" href="#generate-report" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake --report report.html
 </pre></div>
 </div>
+</div>
+<div class="section" id="coming-soon">
+<h1>46. Coming Soon<a class="headerlink" href="#coming-soon" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><strong>In the next tutorial, we will learn how to build a Dockerfile for ‘Trimmomatic app’ from scratch and add it as a rule to our workflow. Stay Tuned !</strong></div></blockquote>
+<p><img alt="_images/minion.gif" src="_images/minion.gif" /></p>
 <blockquote>
 <div><strong>Note: It is advisable to delete your instance if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it. See <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html#instance-maintenance"><strong>Instance Maintenace</strong></a> for more info</strong></div></blockquote>
 <hr class="docutils" />
@@ -289,7 +284,7 @@ rule clean:
       </div>
     
       <div class="pull-right">
-        <a class="btn btn-default" href="singularity_tutorial.html" title="next chapter (use the right arrow)">45. Singularity</a>
+        <a class="btn btn-default" href="singularity_tutorial.html" title="next chapter (use the right arrow)">47. Singularity</a>
       </div>
     </div>
     <div class="clearer"></div>
@@ -304,7 +299,7 @@ rule clean:
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="singularity_tutorial.html" title="45. Singularity"
+          <a href="singularity_tutorial.html" title="47. Singularity"
              >next</a> |</li>
         <li class="right" >
           <a href="advanced_atmosphere.html" title="31. Advanced Topics"

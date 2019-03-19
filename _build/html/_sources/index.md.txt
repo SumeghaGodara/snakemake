@@ -1,6 +1,6 @@
 Reproducible Workflows using Snakemake and Singularity
 ===
-![logo](/img/logos/rep_research_logo.png)
+![](/img/logos/rep_research_logo.png)
 
 > **The Snakemake workflow management system is a tool to create reproducible and scalable data analyses and can be seamlessly scaled to server, cluster, grid and cloud environments, without the need to modify the workflow definition.**
 
@@ -55,13 +55,15 @@ Reproducible Workflows using Snakemake and Singularity
 
  > **To run snakemake jobs via [Singularity](https://singularity-hub.org/) / [Docker](https://hub.docker.com/) containers in the cloud, we recommend [Atmosphere](https://www.cyverse.org/atmosphere), CyVerse's cloud-computing platform which provides easy-to-use web-access to cloud resources and is designed to accommodate computationally and data-intensive tasks.**
 
-![cloud_computing](/img/cloud_computing.png)
+![](/img/cloud_computing.png)
 
 > [**1. Register for a free account on CyVerse**](https://user.cyverse.org/register)
 
 > [**2. Guide to Launching Atmosphere Instances**](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html)
 
 > [**3. Snakemake Cloud Tutorial on Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/smake_cloud_tutorial.html)
+
+> The Snakemake2019 image supports: 1) Miniconda3 2) bio-conda 3) Snakemake 4) Singularity 5) Docker
 
  **Atmosphere / Jetstream Key Features:**
 
@@ -145,9 +147,11 @@ The content for this website has been compiled from tutorials put together by:
 > Please report new issues in [GitHub](https://github.com/sateeshperi/snakemake2019/issues)
 
 # Coming Soon
-![singularity_bot](/img/logos/singularity_bot.png)
+
 + Singularity modules in HPCs
 + Building containers from scratch
 + Version Control
 + Markdown
 + Did someone say *Kubernetes* !!!
+
+![](/img/logos/minion.png)

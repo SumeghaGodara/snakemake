@@ -72,6 +72,12 @@ cd /opt
 
 sudo su
 
+ezd
+
+ezs
+
+apt-get install debootstrap
+
 curl -O -L https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh #install in /opt/miniconda3
 
@@ -152,6 +158,8 @@ $ cat ~/.ssh/id_rsa.pub
 ![](/img/atmosphere/settings_deposit_key.png)
 
 - **You can now securely login to all the instances you launch on Atmosphere without having to type your password each-time you ssh login.**
+
+![](/img/atmosphere/ssh_no_pass.png)
 
 # Tmux & Screen
 
