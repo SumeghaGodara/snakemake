@@ -72,6 +72,12 @@ cd /opt
 
 sudo su
 
+ezd
+
+ezs
+
+apt-get install debootstrap
+
 curl -O -L https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh #install in /opt/miniconda3
 

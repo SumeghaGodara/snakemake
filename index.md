@@ -63,6 +63,8 @@ Reproducible Workflows using Snakemake and Singularity
 
 > [**3. Snakemake Cloud Tutorial on Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/smake_cloud_tutorial.html)
 
+> The Snakemake2019 image supports: 1) Miniconda3 2) bio-conda 3) Snakemake 4) Singularity 5) Docker
+
  **Atmosphere / Jetstream Key Features:**
 
 + Access virtual machine images pre-configured with an operating system and software to help you do scientific computations in domain-specific tasks
@@ -145,7 +147,7 @@ The content for this website has been compiled from tutorials put together by:
 > Please report new issues in [GitHub](https://github.com/sateeshperi/snakemake2019/issues)
 
 # Coming Soon
-![singularity_bot](/img/logos/singularity_bot.png)
+![](/img/logos/singularity_bot.png)
 + Singularity modules in HPCs
 + Building containers from scratch
 + Version Control
