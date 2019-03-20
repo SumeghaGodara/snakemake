@@ -11,43 +11,37 @@ Accessing The Atmosphere Cloud
 
 - CyVerse documentation on how to use Atmosphere resources can be found [here](https://learning.cyverse.org/projects/atmosphere-guide/en/latest/index.html)
 
-### SSH Client for WINDOWS users
-
-- Windows-users will need to install a UNIX-ready terminal.
-
-- We recommend - [mobaxterm home edition](http://mobaxterm.mobatek.net/download-home-edition.html)
-	- Start a new session; Fill in your "remote host" the IP address of your virtual machine(see below). Then select "specify username" and enter your cyverse username; Click OK.
+> **NOTE: WINDOWS users** will need to install a UNIX-ready terminal to SSH-login (if you haven't already). We recommend - [mobaxterm home edition](http://mobaxterm.mobatek.net/download-home-edition.html)
 
 # Login & Launch Instance
 
-- Login to [Atmosphere](https://atmo.cyverse.org/application/images) by clicking the "login" button towards the right-upper corner of the screen.
+- **Login to [Atmosphere](https://atmo.cyverse.org/application/images) by clicking the "login" button towards the right-upper corner of the screen.**
 
 ![](/img/atmosphere/login1.png)
 
-- Fill in your CyVerse username and password and click "LOGIN"
+- **Fill in your CyVerse username and password and click "LOGIN"**
 
 ![](/img/atmosphere/login2.png)
 
-- Select the "Projects" tab and then click the "CREATE NEW PROJECT" button
+- **Select the "Projects" tab and then click the "CREATE NEW PROJECT" button**
 
 ![](/img/atmosphere/login3.png)
 ![](/img/atmosphere/login4.png)
 
-- Give your Project folder a name (Description is optional). Then click "CREATE".
+- **Give your Project folder a name (Description is optional). Then click "CREATE".**
 
 ![](/img/atmosphere/login5.png)
 
-- Click on your newly created project.
-
-- Click "NEW" and then "Instance" from the drop-down menu to start up a new virtual machine.
+- **Click on your newly created project and then Click on "NEW" and then "Instance" from the drop-down menu to start up a new virtual machine.**
 
 ![](/img/atmosphere/login6.png)
 
-- To select an image click on **"Show All"** tab and Search for **"Snakemake2019"** and choose the "Snakemake2019" image created by 'sateeshp'.
+- **To select an image click on "Show All" tab and Search for "Snakemake2019" and choose the "Snakemake2019" image created by 'sateeshp'.**
 
 ![](/img/atmosphere/login7.png)
 
-- Basic options
+- **You will be presented with basic options to configure your virtual machine here:
+
 	+ Instance Name: e.x., "Smake-Tutorial" or you can leave it default which is the image name.
 
 	+	Base Image Version: "1.0"
@@ -58,36 +52,38 @@ Accessing The Atmosphere Cloud
 
 	+	Provider: "CyVerse Cloud - Marana"
 
-	+ Instance size: We recommend "**tiny1** (CPU: 1, Mem: 4GB, Disk: 30GB)"for this tutorial; Though  depending on your allocations, choose most suitable one. [Click here](https://wiki.cyverse.org/wiki/display/atmman/Requesting+More+Atmosphere+Resources) to read more about allocations.
+	+ Instance size: We recommend ""tiny1" (CPU: 1, Mem: 4GB, Disk: 30GB)"for this tutorial; Though  depending on your allocations, choose most suitable one. [Click here](https://wiki.cyverse.org/wiki/display/atmman/Requesting+More+Atmosphere+Resources) to read more about allocations.**
 
 ![](/img/atmosphere/login8.png)
 
 - Launch instance and wait for the build to be deployed (~ 5-10 minutes).
-	> Note: During the build process: `scheduling-->building-->spawning-->deploying-->Networking-->N/A`; Be patient! Don't reload!. Once the virtual machine is ready, the "Activity" column will show "N/A" and the "Status" column will turn green and "Active".
+
+> Note: During the build process: `scheduling-->building-->spawning-->deploying-->Networking-->N/A`; Be patient! Don't reload!. Once the virtual machine is ready, the "Activity" column will show "N/A" and the "Status" column will turn green and "Active".
 
 ![](/img/atmosphere/login9.png)
 
-- Navigate back to 'Projects' and click on your new instance's name to see more information related to the instance you just created!
+- **Navigate back to 'Projects' and click on your new instance's name to see more information related to the instance you just created! and Copy the IP address of your instance created.**
 
-- Copy the IP address of your instance.
+> **Great! We have now built our very own remote virtual machine with all the software pre-installed. Next we will use SSH-Secure-Login to access these remote instances from our laptop's and start Snakemaking !!!.**
 
 # SSH Secure-Login
 
-> MACOS & LINUX users can open a Terminal window and Windows users start a new session in [mobaxterm home edition](http://mobaxterm.mobatek.net/download-home-edition.html)
-+ Start a new session; Fill in your "remote host" the IP address of your virtual machine. Then select "specify username" and enter your cyverse username; Click OK.
+- MACOS & LINUX users can open a Terminal window now.
+- Windows users start a new session in [mobaxterm](http://mobaxterm.mobatek.net/download-home-edition.html)
+	+ Start a new session; Fill in your "remote host" the IP address of your virtual machine; select "specify username" and enter your cyverse username; Click OK.
 
-- Establish a secure-login to the instance by typing the following:
+- **Establish a secure-login to the instance by typing the following:**
 
 ```
-ssh your_cyverseusername@ip_address
+$ ssh your_cyverseusername@ip_address
 ```
-- This should log you into CyVerse and you should see a screen like this:
-
-- Enter 'yes' and then you will be asked for your CyVerse password.
+- **This should log you into CyVerse and you should see a screen like this; Enter 'yes' and then enter your CyVerse password.**
 
 > Your cursor will not move or indicate you are typing as you enter your password. If you make a mistake, hit enter and you will be prompted again.
 
 ![](/img/atmosphere/ssh_pass.png)
+
+> **Success !!! We have established connections with our instances. Proceed to the Tutorial section.**
 
 # Instance Maintenance
 
@@ -97,21 +93,23 @@ ssh your_cyverseusername@ip_address
 
 ![](/img/atmosphere/atmosphere_dashboard.png)
 
-#### Delete Instance
-
-- To completely remove your instance, you can select the "Delete" button from the instance details page.
-- This will open up a dialogue window. Select the "Yes, delete this instance" button.
-- It may take Atmosphere a few minutes to process your request. The instance should disappear from the project when it has been successfully deleted.
-
-![](/img/atmosphere/delete.png)
-
 #### Suspend Instance
 
 ![](/img/atmosphere/suspend.png)
 
 **Note: It is advisable to delete the machine if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it. Notice: IP address changes**
 
+#### Delete Instance
+
+- **To completely remove your instance, you can select the "Delete" button from the instance details page.**
+- **This will open up a dialogue window. Select the "Yes, delete this instance" button.**
+- **It may take Atmosphere a few minutes to process your request. The instance should disappear from the project when it has been successfully deleted.**
+
+![](/img/atmosphere/delete.png)
+
 # Additional Features
+
+## Did you know you can access a shell terminal via your browser ???
 
 #### Web Shell
 
@@ -128,6 +126,6 @@ ssh your_cyverseusername@ip_address
 # Advanced Topics
 
 #### [Atmosphere Advanced Topics](https://snakemake2019.readthedocs.io/en/latest/advanced_atmosphere.html)
- + Transferring Data to and from an Instance
- + Creating custom Atmosphere Images
- + ssh-rsa-key for password-less login
+ + How do I transfer Data to and from this remote instance?
+ + How can I create custom Atmosphere Images for my personal use?
+ + How can I add 'ssh-rsa-key' to Atmosphere for password-less easy login?

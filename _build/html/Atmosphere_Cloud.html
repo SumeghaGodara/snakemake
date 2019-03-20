@@ -59,21 +59,21 @@
     <h2>Contents</h2>
     <div class="sidebar-localtoc">
       <ul>
-<li><a class="reference internal" href="#">25. Accessing The Atmosphere Cloud</a><ul>
-<li><a class="reference internal" href="#ssh-client-for-windows-users">25.1. SSH Client for WINDOWS users</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">25. Accessing The Atmosphere Cloud</a></li>
 <li><a class="reference internal" href="#login-launch-instance">26. Login &amp; Launch Instance</a></li>
 <li><a class="reference internal" href="#ssh-secure-login">27. SSH Secure-Login</a></li>
 <li><a class="reference internal" href="#instance-maintenance">28. Instance Maintenance</a><ul>
 <li><a class="reference internal" href="#atmosphere-dashboard">28.1. Atmosphere Dashboard</a></li>
-<li><a class="reference internal" href="#delete-instance">28.2. Delete Instance</a></li>
-<li><a class="reference internal" href="#suspend-instance">28.3. Suspend Instance</a></li>
+<li><a class="reference internal" href="#suspend-instance">28.2. Suspend Instance</a></li>
+<li><a class="reference internal" href="#delete-instance">28.3. Delete Instance</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#additional-features">29. Additional Features</a><ul>
-<li><a class="reference internal" href="#web-shell">29.1. Web Shell</a></li>
-<li><a class="reference internal" href="#web-desktop">29.2. Web Desktop</a></li>
+<li><a class="reference internal" href="#did-you-know-you-can-access-a-shell-terminal-via-your-browser">29.1. Did you know you can access a shell terminal via your browser ???</a><ul>
+<li><a class="reference internal" href="#web-shell">29.1.1. Web Shell</a></li>
+<li><a class="reference internal" href="#web-desktop">29.1.2. Web Desktop</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#advanced-topics">30. Advanced Topics</a><ul>
@@ -136,90 +136,81 @@
 <li>This is the first and last place in these lessons where it will matter if you are using PC, Mac, or Linux. After we connect to our virtual machines built using the same image; we will all be on the same operating system/computing environment.</li>
 <li>CyVerse documentation on how to use Atmosphere resources can be found <a class="reference external" href="https://learning.cyverse.org/projects/atmosphere-guide/en/latest/index.html">here</a></li>
 </ul>
-<div class="section" id="ssh-client-for-windows-users">
-<h2>25.1. SSH Client for WINDOWS users<a class="headerlink" href="#ssh-client-for-windows-users" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Windows-users will need to install a UNIX-ready terminal.</li>
-<li>We recommend - <a class="reference external" href="http://mobaxterm.mobatek.net/download-home-edition.html">mobaxterm home edition</a><ul>
-<li>Start a new session; Fill in your “remote host” the IP address of your virtual machine(see below). Then select “specify username” and enter your cyverse username; Click OK.</li>
-</ul>
-</li>
-</ul>
-</div>
+<blockquote>
+<div><strong>NOTE: WINDOWS users</strong> will need to install a UNIX-ready terminal to SSH-login (if you haven’t already). We recommend - <a class="reference external" href="http://mobaxterm.mobatek.net/download-home-edition.html">mobaxterm home edition</a></div></blockquote>
 </div>
 <div class="section" id="login-launch-instance">
 <h1>26. Login &amp; Launch Instance<a class="headerlink" href="#login-launch-instance" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>Login to <a class="reference external" href="https://atmo.cyverse.org/application/images">Atmosphere</a> by clicking the “login” button towards the right-upper corner of the screen.</li>
+<li><strong>Login to <a class="reference external" href="https://atmo.cyverse.org/application/images">Atmosphere</a> by clicking the “login” button towards the right-upper corner of the screen.</strong></li>
 </ul>
 <p><img alt="_images/login1.png" src="_images/login1.png" /></p>
 <ul class="simple">
-<li>Fill in your CyVerse username and password and click “LOGIN”</li>
+<li><strong>Fill in your CyVerse username and password and click “LOGIN”</strong></li>
 </ul>
 <p><img alt="_images/login2.png" src="_images/login2.png" /></p>
 <ul class="simple">
-<li>Select the “Projects” tab and then click the “CREATE NEW PROJECT” button</li>
+<li><strong>Select the “Projects” tab and then click the “CREATE NEW PROJECT” button</strong></li>
 </ul>
 <p><img alt="_images/login3.png" src="_images/login3.png" />
 <img alt="_images/login4.png" src="_images/login4.png" /></p>
 <ul class="simple">
-<li>Give your Project folder a name (Description is optional). Then click “CREATE”.</li>
+<li><strong>Give your Project folder a name (Description is optional). Then click “CREATE”.</strong></li>
 </ul>
 <p><img alt="_images/login5.png" src="_images/login5.png" /></p>
 <ul class="simple">
-<li>Click on your newly created project.</li>
-<li>Click “NEW” and then “Instance” from the drop-down menu to start up a new virtual machine.</li>
+<li><strong>Click on your newly created project and then Click on “NEW” and then “Instance” from the drop-down menu to start up a new virtual machine.</strong></li>
 </ul>
 <p><img alt="_images/login6.png" src="_images/login6.png" /></p>
 <ul class="simple">
-<li>To select an image click on <strong>“Show All”</strong> tab and Search for <strong>“Snakemake2019”</strong> and choose the “Snakemake2019” image created by ‘sateeshp’.</li>
+<li><strong>To select an image click on “Show All” tab and Search for “Snakemake2019” and choose the “Snakemake2019” image created by ‘sateeshp’.</strong></li>
 </ul>
 <p><img alt="_images/login7.png" src="_images/login7.png" /></p>
 <ul class="simple">
-<li>Basic options<ul>
+<li>**You will be presented with basic options to configure your virtual machine here:<ul>
 <li>Instance Name: e.x., “Smake-Tutorial” or you can leave it default which is the image name.</li>
 <li>Base Image Version: “1.0”</li>
 <li>Project: select project folder to host the instance</li>
 <li>Allocation Source: should be your cyverse account</li>
 <li>Provider: “CyVerse Cloud - Marana”</li>
-<li>Instance size: We recommend “<strong>tiny1</strong> (CPU: 1, Mem: 4GB, Disk: 30GB)”for this tutorial; Though  depending on your allocations, choose most suitable one. <a class="reference external" href="https://wiki.cyverse.org/wiki/display/atmman/Requesting+More+Atmosphere+Resources">Click here</a> to read more about allocations.</li>
+<li>Instance size: We recommend “”tiny1” (CPU: 1, Mem: 4GB, Disk: 30GB)”for this tutorial; Though  depending on your allocations, choose most suitable one. <a class="reference external" href="https://wiki.cyverse.org/wiki/display/atmman/Requesting+More+Atmosphere+Resources">Click here</a> to read more about allocations.**</li>
 </ul>
 </li>
 </ul>
 <p><img alt="_images/login8.png" src="_images/login8.png" /></p>
-<ul>
-<li><p class="first">Launch instance and wait for the build to be deployed (~ 5-10 minutes).</p>
-<blockquote>
-<div><p>Note: During the build process: <code class="docutils literal notranslate"><span class="pre">scheduling--&gt;building--&gt;spawning--&gt;deploying--&gt;Networking--&gt;N/A</span></code>; Be patient! Don’t reload!. Once the virtual machine is ready, the “Activity” column will show “N/A” and the “Status” column will turn green and “Active”.</p>
-</div></blockquote>
-</li>
+<ul class="simple">
+<li>Launch instance and wait for the build to be deployed (~ 5-10 minutes).</li>
 </ul>
+<blockquote>
+<div>Note: During the build process: <code class="docutils literal notranslate"><span class="pre">scheduling--&gt;building--&gt;spawning--&gt;deploying--&gt;Networking--&gt;N/A</span></code>; Be patient! Don’t reload!. Once the virtual machine is ready, the “Activity” column will show “N/A” and the “Status” column will turn green and “Active”.</div></blockquote>
 <p><img alt="_images/login9.png" src="_images/login9.png" /></p>
 <ul class="simple">
-<li>Navigate back to ‘Projects’ and click on your new instance’s name to see more information related to the instance you just created!</li>
-<li>Copy the IP address of your instance.</li>
+<li><strong>Navigate back to ‘Projects’ and click on your new instance’s name to see more information related to the instance you just created! and Copy the IP address of your instance created.</strong></li>
 </ul>
+<blockquote>
+<div><strong>Great! We have now built our very own remote virtual machine with all the software pre-installed. Next we will use SSH-Secure-Login to access these remote instances from our laptop’s and start Snakemaking !!!.</strong></div></blockquote>
 </div>
 <div class="section" id="ssh-secure-login">
 <h1>27. SSH Secure-Login<a class="headerlink" href="#ssh-secure-login" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div>MACOS &amp; LINUX users can open a Terminal window and Windows users start a new session in <a class="reference external" href="http://mobaxterm.mobatek.net/download-home-edition.html">mobaxterm home edition</a></div></blockquote>
 <ul class="simple">
-<li>Start a new session; Fill in your “remote host” the IP address of your virtual machine. Then select “specify username” and enter your cyverse username; Click OK.</li>
+<li>MACOS &amp; LINUX users can open a Terminal window now.</li>
+<li>Windows users start a new session in <a class="reference external" href="http://mobaxterm.mobatek.net/download-home-edition.html">mobaxterm</a><ul>
+<li>Start a new session; Fill in your “remote host” the IP address of your virtual machine; select “specify username” and enter your cyverse username; Click OK.</li>
 </ul>
-<ul class="simple">
-<li>Establish a secure-login to the instance by typing the following:</li>
+</li>
+<li><strong>Establish a secure-login to the instance by typing the following:</strong></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">your_cyverseusername</span><span class="nd">@ip_address</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh your_cyverseusername@ip_address
 </pre></div>
 </div>
 <ul class="simple">
-<li>This should log you into CyVerse and you should see a screen like this:</li>
-<li>Enter ‘yes’ and then you will be asked for your CyVerse password.</li>
+<li><strong>This should log you into CyVerse and you should see a screen like this; Enter ‘yes’ and then enter your CyVerse password.</strong></li>
 </ul>
 <blockquote>
 <div>Your cursor will not move or indicate you are typing as you enter your password. If you make a mistake, hit enter and you will be prompted again.</div></blockquote>
 <p><img alt="_images/ssh_pass.png" src="_images/ssh_pass.png" /></p>
+<blockquote>
+<div><strong>Success !!! We have established connections with our instances. Proceed to the Tutorial section.</strong></div></blockquote>
 </div>
 <div class="section" id="instance-maintenance">
 <h1>28. Instance Maintenance<a class="headerlink" href="#instance-maintenance" title="Permalink to this headline">¶</a></h1>
@@ -229,36 +220,39 @@
 <h2>28.1. Atmosphere Dashboard<a class="headerlink" href="#atmosphere-dashboard" title="Permalink to this headline">¶</a></h2>
 <p><img alt="_images/atmosphere_dashboard.png" src="_images/atmosphere_dashboard.png" /></p>
 </div>
-<div class="section" id="delete-instance">
-<h2>28.2. Delete Instance<a class="headerlink" href="#delete-instance" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>To completely remove your instance, you can select the “Delete” button from the instance details page.</li>
-<li>This will open up a dialogue window. Select the “Yes, delete this instance” button.</li>
-<li>It may take Atmosphere a few minutes to process your request. The instance should disappear from the project when it has been successfully deleted.</li>
-</ul>
-<p><img alt="_images/delete.png" src="_images/delete.png" /></p>
-</div>
 <div class="section" id="suspend-instance">
-<h2>28.3. Suspend Instance<a class="headerlink" href="#suspend-instance" title="Permalink to this headline">¶</a></h2>
+<h2>28.2. Suspend Instance<a class="headerlink" href="#suspend-instance" title="Permalink to this headline">¶</a></h2>
 <p><img alt="_images/suspend.png" src="_images/suspend.png" /></p>
 <p><strong>Note: It is advisable to delete the machine if you are not planning to use it in future to save valuable resources. However if you want to use it in future, you can suspend it. Notice: IP address changes</strong></p>
+</div>
+<div class="section" id="delete-instance">
+<h2>28.3. Delete Instance<a class="headerlink" href="#delete-instance" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>To completely remove your instance, you can select the “Delete” button from the instance details page.</strong></li>
+<li><strong>This will open up a dialogue window. Select the “Yes, delete this instance” button.</strong></li>
+<li><strong>It may take Atmosphere a few minutes to process your request. The instance should disappear from the project when it has been successfully deleted.</strong></li>
+</ul>
+<p><img alt="_images/delete.png" src="_images/delete.png" /></p>
 </div>
 </div>
 <div class="section" id="additional-features">
 <h1>29. Additional Features<a class="headerlink" href="#additional-features" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="did-you-know-you-can-access-a-shell-terminal-via-your-browser">
+<h2>29.1. Did you know you can access a shell terminal via your browser ???<a class="headerlink" href="#did-you-know-you-can-access-a-shell-terminal-via-your-browser" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="web-shell">
-<h2>29.1. Web Shell<a class="headerlink" href="#web-shell" title="Permalink to this headline">¶</a></h2>
+<h3>29.1.1. Web Shell<a class="headerlink" href="#web-shell" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Access Command-Line Directly from your browser</li>
 </ul>
 <p><img alt="_images/webshell.png" src="_images/webshell.png" /></p>
 </div>
 <div class="section" id="web-desktop">
-<h2>29.2. Web Desktop<a class="headerlink" href="#web-desktop" title="Permalink to this headline">¶</a></h2>
+<h3>29.1.2. Web Desktop<a class="headerlink" href="#web-desktop" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Access your instance through a web desktop version from your browser</li>
 </ul>
 <p><img alt="_images/webdesktop.png" src="_images/webdesktop.png" /></p>
+</div>
 </div>
 </div>
 <div class="section" id="advanced-topics">
@@ -266,9 +260,9 @@
 <div class="section" id="atmosphere-advanced-topics">
 <h2>30.1. <a class="reference external" href="https://snakemake2019.readthedocs.io/en/latest/advanced_atmosphere.html">Atmosphere Advanced Topics</a><a class="headerlink" href="#atmosphere-advanced-topics" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Transferring Data to and from an Instance</li>
-<li>Creating custom Atmosphere Images</li>
-<li>ssh-rsa-key for password-less login</li>
+<li>How do I transfer Data to and from this remote instance?</li>
+<li>How can I create custom Atmosphere Images for my personal use?</li>
+<li>How can I add ‘ssh-rsa-key’ to Atmosphere for password-less easy login?</li>
 </ul>
 </div>
 </div>

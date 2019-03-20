@@ -7,6 +7,7 @@ Reproducible Workflows using Snakemake and Singularity
 > **Singularity is an open source-based container platform designed for scientific and high-performance computing (HPC) environments. Singularity supports Bring Your Own Environment (BYOE)—where entire Singularity environments can be transported between computational resources (e.g., users’ PCs) with reproducibility.**
 
 + Basic [**UNIX command-line**](http://linuxcommand.org/lc3_learning_the_shell.php) experience required. [Bootcamp](http://rik.smith-unna.com/command_line_bootcamp/?id=6oprpl4mlf4)
++ WINDOWS users can download UNIX-terminal interface **mobaxterm** [here](http://mobaxterm.mobatek.net/download-home-edition.html)
 + You don't need to be an expert at Python to use Snakemake, but it can sometimes be very useful.
 
 > No license; the below content is available under CC0 general license.
@@ -15,7 +16,7 @@ Reproducible Workflows using Snakemake and Singularity
 
 # Introduction
 
-> [**What...Why...How???**](https://snakemake2019.readthedocs.io/en/latest/introduction.html)
+> [**What...Why???**](https://snakemake2019.readthedocs.io/en/latest/introduction.html)
 
 # Snakemake Intro Tutorial using Binder
 
@@ -28,8 +29,8 @@ Reproducible Workflows using Snakemake and Singularity
  + Understand how snakemake manages dependencies and outputs
 
 > **Note:**
-  + No setup necessary
-  + Does not support 'Singularity' container execution
+  + **No setup necessary**
+  + **Does not support 'Singularity' container execution**
 
 > **Click on this [![](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/binder?urlpath=rstudio) button to launch a Binder rendered as Rstudio interface pre-configured with conda and Snakemake.**
 
@@ -41,20 +42,19 @@ Reproducible Workflows using Snakemake and Singularity
 # Snakemake Tutorial on Cyverse Cloud
 
 > **Note:**
-  + Requires access to [CyVerse Atmosphere]()
-  + Supports 'Singularity' container execution
-
+  + **Requires access to [CyVerse Atmosphere](https://snakemake2019.readthedocs.io/en/latest/Atmosphere_Cloud.html)**
+  + **Supports 'Singularity' container execution**
 
 ![](/img/cloud_computing.png)
 
-> [**Click here for a guided tutorial on Running Snakemake jobs using Singularity Containers in Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/smake_cyverse.html)
+> [**Click here for Snakemake Tutorial using Singularity Containers in Atmosphere**](https://snakemake2019.readthedocs.io/en/latest/smake_cyverse.html)
 
 ## Tutorial on Jetstream cloud
 
 # Working Locally
 
 > **Click [here](https://snakemake2019.readthedocs.io/en/latest/local_install.html) for local setup instructions.**
-> > Requires *Administrator* privileges
+> > Requires *Administrator* privileges for Singularity installation.
 
 # Awesome
 
