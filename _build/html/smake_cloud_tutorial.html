@@ -138,27 +138,27 @@
 </div>
 <div class="section" id="activate-conda">
 <h1>40. Activate Conda<a class="headerlink" href="#activate-conda" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/opt/miniconda3/bin &gt;&gt; ~/.bashrc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">echo</span> <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/opt/miniconda3/bin &gt;&gt; ~/.bashrc
 </pre></div>
 </div>
 <ul class="simple">
 <li>Then, run the following command (or start a new terminal session) in order to activate the conda environment:</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.bashrc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">source</span> ~/.bashrc
 </pre></div>
 </div>
 <ul class="simple">
 <li>Add channels</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --add channels defaults
-conda config --add channels conda-forge
-conda config --add channels bioconda
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda config --add channels defaults
+$ conda config --add channels conda-forge
+$ conda config --add channels bioconda
 </pre></div>
 </div>
 <ul class="simple">
 <li>Try running the following UNIX command ‘which’, which returns the pathnames of the files (or links) which would be executed in the current environment:</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which snakemake
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ which snakemake
 </pre></div>
 </div>
 <blockquote>
@@ -166,8 +166,8 @@ conda config --add channels bioconda
 <ul class="simple">
 <li>Check if singularity is available in your $PATH and print version:</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which singularity
-singularity --version
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ which singularity
+$ singularity --version
 </pre></div>
 </div>
 <blockquote>
@@ -175,12 +175,12 @@ singularity --version
 </div>
 <div class="section" id="download-data">
 <h1>41. Download data<a class="headerlink" href="#download-data" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir data
-<span class="nb">cd</span> data/
-curl -L https://osf.io/er5tb/download -o data.zip
-unzip data.zip
-rm data.zip
-<span class="nb">cd</span> ..
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir data
+$ <span class="nb">cd</span> data/
+$ curl -L https://osf.io/er5tb/download -o data.zip
+$ unzip data.zip
+$ rm data.zip
+$ <span class="nb">cd</span> ..
 </pre></div>
 </div>
 </div>
@@ -193,8 +193,8 @@ rm data.zip
 </pre></div>
 </div>
 <blockquote>
-<div>click on the link generated to open Rstudio in your browser and login with your CyVerse credentials.
-<img alt="_images/rstudio_interface.png" src="_images/rstudio_interface.png" /></div></blockquote>
+<div>click on the link generated to open Rstudio in your browser and login with your CyVerse credentials.</div></blockquote>
+<p><img alt="_images/rstudio_interface.png" src="_images/rstudio_interface.png" /></p>
 </div>
 <div class="section" id="run-snakemake">
 <h1>43. Run snakemake<a class="headerlink" href="#run-snakemake" title="Permalink to this headline">¶</a></h1>
@@ -243,7 +243,7 @@ rm data.zip
 </ul>
 </li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake --use-singularity
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ snakemake --use-singularity
 </pre></div>
 </div>
 <blockquote>
@@ -251,7 +251,7 @@ rm data.zip
 </div>
 <div class="section" id="visualize-workflow">
 <h1>44. Visualize Workflow<a class="headerlink" href="#visualize-workflow" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake --dag <span class="p">|</span> dot -Tpng &gt; dag.png
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ snakemake --dag <span class="p">|</span> dot -Tpng &gt; dag.png
 </pre></div>
 </div>
 <ul class="simple">
@@ -260,7 +260,7 @@ rm data.zip
 </div>
 <div class="section" id="generate-report">
 <h1>45. Generate Report<a class="headerlink" href="#generate-report" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake --report report.html
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ snakemake --report report.html
 </pre></div>
 </div>
 <blockquote>

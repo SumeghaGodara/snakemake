@@ -40,7 +40,7 @@ Accessing The Atmosphere Cloud
 
 ![](/img/atmosphere/login7.png)
 
-- **You will be presented with basic options to configure your virtual machine here:
+**You will be presented with options to choose and configure your virtual machine here:
 
 	+ Instance Name: e.x., "Smake-Tutorial" or you can leave it default which is the image name.
 
@@ -56,7 +56,7 @@ Accessing The Atmosphere Cloud
 
 ![](/img/atmosphere/login8.png)
 
-- Launch instance and wait for the build to be deployed (~ 5-10 minutes).
+- **Launch instance and wait for the build to be deployed (~ 5-10 minutes).**
 
 > Note: During the build process: `scheduling-->building-->spawning-->deploying-->Networking-->N/A`; Be patient! Don't reload!. Once the virtual machine is ready, the "Activity" column will show "N/A" and the "Status" column will turn green and "Active".
 
@@ -71,6 +71,7 @@ Accessing The Atmosphere Cloud
 - MACOS & LINUX users can open a Terminal window now.
 - Windows users start a new session in [mobaxterm](http://mobaxterm.mobatek.net/download-home-edition.html)
 	+ Start a new session; Fill in your "remote host" the IP address of your virtual machine; select "specify username" and enter your cyverse username; Click OK.
+
 
 - **Establish a secure-login to the instance by typing the following:**
 
@@ -109,7 +110,7 @@ $ ssh your_cyverseusername@ip_address
 
 # Additional Features
 
-## Did you know you can access a shell terminal via your browser ???
+## Did you know you can access a shell terminal and a web-desktop via your browser ???
 
 #### Web Shell
 
@@ -126,6 +127,6 @@ $ ssh your_cyverseusername@ip_address
 # Advanced Topics
 
 #### [Atmosphere Advanced Topics](https://snakemake2019.readthedocs.io/en/latest/advanced_atmosphere.html)
- + How do I transfer Data to and from this remote instance?
+ + How do I transfer Data to and from my remote instances on Atmosphere?
  + How can I create custom Atmosphere Images for my personal use?
- + How can I add 'ssh-rsa-key' to Atmosphere for password-less easy login?
+ + How can I add 'ssh-rsa-key' to Atmosphere for password-less login?

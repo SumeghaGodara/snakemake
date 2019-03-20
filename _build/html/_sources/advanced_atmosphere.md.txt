@@ -98,10 +98,9 @@ wget https://download2.rstudio.org/rstudio-server-1.1.463-amd64.deb
 gdebi -n rstudio-server-1.1.463-amd64.deb
 
 RSTUDIO_LATEST=$(wget --no-check-certificate -qO- https://s3.amazonaws.com/rstudio-server/current.ver)
-```
 
 `echo http://$(hostname):8787/`
-
+```
 
 # ssh-rsa-key for password-less login
 

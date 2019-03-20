@@ -103,8 +103,8 @@
 <li>We recommend installing <a class="reference external" href="https://conda.io/en/latest/"><strong>conda</strong></a>, an open source package management system and environment management system that runs on Windows, macOS and Linux.</li>
 <li>Download and install conda:</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -O -L https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -O -L https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+$ bash Miniconda3-latest-Linux-x86_64.sh
 </pre></div>
 </div>
 <blockquote>
@@ -112,34 +112,34 @@ bash Miniconda3-latest-Linux-x86_64.sh
 <ul class="simple">
 <li>When the installation is complete and the regular prompt returns, run the following command (or start a new terminal session) in order to activate the conda environment:</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.bashrc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">source</span> ~/.bashrc
 </pre></div>
 </div>
 <ul class="simple">
 <li>Next, enable various “channels” for software install, including bioconda:</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --add channels defaults
-conda config --add channels conda-forge
-conda config --add channels bioconda
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda config --add channels defaults
+$ conda config --add channels conda-forge
+$ conda config --add channels bioconda
 </pre></div>
 </div>
 <ul class="simple">
 <li>Next, download conda ‘environment.yml’ file, designed for this tutorial <a class="reference external" href="https://github.com/sateeshperi/snakemake2019/blob/master/binder/environment.yml">here</a></li>
 <li>Install tools in a new conda environment ‘smake’ using downloaded environment file</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env create --file environment.yml -n smake
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda env create --file environment.yml -n smake
 </pre></div>
 </div>
 <ul class="simple">
 <li>To activate the environment for tutorial</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate smake
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda activate smake
 </pre></div>
 </div>
 <ul class="simple">
 <li>To deactivate environment after use</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda deactivate
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda deactivate
 </pre></div>
 </div>
 <ul class="simple">

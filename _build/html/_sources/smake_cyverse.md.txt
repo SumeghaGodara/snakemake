@@ -6,7 +6,6 @@ Snakemake Tutorial on CyVerse cloud
  + Launch and work on remote instances (virtual machines) with pre-built images
  +
 
-
 > **To run Snakemake jobs via [Singularity](https://singularity-hub.org/) / [Docker](https://hub.docker.com/) containers in the cloud, we recommend [Atmosphere](https://www.cyverse.org/atmosphere), CyVerse's cloud-computing platform which provides easy-to-use web-access to cloud resources and is designed to accommodate computationally and data-intensive tasks.**
 
 ![](/img/cloud_computing.png)

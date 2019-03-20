@@ -150,7 +150,7 @@
 <li><a class="reference external" href="https://mybinder.org/v2/gh/sateeshperi/snakemake2019.git/binder?urlpath=rstudio"><img alt="https://mybinder.org/badge_logo.svg" src="https://mybinder.org/badge_logo.svg" />Binder</a></li>
 <li>We’re mostly going to work in the file editor and the terminal of Rstudio; to get started, open the terminal, and execute following to to get a shorter terminal prompt.</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;$ &#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;$ &#39;</span>
 </pre></div>
 </div>
 <p><img alt="_images/rstudio_interface.png" src="_images/rstudio_interface.png" /></p>
@@ -174,7 +174,7 @@
 <li>Then save it as a file named <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code>.</li>
 <li>Now, run snakemake:</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ snakemake
 </pre></div>
 </div>
 <ul class="simple">
@@ -227,7 +227,7 @@ Complete log: /home/jovyan/.snakemake/log/2019-02-27T130941.260352.snakemake.log
 <ul class="simple">
 <li>Now run:</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ snakemake
 </pre></div>
 </div>
 <p>and you should see:</p>
@@ -247,14 +247,14 @@ Complete log: /home/jovyan/.snakemake/log/2019-02-27T132031.813143.snakemake.log
 <ul class="simple">
 <li>You can tell snakemake to run the rule no matter what with <code class="docutils literal notranslate"><span class="pre">-f</span></code>:</li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">snakemake</span> <span class="o">-</span><span class="n">f</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ snakemake -f
 </pre></div>
 </div>
 <ul class="simple">
 <li>You can also remove an output file and it will automatically re-run:</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm data/*.html
-snakemake
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rm data/*.html
+$ snakemake
 </pre></div>
 </div>
 <blockquote>
@@ -262,8 +262,8 @@ snakemake
 <ul class="simple">
 <li>You can <em>also</em> update the timestamp on an <em>input</em> file, and snakemake will figure out that the output file is older than the input file, and rerun things.</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch data/*.fq.gz
-snakemake
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ touch data/*.fq.gz
+$ snakemake
 </pre></div>
 </div>
 <p>This will become important later :)</p>
@@ -298,7 +298,7 @@ snakemake
 <ul class="simple">
 <li>Well, <strong>snakemake only runs the <em>first</em> rule in a Snakefile, by default. You can give a rule name on the command line, if you like, or you can tell snakemake what output file(s) you want</strong>. Let’s do the latter:</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake data/0Hour_001_1_fastqc.html data/6Hour_001_1_fastqc.html
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ snakemake data/0Hour_001_1_fastqc.html data/6Hour_001_1_fastqc.html
 </pre></div>
 </div>
 <blockquote>
@@ -408,7 +408,7 @@ snakemake
 </div>
 <p><strong>What we’ve done here is tell snakemake that anytime we say we <em>want</em> a file that ends with <code class="docutils literal notranslate"><span class="pre">_fastqc.html</span></code>, it should look for a file that ends in <code class="docutils literal notranslate"><span class="pre">.fq.gz</span></code> and then run <code class="docutils literal notranslate"><span class="pre">fastqc</span></code> on it.</strong></p>
 <p>Try running this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ snakemake
 </pre></div>
 </div>
 <p><strong>Oh no! We get a <code class="docutils literal notranslate"><span class="pre">AmbiguousRuleException:</span></code>! What’s going on?</strong></p>
@@ -455,7 +455,7 @@ snakemake
 <div class="section" id="rerunning-snakemake">
 <h2>18.2. Rerunning snakemake<a class="headerlink" href="#rerunning-snakemake" title="Permalink to this headline">¶</a></h2>
 <p>Note you can just run snakemake whenever you want. It won’t do anything unless something’s changed.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ snakemake
 </pre></div>
 </div>
 </div>
@@ -466,7 +466,7 @@ snakemake
 <p><strong>Let’s add in a new rule - multiqc, to summarize our fastqc results.</strong></p>
 <p>multiqc takes a directory name under which there are one or more fastqc reports, and then summarizes them.</p>
 <p>Running it on the command line,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>multiqc data
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ multiqc data
 </pre></div>
 </div>
 <p><strong>you can see that it creates two outputs, <code class="docutils literal notranslate"><span class="pre">multiqc_report.html</span></code> and the directory <code class="docutils literal notranslate"><span class="pre">multiqc_data/</span></code> which contains a bunch of files. Let’s create a snakemake rule for this; add:</strong></p>
@@ -480,7 +480,7 @@ snakemake
 </div>
 <p><strong>to the bottom of the file. (Note, you need to tell snakemake if an output is a directory.)</strong></p>
 <p>Now run it:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake run_multiqc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ snakemake run_multiqc
 </pre></div>
 </div>
 <p>This …doesn’t really do what we want, for a few reasons.</p>
@@ -621,8 +621,8 @@ snakemake
 </pre></div>
 </div>
 <p>and we can rerun it from scratch by doing:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm data/*.html multiqc_report.html
-snakemake
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rm data/*.html multiqc_report.html
+$ snakemake
 </pre></div>
 </div>
 </div>
@@ -636,15 +636,15 @@ rerun the workflow.</strong></p>
 <div class="section" id="making-a-clean-rule">
 <h2>19.4. Making a <code class="docutils literal notranslate"><span class="pre">clean</span></code> rule<a class="headerlink" href="#making-a-clean-rule" title="Permalink to this headline">¶</a></h2>
 <p>It’s kind of annoying to have to delete things explicitly. Snakemake should take care of that for us. Let’s add a new rule, <code class="docutils literal notranslate"><span class="pre">clean</span></code>, that forces rerunning of things –</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rule clean:
-  shell:
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">clean</span><span class="p">:</span>
+  <span class="n">shell</span><span class="p">:</span>
     <span class="s2">&quot;rm -f {fastqc_output} multiqc_report.html&quot;</span>
     <span class="s2">&quot;rmdir -fr multiqc_data/&quot;</span>    
 </pre></div>
 </div>
 <p>and now try re-running things:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake -p clean
-snakemake
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ snakemake -p clean
+$ snakemake
 </pre></div>
 </div>
 <p>**A few things to point out:</p>
@@ -665,8 +665,8 @@ snakemake
 </ul>
 <p><strong>but there’s even more practical value in this, too – because we’ve given snakemake a recipe, rather than a script, we can now run these commands in parallel, too!</strong></p>
 <p>Try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake clean
-snakemake -j <span class="m">4</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ snakemake clean
+$ snakemake -j <span class="m">4</span>
 </pre></div>
 </div>
 <p>this will run up to four things in parallel!</p>
@@ -706,8 +706,8 @@ snakemake -j <span class="m">4</span>
 </pre></div>
 </div>
 <p>and re-run everything:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake clean
-snakemake -j <span class="m">4</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ snakemake clean
+$ snakemake -j <span class="m">4</span>
 </pre></div>
 </div>
 <p>and voila - you’ve got a pile of trimmed output files, and a nice multiqc report on pre- and post- quality!</p>
@@ -719,8 +719,8 @@ snakemake -j <span class="m">4</span>
 <div class="section" id="dry-run">
 <h2>20.1. Dry run<a class="headerlink" href="#dry-run" title="Permalink to this headline">¶</a></h2>
 <p><strong>You can use <code class="docutils literal notranslate"><span class="pre">snakemake</span> <span class="pre">-n</span></code> to see what <em>would</em> be run, without actually running it! This is called a “dry run”. This is useful when you have really big compute.</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake clean
-snakemake -n
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ snakemake clean
+$ snakemake -n
 </pre></div>
 </div>
 </div>
@@ -759,7 +759,7 @@ snakemake -n
 </pre></div>
 </div>
 <p>you can now run snakemake like so,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake --use-conda
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ snakemake --use-conda
 </pre></div>
 </div>
 <p><strong>and for that rule, snakemake will install just that software, with the specified version.</strong></p>
@@ -768,7 +768,7 @@ snakemake -n
 <div class="section" id="outputting-the-entire-workflow-diagram">
 <h2>20.4. Outputting the entire workflow diagram<a class="headerlink" href="#outputting-the-entire-workflow-diagram" title="Permalink to this headline">¶</a></h2>
 <p><strong>You can visualize your workflow like so!</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake --dag <span class="p">|</span> dot -Tpng &gt; dag.png
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ snakemake --dag <span class="p">|</span> dot -Tpng &gt; dag.png
 </pre></div>
 </div>
 <ul class="simple">
@@ -783,11 +783,11 @@ snakemake -n
 <ul class="simple">
 <li>To create the report simply run</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake --report report.html
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ snakemake --report report.html
 </pre></div>
 </div>
 <ul class="simple">
-<li>Sample report here</li>
+<li>Sample report here(xyz)</li>
 </ul>
 </div>
 <div class="section" id="adding-in-some-python">

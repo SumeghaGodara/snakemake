@@ -17,47 +17,47 @@ Snakemake Tutorial on Atmosphere Cloud
 # Activate Conda
 
 ```bash
-echo export PATH=$PATH:/opt/miniconda3/bin >> ~/.bashrc
+$ echo export PATH=$PATH:/opt/miniconda3/bin >> ~/.bashrc
 ```
 
 - Then, run the following command (or start a new terminal session) in order to activate the conda environment:
 
 ```bash
-source ~/.bashrc
+$ source ~/.bashrc
 ```
 
 - Add channels
 
 ```bash
-conda config --add channels defaults
-conda config --add channels conda-forge
-conda config --add channels bioconda
+$ conda config --add channels defaults
+$ conda config --add channels conda-forge
+$ conda config --add channels bioconda
 ```
 
 - Try running the following UNIX command 'which', which returns the pathnames of the files (or links) which would be executed in the current environment:
 
 ```bash
-which snakemake
+$ which snakemake
 ```
 > it should show the absolute path of snakemake as '/opt/miniconda3/bin/snakemake'
 
 - Check if singularity is available in your $PATH and print version:
 
 ```bash
-which singularity
-singularity --version
+$ which singularity
+$ singularity --version
 ```
 > It should show the absolute path of singularity '/usr/local/bin/singularity'
 
 # Download data
 
 ```bash
-mkdir data
-cd data/
-curl -L https://osf.io/er5tb/download -o data.zip
-unzip data.zip
-rm data.zip
-cd ..
+$ mkdir data
+$ cd data/
+$ curl -L https://osf.io/er5tb/download -o data.zip
+$ unzip data.zip
+$ rm data.zip
+$ cd ..
 ```
 
 # Open Rstudio
@@ -67,6 +67,7 @@ cd ..
 echo http://$(hostname):8787/
 ```
 > click on the link generated to open Rstudio in your browser and login with your CyVerse credentials.
+
 ![](/img/rstudio_interface.png)
 
 # Run snakemake
@@ -113,7 +114,7 @@ rule clean:
 - - Save the file as `Snakefile`and execute Snakemake in your terminal by:
 
 ```bash
-snakemake --use-singularity
+$ snakemake --use-singularity
 ```
 
 > **Snakemake will pull the containers and execute each rule individually in the containers specified**
@@ -121,14 +122,14 @@ snakemake --use-singularity
 # Visualize Workflow
 
 ```bash
-snakemake --dag | dot -Tpng > dag.png
+$ snakemake --dag | dot -Tpng > dag.png
 ```
 - Click on the dag.png image in FIle Explorer and open in web-browser
 
 # Generate Report
 
 ```bash
-snakemake --report report.html
+$ snakemake --report report.html
 ```
 
 > **EXERCISE**: Write a snakemake rule to download data and unzip it (as we did earlier using bash commands) and save it to your workflow.

@@ -5,7 +5,7 @@ Snakemake Basic Tutorial
 
 - We're mostly going to work in the file editor and the terminal of Rstudio; to get started, open the terminal, and execute following to to get a shorter terminal prompt.
 ```bash
-PS1='$ '
+$ PS1='$ '
 ```
 ![](/img/rstudio_interface.png)
 
@@ -27,11 +27,13 @@ rule fastqc_a_file:
 - Then save it as a file named `Snakefile`.
 
 - Now, run snakemake:
+
 ```bash
-snakemake
+$ snakemake
 ```
 
 - and you should see:
+
 ```bash
 Building DAG of jobs...
 Using shell: /bin/bash
@@ -45,6 +47,7 @@ Finished job 0.
 1 of 1 steps (100%) done
 Complete log: /home/jovyan/.snakemake/log/2019-02-27T130941.260352.snakemake.log
 ```
+
 > Upon execution there will be two new files, '0Hour_001_1_fastqc.html' & '0Hour_001_1_fastqc.zip'
 
 > Note: snakemake configuration file is by default called `Snakefile`
@@ -77,8 +80,9 @@ rule fastqc_a_file:
 > Question: how do we know what the output files are?
 
 - Now run:
+
 ```bash
-snakemake
+$ snakemake
 ```
 
 and you should see:
@@ -96,22 +100,22 @@ Complete log: /home/jovyan/.snakemake/log/2019-02-27T132031.813143.snakemake.log
 - You can tell snakemake to run the rule no matter what with `-f`:
 
 ```
-snakemake -f
+$ snakemake -f
 ```
 
 - You can also remove an output file and it will automatically re-run:
 
 ```bash
-rm data/*.html
-snakemake
+$ rm data/*.html
+$ snakemake
 ```
 > Note that you don't need to remove *all* the output files to rerun a command - just remove *one* of them.
 
 - You can *also* update the timestamp on an *input* file, and snakemake will figure out that the output file is older than the input file, and rerun things.
 
 ```bash
-touch data/*.fq.gz
-snakemake
+$ touch data/*.fq.gz
+$ snakemake
 ```
 
 This will become important later :)
@@ -145,7 +149,7 @@ rule fastqc_a_file2:
 - Well, **snakemake only runs the *first* rule in a Snakefile, by default. You can give a rule name on the command line, if you like, or you can tell snakemake what output file(s) you want**. Let's do the latter:
 
 ```bash
-snakemake data/0Hour_001_1_fastqc.html data/6Hour_001_1_fastqc.html
+$ snakemake data/0Hour_001_1_fastqc.html data/6Hour_001_1_fastqc.html
 ```
 
 > and now you should see the second fastqc command run, with the appropriate output files!
@@ -263,7 +267,7 @@ rule fastqc_a_file2:
 
 Try running this:
 ```bash
-snakemake
+$ snakemake
 ```
 
 **Oh no! We get a `AmbiguousRuleException:`! What's going on?**
@@ -318,7 +322,7 @@ rule fastqc_a_file:
 Note you can just run snakemake whenever you want. It won't do anything unless something's changed.
 
 ```bash
-snakemake
+$ snakemake
 ```
 
 # Building out the workflow
@@ -331,7 +335,7 @@ multiqc takes a directory name under which there are one or more fastqc reports,
 
 Running it on the command line,
 ```bash
-multiqc data
+$ multiqc data
 ```
 **you can see that it creates two outputs, `multiqc_report.html` and the directory `multiqc_data/` which contains a bunch of files. Let's create a snakemake rule for this; add:**
 
@@ -347,7 +351,7 @@ rule run_multiqc:
 
 Now run it:
 ```bash
-snakemake run_multiqc
+$ snakemake run_multiqc
 ```
 
 This ...doesn't really do what we want, for a few reasons.
@@ -512,8 +516,8 @@ rule run_multiqc:
 and we can rerun it from scratch by doing:
 
 ```bash
-rm data/*.html multiqc_report.html
-snakemake
+$ rm data/*.html multiqc_report.html
+$ snakemake
 ```
 
 ### Digression: what files does snakemake check in order to decide about rerunning?
@@ -529,7 +533,7 @@ rerun the workflow.**
 
 It's kind of annoying to have to delete things explicitly. Snakemake should take care of that for us. Let's add a new rule, `clean`, that forces rerunning of things --
 
-```bash
+```python
 rule clean:
   shell:
     "rm -f {fastqc_output} multiqc_report.html"
@@ -539,8 +543,8 @@ rule clean:
 and now try re-running things:
 
 ```bash
-snakemake -p clean
-snakemake
+$ snakemake -p clean
+$ snakemake
 ```
 
 **A few things to point out:
@@ -563,8 +567,8 @@ So, we've put all this work into making this snakefile with its input rules and 
 Try:
 
 ```bash
-snakemake clean
-snakemake -j 4
+$ snakemake clean
+$ snakemake -j 4
 ```
 
 this will run up to four things in parallel!
@@ -609,8 +613,8 @@ fastqc_output = ["data/0Hour_001_1_fastqc.html", "data/6Hour_001_1_fastqc.html",
 and re-run everything:
 
 ```bash
-snakemake clean
-snakemake -j 4
+$ snakemake clean
+$ snakemake -j 4
 ```
 
 and voila - you've got a pile of trimmed output files, and a nice multiqc report on pre- and post- quality!
@@ -624,8 +628,8 @@ and voila - you've got a pile of trimmed output files, and a nice multiqc report
 **You can use `snakemake -n` to see what *would* be run, without actually running it! This is called a "dry run". This is useful when you have really big compute.**
 
 ```bash
-snakemake clean
-snakemake -n
+$ snakemake clean
+$ snakemake -n
 ```
 
 ### Running things in parallel, revisited
@@ -668,7 +672,7 @@ rule fastqc_a_file:
 you can now run snakemake like so,
 
 ```bash
-snakemake --use-conda
+$ snakemake --use-conda
 ```
 **and for that rule, snakemake will install just that software, with the specified version.**
 
@@ -680,7 +684,7 @@ snakemake --use-conda
 **You can visualize your workflow like so!**
 
 ```bash
-snakemake --dag | dot -Tpng > dag.png
+$ snakemake --dag | dot -Tpng > dag.png
 ```
 - The DAG png file should look something like this,
 ![](/img/dag.png)
@@ -691,10 +695,10 @@ snakemake --dag | dot -Tpng > dag.png
 
 - To create the report simply run
 ```bash
-snakemake --report report.html
+$ snakemake --report report.html
 ```
 
-- Sample report here
+- Sample report here(xyz)
 
 ### Adding in some Python...
 

@@ -215,9 +215,10 @@ wget https://download2.rstudio.org/rstudio-server-1.1.463-amd64.deb
 gdebi -n rstudio-server-1.1.463-amd64.deb
 
 RSTUDIO_LATEST=$(wget --no-check-certificate -qO- https://s3.amazonaws.com/rstudio-server/current.ver)
+
+`echo http://$(hostname):8787/`
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">http://$(hostname):8787/</span></code></p>
 </div>
 <div class="section" id="ssh-rsa-key-for-password-less-login">
 <h1>34. ssh-rsa-key for password-less login<a class="headerlink" href="#ssh-rsa-key-for-password-less-login" title="Permalink to this headline">¶</a></h1>
