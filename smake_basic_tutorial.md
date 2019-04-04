@@ -92,8 +92,8 @@ Nothing to be done.
 Complete log: /home/jovyan/.snakemake/log/2019-02-27T132031.813143.snakemake.log
 ```
 
-> What happened??
-> >snakemake looked at the file, saw that the output files existed, and figured out that it didn't need to do anything!
+> **What happened??**
+> > snakemake looked at the file, saw that the output files existed, and figured out that it didn't need to do anything!
 
 ### Forcibly re-running things
 
@@ -109,7 +109,7 @@ $ snakemake -f
 $ rm data/*.html
 $ snakemake
 ```
-> Note that you don't need to remove *all* the output files to rerun a command - just remove *one* of them.
+> **Note that you don't need to remove *all* the output files to rerun a command - just remove *one* of them.**
 
 - You can *also* update the timestamp on an *input* file, and snakemake will figure out that the output file is older than the input file, and rerun things.
 
@@ -118,7 +118,7 @@ $ touch data/*.fq.gz
 $ snakemake
 ```
 
-This will become important later :)
+> This will become important later :)
 
 # Multiple rules
 
@@ -149,7 +149,7 @@ rule fastqc_a_file2:
 - Well, **snakemake only runs the *first* rule in a Snakefile, by default. You can give a rule name on the command line, if you like, or you can tell snakemake what output file(s) you want**. Let's do the latter:
 
 ```bash
-$ snakemake data/0Hour_001_1_fastqc.html data/6Hour_001_1_fastqc.html
+$ snakemake fastqc_a_file2
 ```
 
 > and now you should see the second fastqc command run, with the appropriate output files!
@@ -157,8 +157,8 @@ $ snakemake data/0Hour_001_1_fastqc.html data/6Hour_001_1_fastqc.html
 > **Note that snakemake only runs the second rule, because it looks at the output files and sees that the first file you wanted, `0Hour_001_1_fastqc.html` already exists!**
 
 > Points to note:
-  * this is pretty long compared to the same shell script...
-  * specifying which file or rule you want is kind of annoying...
+  * this Snakefile is pretty long compared to the same shell script...
+  * specifying which file or rule you want to run explicitly is kind of annoying...
 
 # A first refactoring: adding a better default rule
 
@@ -191,13 +191,12 @@ rule fastqc_a_file2:
     "fastqc data/6Hour_001_1.fq.gz"
 ```
 
-**this rule, by convention called `all`, is a default rule that produces all the output files. But it's a bit weird! It's all input, and no output!**
+> **this rule, by convention called `all`, is a default rule that produces all the output files. But it's a bit weird! It's all input, and no output!**
 
-**This is a blank rule that gathers together all of the various files you want produced, and says "hey, snakemake, I depend on all of these files for my input - make them for me!" And then, once those files are all there, it ...does nothing.**
+> **This is a blank rule that gathers together all of the various files you want produced, and says "hey, snakemake, I depend on all of these files for my input - make them for me!" And then, once those files are all there, it ...does nothing.**
+> > *Yep, this is perfectly legal in snakemake, and it's one way to make your life easier.*
 
-Yep, this is perfectly legal in snakemake, and it's one way to make your life easier.
-
-Note that `snakemake -f` no longer works properly, because `-f` only forces rerunning a single rule. To rerun everything, you can run `touch data/*.fq.gz` to make all the output files stale; or `rm data/*.html` to remove some of the output files.
+- Note that `snakemake -f` no longer works properly, because `-f` only forces rerunning a single rule. To rerun everything, you can run `touch data/*.fq.gz` to make all the output files stale; or `rm data/*.html` to remove some of the output files.
 
 # A second refactoring: doing a bit of templating
 
@@ -228,15 +227,15 @@ rule fastqc_a_file2:
     "fastqc {input}"
 ```
 
-This all works as before, but now the rule is a bit more generic and will work with any input file. Sort of.
+> **This all works as before, but now the rule is a bit more generic and will work with any input file. Sort of.**
 
 # Refactoring 3: templating output files, too
 
-What do I mean, sort of?
+> What do I mean, sort of?
 
-Well, the output **filenames ALSO depend on the input file names in some way - specifically, fastqc replace part of the filename with `_fastqc.html` and `_fastqc.zip` to make its two output files.**
+> Well, the output **filenames ALSO depend on the input file names in some way - specifically, fastqc replace part of the filename with `_fastqc.html` and `_fastqc.zip` to make its two output files.**
 
-Let's rewrite the rule using some **snakemake pattern matching**:
+- Let's rewrite the rule using some **snakemake pattern matching**:
 
 ```python
 rule all:
@@ -263,18 +262,18 @@ rule fastqc_a_file2:
     "fastqc {input}"
 ```
 
-**What we've done here is tell snakemake that anytime we say we *want* a file that ends with `_fastqc.html`, it should look for a file that ends in `.fq.gz` and then run `fastqc` on it.**
+> **What we've done here is tell snakemake that anytime we say we *want* a file that ends with `_fastqc.html`, it should look for a file that ends in `.fq.gz` and then run `fastqc` on it.**
 
-Try running this:
+- Try running this:
 ```bash
 $ snakemake
 ```
 
-**Oh no! We get a `AmbiguousRuleException:`! What's going on?**
+> **Oh no! We get a `AmbiguousRuleException:`! What's going on?**
 
-**Well, if you look at the rule above, we've given snakemake two different rules to produce the same file(s)! `fastqc_a_file` and `fastqc_a_file2` are now identical rules! snakemake doesn't like that.**
+> **Well, if you look at the rule above, we've given snakemake two different rules to produce the same file(s)! `fastqc_a_file` and `fastqc_a_file2` are now identical rules! snakemake doesn't like that.**
 
-Let's remove one, to get a trimmer, leaner, and above all *functional* snakefile:
+- Let's remove one, to get a trimmer, leaner, and above all *functional* snakefile:
 
 ```python
 rule all:
@@ -296,9 +295,9 @@ rule fastqc_a_file:
 
 ### Adding some more files
 
-Now here's the fun bit -- if you look in the data directory, you'll see that there are actually 8 files in there. Let's modify the snakefile to run fastqc on all of them!
+> Now here's the fun bit -- if you look in the data directory, you'll see that there are actually 8 files in there. Let's modify the snakefile to run fastqc on all of them!
 
-How should we do that? (Give it a try!)
+- How should we do that? (Give it a try!)
 
 ```python
 rule all:
@@ -319,7 +318,7 @@ rule fastqc_a_file:
 
 ### Rerunning snakemake
 
-Note you can just run snakemake whenever you want. It won't do anything unless something's changed.
+> Note you can just run snakemake whenever you want. It won't do anything unless something's changed.
 
 ```bash
 $ snakemake
@@ -327,13 +326,13 @@ $ snakemake
 
 # Building out the workflow
 
-So, we've gotten fastqc sorted out. What's next?
+- So, we've gotten fastqc sorted out. What's next?
 
 **Let's add in a new rule - multiqc, to summarize our fastqc results.**
 
-multiqc takes a directory name under which there are one or more fastqc reports, and then summarizes them.
+- multiqc takes a directory name under which there are one or more fastqc reports, and then summarizes them.
 
-Running it on the command line,
+- Running it on the command line,
 ```bash
 $ multiqc data
 ```
@@ -347,27 +346,24 @@ rule run_multiqc:
   shell:
     "multiqc data/"
 ```
-**to the bottom of the file. (Note, you need to tell snakemake if an output is a directory.)**
+> **to the bottom of the file. (Note, you need to tell snakemake if an output is a directory.)**
 
-Now run it:
+- Now run it:
 ```bash
 $ snakemake run_multiqc
 ```
 
-This ...doesn't really do what we want, for a few reasons.
+> **This ...doesn't really do what we want, for a few reasons.**
+  1. **you have to specify the rule name or else snakemake doesn't run anything. How do we fix this??**
+  2. **`multiqc_report.html` already exists, so snakemake doesn't run the rule. How do we actually test the rule??**
+  3. **the multiqc rule has no input dependencies. How do we specify them??**
 
-**First of all, you have to specify the rule name or else snakemake doesn't run anything.** **How do we fix this??**
+- Let's fix the first two things first:
+  * **add `multiqc_report.html` to the inputs for the first all.**
+  * **then remove `multiqc_report.html` and re-run snakemake.**
 
-**Second of all, `multiqc_report.html` already exists, so snakemake doesn't run the rule.** **How do we actually test the rule??**
 
-**Third of all, the multiqc rule has no input dependencies.** **How do we specify them??**
-
-Let's fix the first two things first:
-
-* **add `multiqc_report.html` to the inputs for the first all.**
-* **then remove `multiqc_report.html` and re-run snakemake.**
-
-Your snakefile should look like:
+- Your snakefile should look like:
 
 ```python
 rule all:
@@ -393,16 +389,16 @@ rule run_multiqc:
     "multiqc data/"
 ```
 
-Yay, that seems to work!
+> Yay, that seems to work!
 
-**Points to note:
-* other than the first rule, rules can be in any order
-* the rule name doesn't really matter, it's mostly for debugging. It just needs to be "boring" (text, underscores, etc. only)**
+> Points to note:
+  * other than the first rule, rules can be in any order
+  * the rule name doesn't really matter, it's mostly for debugging. It just needs to be "boring" (text, underscores, etc. only)
 
 
 ### Providing input files explicitly to the multiqc rule
 
-**The third problem, that multiqc doesn't have any input dependencies, is a bit harder to fix.**
+> **The third problem, that multiqc doesn't have any input dependencies, is a bit harder to fix.**
 
 **(Why do we want to fix this? Well, this is how snakemake tracks "out of date" files - if we don't specify input dependencies, then we may update one of the fastqc results that multiqc uses, but snakemake won't re-run multiqc on it, and our multiqc results will be out of date.)**
 
