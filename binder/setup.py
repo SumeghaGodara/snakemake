@@ -1,1 +1,1 @@
-snakemake
+pip install snakemake
