@@ -6,6 +6,6 @@ dependencies:
   - fastqc
   - multiqc
   - trimmomatic
-  - pip:
+  - pip
   - pip:
     - snakemake
