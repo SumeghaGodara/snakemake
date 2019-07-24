@@ -393,8 +393,6 @@ To create the report, run
 snakemake --report report.html
 ```
 
-View sample report [here](img/report.html)
-
 ### Using Singularity/Docker containers in Snakemake
 
 ```
@@ -481,6 +479,10 @@ and dependencies in its own environment,  with the specified version.
 
 This aids in reproducibility, in addition to the practical advantages of
 isolating software installs from each other.
+
+## Advanced Snakemake
+
+- You can access an **iRODS** server to retrieve data from and upload data to it. Read more [here](https://snakemake.readthedocs.io/en/stable/snakefiles/remote_files.html#irods)
 
 ## Resources
 
