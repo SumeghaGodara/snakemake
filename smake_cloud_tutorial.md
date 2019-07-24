@@ -484,7 +484,7 @@ isolating software installs from each other.
 
 ## Resources
 
-+ [Snakemake Documentation]()
++ [Snakemake Documentation](https://snakemake.readthedocs.io/en/stable/)
 
 + Here are some great
 [Snakemake Workflows](https://github.com/snakemake-workflows). Check out the
