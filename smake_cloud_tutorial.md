@@ -23,7 +23,7 @@ echo http://$(hostname -i):8787/
 ```
 - click on the link generated to open Rstudio in your browser and login with your CyVerse credentials.
 
-<center><img src="img/rstudio_interface.png" width="90%"></center>
+<center><img src="/img/rstudio_interface.png" width="90%"></center>
 <br>
 
 3. Activate Conda
@@ -98,7 +98,7 @@ are
 Our goal is to automate the first two steps (FastQC MultiQC) of our example
 workflow using snakemake!
 
-<center><img src="img/wms_syntax.png" width="90%"></center>
+<center><img src="/img/wms_syntax.png" width="90%"></center>
 <br>
 
 ## Starting with Snakemake
@@ -106,7 +106,7 @@ workflow using snakemake!
 Snakemake workflows are built around **rules**. The diagram below shows the
 anatomy of a snakemake rule:
 
-<center><img src="img/smake_rule.png" width="90%"></center>
+<center><img src="/img/smake_rule.png" width="90%"></center>
 <br>
 
 Let's make a rule to run `fastqc` on one of our samples below. We'll put this
@@ -268,7 +268,7 @@ Job counts:
 
 Snakemake now has two processes it's keeping track of.
 
-<center><img src="img/dag_one.png" width="30%"></center>
+<center><img src="/img/dag_one.png" width="30%"></center>
 <br>
 
 ## Using Snakemake to process multiple files
@@ -336,7 +336,7 @@ of the snakefile call `SAMPLES`. Snakemake solves the values for the wildcard
 the wildcard using the `expand` function, and tell snakemake in which variable
 to look for the values.
 
-<center><img src="img/dag_multiple.png" width="90%"></center>
+<center><img src="/img/dag_multiple.png" width="90%"></center>
 <br>
 
 
@@ -363,10 +363,10 @@ snakemake –p
 ```
 snakemake -r
 ```
-#### execute the workflow with 8 cores
+#### execute the workflow with `n` cores
 
 ```
-snakemake --cores 8
+snakemake --cores n
 ```
 #### run the workflow on a SLURM cluster
 
